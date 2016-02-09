@@ -1,1 +1,15 @@
+com\xebia\training\DepartmentType.class
+com\xebia\training\Project.class
 com\xebia\training\App.class
+com\xebia\training\Address.class
+com\xebia\training\Contact.class
+com\xebia\training\PersonalDetails$Gender.class
+com\xebia\training\PersonalDetails$BloodGroup.class
+com\xebia\training\PersonalDetails$MaritalStatus.class
+com\xebia\training\EmployeeTest.class
+com\xebia\training\Address$AddressType.class
+com\xebia\training\PersonalDetails.class
+com\xebia\training\Salary.class
+com\xebia\training\Department.class
+com\xebia\training\Employee.class
+com\xebia\training\Employee$Designation.class
