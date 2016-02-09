@@ -34,7 +34,7 @@ public class DataEmployee  {
 	}
 	
 
-	@SuppressWarnings("resource")
+	@SuppressWarnings({ "resource", "unchecked" })
 	public void setValues() throws IOException, NumberFormatException, ParseException, InterruptedException, ExecutionException {
 	
 		File file = new File(infile);
@@ -77,7 +77,6 @@ public class DataEmployee  {
 				List<PersonalDetails> personalDetails = personalDetailsData.call();
 
 				
-			    //List<Future<List<Salary>>> list1 = new ArrayList<Future<List<Salary>>>();
 			    SalaryData salaryData = new SalaryData(id);
 			    Future<List<Salary>> futureTask2 = executor1.submit(salaryData);
 			    List<Salary> salary = futureTask2.get();
