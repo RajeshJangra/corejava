@@ -6,7 +6,8 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.Callable;
 
-public class DepartmentData implements Callable {
+@SuppressWarnings("rawtypes")
+public class DepartmentInput implements Callable {
 		
 		private static final String infile="E:/department.txt";
 		int EmployeeId;
@@ -26,7 +27,7 @@ public class DepartmentData implements Callable {
 
 
 
-		public DepartmentData(int id) {
+		public DepartmentInput(int id) {
 			super();
 			this.id = id;
 		}

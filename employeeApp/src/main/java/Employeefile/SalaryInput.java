@@ -4,7 +4,8 @@ import java.io.*;
 import java.util.*;
 import java.util.concurrent.Callable;
 
-public class SalaryData implements Callable{
+@SuppressWarnings("rawtypes")
+public class SalaryInput implements Callable{
 	 int id,EmployeeId;
 	 double salaryId;
 	 double basic;
@@ -17,7 +18,7 @@ public class SalaryData implements Callable{
 
 
 
-	public SalaryData(int employeeId) {
+	public SalaryInput(int employeeId) {
 		super();
 		this.EmployeeId = employeeId;
 	}

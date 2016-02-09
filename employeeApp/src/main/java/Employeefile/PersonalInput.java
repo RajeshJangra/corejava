@@ -6,7 +6,8 @@ import java.util.concurrent.Callable;
 
 import Employeefile.PersonalDetails.MaritalStatus;
 
-public class PersonalData implements Callable<Object> {
+@SuppressWarnings("rawtypes")
+public class PersonalInput implements Callable{
 
 		private static final String infile="E:/personaldetails.txt";
 		int id;
@@ -19,7 +20,7 @@ public class PersonalData implements Callable<Object> {
 		 String drivingLicenceNo;
 		 
 		 
-		public PersonalData(int employeeID) {
+		public PersonalInput(int employeeID) {
 			super();
 			this.EmployeeID = employeeID;
 		}

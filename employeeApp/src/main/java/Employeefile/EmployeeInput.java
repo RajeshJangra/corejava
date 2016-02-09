@@ -4,7 +4,6 @@ import java.io.*;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
-import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
@@ -12,7 +11,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 import Employeefile.Employee.Designation;
 
-public class DataEmployee  {
+public class EmployeeInput{
 	private final String infile = "E:/employee.txt";
 	String name;
 	Date startingDate;
@@ -27,19 +26,14 @@ public class DataEmployee  {
 	Date dOB;
 	static int id;
 	Map<Integer,Employee> employeeMap = new HashMap<Integer, Employee>();
+    BufferedReader bufferedReader;
 
-	public static void main(String args[]) throws NumberFormatException, IOException, ParseException, InterruptedException, ExecutionException{
-		DataEmployee employee1 = new DataEmployee();
-		employee1.setValues();
-	}
-	
-
-	@SuppressWarnings({ "resource", "unchecked" })
-	public void setValues() throws IOException, NumberFormatException, ParseException, InterruptedException, ExecutionException {
+	@SuppressWarnings({ "unchecked" })
+	public Map<Integer, Employee> setinput() throws IOException, NumberFormatException, ParseException, InterruptedException, ExecutionException {
 	
 		File file = new File(infile);
 		FileReader fileReader = new FileReader(file);
-		BufferedReader bufferedReader = new BufferedReader(fileReader);
+		bufferedReader = new BufferedReader(fileReader);
 		StringBuffer stringBuffer = new StringBuffer();
 		String line;
 		while ((line = bufferedReader.readLine()) != null) {
@@ -63,36 +57,36 @@ public class DataEmployee  {
 				endingDate =null;
 				
 				ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
-				ProjectData projectData = new ProjectData();
-				List<Project> project = projectData.setValue(id);
-
-				DepartmentData departmentData = new DepartmentData(id);
-				Future<List<Department>> futureTask1 = executor1.submit(departmentData);
+				
+				DepartmentInput departmentinput = new DepartmentInput(id);
+				Future<List<Department>> futureTask1 = executor1.submit(departmentinput);
 				List<Department> department = futureTask1.get();
 				
-				AddressData addressData = new AddressData();
-				List<Address> contactDetails = addressData.setValue(id);
+				AddressInput addressinput = new AddressInput(id);
+				Future<List<Address>> futureTask2 = executor1.submit(addressinput);
+				List<Address> address = futureTask2.get();
 
-				PersonalData personalDetailsData = new PersonalData(id);
-				List<PersonalDetails> personalDetails = personalDetailsData.call();
+				PersonalInput personalinput = new PersonalInput(id);
+				Future<List<PersonalDetails>> futureTask3 = executor1.submit(personalinput);
+				List<PersonalDetails> personalDetails = futureTask3.get();
 
 				
-			    SalaryData salaryData = new SalaryData(id);
-			    Future<List<Salary>> futureTask2 = executor1.submit(salaryData);
-			    List<Salary> salary = futureTask2.get();
+			    SalaryInput salaryinput = new SalaryInput(id);
+			    Future<List<Salary>> futureTask4 = executor1.submit(salaryinput);
+			    List<Salary> salary = futureTask4.get();
 	
-				
-				Employee emp = new Employee(name, startingDate, fathersName, endingDate, correspondant, designation, current, personal, workEx, gender, dOB, id, salary, project, personalDetails, department, contactDetails);
+			    ProjectInput projectinput = new ProjectInput(id);
+				Future<List<Project>> futureTask5=executor1.submit(projectinput) ;
+				List<Project> project = futureTask5.get();
+				Employee emp = new Employee(name, startingDate, fathersName, endingDate, correspondant, designation, current, personal, workEx, gender, dOB, id, salary, project, personalDetails, department, address);
 
 				employeeMap.put(id,emp);
 
 			}
 
 		}
-		System.out.println("enter the ID:");
-		Scanner sc=new Scanner(System.in);
-		id=sc.nextInt();
-		System.out.println(employeeMap.get(id));
+		return employeeMap;
+
 	}
 }
 

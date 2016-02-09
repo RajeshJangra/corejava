@@ -2,14 +2,17 @@ package Employeefile;
 
 import java.io.*;
 import java.util.*;
+import java.util.concurrent.Callable;
 
 import Employeefile.Address.AddressType;
 
-public class AddressData {
+@SuppressWarnings("rawtypes")
+public class AddressInput implements Callable {
 	public static final String infile="E:/address.txt";
 	 double ContactId;
 	 AddressType addressType;
 	 int id;
+	 int EmployeeId;
 	 int houseNo;
 	 String street;
 	 String area;
@@ -20,16 +23,15 @@ public class AddressData {
 	 double phoneNo;
 	 String email;
 	 String skypeid;
-	 
-	 public static void main(String[] args) throws IOException {
-		
-	}
-	
-	
 	
 
+	public AddressInput(int employeeId) {
+		super();
+		this.EmployeeId = employeeId;
+	}
+	
 	@SuppressWarnings("resource")
-	public List<Address> setValue(int EmployeeId) throws IOException{
+	public List<Address> call() throws IOException{
 		List<Address> list = new ArrayList<Address>();
 		File file = new File(infile);
 		FileReader fileReader = new FileReader(file);

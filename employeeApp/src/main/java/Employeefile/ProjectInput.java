@@ -3,10 +3,12 @@ package Employeefile;
 import java.io.*;
 import java.text.*;
 import java.util.*;
+import java.util.concurrent.Callable;
 
-public class ProjectData {
+@SuppressWarnings("rawtypes")
+public class ProjectInput implements Callable {
 	private static final String infile = "E:/project.txt";
-	int EmployeeID;
+	int EmployeeID,id;
 	double projectId;
 	String name;
 	Date endDate;
@@ -15,8 +17,16 @@ public class ProjectData {
 	
 
 
+	public ProjectInput(int id) {
+		super();
+		this.id = id;
+	}
+
+
+
+
 	@SuppressWarnings("resource")
-	public List<Project> setValue(int id) throws IOException, ParseException {
+	public List<Project> call() throws IOException, ParseException {
 		List<Project> list = new ArrayList<Project>();
 
 		File file = new File(infile);
