@@ -61,25 +61,26 @@ public class DataEmployee  {
 						.nextToken(","));
 				id = Integer.parseInt(stringTokenizer.nextToken(","));
 				endingDate =null;
-
+				
+				ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
 				ProjectData projectData = new ProjectData();
 				List<Project> project = projectData.setValue(id);
 
 				DepartmentData departmentData = new DepartmentData(id);
-				List<Department> department = departmentData.call();
-
+				Future<List<Department>> futureTask1 = executor1.submit(departmentData);
+				List<Department> department = futureTask1.get();
+				
 				AddressData addressData = new AddressData();
 				List<Address> contactDetails = addressData.setValue(id);
 
 				PersonalData personalDetailsData = new PersonalData(id);
 				List<PersonalDetails> personalDetails = personalDetailsData.call();
 
-				ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
-			    List<Future<List<Salary>>> list1 = new ArrayList();
+				
+			    //List<Future<List<Salary>>> list1 = new ArrayList<Future<List<Salary>>>();
 			    SalaryData salaryData = new SalaryData(id);
-			    Future<List<Salary>> futureTask1 = executor1.submit(salaryData);
-			    
-			    List<Salary> salary = futureTask1.get();
+			    Future<List<Salary>> futureTask2 = executor1.submit(salaryData);
+			    List<Salary> salary = futureTask2.get();
 	
 				
 				Employee emp = new Employee(name, startingDate, fathersName, endingDate, correspondant, designation, current, personal, workEx, gender, dOB, id, salary, project, personalDetails, department, contactDetails);
