@@ -1,10 +1,8 @@
-package com.Employee2;
+package com.xebia.training.Employee2;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -12,7 +10,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.concurrent.Callable;
 
-import com.Employee1.Department;
+import com.xebia.training.Employee1.Department;
 
 public class DepartmentData implements Callable<List<Department>>{
 	

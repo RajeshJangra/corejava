@@ -1,4 +1,4 @@
-package com.Employee1;
+package com.xebia.training.Employee1;
 
 import java.util.Date;
 
@@ -10,6 +10,39 @@ public class Project {
 	private Date startDate;
 	
 	
+	
+	public double getProjectId() {
+		return projectId;
+	}
+
+
+
+
+
+	public void setProjectId(double projectId) {
+		this.projectId = projectId;
+	}
+
+
+
+
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+
+
+
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+
+
+
+
 	@Override
 	public String toString() {
 		return " [ProjectId=" + projectId + ", Name=" + name

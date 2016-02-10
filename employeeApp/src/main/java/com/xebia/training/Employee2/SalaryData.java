@@ -1,20 +1,22 @@
-package com.Employee2;
+package com.xebia.training.Employee2;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.concurrent.Callable;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.ThreadPoolExecutor;
 
-import com.Employee1.Salary;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import com.xebia.training.Employee1.Salary;
 
 
 public class SalaryData implements Callable<List<Salary>> {
@@ -29,7 +31,7 @@ public class SalaryData implements Callable<List<Salary>> {
 	public double FP;
 	public double gratvity;
 	public int EmployeeId;
-	public static final String input = "/home/raggarwal/Salary.txt";
+	public static final String input = "/home/raggarwal/GIT/corejava/employeeApp/src/main/java/com/XmlFiles/Salary.xml";
 	
 	
 
@@ -50,35 +52,41 @@ public class SalaryData implements Callable<List<Salary>> {
 
 	@Override
 	public List<Salary> call() throws Exception {
-		List<Salary> list = new ArrayList();
+		List<Salary> list = new ArrayList<>();
 		File file = new File(input);
-		FileReader fileReader = new FileReader(file);
-		BufferedReader bufferedReader = new BufferedReader(fileReader);
-		StringBuffer stringBuffer = new StringBuffer();
-		String line;
-		while ((line = bufferedReader.readLine()) != null) {
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+        Document doc = dBuilder.parse(file);
+        doc.getDocumentElement().normalize();
+        NodeList nList = doc.getElementsByTagName("salary");
+        for (int temp = 0; temp < nList.getLength(); temp++){
+        	
+        	  Node nNode = nList.item(temp);
+             
+              if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+            	  Element eElement = (Element) nNode;
+            	  id = Integer.parseInt(eElement.getAttribute("id"));
+            	  if (EmployeeId == id) {
 
-			stringBuffer.append(line);
-			StringTokenizer stringTokenizer = new StringTokenizer(line, ",");
-			while (stringTokenizer.hasMoreTokens()) {
-				id = Integer.parseInt(stringTokenizer.nextToken());
-				if (EmployeeId == id) {
-					salaryId = Integer.parseInt(stringTokenizer.nextToken(","));
-					basic = Double.parseDouble(stringTokenizer.nextToken(","));
+  					salaryId = Integer.parseInt(eElement.getElementsByTagName("salaryId").item(0).getTextContent());
+  					basic = Double.parseDouble(eElement.getElementsByTagName("basic").item(0).getTextContent());
 
-					Salary salary = new Salary(id, salaryId, basic);
-					list.add(salary);
-					
-				}
-
-				else {
-					break;
-				}
-
-			}
-		}
+  					Salary salary = new Salary(id, salaryId, basic);
+  					list.add(salary);
+              }
+            	  else {
+  					break;
+  				}
+        }
 		
+	
+
+	
+				
+					
+        }
 		return list;
 	}
 
 }
+

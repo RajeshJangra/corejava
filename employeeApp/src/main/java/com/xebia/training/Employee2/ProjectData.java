@@ -1,11 +1,8 @@
-package com.Employee2;
+package com.xebia.training.Employee2;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -13,8 +10,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.concurrent.Callable;
 
-import com.Employee1.Employee;
-import com.Employee1.Project;
+import com.xebia.training.Employee1.Project;
 
 public class ProjectData implements Callable<List<Project>> {
 	private static final String input = "/home/raggarwal/Project.txt";

@@ -1,16 +1,15 @@
-package com.Employee2;
+package com.xebia.training.Employee2;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 import java.util.concurrent.Callable;
 
-import com.Employee1.PersonalDetails;
-import com.Employee1.PersonalDetails.MarritalStatus;
+import com.xebia.training.Employee1.PersonalDetails;
+import com.xebia.training.Employee1.PersonalDetails.MarritalStatus;
 
 public class PersonalDetailsData implements Callable<List<PersonalDetails>> {
 	private static final String input="/home/raggarwal/Personaldetails.txt";

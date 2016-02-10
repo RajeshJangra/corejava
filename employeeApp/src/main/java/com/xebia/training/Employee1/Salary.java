@@ -1,9 +1,5 @@
-package com.Employee1;
+package com.xebia.training.Employee1;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-
-import com.Employee2.SalaryData;
 
 
 

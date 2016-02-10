@@ -1,16 +1,10 @@
-package com.Employee1;
+package com.xebia.training.Employee1;
+
+
 
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.Future;
-
-import com.Employee1.Employee.Designation;
-import com.Employee2.ContactDetailsData;
-import com.Employee2.DepartmentData;
-import com.Employee2.PersonalDetailsData;
-import com.Employee2.ProjectData;
-import com.Employee2.SalaryData;
 
 public class Employee {
 
@@ -26,13 +20,20 @@ public class Employee {
 	private String personal;
 	private String workEx;
 
+	
+
+
+
+
+
+
 	private int id;
 	private String gender;
 	private Date DOB;
 	
 	
 	public List<Salary> salary;
-	public List<Project> projectData;
+	public List<Project> project;
 	public List<PersonalDetails> personalDetails;
 	public List<Department> department;
 	public List<ContactDetails> contactDetails;
@@ -45,7 +46,7 @@ public class Employee {
 	public Employee(String name, Date startingDate, String fathersName,
 			 Date endingDate, String correspondant,
 			Designation designation, String current, String personal,
-			String workEx, String gender, Date dOB, int id,List<Salary>  salary,List<Project> projectData,
+			String workEx, String gender, Date dOB, int id,List<Salary>  salary,List<Project> project,
 			List<PersonalDetails> personalDetails,List<Department> department,List<ContactDetails> contactDetails) {
 		super();
 		
@@ -66,7 +67,7 @@ public class Employee {
 		this.gender = gender;
 		this.id = id;
 		this.salary = salary;
-		this.projectData= projectData;
+		this.project= project;
 		this.personalDetails = personalDetails;
 		this.department = department;
 		this.contactDetails = contactDetails;
@@ -102,7 +103,7 @@ public class Employee {
 				+ correspondant + ", current=" + current + ", personal="
 				+ personal + ", workEx=" + workEx + ",name=" + name + ", gender="
 				+ gender + ", DOB=" + DOB + ",\n salary=" + salary
-				+ ",\n projectData=" + projectData + ",\n personalDetails="
+				+ ",\n projectData=" + project + ",\n personalDetails="
 				+ personalDetails + ",\n department=" + department
 				+ ",\n contactDetails=" + contactDetails + "\n]";
 	}
@@ -110,6 +111,20 @@ public class Employee {
 
 	
 	 
+
+
+	public List<Project> getProject() {
+		return project;
+	}
+
+
+	public void setProject(List<Project> project) {
+		this.project = project;
+	}
+
+
+
+
 
 
 	public enum Designation{

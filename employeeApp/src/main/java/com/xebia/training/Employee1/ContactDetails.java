@@ -1,4 +1,4 @@
-package com.Employee1;
+package com.xebia.training.Employee1;
 
 public class ContactDetails {
 	private int id;
