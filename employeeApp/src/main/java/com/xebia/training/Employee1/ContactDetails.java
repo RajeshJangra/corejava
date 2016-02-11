@@ -41,11 +41,75 @@ public class ContactDetails {
 		PERMANENT;
 	}
 
-	
 
-	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ContactDetails other = (ContactDetails) obj;
+		if (Double.doubleToLongBits(ContactId) != Double
+				.doubleToLongBits(other.ContactId))
+			return false;
+		if (addressType != other.addressType)
+			return false;
+		if (area == null) {
+			if (other.area != null)
+				return false;
+		} else if (!area.equals(other.area))
+			return false;
+		if (city == null) {
+			if (other.city != null)
+				return false;
+		} else if (!city.equals(other.city))
+			return false;
+		if (email == null) {
+			if (other.email != null)
+				return false;
+		} else if (!email.equals(other.email))
+			return false;
+		if (houseNo != other.houseNo)
+			return false;
+		if (id != other.id)
+			return false;
+		if (landmark == null) {
+			if (other.landmark != null)
+				return false;
+		} else if (!landmark.equals(other.landmark))
+			return false;
+		if (Double.doubleToLongBits(phoneNo) != Double
+				.doubleToLongBits(other.phoneNo))
+			return false;
+		if (Double.doubleToLongBits(pinCode) != Double
+				.doubleToLongBits(other.pinCode))
+			return false;
+		if (skypeid == null) {
+			if (other.skypeid != null)
+				return false;
+		} else if (!skypeid.equals(other.skypeid))
+			return false;
+		if (state == null) {
+			if (other.state != null)
+				return false;
+		} else if (!state.equals(other.state))
+			return false;
+		if (street == null) {
+			if (other.street != null)
+				return false;
+		} else if (!street.equals(other.street))
+			return false;
+		return true;
+	}
 
-	
+
+
+
+
+
+
 
 	@Override
 	public String toString() {

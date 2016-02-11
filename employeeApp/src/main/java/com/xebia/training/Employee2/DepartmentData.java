@@ -10,11 +10,19 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.concurrent.Callable;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
 import com.xebia.training.Employee1.Department;
 
 public class DepartmentData implements Callable<List<Department>>{
 	
-	private static final String input="/home/raggarwal/Department.txt";
+	private static final String input="src/main/java/com/XmlFiles/Department.xml";
 	int EmployeeId;
 	 double departmentId;
 	
@@ -44,21 +52,24 @@ public class DepartmentData implements Callable<List<Department>>{
 	public List<Department> call() throws Exception {
 		List<Department> list = new ArrayList<Department>();
 		File file = new File(input);
-		FileReader fileReader = new FileReader(file);
-		BufferedReader  bufferedReader = new BufferedReader(fileReader);
-		String line;
-		StringBuffer stringBuffer = new StringBuffer();
-		while ((line = bufferedReader.readLine() ) != null){
-			stringBuffer.append(line);
-			StringTokenizer stringTokenizer = new StringTokenizer(line,",");
-			while(stringTokenizer.hasMoreElements()){
-			EmployeeId = Integer.parseInt(stringTokenizer.nextToken());
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+		Document doc = dBuilder.parse(file);
+		doc.getDocumentElement().normalize();
+		NodeList nList = doc.getElementsByTagName("Department");
+
+		for (int temp = 0; temp < nList.getLength(); temp++) {
+
+			Node nNode = nList.item(temp);
+			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+				Element eElement = (Element) nNode;
+			EmployeeId =Integer.parseInt(eElement.getAttribute("EmployeeId"));
 			if(EmployeeId == id){
 			
-			departmentId = Double.parseDouble(stringTokenizer.nextToken(","));
-			name = stringTokenizer.nextToken(",");
-			startingDate = new SimpleDateFormat("dd-MM-yyyy").parse(stringTokenizer.nextToken(","));
-			endingDate = new SimpleDateFormat("dd-MM-yyyy").parse(stringTokenizer.nextToken(","));
+			departmentId = Double.parseDouble(eElement.getElementsByTagName("departmentId").item(0).getTextContent());
+			name = eElement.getElementsByTagName("name").item(0).getTextContent();
+			startingDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("startingDate").item(0).getTextContent());
+			endingDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("endingDate").item(0).getTextContent());
 			
 			Department department = new Department(EmployeeId,departmentId, name, startingDate, endingDate);
 			list.add(department);

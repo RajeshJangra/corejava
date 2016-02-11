@@ -42,6 +42,9 @@ public class EndDateSetup {
 			      p.setEndDate(new Date());
 				
 			}
+			else{
+				System.out.println("u r not a part of this project..:)");
+			}
 			}
 		}
 		

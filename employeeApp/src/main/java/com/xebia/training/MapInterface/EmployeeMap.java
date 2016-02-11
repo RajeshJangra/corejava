@@ -40,6 +40,12 @@ public class EmployeeMap {
 		//System.out.println(employee);
 		}
 		
+		
+		else{
+			System.out.println("-------------------------------");
+			
+		}
+		
 	}
 	
 	

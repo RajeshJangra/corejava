@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<class>
+ <Department EmployeeId="1">
+  <departmentId>1</departmentId>
+  <name>pioneer</name>
+  <startingDate>03-08-2015</startingDate>
+  <endingDate>03-12-2016</endingDate>
+ </Department>
+</class>

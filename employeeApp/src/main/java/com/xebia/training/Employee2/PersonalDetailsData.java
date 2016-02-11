@@ -38,6 +38,7 @@ public class PersonalDetailsData implements Callable<List<PersonalDetails>> {
 
 
 
+	
 	@Override
 	public List<PersonalDetails> call() throws Exception {
 		List<PersonalDetails> list = new ArrayList<>();
@@ -46,7 +47,7 @@ public class PersonalDetailsData implements Callable<List<PersonalDetails>> {
         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
         Document doc = dBuilder.parse(file);
         doc.getDocumentElement().normalize();
-        NodeList nList = doc.getElementsByTagName("PersonalDetailsID");
+        NodeList nList = doc.getElementsByTagName("PersonalDetails");
         for (int temp = 0; temp < nList.getLength(); temp++){
         	
       	  Node nNode = nList.item(temp);
