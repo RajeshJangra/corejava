@@ -1,11 +1,8 @@
 package com.xebia.training.Employee2;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 import java.util.concurrent.Callable;
 
 import javax.xml.parsers.DocumentBuilder;

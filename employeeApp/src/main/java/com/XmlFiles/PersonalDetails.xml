@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<class>
+<PersonalDetails id="1">
+	<personalDetailsID>1</personalDetailsID>
+	<adharNO>dcbj33</adharNO>
+	<panNO>83eb3</panNO>
+	<bloodGroup>o+</bloodGroup>
+	<marritalStatus>SINGLE</marritalStatus>
+	<drivingLicenceNo>web321</drivingLicenceNo>
+</PersonalDetails>
+<PersonalDetails id="2">
+	<personalDetailsID>1</personalDetailsID>
+	<adharNO>adhar</adharNO>
+	<panNO>24333454d</panNO>
+	<bloodGroup>o+</bloodGroup>
+	<marritalStatus>SINGLE</marritalStatus>
+	<drivingLicenceNo>web321</drivingLicenceNo>
+</PersonalDetails>
+</class>

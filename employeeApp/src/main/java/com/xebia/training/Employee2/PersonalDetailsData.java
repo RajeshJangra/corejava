@@ -1,18 +1,23 @@
 package com.xebia.training.Employee2;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 import java.util.concurrent.Callable;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 import com.xebia.training.Employee1.PersonalDetails;
 import com.xebia.training.Employee1.PersonalDetails.MarritalStatus;
 
 public class PersonalDetailsData implements Callable<List<PersonalDetails>> {
-	private static final String input="/home/raggarwal/Personaldetails.txt";
+	private static final String input="src/main/java/com/XmlFiles/PersonalDetails.xml";
 	int id;
 	 int personalDetailsID;
 	 String adharNO;
@@ -35,24 +40,28 @@ public class PersonalDetailsData implements Callable<List<PersonalDetails>> {
 
 	@Override
 	public List<PersonalDetails> call() throws Exception {
-		List<PersonalDetails> list = new ArrayList();
+		List<PersonalDetails> list = new ArrayList<>();
 		File file = new File(input);
-		FileReader fileReader = new FileReader(file);
-		BufferedReader  bufferedReader = new BufferedReader(fileReader);
-		StringBuffer stringBuffer = new StringBuffer();
-		String line;
-		while ((line = bufferedReader.readLine() ) != null){
-			stringBuffer.append(line);
-			StringTokenizer stringTokenizer = new StringTokenizer(line,",");
-			while(stringTokenizer.hasMoreElements()){
-			id = Integer.parseInt(stringTokenizer.nextToken());
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+        Document doc = dBuilder.parse(file);
+        doc.getDocumentElement().normalize();
+        NodeList nList = doc.getElementsByTagName("PersonalDetailsID");
+        for (int temp = 0; temp < nList.getLength(); temp++){
+        	
+      	  Node nNode = nList.item(temp);
+           
+            if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+          	  Element eElement = (Element) nNode;
+          	  
+			id = Integer.parseInt(eElement.getAttribute("id"));
 			if(EmployeeID == id){
-			personalDetailsID = Integer.parseInt(stringTokenizer.nextToken(","));
-			adharNO = stringTokenizer.nextToken(",");
-			panNO = stringTokenizer.nextToken(",");
-			bloodGroup = stringTokenizer.nextToken(",");
-			marritalStatus = MarritalStatus.valueOf(stringTokenizer.nextToken(","));
-			drivingLicenceNo = stringTokenizer.nextToken(",");
+			personalDetailsID = Integer.parseInt(eElement.getElementsByTagName("personalDetailsID").item(0).getTextContent());
+			adharNO = eElement.getElementsByTagName("adharNO").item(0).getTextContent();
+			panNO = eElement.getElementsByTagName("panNO").item(0).getTextContent();
+			bloodGroup = eElement.getElementsByTagName("bloodGroup").item(0).getTextContent();
+			marritalStatus = MarritalStatus.valueOf(eElement.getElementsByTagName("marritalStatus").item(0).getTextContent());
+			drivingLicenceNo = eElement.getElementsByTagName("drivingLicenceNo").item(0).getTextContent();
 			
 			PersonalDetails personalDetails = new PersonalDetails(id,personalDetailsID, adharNO, panNO, bloodGroup, marritalStatus, drivingLicenceNo);
 			list.add(personalDetails);
