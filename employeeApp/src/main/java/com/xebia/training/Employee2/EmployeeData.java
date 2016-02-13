@@ -94,18 +94,12 @@ public class EmployeeData {
 				
 				SalaryData salaryData = new SalaryData(id);
 				Future<List<Salary>> futureTask1 = executor1.submit(salaryData);
-				
 				List<Salary> salary = futureTask1.get();
-				
-				
-
-				
 				
 				
 				
 				ProjectData projectData = new ProjectData(id);
 				Future<List<Project>> futureTask = executor1.submit(projectData);
-				
 				List<Project> project = futureTask.get();
 				
 
