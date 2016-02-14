@@ -6,10 +6,21 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.Callable;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.DOMException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
 @SuppressWarnings("rawtypes")
 public class DepartmentInput implements Callable {
 		
-		private static final String infile="E:/department.txt";
+		private static final String infile="C:/Users/Administrator/corejava/employeeApp/src/main/java/Xml/Department.xml";
 		int EmployeeId;
 		 double departmentId;
 		 int id;
@@ -17,44 +28,35 @@ public class DepartmentInput implements Callable {
 		 Date startingDate;
 		 Date endingDate;
 
-		public String toString() {
-			return "DepartmentData [EmployeeId=" + EmployeeId + ", departmentId=" + departmentId
-					+ ", name=" + name + ", startingDate=" + startingDate
-					+ ", endingDate=" + endingDate + "]";
-		}
-
-
-
-
-
 		public DepartmentInput(int id) {
 			super();
 			this.id = id;
 		}
 
 
-
-
-
-		@SuppressWarnings("resource")
-		public List<Department> call() throws NumberFormatException, IOException, ParseException{
-			List<Department> list = new ArrayList<Department>();
+		public List<Department> call() throws  ParserConfigurationException, SAXException, IOException, DOMException, ParseException{
 			
 			
-			File file = new File(infile);
-			FileReader fileReader = new FileReader(file);
-			BufferedReader  bufferedReader = new BufferedReader(fileReader);
-			String line;
-			while ((line = bufferedReader.readLine() ) != null){
-				StringTokenizer stringTokenizer = new StringTokenizer(line,",");
-				while(stringTokenizer.hasMoreElements()){
-				EmployeeId = Integer.parseInt(stringTokenizer.nextToken());
+			 List<Department> list = new ArrayList<Department>();			
+			 DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+	         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+	         Document doc = dBuilder.parse(infile);
+	         doc.getDocumentElement().normalize();
+	         NodeList nList = doc.getElementsByTagName("Department");
+	         for (int temp = 0; temp < nList.getLength(); temp++) 
+	         {
+	             Node nNode = nList.item(temp);
+	       
+	             if (nNode.getNodeType() == Node.ELEMENT_NODE) 
+	             {
+	                Element eElement = (Element) nNode;
+				EmployeeId = Integer.parseInt(eElement.getAttribute("EmployeeId"));
 				if(EmployeeId == id){
 				
-				departmentId = Double.parseDouble(stringTokenizer.nextToken(","));
-				name = stringTokenizer.nextToken(",");
-				startingDate = new SimpleDateFormat("dd-MM-yyyy").parse(stringTokenizer.nextToken(","));
-				endingDate = new SimpleDateFormat("dd-MM-yyyy").parse(stringTokenizer.nextToken(","));
+				departmentId = Double.parseDouble(eElement.getElementsByTagName("departmentId").item(0).getTextContent());
+				name =eElement.getElementsByTagName("name").item(0).getTextContent();
+				startingDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("startingDate").item(0).getTextContent());
+				endingDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("endingDate").item(0).getTextContent());
 				
 				Department department = new Department(EmployeeId,departmentId, name, startingDate, endingDate);
 				list.add(department);

@@ -9,10 +9,21 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.DOMException;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
 import Employeefile.Employee.Designation;
 
 public class EmployeeInput{
-	private final String infile = "E:/employee.txt";
+	final String infile = "C:/Users/Administrator/corejava/employeeApp/src/main/java/Xml/Employee.xml";
 	String name;
 	Date startingDate;
 	String fathersName;
@@ -23,37 +34,40 @@ public class EmployeeInput{
 	String personal;
 	String workEx;
 	String gender;
+	String unknown;
 	Date dOB;
 	static int id;
 	Map<Integer,Employee> employeeMap = new HashMap<Integer, Employee>();
-    BufferedReader bufferedReader;
 
-	@SuppressWarnings({ "unchecked" })
-	public Map<Integer, Employee> setinput() throws IOException, NumberFormatException, ParseException, InterruptedException, ExecutionException {
+
+	@SuppressWarnings("unchecked")
+	public Map<Integer, Employee> setinput() throws IOException, ParserConfigurationException, SAXException, DOMException, ParseException, InterruptedException, ExecutionException {
 	
-		File file = new File(infile);
-		FileReader fileReader = new FileReader(file);
-		bufferedReader = new BufferedReader(fileReader);
-		StringBuffer stringBuffer = new StringBuffer();
-		String line;
-		while ((line = bufferedReader.readLine()) != null) {
-
-			stringBuffer.append(line);
-			StringTokenizer stringTokenizer = new StringTokenizer(line, ",");
-			while (stringTokenizer.hasMoreTokens()) {
-				name = stringTokenizer.nextToken(",");
-				startingDate = new SimpleDateFormat("dd-MM-yyyy").parse(stringTokenizer.nextToken(","));
-				fathersName = stringTokenizer.nextToken(",");
+		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+        Document doc = dBuilder.parse(infile);
+        doc.getDocumentElement().normalize();
+        NodeList nList = doc.getElementsByTagName("employee");
+        for (int temp = 0; temp < nList.getLength(); temp++) 
+        {
+            Node nNode = nList.item(temp);
+      
+            if (nNode.getNodeType() == Node.ELEMENT_NODE) 
+            {
+               Element eElement = (Element) nNode;
+               unknown=eElement.getAttribute("EmployeeID");
+				name =eElement.getElementsByTagName("name").item(0).getTextContent();
+				startingDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("startingDate").item(0).getTextContent());
+				fathersName = eElement.getElementsByTagName("fathersName").item(0).getTextContent();
 				
-				correspondant = stringTokenizer.nextToken(",");
-				designation = Designation.valueOf(stringTokenizer.nextToken(","));
-				current = stringTokenizer.nextToken(",");
-				personal = stringTokenizer.nextToken(",");
-				workEx = stringTokenizer.nextToken(",");
-				gender = stringTokenizer.nextToken(",");
-				dOB = new SimpleDateFormat("dd-MM-yyyy").parse(stringTokenizer
-						.nextToken(","));
-				id = Integer.parseInt(stringTokenizer.nextToken(","));
+				correspondant =eElement.getElementsByTagName("correspondant").item(0).getTextContent();
+				designation = Designation.valueOf(eElement.getElementsByTagName("designation").item(0).getTextContent());
+				current =eElement.getElementsByTagName("current").item(0).getTextContent();
+				personal =eElement.getElementsByTagName("personal").item(0).getTextContent();
+				workEx =eElement.getElementsByTagName("workEx").item(0).getTextContent();
+				gender =eElement.getElementsByTagName("gender").item(0).getTextContent();
+				dOB = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("dOB").item(0).getTextContent());
+				id = Integer.parseInt(eElement.getElementsByTagName("id").item(0).getTextContent());
 				endingDate =null;
 				
 				ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
@@ -78,6 +92,7 @@ public class EmployeeInput{
 			    ProjectInput projectinput = new ProjectInput(id);
 				Future<List<Project>> futureTask5=executor1.submit(projectinput) ;
 				List<Project> project = futureTask5.get();
+				
 				Employee emp = new Employee(name, startingDate, fathersName, endingDate, correspondant, designation, current, personal, workEx, gender, dOB, id, salary, project, personalDetails, department, address);
 
 				employeeMap.put(id,emp);
@@ -87,6 +102,12 @@ public class EmployeeInput{
 		}
 		return employeeMap;
 
+	}
+	Project terminate()
+	{
+		Project project=new Project();
+		project.setEndDate();
+		return project;
 	}
 }
 

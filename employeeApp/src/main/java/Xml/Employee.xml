@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<class>
+	<employee>
+		<name>Prince</name>
+		<startingDate>20-01-2016</startingDate>
+		<fathersName>upendra kumar</fathersName>
+		<correspondant>pprakash@xebia.com</correspondant>
+		<designation>TRAINEE</designation>
+		<current>13/B gurgaon,haryana,India</current>
+		<personal>409/5 gandhi nagar hind,gaya</personal>
+		<workEx>1</workEx>
+		<gender>male</gender>
+		<dOB>17-10-1994</dOB>
+		<id>110</id>
+		<endingDate></endingDate>
+	</employee>
+	<employee>
+		<name>Prakash</name>
+		<startingDate>20-01-2016</startingDate>
+		<fathersName>kumar upendra</fathersName>
+		<correspondant> pprince@xebia.com </correspondant>
+		<designation>TRAINEE</designation>
+		<current>12/B Delhi,India</current>
+		<personal>409/5 rameshwar nagar hind,patna</personal>
+		<workEx>5</workEx>
+		<gender>male</gender>
+		<dOB>27-07-1994</dOB>
+		<id>112</id>
+		<endingDate></endingDate>
+	</employee>
+</class>

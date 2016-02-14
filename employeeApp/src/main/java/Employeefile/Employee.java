@@ -83,7 +83,7 @@ public class Employee {
 		}
 
 		public String toString() {
-			return "Employee [ \nEmployeeId=" + id + ", startingDate=" + startingDate
+			return "Employee  \nEmployeeId=" + id + ", startingDate=" + startingDate
 					+ ", fathersName=" + fathersName + ", age=" + age
 					+ ", endingDate=" + endingDate + ", correspondant="
 					+ correspondant + ", current=" + current + ", personal="
@@ -91,6 +91,6 @@ public class Employee {
 					+ gender + ", DOB=" + DOB + ",\n salary=" + salary
 					+ ",\n projectData=" + projectData + ",\n personalDetails="
 					+ personalDetails + ",\n department=" + department
-					+ ",\n Address=" + address + "\n]";
+					+ ",\n Address=" + address + "\n";
 		}
 }

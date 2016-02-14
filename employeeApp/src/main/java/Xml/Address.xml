@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<class>
+	<address id="110">
+		<ContactId>1</ContactId>
+		<addressType>CORRESPONDENT</addressType>
+		<houseNo>709</houseNo>
+		<street>13</street>
+		<area>Rajendra Nagar:</area>
+		<city>patna</city>
+		<pinCode>126055</pinCode>
+		<state>Bihar</state>
+		<landmark>Hanuman mandir</landmark>
+		<phoneNo>8859399390</phoneNo>
+		<email>pprakash@xebia.com</email>
+		<skypeid>prince199428</skypeid>
+	</address>
+</class>
+
+
+

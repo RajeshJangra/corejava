@@ -4,8 +4,19 @@ import java.io.*;
 import java.util.*;
 import java.util.concurrent.Callable;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
+
 @SuppressWarnings("rawtypes")
 public class SalaryInput implements Callable{
+	
 	 int id,EmployeeId;
 	 double salaryId;
 	 double basic;
@@ -14,7 +25,7 @@ public class SalaryInput implements Callable{
 	 double LTA;
 	 double FP;
 	 double gratvity;
-	public static final String infile = "E:/salary.txt";
+	public static final String inputFile = "C:/Users/Administrator/corejava/employeeApp/src/main/java/Xml/salary.xml";
 
 
 
@@ -25,21 +36,27 @@ public class SalaryInput implements Callable{
 
 
 	  
-	@SuppressWarnings("resource")
-	public List<Salary> call() throws IOException {
-		List<Salary> list = new ArrayList<Salary>();
-		File file = new File(infile);
-		FileReader fileReader = new FileReader(file);
-		BufferedReader bufferedReader = new BufferedReader(fileReader);
-		String line;
-		while ((line = bufferedReader.readLine()) != null) {
-			
-			StringTokenizer stringTokenizer = new StringTokenizer(line, ",");
-			while (stringTokenizer.hasMoreTokens()) {
-				id = Integer.parseInt(stringTokenizer.nextToken());
-				if(EmployeeId == id){
-				salaryId = Integer.parseInt(stringTokenizer.nextToken(","));
-				basic = Double.parseDouble(stringTokenizer.nextToken(","));
+	public List<Salary> call() throws IOException, SAXException, ParserConfigurationException {
+		
+		 List<Salary> list = new ArrayList<Salary>();
+		 DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+         DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+         Document doc = dBuilder.parse(inputFile);
+         doc.getDocumentElement().normalize();
+         NodeList nList = doc.getElementsByTagName("salary");
+         for (int temp = 0; temp < nList.getLength(); temp++) 
+          {
+             Node nNode = nList.item(temp);
+       
+             if (nNode.getNodeType() == Node.ELEMENT_NODE) 
+             {
+                Element eElement = (Element) nNode;
+                id = Integer.parseInt(eElement.getAttribute("id"));
+				
+                if(EmployeeId == id)
+				{
+				salaryId = Integer.parseInt(eElement.getElementsByTagName("salaryId").item(0).getTextContent());
+				basic = Double.parseDouble( eElement.getElementsByTagName("basic").item(0).getTextContent());
 
 				Salary salary = new Salary(id,salaryId, basic);
 				list.add(salary);
@@ -48,8 +65,8 @@ public class SalaryInput implements Callable{
 				else{
 					break;
 				}
+             }
 				
-			}
 		}
 		return list;
 
