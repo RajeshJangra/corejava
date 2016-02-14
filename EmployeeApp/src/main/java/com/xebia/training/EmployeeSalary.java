@@ -14,17 +14,16 @@ public class EmployeeSalary {
 	}
 
 
-	public EmployeeSalary(int id,double basic, double hra, double da, double lta,
-			double pf, double fp, double gratuity) {
+	public EmployeeSalary(int id,double basic) {
 		//super();
 		this.id=id;
 		this.basic = basic;
-		this.hra = hra;
-		this.da = da;
-		this.lta = lta;
-		this.pf = pf;
-		this.fp = fp;
-		this.gratuity = gratuity;
+		this.hra = 0.5*basic;
+		this.da = 0.1*basic;
+		this.lta = 0.1*basic;
+		this.pf = 0.12*basic;
+		this.fp =0.1* basic;
+		this.gratuity = 3*basic;
 	}
 
 

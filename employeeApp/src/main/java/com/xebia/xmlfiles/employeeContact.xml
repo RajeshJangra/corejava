@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+<contact id="101">
+<houseno>Dayanand Sagar Nagar</houseno>
+<street>Sadar Road</street>
+<area>Sector 15</area>
+<city>Gurgaon</city>
+<pincode>12201</pincode>
+<state>Haryana</state>
+<landmark>Park Centra</landmark>
+<phone>97348</phone>
+<email>adarshaman@xebia.com</email>
+<AddressType>CORRESPONDENCE</AddressType>
+</contact>
+</class>

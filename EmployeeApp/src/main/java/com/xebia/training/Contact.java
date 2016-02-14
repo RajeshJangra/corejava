@@ -29,7 +29,7 @@ public class Contact {
 			String email, AddressType addressType) {
 		super();
 		this.id = id;
-		Hno = hno;
+		this.Hno = hno;
 		this.street = street;
 		this.area = area;
 		this.city = city;
@@ -49,17 +49,12 @@ public class Contact {
 		this.addressType = addressType;
 	}
 
-	public Contact(int id) {
-		super();
-		this.id = id;
-	}
-
 	public String getHno() {
 		return Hno;
 	}
 
 	public void setHno(String hno) {
-		Hno = hno;
+		this.Hno = hno;
 	}
 
 	public String getStreet() {

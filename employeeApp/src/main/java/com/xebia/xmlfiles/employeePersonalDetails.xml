@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+	<PersonalDetails id="101">
+	<name>Adarsh Aman</name>
+	<fathername>S.K.Sinha</fathername>
+	<age>22</age>
+	<dob>01-11-1993</dob>
+	<maritalStatus>Single</maritalStatus>
+	<passport>NA</passport>
+	<aadhar>BJAPA3249M</aadhar>
+	<bloodgroup>O+</bloodgroup>
+	<gender>MALE</gender>
+	</PersonalDetails>
+</class>
