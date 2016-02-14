@@ -1,1 +1,7 @@
-com\xebia\training\AppTest.class
+com\xebia\training\dataInput\EmployeeInputTest.class
+com\xebia\training\dataInput\ProjectInputTest.class
+com\xebia\training\dataInput\SalaryInputTest.class
+com\xebia\training\dataInput\ContactInputTest.class
+com\xebia\training\dataInput\PersonalDetailsInputTest.class
+com\xebia\training\dataInput\DepartmentInputTest.class
+com\xebia\training\dataInput\AddressInputTest.class
