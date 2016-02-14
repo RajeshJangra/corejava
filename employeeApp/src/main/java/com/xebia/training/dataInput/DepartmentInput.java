@@ -12,9 +12,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.*;
 
-/**
- * Created by nitishkumar on 11-Feb-16.
- */
 public class DepartmentInput {
     Department department = null;
 
@@ -22,8 +19,11 @@ public class DepartmentInput {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
+
         DepartmentInput that = (DepartmentInput) o;
+
         return department.equals(that.department);
+
     }
 
     @Override
@@ -39,9 +39,9 @@ public class DepartmentInput {
                 document.getDocumentElement().normalize();
                 NodeList nodeList = document.getElementsByTagName("employee");
                 for (int temp = 0; temp < nodeList.getLength(); temp++) {
-                    Node nNode = nodeList.item(temp);
-                    if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-                        Element eElement = (Element) nNode;
+                    Node node = nodeList.item(temp);
+                    if (node.getNodeType() == Node.ELEMENT_NODE) {
+                        Element eElement = (Element) node;
                         if (eElement.getAttribute("id").equalsIgnoreCase(id)) {
                             DepartmentType deptName = DepartmentType.valueOf(eElement.getElementsByTagName("deptName").item(0).getTextContent());
                             department = new Department(deptName);

@@ -13,9 +13,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.concurrent.*;
 
-/**
- * Created by nitishkumar on 11-Feb-16.
- */
 public class PersonalDetailsInput {
     PersonalDetails personalDetails = null;
 
@@ -40,9 +37,9 @@ public class PersonalDetailsInput {
                 document.getDocumentElement().normalize();
                 NodeList nodeList = document.getElementsByTagName("employee");
                 for (int temp = 0; temp < nodeList.getLength(); temp++) {
-                    Node nNode = nodeList.item(temp);
-                    if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-                        Element eElement = (Element) nNode;
+                    Node node = nodeList.item(temp);
+                    if (node.getNodeType() == Node.ELEMENT_NODE) {
+                        Element eElement = (Element) node;
                         if (eElement.getAttribute("id").equalsIgnoreCase(id)) {
                             String name = eElement.getElementsByTagName("name").item(0).getTextContent();
                             String fatherName = eElement.getElementsByTagName("fatherName").item(0).getTextContent();

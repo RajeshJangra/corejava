@@ -5,7 +5,7 @@
         <houseNo>1</houseNo>
         <pin>122001</pin>
         <sector>30</sector>
-        <state>Hariyana</state>
+        <state>Haryana</state>
         <street>Star Mall</street>
     </employee>
     <employee id="XI101" addressType="PERMANENT">
@@ -13,7 +13,7 @@
         <houseNo>1</houseNo>
         <pin>122001</pin>
         <sector>15</sector>
-        <state>Hariyana</state>
+        <state>Haryana</state>
         <street>DLF Star Mall</street>
     </employee>
     <employee id="XI101" addressType="CORRESPONDENCE">
@@ -21,7 +21,7 @@
         <houseNo>1</houseNo>
         <pin>122001</pin>
         <sector>10</sector>
-        <state>Hariyana</state>
+        <state>Haryana</state>
         <street>DLF Cyber City</street>
     </employee>
     <employee id="XI102" addressType="TEMPORARY">
@@ -29,7 +29,7 @@
         <houseNo>2</houseNo>
         <pin>122001</pin>
         <sector>30</sector>
-        <state>Hariyana</state>
+        <state>Haryana</state>
         <street>Star Mall</street>
     </employee>
     <employee id="XI102" addressType="PERMANENT">
@@ -37,7 +37,7 @@
         <houseNo>2</houseNo>
         <pin>122001</pin>
         <sector>15</sector>
-        <state>Hariyana</state>
+        <state>Haryana</state>
         <street>DLF Star Mall</street>
     </employee>
     <employee id="XI102" addressType="CORRESPONDENCE">
@@ -45,7 +45,7 @@
         <houseNo>2</houseNo>
         <pin>122001</pin>
         <sector>10</sector>
-        <state>Hariyana</state>
+        <state>Haryana</state>
         <street>DLF Cyber City</street>
     </employee>
     <employee id="XI103" addressType="TEMPORARY">
@@ -53,7 +53,7 @@
         <houseNo>3</houseNo>
         <pin>122001</pin>
         <sector>30</sector>
-        <state>Hariyana</state>
+        <state>Haryana</state>
         <street>Star Mall</street>
     </employee>
     <employee id="XI103" addressType="PERMANENT">
@@ -61,7 +61,7 @@
         <houseNo>3</houseNo>
         <pin>122001</pin>
         <sector>15</sector>
-        <state>Hariyana</state>
+        <state>Haryana</state>
         <street>DLF Star Mall</street>
     </employee>
     <employee id="XI103" addressType="CORRESPONDENCE">
@@ -69,7 +69,7 @@
         <houseNo>3</houseNo>
         <pin>122001</pin>
         <sector>10</sector>
-        <state>Hariyana</state>
+        <state>Haryana</state>
         <street>DLF Cyber City</street>
     </employee>
     <employee id="XI104" addressType="TEMPORARY">
@@ -77,7 +77,7 @@
         <houseNo>4</houseNo>
         <pin>122001</pin>
         <sector>30</sector>
-        <state>Hariyana</state>
+        <state>Haryana</state>
         <street>Star Mall</street>
     </employee>
     <employee id="XI104" addressType="PERMANENT">
@@ -85,7 +85,7 @@
         <houseNo>4</houseNo>
         <pin>122001</pin>
         <sector>15</sector>
-        <state>Hariyana</state>
+        <state>Haryana</state>
         <street>DLF Star Mall</street>
     </employee>
     <employee id="XI104" addressType="CORRESPONDENCE">
@@ -93,7 +93,7 @@
         <houseNo>4</houseNo>
         <pin>122001</pin>
         <sector>10</sector>
-        <state>Hariyana</state>
+        <state>Haryana</state>
         <street>DLF Cyber City</street>
     </employee>
     <employee id="XI105" addressType="TEMPORARY">
@@ -101,7 +101,7 @@
         <houseNo>5</houseNo>
         <pin>122001</pin>
         <sector>30</sector>
-        <state>Hariyana</state>
+        <state>Haryana</state>
         <street>Star Mall</street>
     </employee>
     <employee id="XI105" addressType="PERMANENT">
@@ -109,7 +109,7 @@
         <houseNo>5</houseNo>
         <pin>122001</pin>
         <sector>15</sector>
-        <state>Hariyana</state>
+        <state>Haryana</state>
         <street>DLF Star Mall</street>
     </employee>
     <employee id="XI105" addressType="CORRESPONDENCE">
@@ -117,7 +117,7 @@
         <houseNo>5</houseNo>
         <pin>122001</pin>
         <sector>10</sector>
-        <state>Hariyana</state>
+        <state>Haryana</state>
         <street>DLF Cyber City</street>
     </employee>
 </address>

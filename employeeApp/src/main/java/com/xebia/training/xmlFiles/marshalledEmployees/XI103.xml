@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<employee id="XI103">
+    <workExperience>6</workExperience>
+    <startDate>2013-04-01T00:00:00+05:30</startDate>
+    <designation>SCRUM_MASTER</designation>
+    <address addressType="TEMPORARY">
+        <houseNo>3</houseNo>
+        <street>Star Mall</street>
+        <sector>30</sector>
+        <city>Gurgaon</city>
+        <state>Haryana</state>
+        <pin>122001</pin>
+    </address>
+    <address addressType="PERMANENT">
+        <houseNo>3</houseNo>
+        <street>DLF Star Mall</street>
+        <sector>15</sector>
+        <city>Gurgaon</city>
+        <state>Haryana</state>
+        <pin>122001</pin>
+    </address>
+    <address addressType="CORRESPONDENCE">
+        <houseNo>3</houseNo>
+        <street>DLF Cyber City</street>
+        <sector>10</sector>
+        <city>Gurgaon</city>
+        <state>Haryana</state>
+        <pin>122001</pin>
+    </address>
+    <personalDetails>
+        <name>ADARSH AMAN</name>
+        <fatherName>R KUMAR</fatherName>
+        <motherName>M DEVI</motherName>
+        <dateOfBirth>1993-04-11T00:00:00+05:30</dateOfBirth>
+        <age>23</age>
+        <gender>MALE</gender>
+        <bloodGroup>A_POSITIVE</bloodGroup>
+        <maritalStatus>UNMARRIED</maritalStatus>
+        <panNo>CUASWDR45N</panNo>
+        <adharNo>958625635245</adharNo>
+        <drivingLicenceNo>BR85857585</drivingLicenceNo>
+    </personalDetails>
+    <contact>
+        <phone>7868545965</phone>
+        <email>adarsh@hotmail.com</email>
+    </contact>
+    <department deptId="D01">
+        <deptName>ACCOUNT</deptName>
+        <startDate>2000-01-01T00:00:00+05:30</startDate>
+    </department>
+    <project projectId="2">
+        <projectName>INDIGO</projectName>
+        <startDate>2016-02-01T00:00:00+05:30</startDate>
+    </project>
+    <salary>
+        <basic>90000.0</basic>
+        <houseRentAllowance>45000.0</houseRentAllowance>
+        <leaveTravelAllowance>9000.0</leaveTravelAllowance>
+        <flexiPay>22500.0</flexiPay>
+        <providentFund>10800.0</providentFund>
+        <grossSalary>177300.0</grossSalary>
+        <netSalary>166500.0</netSalary>
+    </salary>
+</employee>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<employee id="XI104">
+    <workExperience>7</workExperience>
+    <startDate>2012-03-01T00:00:00+05:30</startDate>
+    <designation>JAVA_DEVELOPER</designation>
+    <address addressType="TEMPORARY">
+        <houseNo>4</houseNo>
+        <street>Star Mall</street>
+        <sector>30</sector>
+        <city>Gurgaon</city>
+        <state>Haryana</state>
+        <pin>122001</pin>
+    </address>
+    <address addressType="PERMANENT">
+        <houseNo>4</houseNo>
+        <street>DLF Star Mall</street>
+        <sector>15</sector>
+        <city>Gurgaon</city>
+        <state>Haryana</state>
+        <pin>122001</pin>
+    </address>
+    <address addressType="CORRESPONDENCE">
+        <houseNo>4</houseNo>
+        <street>DLF Cyber City</street>
+        <sector>10</sector>
+        <city>Gurgaon</city>
+        <state>Haryana</state>
+        <pin>122001</pin>
+    </address>
+    <personalDetails>
+        <name>MANAV KUMAR</name>
+        <fatherName>P KUMAR</fatherName>
+        <motherName>A DEVI</motherName>
+        <dateOfBirth>1992-09-21T00:00:00+05:30</dateOfBirth>
+        <age>24</age>
+        <gender>MALE</gender>
+        <bloodGroup>AB_POSITIVE</bloodGroup>
+        <maritalStatus>UNMARRIED</maritalStatus>
+        <panNo>CULK5825JN</panNo>
+        <adharNo>758562525456</adharNo>
+        <drivingLicenceNo>BR96585696</drivingLicenceNo>
+    </personalDetails>
+    <contact>
+        <phone>7863945555</phone>
+        <email>manav@hotmail.com</email>
+    </contact>
+    <department deptId="D03">
+        <deptName>IT</deptName>
+        <startDate>2002-01-01T00:00:00+05:30</startDate>
+    </department>
+    <project projectId="2">
+        <projectName>INDIGO</projectName>
+        <startDate>2016-02-01T00:00:00+05:30</startDate>
+    </project>
+    <project projectId="3">
+        <projectName>AMAZON</projectName>
+        <startDate>2016-03-01T00:00:00+05:30</startDate>
+    </project>
+    <salary>
+        <basic>100000.0</basic>
+        <houseRentAllowance>50000.0</houseRentAllowance>
+        <leaveTravelAllowance>10000.0</leaveTravelAllowance>
+        <flexiPay>25000.0</flexiPay>
+        <providentFund>12000.0</providentFund>
+        <grossSalary>197000.0</grossSalary>
+        <netSalary>185000.0</netSalary>
+    </salary>
+</employee>

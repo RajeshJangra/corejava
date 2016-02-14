@@ -1,8 +1,11 @@
 package com.xebia.training.employeeInformation;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import java.util.Calendar;
 import java.util.Date;
 
+@XmlType(propOrder = {"name", "fatherName", "motherName", "dateOfBirth", "age", "gender", "bloodGroup", "maritalStatus", "panNo", "adharNo", "drivingLicenceNo"})
 public class PersonalDetails {
     private String name, fatherName, motherName, drivingLicenceNo, panNo;
     private long adharNo;
@@ -39,18 +42,7 @@ public class PersonalDetails {
 
         PersonalDetails that = (PersonalDetails) o;
 
-        if (adharNo != that.adharNo) return false;
-        if (age != that.age) return false;
-        if (!name.equals(that.name)) return false;
-        if (!fatherName.equals(that.fatherName)) return false;
-        if (!motherName.equals(that.motherName)) return false;
-        if (!drivingLicenceNo.equals(that.drivingLicenceNo)) return false;
-        if (!panNo.equals(that.panNo)) return false;
-        if (!dateOfBirth.equals(that.dateOfBirth)) return false;
-        if (gender != that.gender) return false;
-        if (bloodGroup != that.bloodGroup) return false;
-        return maritalStatus == that.maritalStatus;
-
+        return adharNo == that.adharNo && age == that.age && name.equals(that.name) && fatherName.equals(that.fatherName) && motherName.equals(that.motherName) && drivingLicenceNo.equals(that.drivingLicenceNo) && panNo.equals(that.panNo) && dateOfBirth.equals(that.dateOfBirth) && gender == that.gender && bloodGroup == that.bloodGroup && maritalStatus == that.maritalStatus;
     }
 
     @Override
@@ -69,6 +61,7 @@ public class PersonalDetails {
         return result;
     }
 
+    @XmlElement(name = "name")
     public String getName() {
         return name;
     }
@@ -77,6 +70,7 @@ public class PersonalDetails {
         this.name = name;
     }
 
+    @XmlElement(name = "fatherName")
     public String getFatherName() {
         return fatherName;
     }
@@ -85,6 +79,7 @@ public class PersonalDetails {
         this.fatherName = fatherName;
     }
 
+    @XmlElement(name = "motherName")
     public String getMotherName() {
         return motherName;
     }
@@ -93,6 +88,7 @@ public class PersonalDetails {
         this.motherName = motherName;
     }
 
+    @XmlElement(name = "drivingLicenceNo")
     public String getDrivingLicenceNo() {
         return drivingLicenceNo;
     }
@@ -101,6 +97,7 @@ public class PersonalDetails {
         this.drivingLicenceNo = drivingLicenceNo;
     }
 
+    @XmlElement(name = "panNo")
     public String getPanNo() {
         return panNo;
     }
@@ -109,6 +106,7 @@ public class PersonalDetails {
         this.panNo = panNo;
     }
 
+    @XmlElement(name = "adharNo")
     public long getAdharNo() {
         return adharNo;
     }
@@ -117,6 +115,7 @@ public class PersonalDetails {
         this.adharNo = adharNo;
     }
 
+    @XmlElement(name = "age")
     public int getAge() {
         return age;
     }
@@ -125,6 +124,7 @@ public class PersonalDetails {
         this.age = age;
     }
 
+    @XmlElement(name = "dateOfBirth")
     public Date getDateOfBirth() {
         return dateOfBirth;
     }
@@ -133,6 +133,7 @@ public class PersonalDetails {
         this.dateOfBirth = dateOfBirth;
     }
 
+    @XmlElement(name = "gender")
     public PersonalDetails.Gender getGender() {
         return gender;
     }
@@ -141,6 +142,7 @@ public class PersonalDetails {
         this.gender = gender;
     }
 
+    @XmlElement(name = "bloodGroup")
     public PersonalDetails.BloodGroup getBloodGroup() {
         return bloodGroup;
     }
@@ -149,6 +151,7 @@ public class PersonalDetails {
         this.bloodGroup = bloodGroup;
     }
 
+    @XmlElement(name = "maritalStatus")
     public MaritalStatus getMaritalStatus() {
         return maritalStatus;
     }

@@ -1,15 +1,17 @@
 package com.xebia.training.employeeInformation;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlType(propOrder = {"basic", "houseRentAllowance", "leaveTravelAllowance", "flexiPay", "providentFund", "grossSalary", "netSalary"})
 public class Salary {
-    String id;
     double basic, houseRentAllowance, leaveTravelAllowance, flexiPay, providentFund, grossSalary, netSalary;
 
     public Salary() {
     }
 
-    public Salary(String id, double basic) {
+    public Salary(double basic) {
         super();
-        this.id = id;
         this.basic = basic;
         this.houseRentAllowance = 0.5 * basic;
         this.leaveTravelAllowance = 0.1 * basic;
@@ -26,14 +28,7 @@ public class Salary {
 
         Salary salary = (Salary) o;
 
-        if (Double.compare(salary.basic, basic) != 0) return false;
-        if (Double.compare(salary.houseRentAllowance, houseRentAllowance) != 0) return false;
-        if (Double.compare(salary.leaveTravelAllowance, leaveTravelAllowance) != 0) return false;
-        if (Double.compare(salary.flexiPay, flexiPay) != 0) return false;
-        if (Double.compare(salary.providentFund, providentFund) != 0) return false;
-        if (Double.compare(salary.grossSalary, grossSalary) != 0) return false;
-        if (Double.compare(salary.netSalary, netSalary) != 0) return false;
-        return id.equals(salary.id);
+        return Double.compare(salary.basic, basic) == 0 && Double.compare(salary.houseRentAllowance, houseRentAllowance) == 0 && Double.compare(salary.leaveTravelAllowance, leaveTravelAllowance) == 0 && Double.compare(salary.flexiPay, flexiPay) == 0 && Double.compare(salary.providentFund, providentFund) == 0 && Double.compare(salary.grossSalary, grossSalary) == 0 && Double.compare(salary.netSalary, netSalary) == 0;
 
     }
 
@@ -41,9 +36,8 @@ public class Salary {
     public int hashCode() {
         int result;
         long temp;
-        result = id.hashCode();
         temp = Double.doubleToLongBits(basic);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = (int) (temp ^ (temp >>> 32));
         temp = Double.doubleToLongBits(houseRentAllowance);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         temp = Double.doubleToLongBits(leaveTravelAllowance);
@@ -59,104 +53,68 @@ public class Salary {
         return result;
     }
 
-    /**
-     * @return the basic
-     */
+    @XmlElement(name = "basic")
     public double getBasic() {
         return basic;
     }
 
-    /**
-     * @param basic the basic to set
-     */
     public void setBasic(double basic) {
         this.basic = basic;
     }
 
-    /**
-     * @return the houseRentAllowance
-     */
+    @XmlElement(name = "houseRentAllowance")
     public double getHouseRentAllowance() {
         return houseRentAllowance;
     }
 
-    /**
-     * @param houseRentAllowance the houseRentAllowance to set
-     */
     public void setHouseRentAllowance(double houseRentAllowance) {
         this.houseRentAllowance = houseRentAllowance;
     }
 
-    /**
-     * @return the leaveTravelAllowance
-     */
+    @XmlElement(name = "leaveTravelAllowance")
     public double getLeaveTravelAllowance() {
         return leaveTravelAllowance;
     }
 
-    /**
-     * @param leaveTravelAllowance the leaveTravelAllowance to set
-     */
     public void setLeaveTravelAllowance(double leaveTravelAllowance) {
         this.leaveTravelAllowance = leaveTravelAllowance;
     }
 
-    /**
-     * @return the flexiPay
-     */
+    @XmlElement(name = "flexiPay")
     public double getFlexiPay() {
         return flexiPay;
     }
 
-    /**
-     * @param flexiPay the flexiPay to set
-     */
     public void setFlexiPay(double flexiPay) {
         this.flexiPay = flexiPay;
     }
 
-    /**
-     * @return the providentFund
-     */
+    @XmlElement(name = "providentFund")
     public double getProvidentFund() {
         return providentFund;
     }
 
-    /**
-     * @param providentFund the providentFund to set
-     */
     public void setProvidentFund(double providentFund) {
         this.providentFund = providentFund;
     }
 
-    /**
-     * @return the grossSalary
-     */
+    @XmlElement(name = "grossSalary")
     public double getGrossSalary() {
         return grossSalary;
     }
 
-    /**
-     * @param grossSalary the grossSalary to set
-     */
     public void setGrossSalary(double grossSalary) {
         this.grossSalary = grossSalary;
     }
 
-    /**
-     * @return the netSalary
-     */
+    @XmlElement(name = "netSalary")
     public double getNetSalary() {
         return netSalary;
     }
 
-    /**
-     * @param netSalary the netSalary to set
-     */
     public void setNetSalary(double netSalary) {
         this.netSalary = netSalary;
     }
-
 
     @Override
     public String toString() {

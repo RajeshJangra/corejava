@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<employee id="XI101">
+    <workExperience>4</workExperience>
+    <startDate>2015-01-01T00:00:00+05:30</startDate>
+    <designation>TRAINEE</designation>
+    <address addressType="TEMPORARY">
+        <houseNo>1</houseNo>
+        <street>Star Mall</street>
+        <sector>30</sector>
+        <city>Gurgaon</city>
+        <state>Haryana</state>
+        <pin>122001</pin>
+    </address>
+    <address addressType="PERMANENT">
+        <houseNo>1</houseNo>
+        <street>DLF Star Mall</street>
+        <sector>15</sector>
+        <city>Gurgaon</city>
+        <state>Haryana</state>
+        <pin>122001</pin>
+    </address>
+    <address addressType="CORRESPONDENCE">
+        <houseNo>1</houseNo>
+        <street>DLF Cyber City</street>
+        <sector>10</sector>
+        <city>Gurgaon</city>
+        <state>Haryana</state>
+        <pin>122001</pin>
+    </address>
+    <personalDetails>
+        <name>NITISH KUMAR</name>
+        <fatherName>S S SINHA</fatherName>
+        <motherName>S DEVI</motherName>
+        <dateOfBirth>1994-04-18T00:00:00+05:30</dateOfBirth>
+        <age>22</age>
+        <gender>MALE</gender>
+        <bloodGroup>O_POSITIVE</bloodGroup>
+        <maritalStatus>UNMARRIED</maritalStatus>
+        <panNo>CUAPK5453N</panNo>
+        <adharNo>324545334543</adharNo>
+        <drivingLicenceNo>BR10101010</drivingLicenceNo>
+    </personalDetails>
+    <contact>
+        <phone>7863962312</phone>
+        <email>nitish@hotmail.com</email>
+    </contact>
+    <department deptId="D01">
+        <deptName>ACCOUNT</deptName>
+        <startDate>2000-01-01T00:00:00+05:30</startDate>
+    </department>
+    <project projectId="2">
+        <projectName>INDIGO</projectName>
+        <startDate>2016-02-01T00:00:00+05:30</startDate>
+    </project>
+    <project projectId="1">
+        <projectName>SPICEJET</projectName>
+        <startDate>2016-01-01T00:00:00+05:30</startDate>
+    </project>
+    <project projectId="3">
+        <projectName>AMAZON</projectName>
+        <startDate>2016-03-01T00:00:00+05:30</startDate>
+    </project>
+    <salary>
+        <basic>50000.0</basic>
+        <houseRentAllowance>25000.0</houseRentAllowance>
+        <leaveTravelAllowance>5000.0</leaveTravelAllowance>
+        <flexiPay>12500.0</flexiPay>
+        <providentFund>6000.0</providentFund>
+        <grossSalary>98500.0</grossSalary>
+        <netSalary>92500.0</netSalary>
+    </salary>
+</employee>

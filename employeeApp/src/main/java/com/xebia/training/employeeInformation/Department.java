@@ -1,8 +1,11 @@
 package com.xebia.training.employeeInformation;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
 
+@XmlType(propOrder = {"deptId", "deptName", "startDate", "endDate"})
 public class Department {
     private final static String directory = "C:/Users/nitishkumar/Desktop/Employee/";
     String deptId, deptName;
@@ -24,10 +27,7 @@ public class Department {
 
         Department that = (Department) o;
 
-        if (!deptId.equals(that.deptId)) return false;
-        if (!deptName.equals(that.deptName)) return false;
-        if (!startDate.equals(that.startDate)) return false;
-        return endDate.equals(that.endDate);
+        return deptId.equals(that.deptId) && deptName.equals(that.deptName) && startDate.equals(that.startDate) && (endDate != null ? endDate.equals(that.endDate) : that.endDate == null);
 
     }
 
@@ -36,7 +36,7 @@ public class Department {
         int result = deptId.hashCode();
         result = 31 * result + deptName.hashCode();
         result = 31 * result + startDate.hashCode();
-        result = 31 * result + endDate.hashCode();
+        result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
         return result;
     }
 
@@ -49,6 +49,7 @@ public class Department {
         this.deptId = deptId;
     }
 
+    @XmlElement(name = "deptName")
     public String getDeptName() {
         return deptName;
     }
@@ -57,6 +58,7 @@ public class Department {
         this.deptName = deptName;
     }
 
+    @XmlElement(name = "startDate")
     public Date getStartDate() {
         return startDate;
     }
@@ -65,6 +67,7 @@ public class Department {
         this.startDate = startDate;
     }
 
+    @XmlElement(name = "endDate")
     public Date getEndDate() {
         return endDate;
     }

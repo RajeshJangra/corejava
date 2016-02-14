@@ -15,11 +15,8 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.*;
 
-/**
- * Created by nitishkumar on 11-Feb-16.
- */
 public class ProjectInput {
-    Set<Project> project = new HashSet<Project>();
+    Set<Project> project = new HashSet<>();
 
     @Override
     public boolean equals(Object o) {
@@ -42,9 +39,9 @@ public class ProjectInput {
                 document.getDocumentElement().normalize();
                 NodeList nodeList = document.getElementsByTagName("employee");
                 for (int temp = 0; temp < nodeList.getLength(); temp++) {
-                    Node nNode = nodeList.item(temp);
-                    if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-                        Element eElement = (Element) nNode;
+                    Node node = nodeList.item(temp);
+                    if (node.getNodeType() == Node.ELEMENT_NODE) {
+                        Element eElement = (Element) node;
                         if (eElement.getAttribute("id").equalsIgnoreCase(id)) {
                             int projectId = Integer.parseInt(eElement.getElementsByTagName("projectId").item(0).getTextContent());
                             String projectName = eElement.getElementsByTagName("projectName").item(0).getTextContent();

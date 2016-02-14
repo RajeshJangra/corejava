@@ -11,9 +11,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.*;
 
-/**
- * Created by nitishkumar on 11-Feb-16.
- */
 public class ContactInput {
     Contact contact = null;
 
@@ -39,9 +36,9 @@ public class ContactInput {
                 document.getDocumentElement().normalize();
                 NodeList nodeList = document.getElementsByTagName("employee");
                 for (int temp = 0; temp < nodeList.getLength(); temp++) {
-                    Node nNode = nodeList.item(temp);
-                    if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-                        Element eElement = (Element) nNode;
+                    Node node = nodeList.item(temp);
+                    if (node.getNodeType() == Node.ELEMENT_NODE) {
+                        Element eElement = (Element) node;
                         if (eElement.getAttribute("id").equalsIgnoreCase(id)) {
                             String email = eElement.getElementsByTagName("email").item(0).getTextContent();
                             long phone = Long.parseLong(eElement.getElementsByTagName("phone").item(0).getTextContent());

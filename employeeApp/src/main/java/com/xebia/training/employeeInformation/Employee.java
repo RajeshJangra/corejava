@@ -2,12 +2,12 @@ package com.xebia.training.employeeInformation;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
-@XmlType
+@XmlType(propOrder = {"id", "workExperience", "startDate", "endDate", "designation", "address", "personalDetails", "contact", "department", "project", "salary"})
+@XmlRootElement(name = "employee")
 public class Employee {
 
     private String id;
@@ -21,16 +21,20 @@ public class Employee {
     private Set<Project> project = new HashSet<>();
     private Salary salary;
 
-    public static void employeeResign(List<Employee> employee, String id) throws ParseException {
-        for (Employee emp : employee) {
-            if (emp.getId().equalsIgnoreCase(id)) {
-                emp.setEndDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date())));
-                emp.department.setEndDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date())));
-                for (Project project : emp.project) {
-                    project.setEndDate(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").parse(new SimpleDateFormat("dd-MM-yyyy HH:mm:ss").format(new Date())));
-                }
-            }
-        }
+    public Employee() {
+    }
+
+    public Employee(String id, int workExperience, Date startDate, Designation designation, List<Address> address, Contact contact, Department department, PersonalDetails personalDetails, Set<Project> project, Salary salary) {
+        this.id = id;
+        this.workExperience = workExperience;
+        this.startDate = startDate;
+        this.designation = designation;
+        this.address = address;
+        this.contact = contact;
+        this.department = department;
+        this.personalDetails = personalDetails;
+        this.project = project;
+        this.salary = salary;
     }
 
     @Override
@@ -40,17 +44,7 @@ public class Employee {
 
         Employee employee = (Employee) o;
 
-        if (workExperience != employee.workExperience) return false;
-        if (!id.equals(employee.id)) return false;
-        if (!startDate.equals(employee.startDate)) return false;
-        if (!endDate.equals(employee.endDate)) return false;
-        if (designation != employee.designation) return false;
-        if (!address.equals(employee.address)) return false;
-        if (!contact.equals(employee.contact)) return false;
-        if (!department.equals(employee.department)) return false;
-        if (!personalDetails.equals(employee.personalDetails)) return false;
-        if (!project.equals(employee.project)) return false;
-        return salary.equals(employee.salary);
+        return workExperience == employee.workExperience && id.equals(employee.id) && startDate.equals(employee.startDate) && (endDate != null ? endDate.equals(employee.endDate) : employee.endDate == null && designation == employee.designation && address.equals(employee.address) && contact.equals(employee.contact) && department.equals(employee.department) && personalDetails.equals(employee.personalDetails) && project.equals(employee.project) && salary.equals(employee.salary));
 
     }
 
@@ -59,7 +53,7 @@ public class Employee {
         int result = id.hashCode();
         result = 31 * result + workExperience;
         result = 31 * result + startDate.hashCode();
-        result = 31 * result + endDate.hashCode();
+        result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
         result = 31 * result + designation.hashCode();
         result = 31 * result + address.hashCode();
         result = 31 * result + contact.hashCode();
@@ -171,7 +165,8 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "ID:-\'" + id + '\'' +
+        return "\n--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------" +
+                "\nID:-\'" + id + '\'' +
                 ", Work Experience:-" + workExperience +
                 ", Start Date:-" + startDate +
                 ", End Date:-" + endDate +
@@ -182,7 +177,7 @@ public class Employee {
                 ", \n\nPersonal Details:-" + personalDetails +
                 ", \n\nproject:-" + project +
                 ", \n\nSalary:-" + salary +
-                "\n}\n\n\n";
+                "\n------------------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
     }
 
     public enum Designation {

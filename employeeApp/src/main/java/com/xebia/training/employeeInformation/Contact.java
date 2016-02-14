@@ -1,5 +1,9 @@
 package com.xebia.training.employeeInformation;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlType(propOrder = {"phone", "email"})
 public class Contact {
     private String email;
     private long phone;
@@ -21,8 +25,7 @@ public class Contact {
 
         Contact contact = (Contact) o;
 
-        if (phone != contact.phone) return false;
-        return email.equals(contact.email);
+        return phone == contact.phone && email.equals(contact.email);
 
     }
 
@@ -33,30 +36,20 @@ public class Contact {
         return result;
     }
 
-    /**
-     * @return the email
-     */
+    @XmlElement(name = "email")
     public String getEmail() {
         return email;
     }
 
-    /**
-     * @param email the email to set
-     */
     public void setEmail(String email) {
         this.email = email;
     }
 
-    /**
-     * @return the phone
-     */
+    @XmlElement(name = "phone")
     public long getPhone() {
         return phone;
     }
 
-    /**
-     * @param phone the phone to set
-     */
     public void setPhone(long phone) {
         this.phone = phone;
     }

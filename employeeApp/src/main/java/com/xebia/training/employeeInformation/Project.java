@@ -1,8 +1,11 @@
 package com.xebia.training.employeeInformation;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 import java.util.Date;
 
+@XmlType(propOrder = {"projectId", "projectName", "startDate", "endDate"})
 public class Project {
     private int projectId;
     private String projectName;
@@ -25,10 +28,7 @@ public class Project {
 
         Project project = (Project) o;
 
-        if (projectId != project.projectId) return false;
-        if (!projectName.equals(project.projectName)) return false;
-        if (!startDate.equals(project.startDate)) return false;
-        return endDate.equals(project.endDate);
+        return projectId == project.projectId && projectName.equals(project.projectName) && startDate.equals(project.startDate) && (endDate != null ? endDate.equals(project.endDate) : project.endDate == null);
 
     }
 
@@ -37,63 +37,42 @@ public class Project {
         int result = projectId;
         result = 31 * result + projectName.hashCode();
         result = 31 * result + startDate.hashCode();
-        result = 31 * result + endDate.hashCode();
+        result = 31 * result + (endDate != null ? endDate.hashCode() : 0);
         return result;
     }
 
-    /**
-     * @return the projectId
-     */
     @XmlAttribute(name = "projectId")
     public int getProjectId() {
         return projectId;
     }
 
-    /**
-     * @param projectId the projectId to set
-     */
     public void setProjectId(int projectId) {
         this.projectId = projectId;
     }
 
-    /**
-     * @return the projectName
-     */
+    @XmlElement(name = "projectName")
     public String getProjectName() {
         return projectName;
     }
 
-    /**
-     * @param projectName the projectName to set
-     */
     public void setProjectName(String projectName) {
         this.projectName = projectName;
     }
 
-    /**
-     * @return the startDate
-     */
+    @XmlElement(name = "startDate")
     public Date getStartDate() {
         return startDate;
     }
 
-    /**
-     * @param startDate the startDate to set
-     */
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    /**
-     * @return the endDate
-     */
+    @XmlElement(name = "endDate")
     public Date getEndDate() {
         return endDate;
     }
 
-    /**
-     * @param endDate the endDate to set
-     */
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }

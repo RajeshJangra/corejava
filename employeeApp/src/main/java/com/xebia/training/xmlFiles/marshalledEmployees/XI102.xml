@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<employee id="XI102">
+    <workExperience>5</workExperience>
+    <startDate>2016-01-01T00:00:00+05:30</startDate>
+    <designation>ACCOUNTANT</designation>
+    <address addressType="TEMPORARY">
+        <houseNo>2</houseNo>
+        <street>Star Mall</street>
+        <sector>30</sector>
+        <city>Gurgaon</city>
+        <state>Haryana</state>
+        <pin>122001</pin>
+    </address>
+    <address addressType="PERMANENT">
+        <houseNo>2</houseNo>
+        <street>DLF Star Mall</street>
+        <sector>15</sector>
+        <city>Gurgaon</city>
+        <state>Haryana</state>
+        <pin>122001</pin>
+    </address>
+    <address addressType="CORRESPONDENCE">
+        <houseNo>2</houseNo>
+        <street>DLF Cyber City</street>
+        <sector>10</sector>
+        <city>Gurgaon</city>
+        <state>Haryana</state>
+        <pin>122001</pin>
+    </address>
+    <personalDetails>
+        <name>VISHAL KUMAR</name>
+        <fatherName>M KUMAR</fatherName>
+        <motherName>R DEVI</motherName>
+        <dateOfBirth>1994-12-10T00:00:00+05:30</dateOfBirth>
+        <age>22</age>
+        <gender>MALE</gender>
+        <bloodGroup>B_POSITIVE</bloodGroup>
+        <maritalStatus>UNMARRIED</maritalStatus>
+        <panNo>CUAS454DFN</panNo>
+        <adharNo>358458568585</adharNo>
+        <drivingLicenceNo>BR78585485</drivingLicenceNo>
+    </personalDetails>
+    <contact>
+        <phone>7863965845</phone>
+        <email>vishal@hotmail.com</email>
+    </contact>
+    <department deptId="D02">
+        <deptName>MANAGEMENT</deptName>
+        <startDate>2001-01-01T00:00:00+05:30</startDate>
+    </department>
+    <project projectId="3">
+        <projectName>AMAZON</projectName>
+        <startDate>2016-03-01T00:00:00+05:30</startDate>
+    </project>
+    <salary>
+        <basic>80000.0</basic>
+        <houseRentAllowance>40000.0</houseRentAllowance>
+        <leaveTravelAllowance>8000.0</leaveTravelAllowance>
+        <flexiPay>20000.0</flexiPay>
+        <providentFund>9600.0</providentFund>
+        <grossSalary>157600.0</grossSalary>
+        <netSalary>148000.0</netSalary>
+    </salary>
+</employee>

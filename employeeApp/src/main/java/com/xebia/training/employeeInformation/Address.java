@@ -1,7 +1,10 @@
 package com.xebia.training.employeeInformation;
 
 import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlType;
 
+@XmlType(propOrder = {"addressType", "houseNo", "street", "sector", "city", "state", "pin"})
 public class Address {
     private String street, city, state;
     private int houseNo, sector, pin;
@@ -29,13 +32,7 @@ public class Address {
 
         Address address = (Address) o;
 
-        if (houseNo != address.houseNo) return false;
-        if (sector != address.sector) return false;
-        if (pin != address.pin) return false;
-        if (!street.equals(address.street)) return false;
-        if (!city.equals(address.city)) return false;
-        if (!state.equals(address.state)) return false;
-        return addressType == address.addressType;
+        return houseNo == address.houseNo && sector == address.sector && pin == address.pin && street.equals(address.street) && city.equals(address.city) && state.equals(address.state) && addressType == address.addressType;
 
     }
 
@@ -51,102 +48,65 @@ public class Address {
         return result;
     }
 
-    /**
-     * @return the street
-     */
+    @XmlElement(name = "street")
     public String getStreet() {
         return street;
     }
 
-    /**
-     * @param street the street to set
-     */
     public void setStreet(String street) {
         this.street = street;
     }
 
-    /**
-     * @return the city
-     */
+    @XmlElement(name = "city")
     public String getCity() {
         return city;
     }
 
-    /**
-     * @param city the city to set
-     */
     public void setCity(String city) {
         this.city = city;
     }
 
-    /**
-     * @return the state
-     */
+    @XmlElement(name = "state")
     public String getState() {
         return state;
     }
 
-    /**
-     * @param state the state to set
-     */
     public void setState(String state) {
         this.state = state;
     }
 
-    /**
-     * @return the houseNo
-     */
+    @XmlElement(name = "houseNo")
     public int getHouseNo() {
         return houseNo;
     }
 
-    /**
-     * @param houseNo the houseNo to set
-     */
     public void setHouseNo(int houseNo) {
         this.houseNo = houseNo;
     }
 
-    /**
-     * @return the sector
-     */
+    @XmlElement(name = "sector")
     public int getSector() {
         return sector;
     }
 
-    /**
-     * @param sector the sector to set
-     */
     public void setSector(int sector) {
         this.sector = sector;
     }
 
-    /**
-     * @return the pin
-     */
+    @XmlElement(name = "pin")
     public int getPin() {
         return pin;
     }
 
-    /**
-     * @param pin the pin to set
-     */
     public void setPin(int pin) {
         this.pin = pin;
     }
-
-    /**
-     * @return the addressType
-     */
 
     @XmlAttribute(name = "addressType")
     public AddressType getAddressType() {
         return addressType;
     }
 
-    /**
-     * @param addressType the addressType to set
-     */
     public void setAddressType(AddressType addressType) {
         this.addressType = addressType;
     }

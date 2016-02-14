@@ -13,11 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.*;
 
-/**
- * Created by nitishkumar on 11-Feb-16.
- */
 public class AddressInput {
-    List<Address> address = new ArrayList<Address>();
+    List<Address> address = new ArrayList<>();
 
     @Override
     public boolean equals(Object o) {
@@ -41,9 +38,9 @@ public class AddressInput {
                 document.getDocumentElement().normalize();
                 NodeList nodeList = document.getElementsByTagName("employee");
                 for (int temp = 0; temp < nodeList.getLength(); temp++) {
-                    Node nNode = nodeList.item(temp);
-                    if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-                        Element element = (Element) nNode;
+                    Node node = nodeList.item(temp);
+                    if (node.getNodeType() == Node.ELEMENT_NODE) {
+                        Element element = (Element) node;
                         if (element.getAttribute("id").equalsIgnoreCase(id)) {
                             int houseNo = Integer.parseInt(element.getElementsByTagName("houseNo").item(0).getTextContent());
                             int sector = Integer.parseInt(element.getElementsByTagName("sector").item(0).getTextContent());

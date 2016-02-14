@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<employee id="XI105">
+    <workExperience>8</workExperience>
+    <startDate>2014-05-01T00:00:00+05:30</startDate>
+    <designation>CEO</designation>
+    <address addressType="TEMPORARY">
+        <houseNo>5</houseNo>
+        <street>Star Mall</street>
+        <sector>30</sector>
+        <city>Gurgaon</city>
+        <state>Haryana</state>
+        <pin>122001</pin>
+    </address>
+    <address addressType="PERMANENT">
+        <houseNo>5</houseNo>
+        <street>DLF Star Mall</street>
+        <sector>15</sector>
+        <city>Gurgaon</city>
+        <state>Haryana</state>
+        <pin>122001</pin>
+    </address>
+    <address addressType="CORRESPONDENCE">
+        <houseNo>5</houseNo>
+        <street>DLF Cyber City</street>
+        <sector>10</sector>
+        <city>Gurgaon</city>
+        <state>Haryana</state>
+        <pin>122001</pin>
+    </address>
+    <personalDetails>
+        <name>PRINCE KUMAR</name>
+        <fatherName>D KUMAR</fatherName>
+        <motherName>D DEVI</motherName>
+        <dateOfBirth>1994-06-24T00:00:00+05:30</dateOfBirth>
+        <age>22</age>
+        <gender>MALE</gender>
+        <bloodGroup>O_NEGATIVE</bloodGroup>
+        <maritalStatus>UNMARRIED</maritalStatus>
+        <panNo>CLKOI5485N</panNo>
+        <adharNo>456258357895</adharNo>
+        <drivingLicenceNo>BR10101010</drivingLicenceNo>
+    </personalDetails>
+    <contact>
+        <phone>7863558455</phone>
+        <email>prince@hotmail.com</email>
+    </contact>
+    <department deptId="D06">
+        <deptName>HR</deptName>
+        <startDate>2005-01-01T00:00:00+05:30</startDate>
+    </department>
+    <project projectId="1">
+        <projectName>SPICEJET</projectName>
+        <startDate>2016-01-01T00:00:00+05:30</startDate>
+    </project>
+    <salary>
+        <basic>140000.0</basic>
+        <houseRentAllowance>70000.0</houseRentAllowance>
+        <leaveTravelAllowance>14000.0</leaveTravelAllowance>
+        <flexiPay>35000.0</flexiPay>
+        <providentFund>16800.0</providentFund>
+        <grossSalary>275800.0</grossSalary>
+        <netSalary>259000.0</netSalary>
+    </salary>
+</employee>

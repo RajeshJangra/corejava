@@ -4,9 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * Created by nitishkumar on 11-Feb-16.
- */
 public enum DepartmentType {
     ACCOUNT("D01", "01-01-2000"),
     MANAGEMENT("D02", "01-01-2001"),
@@ -18,7 +15,7 @@ public enum DepartmentType {
     private String departmentId;
     private Date startDate;
 
-    private DepartmentType(String departmentId, String startDate) {
+    DepartmentType(String departmentId, String startDate) {
         this.departmentId = departmentId;
         try {
             this.startDate = new SimpleDateFormat("dd-MM-yyyy").parse(startDate);
