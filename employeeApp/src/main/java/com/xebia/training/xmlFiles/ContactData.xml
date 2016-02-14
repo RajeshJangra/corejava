@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contact>
+    <employee id="XI101">
+        <email>nitish@hotmail.com</email>
+        <phone>7863962312</phone>
+    </employee>
+    <employee id="XI102">
+        <email>vishal@hotmail.com</email>
+        <phone>7863965845</phone>
+    </employee>
+    <employee id="XI103">
+        <email>adarsh@hotmail.com</email>
+        <phone>7868545965</phone>
+    </employee>
+    <employee id="XI104">
+        <email>manav@hotmail.com</email>
+        <phone>7863945555</phone>
+    </employee>
+    <employee id="XI105">
+        <email>prince@hotmail.com</email>
+        <phone>7863558455</phone>
+    </employee>
+</contact>
+        

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<employees>
+    <employee id="XI101">
+        <workExperience>4</workExperience>
+        <designation>TRAINEE</designation>
+        <startDate>01-01-2015</startDate>
+    </employee>
+    <employee id="XI102">
+        <workExperience>5</workExperience>
+        <designation>ACCOUNTANT</designation>
+        <startDate>01-01-2016</startDate>
+    </employee>
+    <employee id="XI103">
+        <workExperience>6</workExperience>
+        <designation>SCRUM_MASTER</designation>
+        <startDate>01-04-2013</startDate>
+    </employee>
+    <employee id="XI104">
+        <workExperience>7</workExperience>
+        <designation>JAVA_DEVELOPER</designation>
+        <startDate>01-03-2012</startDate>
+    </employee>
+    <employee id="XI105">
+        <workExperience>8</workExperience>
+        <designation>CEO</designation>
+        <startDate>01-05-2014</startDate>
+    </employee>
+</employees>

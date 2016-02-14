@@ -1,0 +1,17 @@
+<salary>
+	<employee id="XI101">
+            <basic>50000.0</basic>
+	</employee>
+   	<employee id="XI102">
+            <basic>80000.0</basic>
+	</employee>
+    	<employee id="XI103">
+            <basic>90000.0</basic>
+	</employee>
+    	<employee id="XI104">
+            <basic>100000.0</basic>
+	</employee>
+    	<employee id="XI105">
+            <basic>140000.0</basic>
+	</employee>
+</salary>

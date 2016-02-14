@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<department>
+    <employee id="XI101">
+        <deptName>ACCOUNT</deptName>
+    </employee>
+    <employee id="XI102">
+        <deptName>MANAGEMENT</deptName>
+    </employee>
+    <employee id="XI103">
+        <deptName>ACCOUNT</deptName>
+    </employee>
+    <employee id="XI104">
+        <deptName>IT</deptName>
+    </employee>
+    <employee id="XI105">
+        <deptName>HR</deptName>
+    </employee>
+</department>

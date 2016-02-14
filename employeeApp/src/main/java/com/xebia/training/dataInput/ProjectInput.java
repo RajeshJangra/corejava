@@ -1,0 +1,64 @@
+package com.xebia.training.dataInput;
+
+import com.xebia.training.employeeInformation.Project;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import java.io.File;
+import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.concurrent.*;
+
+/**
+ * Created by nitishkumar on 11-Feb-16.
+ */
+public class ProjectInput {
+    Set<Project> project = new HashSet<Project>();
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ProjectInput that = (ProjectInput) o;
+        return project.equals(that.project);
+    }
+
+    @Override
+    public int hashCode() {
+        return project.hashCode();
+    }
+
+    public Set<Project> inputProject(final String id) throws IOException, ParseException, ExecutionException, InterruptedException {
+        Callable<Set<Project>> callProject = new Callable<Set<Project>>() {
+            public Set<Project> call() throws Exception {
+                File file = new File("src/main/java/com/xebia/training/xmlFiles/ProjectData.xml");
+                Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
+                document.getDocumentElement().normalize();
+                NodeList nodeList = document.getElementsByTagName("employee");
+                for (int temp = 0; temp < nodeList.getLength(); temp++) {
+                    Node nNode = nodeList.item(temp);
+                    if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+                        Element eElement = (Element) nNode;
+                        if (eElement.getAttribute("id").equalsIgnoreCase(id)) {
+                            int projectId = Integer.parseInt(eElement.getElementsByTagName("projectId").item(0).getTextContent());
+                            String projectName = eElement.getElementsByTagName("projectName").item(0).getTextContent();
+                            String startDate = eElement.getElementsByTagName("startDate").item(0).getTextContent();
+                            project.add(new Project(projectId, projectName, new SimpleDateFormat("dd-MM-yyyy").parse(startDate)));
+                        }
+                    }
+                }
+                return project;
+            }
+
+        };
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        Future<Set<Project>> projectFuture = executorService.submit(callProject);
+        return projectFuture.get();
+    }
+}

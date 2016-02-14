@@ -1,0 +1,62 @@
+<personalDetails>
+    <employee id="XI101">
+        <adharNo>324545334543</adharNo>
+        <bloodGroup>O_POSITIVE</bloodGroup>
+        <dateOfBirth>18-04-1994</dateOfBirth>
+        <drivingLicenceNo>BR10101010</drivingLicenceNo>
+        <fatherName>S S SINHA</fatherName>
+        <gender>MALE</gender>
+        <maritalStatus>UNMARRIED</maritalStatus>
+        <motherName>S DEVI</motherName>
+        <name>NITISH KUMAR</name>
+        <panNo>CUAPK5453N</panNo>
+    </employee>
+    <employee id="XI102">
+        <adharNo>358458568585</adharNo>
+        <bloodGroup>B_POSITIVE</bloodGroup>
+        <dateOfBirth>10-12-1994</dateOfBirth>
+        <drivingLicenceNo>BR78585485</drivingLicenceNo>
+        <fatherName>M KUMAR</fatherName>
+        <gender>MALE</gender>
+        <maritalStatus>UNMARRIED</maritalStatus>
+        <motherName>R DEVI</motherName>
+        <name>VISHAL KUMAR</name>
+        <panNo>CUAS454DFN</panNo>
+    </employee>
+    <employee id="XI103">
+        <adharNo>958625635245</adharNo>
+        <bloodGroup>A_POSITIVE</bloodGroup>
+        <dateOfBirth>11-04-1993</dateOfBirth>
+        <drivingLicenceNo>BR85857585</drivingLicenceNo>
+        <fatherName>R KUMAR</fatherName>
+        <gender>MALE</gender>
+        <maritalStatus>UNMARRIED</maritalStatus>
+        <motherName>M DEVI</motherName>
+        <name>ADARSH AMAN</name>
+        <panNo>CUASWDR45N</panNo>
+    </employee>
+    <employee id="XI104">
+        <adharNo>758562525456</adharNo>
+        <bloodGroup>AB_POSITIVE</bloodGroup>
+        <dateOfBirth>21-09-1992</dateOfBirth>
+        <drivingLicenceNo>BR96585696</drivingLicenceNo>
+        <fatherName>P KUMAR</fatherName>
+        <gender>MALE</gender>
+        <maritalStatus>UNMARRIED</maritalStatus>
+        <motherName>A DEVI</motherName>
+        <name>MANAV KUMAR</name>
+        <panNo>CULK5825JN</panNo>
+    </employee>
+    <employee id="XI105">
+        <adharNo>456258357895</adharNo>
+        <bloodGroup>O_NEGATIVE</bloodGroup>
+        <dateOfBirth>24-06-1994</dateOfBirth>
+        <drivingLicenceNo>BR10101010</drivingLicenceNo>
+        <fatherName>D KUMAR</fatherName>
+        <gender>MALE</gender>
+        <maritalStatus>UNMARRIED</maritalStatus>
+        <motherName>D DEVI</motherName>
+        <name>PRINCE KUMAR</name>
+        <panNo>CLKOI5485N</panNo>
+    </employee>
+</personalDetails>
