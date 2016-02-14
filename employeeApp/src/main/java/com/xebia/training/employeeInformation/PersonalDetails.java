@@ -1,10 +1,10 @@
-package com.xebia.training;
+package com.xebia.training.employeeInformation;
 
 import java.util.Calendar;
 import java.util.Date;
 
 public class PersonalDetails {
-    private String id, name, fatherName, motherName, drivingLicenceNo, panNo;
+    private String name, fatherName, motherName, drivingLicenceNo, panNo;
     private long adharNo;
     private int age;
     private Date dateOfBirth;
@@ -12,24 +12,13 @@ public class PersonalDetails {
     private BloodGroup bloodGroup;
     private MaritalStatus maritalStatus;
 
-    /**
-     * @param id
-     * @param name
-     * @param fatherName
-     * @param motherName
-     * @param drivingLicenceNo
-     * @param adharNo
-     * @param panNo
-     * @param dateOfBirth
-     * @param gender
-     * @param bloodGroup
-     * @param maritalStatus
-     */
-    public PersonalDetails(String id, String name, String fatherName, String motherName, String drivingLicenceNo,
+    public PersonalDetails() {
+    }
+
+    public PersonalDetails(String name, String fatherName, String motherName, String drivingLicenceNo,
                            long adharNo, String panNo, Date dateOfBirth, Gender gender, BloodGroup bloodGroup,
                            MaritalStatus maritalStatus) {
         super();
-        this.id = id;
         this.name = name;
         this.fatherName = fatherName;
         this.motherName = motherName;
@@ -43,35 +32,41 @@ public class PersonalDetails {
         this.age = this.calculateAge();
     }
 
-    enum Gender {
-        MALE,
-        FEMALE,
-        TRANSGENDER
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        PersonalDetails that = (PersonalDetails) o;
+
+        if (adharNo != that.adharNo) return false;
+        if (age != that.age) return false;
+        if (!name.equals(that.name)) return false;
+        if (!fatherName.equals(that.fatherName)) return false;
+        if (!motherName.equals(that.motherName)) return false;
+        if (!drivingLicenceNo.equals(that.drivingLicenceNo)) return false;
+        if (!panNo.equals(that.panNo)) return false;
+        if (!dateOfBirth.equals(that.dateOfBirth)) return false;
+        if (gender != that.gender) return false;
+        if (bloodGroup != that.bloodGroup) return false;
+        return maritalStatus == that.maritalStatus;
+
     }
 
-    enum BloodGroup {
-        A_POSITIVE,
-        A_NEGATIVE,
-        B_POSITIVE,
-        B_NEGATIVE,
-        AB_POSITIVE,
-        AB_NEGATIVE,
-        O_POSITIVE,
-        O_NEGATIVE
-    }
-
-    enum MaritalStatus {
-        MARRIED,
-        UNMARRIED,
-        DIVORCED
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
+    @Override
+    public int hashCode() {
+        int result = name.hashCode();
+        result = 31 * result + fatherName.hashCode();
+        result = 31 * result + motherName.hashCode();
+        result = 31 * result + drivingLicenceNo.hashCode();
+        result = 31 * result + panNo.hashCode();
+        result = 31 * result + (int) (adharNo ^ (adharNo >>> 32));
+        result = 31 * result + age;
+        result = 31 * result + dateOfBirth.hashCode();
+        result = 31 * result + gender.hashCode();
+        result = 31 * result + bloodGroup.hashCode();
+        result = 31 * result + maritalStatus.hashCode();
+        return result;
     }
 
     public String getName() {
@@ -162,14 +157,13 @@ public class PersonalDetails {
         this.maritalStatus = maritalStatus;
     }
 
-    private int calculateAge() {
+    public int calculateAge() {
         Calendar calender = Calendar.getInstance();
         calender.setTime(this.dateOfBirth);
         int year = calender.get(Calendar.YEAR);
         calender = Calendar.getInstance();
         int now = calender.get(Calendar.YEAR);
-        int age = now - year;
-        return age;
+        return now - year;
     }
 
     @Override
@@ -185,5 +179,29 @@ public class PersonalDetails {
                 ", Gender=" + gender +
                 ", Blood Group=" + bloodGroup +
                 ", Marital Status=" + maritalStatus;
+    }
+
+    public enum Gender {
+        MALE,
+        FEMALE,
+        TRANSGENDER
+    }
+
+    public enum BloodGroup {
+        A_POSITIVE,
+        A_NEGATIVE,
+        B_POSITIVE,
+        B_NEGATIVE,
+        AB_POSITIVE,
+        AB_NEGATIVE,
+        O_POSITIVE,
+        O_NEGATIVE
+    }
+
+
+    public enum MaritalStatus {
+        MARRIED,
+        UNMARRIED,
+        DIVORCED
     }
 }

@@ -1,18 +1,12 @@
-package com.xebia.training;
+package com.xebia.training.employeeInformation;
 
 public class Salary {
     String id;
     double basic, houseRentAllowance, leaveTravelAllowance, flexiPay, providentFund, grossSalary, netSalary;
 
-    /*
-     * @param basic
-     * @param houseRentAllowance
-     * @param leaveTravelAllowance
-     * @param flexiPay
-     * @param providentFund
-     * @param grossSalary
-     * @param netSalary
-     */
+    public Salary() {
+    }
+
     public Salary(String id, double basic) {
         super();
         this.id = id;
@@ -23,6 +17,46 @@ public class Salary {
         this.providentFund = 0.12 * basic;
         this.grossSalary = this.basic + this.houseRentAllowance + this.leaveTravelAllowance + this.flexiPay + this.providentFund;
         this.netSalary = this.grossSalary - this.providentFund;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Salary salary = (Salary) o;
+
+        if (Double.compare(salary.basic, basic) != 0) return false;
+        if (Double.compare(salary.houseRentAllowance, houseRentAllowance) != 0) return false;
+        if (Double.compare(salary.leaveTravelAllowance, leaveTravelAllowance) != 0) return false;
+        if (Double.compare(salary.flexiPay, flexiPay) != 0) return false;
+        if (Double.compare(salary.providentFund, providentFund) != 0) return false;
+        if (Double.compare(salary.grossSalary, grossSalary) != 0) return false;
+        if (Double.compare(salary.netSalary, netSalary) != 0) return false;
+        return id.equals(salary.id);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = id.hashCode();
+        temp = Double.doubleToLongBits(basic);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(houseRentAllowance);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(leaveTravelAllowance);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(flexiPay);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(providentFund);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(grossSalary);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        temp = Double.doubleToLongBits(netSalary);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
     }
 
     /**
@@ -122,6 +156,7 @@ public class Salary {
     public void setNetSalary(double netSalary) {
         this.netSalary = netSalary;
     }
+
 
     @Override
     public String toString() {

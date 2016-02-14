@@ -1,17 +1,16 @@
-package com.xebia.training;
+package com.xebia.training.employeeInformation;
 
+import javax.xml.bind.annotation.XmlAttribute;
 import java.util.Date;
 
 public class Project {
     private int projectId;
     private String projectName;
-    private Date startDate, endDate=null;
+    private Date startDate, endDate = null;
 
-    /**
-     * @param projectId
-     * @param projectName
-     * @param startDate
-     */
+    public Project() {
+    }
+
     public Project(int projectId, String projectName, Date startDate) {
         super();
         this.projectId = projectId;
@@ -19,9 +18,33 @@ public class Project {
         this.startDate = startDate;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Project project = (Project) o;
+
+        if (projectId != project.projectId) return false;
+        if (!projectName.equals(project.projectName)) return false;
+        if (!startDate.equals(project.startDate)) return false;
+        return endDate.equals(project.endDate);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = projectId;
+        result = 31 * result + projectName.hashCode();
+        result = 31 * result + startDate.hashCode();
+        result = 31 * result + endDate.hashCode();
+        return result;
+    }
+
     /**
      * @return the projectId
      */
+    @XmlAttribute(name = "projectId")
     public int getProjectId() {
         return projectId;
     }
@@ -75,10 +98,11 @@ public class Project {
         this.endDate = endDate;
     }
 
+
     @Override
     public String toString() {
-        return "\nProject Id=" + projectId +
-                ", Project Name='" + projectName + '\'' +
+        return "\nproject Id=" + projectId +
+                ", project Name='" + projectName + '\'' +
                 ", Start Date=" + startDate +
                 ", End Date=" + endDate;
     }

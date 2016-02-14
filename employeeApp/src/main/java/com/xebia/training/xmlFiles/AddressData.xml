@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<address>
+    <employee id="XI101" addressType="TEMPORARY">
+        <city>Gurgaon</city>
+        <houseNo>1</houseNo>
+        <pin>122001</pin>
+        <sector>30</sector>
+        <state>Hariyana</state>
+        <street>Star Mall</street>
+    </employee>
+    <employee id="XI101" addressType="PERMANENT">
+        <city>Gurgaon</city>
+        <houseNo>1</houseNo>
+        <pin>122001</pin>
+        <sector>15</sector>
+        <state>Hariyana</state>
+        <street>DLF Star Mall</street>
+    </employee>
+    <employee id="XI101" addressType="CORRESPONDENCE">
+        <city>Gurgaon</city>
+        <houseNo>1</houseNo>
+        <pin>122001</pin>
+        <sector>10</sector>
+        <state>Hariyana</state>
+        <street>DLF Cyber City</street>
+    </employee>
+    <employee id="XI102" addressType="TEMPORARY">
+        <city>Gurgaon</city>
+        <houseNo>2</houseNo>
+        <pin>122001</pin>
+        <sector>30</sector>
+        <state>Hariyana</state>
+        <street>Star Mall</street>
+    </employee>
+    <employee id="XI102" addressType="PERMANENT">
+        <city>Gurgaon</city>
+        <houseNo>2</houseNo>
+        <pin>122001</pin>
+        <sector>15</sector>
+        <state>Hariyana</state>
+        <street>DLF Star Mall</street>
+    </employee>
+    <employee id="XI102" addressType="CORRESPONDENCE">
+        <city>Gurgaon</city>
+        <houseNo>2</houseNo>
+        <pin>122001</pin>
+        <sector>10</sector>
+        <state>Hariyana</state>
+        <street>DLF Cyber City</street>
+    </employee>
+    <employee id="XI103" addressType="TEMPORARY">
+        <city>Gurgaon</city>
+        <houseNo>3</houseNo>
+        <pin>122001</pin>
+        <sector>30</sector>
+        <state>Hariyana</state>
+        <street>Star Mall</street>
+    </employee>
+    <employee id="XI103" addressType="PERMANENT">
+        <city>Gurgaon</city>
+        <houseNo>3</houseNo>
+        <pin>122001</pin>
+        <sector>15</sector>
+        <state>Hariyana</state>
+        <street>DLF Star Mall</street>
+    </employee>
+    <employee id="XI103" addressType="CORRESPONDENCE">
+        <city>Gurgaon</city>
+        <houseNo>3</houseNo>
+        <pin>122001</pin>
+        <sector>10</sector>
+        <state>Hariyana</state>
+        <street>DLF Cyber City</street>
+    </employee>
+    <employee id="XI104" addressType="TEMPORARY">
+        <city>Gurgaon</city>
+        <houseNo>4</houseNo>
+        <pin>122001</pin>
+        <sector>30</sector>
+        <state>Hariyana</state>
+        <street>Star Mall</street>
+    </employee>
+    <employee id="XI104" addressType="PERMANENT">
+        <city>Gurgaon</city>
+        <houseNo>4</houseNo>
+        <pin>122001</pin>
+        <sector>15</sector>
+        <state>Hariyana</state>
+        <street>DLF Star Mall</street>
+    </employee>
+    <employee id="XI104" addressType="CORRESPONDENCE">
+        <city>Gurgaon</city>
+        <houseNo>4</houseNo>
+        <pin>122001</pin>
+        <sector>10</sector>
+        <state>Hariyana</state>
+        <street>DLF Cyber City</street>
+    </employee>
+    <employee id="XI105" addressType="TEMPORARY">
+        <city>Gurgaon</city>
+        <houseNo>5</houseNo>
+        <pin>122001</pin>
+        <sector>30</sector>
+        <state>Hariyana</state>
+        <street>Star Mall</street>
+    </employee>
+    <employee id="XI105" addressType="PERMANENT">
+        <city>Gurgaon</city>
+        <houseNo>5</houseNo>
+        <pin>122001</pin>
+        <sector>15</sector>
+        <state>Hariyana</state>
+        <street>DLF Star Mall</street>
+    </employee>
+    <employee id="XI105" addressType="CORRESPONDENCE">
+        <city>Gurgaon</city>
+        <houseNo>5</houseNo>
+        <pin>122001</pin>
+        <sector>10</sector>
+        <state>Hariyana</state>
+        <street>DLF Cyber City</street>
+    </employee>
+</address>
+       

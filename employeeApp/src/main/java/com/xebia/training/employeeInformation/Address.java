@@ -1,30 +1,18 @@
-package com.xebia.training;
+package com.xebia.training.employeeInformation;
+
+import javax.xml.bind.annotation.XmlAttribute;
 
 public class Address {
-    private String id, street, city, state;
+    private String street, city, state;
     private int houseNo, sector, pin;
     private AddressType addressType;
 
-    enum AddressType {
-        TEMPORARY,
-        PERMANENT,
-        CORRESPONDENCE
+    public Address() {
     }
 
-    /**
-     * @param id
-     * @param street
-     * @param city
-     * @param state
-     * @param houseNo
-     * @param sector
-     * @param pin
-     * @param addressType
-     */
-    public Address(String id, int houseNo, int sector, String street, String city, String state, int pin,
+    public Address(int houseNo, int sector, String street, String city, String state, int pin,
                    AddressType addressType) {
         super();
-        this.id = id;
         this.street = street;
         this.city = city;
         this.state = state;
@@ -34,18 +22,33 @@ public class Address {
         this.addressType = addressType;
     }
 
-    /**
-     * @return the id
-     */
-    public String getId() {
-        return id;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Address address = (Address) o;
+
+        if (houseNo != address.houseNo) return false;
+        if (sector != address.sector) return false;
+        if (pin != address.pin) return false;
+        if (!street.equals(address.street)) return false;
+        if (!city.equals(address.city)) return false;
+        if (!state.equals(address.state)) return false;
+        return addressType == address.addressType;
+
     }
 
-    /**
-     * @param id the id to set
-     */
-    public void setId(String id) {
-        this.id = id;
+    @Override
+    public int hashCode() {
+        int result = street.hashCode();
+        result = 31 * result + city.hashCode();
+        result = 31 * result + state.hashCode();
+        result = 31 * result + houseNo;
+        result = 31 * result + sector;
+        result = 31 * result + pin;
+        result = 31 * result + addressType.hashCode();
+        return result;
     }
 
     /**
@@ -135,6 +138,8 @@ public class Address {
     /**
      * @return the addressType
      */
+
+    @XmlAttribute(name = "addressType")
     public AddressType getAddressType() {
         return addressType;
     }
@@ -155,5 +160,11 @@ public class Address {
                 ", City='" + city + '\'' +
                 ", State='" + state + '\'' +
                 ", PIN=" + pin;
+    }
+
+    public enum AddressType {
+        TEMPORARY,
+        PERMANENT,
+        CORRESPONDENCE
     }
 }

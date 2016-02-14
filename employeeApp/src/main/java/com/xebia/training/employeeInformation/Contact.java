@@ -1,33 +1,36 @@
-package com.xebia.training;
+package com.xebia.training.employeeInformation;
 
 public class Contact {
-    private String id, email;
+    private String email;
     private long phone;
 
-    /**
-     * @param id
-     * @param email
-     * @param phone
-     */
-    public Contact(String id, long phone, String email) {
+    public Contact() {
+    }
+
+    public Contact(long phone, String email) {
+
         super();
-        this.id = id;
         this.email = email;
         this.phone = phone;
     }
 
-    /**
-     * @return the id
-     */
-    public String getId() {
-        return id;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Contact contact = (Contact) o;
+
+        if (phone != contact.phone) return false;
+        return email.equals(contact.email);
+
     }
 
-    /**
-     * @param id the id to set
-     */
-    public void setId(String id) {
-        this.id = id;
+    @Override
+    public int hashCode() {
+        int result = email.hashCode();
+        result = 31 * result + (int) (phone ^ (phone >>> 32));
+        return result;
     }
 
     /**
@@ -57,6 +60,7 @@ public class Contact {
     public void setPhone(long phone) {
         this.phone = phone;
     }
+
 
     /* (non-Javadoc)
      * @see java.lang.Object#toString()
