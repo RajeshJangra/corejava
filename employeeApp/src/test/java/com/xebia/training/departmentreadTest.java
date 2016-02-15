@@ -18,15 +18,14 @@ public class departmentreadTest {
 
     @Test
     public void testCall() throws Exception {
-        List<Department> list = new ArrayList<Department>();
+
         Department department = new Department(102,"Developer",new SimpleDateFormat("dd-MM-yyyy").parse("18-01-2016"),null);
-        list.add(department);
 
         ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);
         departmentread departData = new departmentread(102);
-        Future<List<Department>> futureTask1 = executor1.submit(departData);
+        Future<Department> futureTask1 = executor1.submit(departData);
 
-        List<Department> depart1 = futureTask1.get();
-        assertEquals(list, depart1);
+        Department depart1 = futureTask1.get();
+        assertEquals(department, depart1);
     }
 }

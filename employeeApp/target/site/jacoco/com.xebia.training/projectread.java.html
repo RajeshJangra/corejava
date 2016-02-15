@@ -81,7 +81,7 @@ public class projectread implements Callable&lt;Set&lt;Project&gt;&gt;{
 <span class="fc bfc" id="L81" title="All 2 branches covered.">        if (Integer.parseInt(eElement.getAttribute(&quot;id&quot;)) == id) {</span>
 
 
-<span class="fc" id="L84">            project.add(new Project(Integer.parseInt(eElement.getAttribute(&quot;id&quot;)), Integer.parseInt(eElement.getElementsByTagName(&quot;projectid&quot;).item(0).getTextContent()), eElement.getElementsByTagName(&quot;name&quot;).item(0).getTextContent(), new SimpleDateFormat(&quot;dd-MM-yyyy&quot;).parse(eElement.getElementsByTagName(&quot;start&quot;).item(0).getTextContent()), new allread().date));</span>
+<span class="fc" id="L84">            project.add(new Project(Integer.parseInt(eElement.getAttribute(&quot;id&quot;)), Integer.parseInt(eElement.getElementsByTagName(&quot;projectid&quot;).item(0).getTextContent()), eElement.getElementsByTagName(&quot;name&quot;).item(0).getTextContent(), new SimpleDateFormat(&quot;dd-MM-yyyy&quot;).parse(eElement.getElementsByTagName(&quot;start&quot;).item(0).getTextContent()), new EmployeeObjectRead().date));</span>
 
 
         }

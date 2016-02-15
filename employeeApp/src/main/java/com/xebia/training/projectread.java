@@ -81,7 +81,7 @@ public class projectread implements Callable<Set<Project>>{
         if (Integer.parseInt(eElement.getAttribute("id")) == id) {
 
 
-            project.add(new Project(Integer.parseInt(eElement.getAttribute("id")), Integer.parseInt(eElement.getElementsByTagName("projectid").item(0).getTextContent()), eElement.getElementsByTagName("name").item(0).getTextContent(), new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("start").item(0).getTextContent()), new allread().date));
+            project.add(new Project(Integer.parseInt(eElement.getAttribute("id")), Integer.parseInt(eElement.getElementsByTagName("projectid").item(0).getTextContent()), eElement.getElementsByTagName("name").item(0).getTextContent(), new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("start").item(0).getTextContent()), new EmployeeObjectRead().date));
 
 
         }

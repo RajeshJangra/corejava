@@ -15,9 +15,9 @@ import java.util.concurrent.Callable;
 /**
  * Created by mkishore on 2/10/2016.
  */
-public class salaryread implements Callable<List<Salary>>{
+public class salaryread implements Callable<Salary>{
     int id;
-    List<Salary> salary;
+    Salary salary;
 
     @Override
     public boolean equals(Object o) {
@@ -42,8 +42,8 @@ public class salaryread implements Callable<List<Salary>>{
         this.id = id;
     }
 
-    public List<Salary> call() throws Exception {
-        try {salary=new ArrayList<Salary>();
+    public Salary call() throws Exception {
+        try {salary=new Salary();
             File file = new File("C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\salaryxml.xml");
             Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
 
@@ -79,7 +79,7 @@ public class salaryread implements Callable<List<Salary>>{
         if (Integer.parseInt(eElement.getAttribute("id")) == id) {
 
 
-salary.add(new Salary(id, Integer.parseInt(eElement.getElementsByTagName("basic").item(0).getTextContent())));
+salary=new Salary(id, Integer.parseInt(eElement.getElementsByTagName("basic").item(0).getTextContent()));
 
 
         }

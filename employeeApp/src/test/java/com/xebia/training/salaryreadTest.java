@@ -23,14 +23,14 @@ public class salaryreadTest {
 
     @Test
     public void testCall() throws Exception {
-        List<Salary> list = new ArrayList<Salary>();
+
         Salary salary = new Salary(101,175000);
-        list.add(salary);
+
 
         ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(100);
         salaryread salaryData = new salaryread(101);
-        Future<List<Salary>> futureTask1 = executor1.submit(salaryData);
-        List<Salary> salary1 = futureTask1.get();
-        assertEquals(list, salary1);
+        Future<Salary> futureTask1 = executor1.submit(salaryData);
+        Salary salary1 = futureTask1.get();
+        assertEquals(salary, salary1);
     }
 }

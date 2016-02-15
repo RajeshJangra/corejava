@@ -56,7 +56,7 @@ public class Contact {
 	 */
 	@Override
 	public String toString() {
-		return "Contact [id=" + id + ", emailid=" + emailid + ", phone="
+		return "\nContact [id=" + id + ", emailid=" + emailid + ", phone="
 				+ phone + "]";
 	}
 	public Contact(int id, String emailid, long phone) {

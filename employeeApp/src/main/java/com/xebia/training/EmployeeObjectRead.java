@@ -2,7 +2,6 @@ package com.xebia.training;
 
 import org.xml.sax.SAXException;
 
-import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
 import java.text.DateFormat;
@@ -15,7 +14,7 @@ import java.util.concurrent.*;
  * Created by mkishore on 2/11/2016.
  */
 
-public class allread {
+public class EmployeeObjectRead {
 
     int id;
     Date date=null;
@@ -23,61 +22,52 @@ public class allread {
     EmployeeData.designation designation;
     Set<Project> project;
     List<PersonalDetails> personalDetails;
-    List<Salary> salary;
+    Salary salary;
     List<Department> department;
     List<Address> address;
     List<Contact> contact;
 
     String line;
-  //  allread ar=new allread();
+  //  EmployeeObjectRead ar=new EmployeeObjectRead();
 
-    public allread()
+    public EmployeeObjectRead()
     {
 
     }
-    public allread(int id)
+    public EmployeeObjectRead(int id)
     {
         this.id=id;
       //  ar.id=id;
 
 
     }
-    public  List<Contact> contactget(int id) throws ExecutionException, InterruptedException {
-        allread al=new allread(id);
+    public  Contact contactget(int id) throws ExecutionException, InterruptedException {
+        EmployeeObjectRead al=new EmployeeObjectRead(id);
         contactread cr=new contactread(al.id);
         ExecutorService service =  Executors.newFixedThreadPool(10);
         contactread sumTask = new contactread(id);
-        Future<List<Contact>> future = service.submit(sumTask);
-        List<Contact> s=future.get();
-        for(Contact a:s)
-        {
-            System.out.println(a);
-        }
+        Future<Contact> future = service.submit(sumTask);
+        Contact s=future.get();
+
         return s;
     }
-    public  List<Address> addressget(int id) throws ExecutionException, InterruptedException {
-        allread al=new allread(id);
+    public  Address addressget(int id) throws ExecutionException, InterruptedException {
+        EmployeeObjectRead al=new EmployeeObjectRead(id);
         ExecutorService service =  Executors.newFixedThreadPool(10);
         Addressread sumTask = new Addressread(id);
-        Future<List<Address>> future = service.submit(sumTask);
-        List<Address> s=future.get();
-        for(Address a:s)
-        {
-            System.out.println(a);
-        }
+        Future<Address> future = service.submit(sumTask);
+        Address s=future.get();
+
         return s;
 
     }
-    public  List<Department> departmentget(int id) throws ExecutionException, InterruptedException {
-        allread al=new allread(id);
+    public  Department departmentget(int id) throws ExecutionException, InterruptedException {
+        EmployeeObjectRead al=new EmployeeObjectRead(id);
         ExecutorService service =  Executors.newFixedThreadPool(10);
         departmentread sumTask = new departmentread(id);
-        Future<List<Department>> future = service.submit(sumTask);
-        List<Department> s=future.get();
-        for(Department a:s)
-        {
-            System.out.println(a);
-        }
+        Future<Department> future = service.submit(sumTask);
+        Department s=future.get();
+
         return s;
 
     }
@@ -119,57 +109,48 @@ public class allread {
     }*/
   public  EmployeeData employeeget(int id) throws ExecutionException, InterruptedException {
 
-  //    allread al=new allread(id);
+  //    EmployeeObjectRead al=new EmployeeObjectRead(id);
   //    employeeread cr=new employeeread(id);
       ExecutorService service = Executors.newFixedThreadPool(10);
       employeeread sumTask = new employeeread(id);
       Future<EmployeeData> future = service.submit(sumTask);
       EmployeeData s=future.get();
 
-          System.out.println(s);
+
 
       return s;
   }
-    public  List<PersonalDetails> personalget(int id) throws ExecutionException, InterruptedException {
-        allread al=new allread(id);
+    public  PersonalDetails personalget(int id) throws ExecutionException, InterruptedException {
+        EmployeeObjectRead al=new EmployeeObjectRead(id);
         contactread cr=new contactread(al.id);
         ExecutorService service =  Executors.newFixedThreadPool(10);
         personalread sumTask = new personalread(id);
-        Future<List<PersonalDetails>> future = service.submit(sumTask);
-        List<PersonalDetails> s=future.get();
-        for(PersonalDetails a:s)
-        {
-            System.out.println(a);
-        }
+        Future<PersonalDetails> future = service.submit(sumTask);
+        PersonalDetails s=future.get();
+
           return s;
     }
     public  Set<Project> projectget(int id) throws ExecutionException, InterruptedException {
-        allread al=new allread(id);
+        EmployeeObjectRead al=new EmployeeObjectRead(id);
         projectread cr=new projectread(al.id);
         ExecutorService service = Executors.newFixedThreadPool(10);
         projectread sumTask = new projectread(id);
         Future<Set<Project>> future = service.submit(sumTask);
         Set<Project> s=future.get();
-        for(Project a:s)
-        {
-            System.out.println(a);
-        }
+
          return s;
 
     }
-    public  List<Salary> salaryget(int id) throws ExecutionException, InterruptedException {
-        allread al=new allread(id);
+    public  Salary salaryget(int id) throws ExecutionException, InterruptedException {
+        EmployeeObjectRead al=new EmployeeObjectRead(id);
         ExecutorService service =   Executors.newFixedThreadPool(10);
         salaryread sumTask = new salaryread(id);
-        Future<List<Salary>> future = service.submit(sumTask);
-        List<Salary> s=future.get();
-        for(Salary a:s)
-        {
-            System.out.println(a);
-        }
+        Future<Salary> future = service.submit(sumTask);
+        Salary s=future.get();
+
         return s;
     }
-    public void empget(Employee employee) throws InterruptedException, ParserConfigurationException, SAXException, IOException, ExecutionException, ParseException {    allread ar=new allread();
+    public void empget(Employee employee) throws InterruptedException, ParserConfigurationException, SAXException, IOException, ExecutionException, ParseException {    EmployeeObjectRead ar=new EmployeeObjectRead();
 
         System.out.println("Want employee to resign(Y/N):");
         Scanner sc=new Scanner(System.in);
@@ -180,21 +161,21 @@ public class allread {
             DateFormat dateFormat=new SimpleDateFormat("dd-MM-yyyy");
         //    System.out.println(dateFormat.format(c.getTime()));
             date=new SimpleDateFormat("dd-MM-yyyy").parse(dateFormat.format(c.getTime()));
-            for(Department department:employee.getDepartment())
-            {
+            Department department=employee.getDepartment();
+
                 department.setEnddate(date);
-            }
+
 
                 for (Project project:employee.getProject())
                 {
                     project.setEnddate(date);
                 }
-            for(PersonalDetails personalDetails:employee.getPersonalDetails())
-            {
+           PersonalDetails personalDetails=employee.getPersonalDetails();
+
                 personalDetails.setEndDate(date);
-            }
 
 
+            System.out.println("\n"+personalDetails.getName()  +"\tResigned \n");
         }
 
 
@@ -207,7 +188,7 @@ public class allread {
             public Employee call() throws Exception {
                     //  empget(ar.id);
                   //  System.out.println(id);
-                    allread ar=new allread(id);
+                    EmployeeObjectRead ar=new EmployeeObjectRead(id);
                     Employee emp=new Employee(ar.employeeget(ar.id),ar.addressget(ar.id),ar.contactget(ar.id),ar.departmentget(ar.id),ar.personalget(ar.id),ar.projectget(ar.id),ar.salaryget(ar.id));
                     //  System.out.println(ar.id+""+experience);
                     System.out.println(emp);
@@ -216,7 +197,7 @@ public class allread {
         };
 
         ExecutorService service =  Executors.newSingleThreadExecutor();
-      //  allread sumTask = new allread(id);
+      //  EmployeeObjectRead sumTask = new EmployeeObjectRead(id);
         Future<Employee> future = service.submit(sumTask);
         return future.get();
     }
@@ -231,7 +212,7 @@ public class allread {
 */
    /* public static void main(String[] args) throws ExecutionException, InterruptedException, IOException, ParserConfigurationException, SAXException {
 
-      allread ar=new allread();
+      EmployeeObjectRead ar=new EmployeeObjectRead();
         ar.id=101;
       //  ar.reademp(101);
       Employee emp=new Employee(ar.employeeget(ar.id),ar.addressget(ar.id),ar.contactget(ar.id),ar.departmentget(ar.id),ar.personalget(ar.id),ar.projectget(ar.id),ar.salaryget(ar.id));

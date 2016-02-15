@@ -17,16 +17,16 @@ public class AddressreadTest {
 
     @Test
     public void testCall() throws Exception {
-        List<Address> list = new ArrayList<Address>();
+
         Address address = new Address(101,71,30,"Gurgaon",249403,"Uttrakhand","Hilly","kishor@gmail.com",Address.addresstype.CORRESPONDANCE);
-        list.add(address);
+
 
         ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);
         Addressread addressData = new Addressread(101);
-        Future<List<Address>> futureTask1 = executor1.submit(addressData);
+        Future<Address> futureTask1 = executor1.submit(addressData);
 
-        List<Address> addresses1 = futureTask1.get();
-        assertEquals(list, addresses1);
+        Address addresses1 = futureTask1.get();
+        assertEquals(address, addresses1);
 
     }
 }

@@ -71,7 +71,7 @@ public class Department {
 	 */
 	@Override
 	public String toString() {
-		return "Department [id=" + id + ", name=" + name + ", startdate="+ startdate + ", enddate=" + enddate + "]";
+		return "\nDepartment [id=" + id + ", name=" + name + ", startdate="+ startdate + ", enddate=" + enddate + "]";
 	}
 	public Department(int id, String name, Date startdate, Date enddate) {
 		super();

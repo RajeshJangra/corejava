@@ -9,16 +9,14 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.Callable;
 
 /**
  * Created by mkishore on 2/11/2016.
  */
-public class departmentread implements Callable<List<Department>> {
+public class departmentread implements Callable<Department> {
     int id;
-    List<Department> depart;
+    Department depart;
 
     @Override
     public boolean equals(Object o) {
@@ -43,8 +41,8 @@ public class departmentread implements Callable<List<Department>> {
         this.id = id;
     }
 
-    public List<Department> call() throws Exception {
-        try {depart=new ArrayList<Department>();
+    public Department call() throws Exception {
+        try {depart=new Department();
             File file = new File("C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\departmentxml.xml");
             Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
 
@@ -80,7 +78,7 @@ public class departmentread implements Callable<List<Department>> {
         if (Integer.parseInt(eElement.getAttribute("id")) == id) {
 
 
-            depart.add(new Department(Integer.parseInt(eElement.getAttribute("id")), eElement.getElementsByTagName("deptname").item(0).getTextContent(), new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("start").item(0).getTextContent()),new allread().date));
+            depart= new Department(Integer.parseInt(eElement.getAttribute("id")), eElement.getElementsByTagName("deptname").item(0).getTextContent(), new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("start").item(0).getTextContent()),new EmployeeObjectRead().date);
 
 
 

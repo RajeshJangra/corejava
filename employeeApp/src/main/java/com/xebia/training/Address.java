@@ -130,7 +130,7 @@ public class Address {
 	 */
 	@Override
 	public String toString() {
-		return "Address [id=" + id + ", houseno=" + houseno + ", sector="
+		return "\nAddress [id=" + id + ", houseno=" + houseno + ", sector="
 				+ sector + ", city=" + city + ", pincode=" + pincode
 				+ ", state=" + state + ", " + ", landmark="
 				+ landmark +  ", email_id=" + email_id+", address type="

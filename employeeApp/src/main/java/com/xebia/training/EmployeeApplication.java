@@ -1,5 +1,7 @@
 package com.xebia.training;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBContext;
@@ -9,45 +11,44 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
 class EmployeeApplication
 {
-
+	static Logger log=Logger.getLogger(EmployeeApplication.class.getName());
 
 	public static void main(String s[]) throws NumberFormatException, IOException, InterruptedException, ExecutionException, SAXException, ParserConfigurationException, ParseException, JAXBException
 
 	{
+		PropertyConfigurator.configure("src/main/resources/log4j.properties");
+
+		log.debug("Hiiiii");
 		System.out.println("Enter employee id:");
 		Scanner sc=new Scanner(System.in);
 		int a=sc.nextInt();
-		allread ar=new allread(a);
+		EmployeeObjectRead ar=new EmployeeObjectRead(a);
 		Employee employee=ar.inputEmployee(a);
 
 
 
 		ar.empget(employee);
-		//employee=ar.inputEmployee(a);
-		System.out.println(employee);
-		//allread ar=new allread(a);
 
-		/*JAXBContext jaxbContext = JAXBContext.newInstance(Employee.class);
+		System.out.println(employee);
+
+
+		JAXBContext jaxbContext = JAXBContext.newInstance(Employee.class);
 		Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 		System.out.println();
 		jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
 
 		//Marshal the employees list in console
-		jaxbMarshaller.marshal(emp, System.out);
+	//	jaxbMarshaller.marshal(employee, System.out);
 
 		//Marshal the employees list in file
 		String f="employee"+a+".xml";
-		jaxbMarshaller.marshal(emp, new File("C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\"+f));
-		System.out.println("Completed");*/
+		jaxbMarshaller.marshal(employee, new File("C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\"+f));
+		System.out.println("Employee Id"+a+" details has been written into file employee"+a+" successfully");
 	}
 }
 /*static String line;

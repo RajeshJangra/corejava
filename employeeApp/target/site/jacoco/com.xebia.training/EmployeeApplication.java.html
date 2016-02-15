@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>EmployeeApplication.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Employee</a> &gt; <a href="index.source.html" class="el_package">com.xebia.training</a> &gt; <span class="el_source">EmployeeApplication.java</span></div><h1>EmployeeApplication.java</h1><pre class="source lang-java linenums">package com.xebia.training;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBContext;
@@ -9,46 +11,45 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 
-<span class="nc" id="L19">class EmployeeApplication</span>
+<span class="nc" id="L17">class EmployeeApplication</span>
 {
-
+<span class="nc" id="L19">	static Logger log=Logger.getLogger(EmployeeApplication.class.getName());</span>
 
 	public static void main(String s[]) throws NumberFormatException, IOException, InterruptedException, ExecutionException, SAXException, ParserConfigurationException, ParseException, JAXBException
 
 	{
-<span class="nc" id="L26">		System.out.println(&quot;Enter employee id:&quot;);</span>
-<span class="nc" id="L27">		Scanner sc=new Scanner(System.in);</span>
-<span class="nc" id="L28">		int a=sc.nextInt();</span>
-<span class="nc" id="L29">		allread ar=new allread(a);</span>
-<span class="nc" id="L30">		Employee employee=ar.inputEmployee(a);</span>
+<span class="nc" id="L24">		PropertyConfigurator.configure(&quot;src/main/resources/log4j.properties&quot;);</span>
+
+<span class="nc" id="L26">		log.debug(&quot;Hiiiii&quot;);</span>
+<span class="nc" id="L27">		System.out.println(&quot;Enter employee id:&quot;);</span>
+<span class="nc" id="L28">		Scanner sc=new Scanner(System.in);</span>
+<span class="nc" id="L29">		int a=sc.nextInt();</span>
+<span class="nc" id="L30">		EmployeeObjectRead ar=new EmployeeObjectRead(a);</span>
+<span class="nc" id="L31">		Employee employee=ar.inputEmployee(a);</span>
 
 
 
-<span class="nc" id="L34">		ar.empget(employee);</span>
-		//employee=ar.inputEmployee(a);
-<span class="nc" id="L36">		System.out.println(employee);</span>
-		//allread ar=new allread(a);
+<span class="nc" id="L35">		ar.empget(employee);</span>
 
-		/*JAXBContext jaxbContext = JAXBContext.newInstance(Employee.class);
-		Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-		System.out.println();
-		jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+<span class="nc" id="L37">		System.out.println(employee);</span>
+
+
+<span class="nc" id="L40">		JAXBContext jaxbContext = JAXBContext.newInstance(Employee.class);</span>
+<span class="nc" id="L41">		Marshaller jaxbMarshaller = jaxbContext.createMarshaller();</span>
+<span class="nc" id="L42">		System.out.println();</span>
+<span class="nc" id="L43">		jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);</span>
 
 		//Marshal the employees list in console
-		jaxbMarshaller.marshal(emp, System.out);
+	//	jaxbMarshaller.marshal(employee, System.out);
 
 		//Marshal the employees list in file
-		String f=&quot;employee&quot;+a+&quot;.xml&quot;;
-		jaxbMarshaller.marshal(emp, new File(&quot;C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\&quot;+f));
-		System.out.println(&quot;Completed&quot;);*/
-<span class="nc" id="L51">	}</span>
+<span class="nc" id="L49">		String f=&quot;employee&quot;+a+&quot;.xml&quot;;</span>
+<span class="nc" id="L50">		jaxbMarshaller.marshal(employee, new File(&quot;C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\&quot;+f));</span>
+<span class="nc" id="L51">		System.out.println(&quot;Employee Id&quot;+a+&quot; details has been written into file employee&quot;+a+&quot; successfully&quot;);</span>
+<span class="nc" id="L52">	}</span>
 }
 /*static String line;
 static String directory=&quot;C:/Users/mkishore/Desktop/Today work/&quot;;

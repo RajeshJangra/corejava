@@ -18,11 +18,11 @@ public class Employee {
 	Employee employee;
 	Set<Project> project;
 	EmployeeData employeeData;
-	List<PersonalDetails> personalDetails;
-	List<Salary> salary;
-	List<Department> department;
-	List<Address> address;
-	List<Contact> contact;
+	PersonalDetails personalDetails;
+	Salary salary;
+	Department department;
+	Address address;
+	Contact contact;
 
 	public Employee getEmployee() {
 		return employee;
@@ -48,43 +48,43 @@ public class Employee {
 		this.employeeData = employeeData;
 	}
 
-	public List<PersonalDetails> getPersonalDetails() {
+	public PersonalDetails getPersonalDetails() {
 		return personalDetails;
 	}
 
-	public void setPersonalDetails(List<PersonalDetails> personalDetails) {
+	public void setPersonalDetails(PersonalDetails personalDetails) {
 		this.personalDetails = personalDetails;
 	}
 
-	public List<Salary> getSalary() {
+	public Salary getSalary() {
 		return salary;
 	}
 
-	public void setSalary(List<Salary> salary) {
+	public void setSalary(Salary salary) {
 		this.salary = salary;
 	}
 
-	public List<Department> getDepartment() {
+	public Department getDepartment() {
 		return department;
 	}
 
-	public void setDepartment(List<Department> department) {
+	public void setDepartment(Department department) {
 		this.department = department;
 	}
 
-	public List<Address> getAddress() {
+	public Address getAddress() {
 		return address;
 	}
 
-	public void setAddress(List<Address> address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 
-	public List<Contact> getContact() {
+	public Contact getContact() {
 		return contact;
 	}
 
-	public void setContact(List<Contact> contact) {
+	public void setContact(Contact contact) {
 		this.contact = contact;
 	}
 
@@ -101,14 +101,14 @@ public class Employee {
 	public String toString() {
 		return "Employee{" +
 
-				" Project=" + project +
-				", employeeData=" + employeeData +
-				", personalDetails=" + personalDetails +
-				", salary=" + salary +
-				", department=" + department +
-				", address=" + address +
-				", contact=" + contact +
-				'}';
+				" \n" + project +
+				", \n" + employeeData +
+				",\n" + personalDetails +
+				", \n" + salary +
+				", \n" + department +
+				", \n" + address +
+				",\n" + contact +
+				"}\n";
 	}
 
 	@Override
@@ -148,7 +148,7 @@ public class Employee {
 	}
 
 
-	public Employee(EmployeeData employeeData, List<Address> address,List<Contact> contact,List<Department> department,List<PersonalDetails> personal,Set<Project> project,List<Salary> salary) throws NumberFormatException, IOException, InterruptedException, ExecutionException, SAXException, ParserConfigurationException {
+	public Employee(EmployeeData employeeData, Address address,Contact contact,Department department,PersonalDetails personal,Set<Project> project,Salary salary) throws NumberFormatException, IOException, InterruptedException, ExecutionException, SAXException, ParserConfigurationException {
 		super();
 		this.employeeData=employeeData;
 		this.address=address;
@@ -157,7 +157,7 @@ public class Employee {
 		this.personalDetails=personal;
 		this.project=project;
 		this.salary=salary;
-	//	allread al=new allread(id);
+	//	EmployeeObjectRead al=new EmployeeObjectRead(id);
 
 	//	this.threadcall();
 

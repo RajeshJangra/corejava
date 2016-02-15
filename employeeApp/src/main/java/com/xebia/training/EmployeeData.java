@@ -55,11 +55,11 @@ public class EmployeeData {
 
     @Override
     public String toString() {
-        return "EmployeeData{" +
+        return "\nEmployeeData[" +
                 "id=" + id +
                 ", experience=" + experience +
                 ", d=" + d +
-                '}';
+                ']';
     }
 
     public void setExperience(int experience) {

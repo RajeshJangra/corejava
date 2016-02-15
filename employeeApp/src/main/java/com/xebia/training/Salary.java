@@ -34,7 +34,7 @@ public class Salary {
 	 */
 	@Override
 	public String toString() {
-		return "Salary [id=" + id + ", basic=" + basic + ", hra=" + hra
+		return "\nSalary [id=" + id + ", basic=" + basic + ", hra=" + hra
 				+ ", da=" + da + ", lta=" + lta + ", pf=" + pf + ", fp=" + fp
 				+ ", gratuity=" + gratuity + "]";
 	}

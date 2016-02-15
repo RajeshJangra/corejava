@@ -10,6 +10,16 @@ import java.util.Date;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class PersonalDetails {
 	private int id;
+	private int age;
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
 	private long passportNo,adharNo,voterId,accountNo;
 	private String bloodGroup,name,fatherName;
 	private Date dob,startdate,enddate;
@@ -219,20 +229,20 @@ public class PersonalDetails {
 	//	System.out.println(dbyear);
 		Calendar c=Calendar.getInstance();
 		int now=c.get(Calendar.YEAR);
-		int age=now-dbyear;
-		System.out.println("Age calculated is"+age);
+		 age=now-dbyear;
+	//	System.out.println("Age calculated is"+age);
 	}
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
 	public String toString() {
-		return "PersonalDetails [id=" + id + ", passport_no=" + passportNo
+		return "\nPersonalDetails [id=" + id + ", passport_no=" + passportNo
 				+ ", adhar_no=" + adharNo + ", voter_id=" + voterId
 				+ ", account_no=" + accountNo + ", bloodgroup=" + bloodGroup
 				+ ", maritial_status=" + m + ", name=" + name
 				+ ", father_name=" + fatherName + ", dob=" + dob
-				+",startdate="+startdate+",enddate=" +enddate+ "]";
+				+",startdate="+startdate+",enddate=" +enddate+ ",age="+age+"]";
 	}
 
 	

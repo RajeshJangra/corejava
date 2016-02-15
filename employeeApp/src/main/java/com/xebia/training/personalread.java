@@ -9,23 +9,21 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.Callable;
 
 /**
  * Created by mkishore on 2/11/2016.
  */
-public class personalread implements Callable<List<PersonalDetails>>{
+public class personalread implements Callable<PersonalDetails>{
     int id;
-    List<PersonalDetails> personal;
+    PersonalDetails personal;
 
     public personalread(int id) {
         this.id = id;
     }
 
-    public List<PersonalDetails> call() throws Exception {
-        try {personal=new ArrayList<PersonalDetails>();
+    public PersonalDetails call() throws Exception {
+        try {personal=new PersonalDetails();
             File file = new File("C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\personalxml.xml");
             Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
 
@@ -80,7 +78,7 @@ public class personalread implements Callable<List<PersonalDetails>>{
         if (Integer.parseInt(eElement.getAttribute("id")) == id) {
 
 
-            personal.add(new PersonalDetails(Integer.parseInt(eElement.getAttribute("id")),
+            personal=new PersonalDetails(Integer.parseInt(eElement.getAttribute("id")),
                     Long.parseLong(eElement.getElementsByTagName("passport").item(0).getTextContent()),
                     Long.parseLong(eElement.getElementsByTagName("adhar").item(0).getTextContent()),
                     Long.parseLong(eElement.getElementsByTagName("voter").item(0).getTextContent()),
@@ -91,7 +89,7 @@ public class personalread implements Callable<List<PersonalDetails>>{
                     eElement.getElementsByTagName("father").item(0).getTextContent(),
                     new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("dob").item(0).getTextContent()),
                     new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("start").item(0).getTextContent()),
-                    new allread().date));
+                    new EmployeeObjectRead().date);
 
 
 

@@ -18,11 +18,11 @@ public class Employee {
 	Employee employee;
 	Set&lt;Project&gt; project;
 	EmployeeData employeeData;
-	List&lt;PersonalDetails&gt; personalDetails;
-	List&lt;Salary&gt; salary;
-	List&lt;Department&gt; department;
-	List&lt;Address&gt; address;
-	List&lt;Contact&gt; contact;
+	PersonalDetails personalDetails;
+	Salary salary;
+	Department department;
+	Address address;
+	Contact contact;
 
 	public Employee getEmployee() {
 <span class="nc" id="L28">		return employee;</span>
@@ -48,43 +48,43 @@ public class Employee {
 <span class="nc" id="L48">		this.employeeData = employeeData;</span>
 <span class="nc" id="L49">	}</span>
 
-	public List&lt;PersonalDetails&gt; getPersonalDetails() {
+	public PersonalDetails getPersonalDetails() {
 <span class="nc" id="L52">		return personalDetails;</span>
 	}
 
-	public void setPersonalDetails(List&lt;PersonalDetails&gt; personalDetails) {
+	public void setPersonalDetails(PersonalDetails personalDetails) {
 <span class="nc" id="L56">		this.personalDetails = personalDetails;</span>
 <span class="nc" id="L57">	}</span>
 
-	public List&lt;Salary&gt; getSalary() {
+	public Salary getSalary() {
 <span class="nc" id="L60">		return salary;</span>
 	}
 
-	public void setSalary(List&lt;Salary&gt; salary) {
+	public void setSalary(Salary salary) {
 <span class="nc" id="L64">		this.salary = salary;</span>
 <span class="nc" id="L65">	}</span>
 
-	public List&lt;Department&gt; getDepartment() {
+	public Department getDepartment() {
 <span class="nc" id="L68">		return department;</span>
 	}
 
-	public void setDepartment(List&lt;Department&gt; department) {
+	public void setDepartment(Department department) {
 <span class="nc" id="L72">		this.department = department;</span>
 <span class="nc" id="L73">	}</span>
 
-	public List&lt;Address&gt; getAddress() {
+	public Address getAddress() {
 <span class="nc" id="L76">		return address;</span>
 	}
 
-	public void setAddress(List&lt;Address&gt; address) {
+	public void setAddress(Address address) {
 <span class="nc" id="L80">		this.address = address;</span>
 <span class="nc" id="L81">	}</span>
 
-	public List&lt;Contact&gt; getContact() {
+	public Contact getContact() {
 <span class="nc" id="L84">		return contact;</span>
 	}
 
-	public void setContact(List&lt;Contact&gt; contact) {
+	public void setContact(Contact contact) {
 <span class="nc" id="L88">		this.contact = contact;</span>
 <span class="nc" id="L89">	}</span>
 
@@ -101,14 +101,14 @@ public class Employee {
 	public String toString() {
 <span class="fc" id="L102">		return &quot;Employee{&quot; +</span>
 
-				&quot; Project=&quot; + project +
-				&quot;, employeeData=&quot; + employeeData +
-				&quot;, personalDetails=&quot; + personalDetails +
-				&quot;, salary=&quot; + salary +
-				&quot;, department=&quot; + department +
-				&quot;, address=&quot; + address +
-				&quot;, contact=&quot; + contact +
-				'}';
+				&quot; \n&quot; + project +
+				&quot;, \n&quot; + employeeData +
+				&quot;,\n&quot; + personalDetails +
+				&quot;, \n&quot; + salary +
+				&quot;, \n&quot; + department +
+				&quot;, \n&quot; + address +
+				&quot;,\n&quot; + contact +
+				&quot;}\n&quot;;
 	}
 
 	@Override
@@ -148,7 +148,7 @@ public class Employee {
 <span class="nc" id="L148">	}</span>
 
 
-	public Employee(EmployeeData employeeData, List&lt;Address&gt; address,List&lt;Contact&gt; contact,List&lt;Department&gt; department,List&lt;PersonalDetails&gt; personal,Set&lt;Project&gt; project,List&lt;Salary&gt; salary) throws NumberFormatException, IOException, InterruptedException, ExecutionException, SAXException, ParserConfigurationException {
+	public Employee(EmployeeData employeeData, Address address,Contact contact,Department department,PersonalDetails personal,Set&lt;Project&gt; project,Salary salary) throws NumberFormatException, IOException, InterruptedException, ExecutionException, SAXException, ParserConfigurationException {
 <span class="fc" id="L152">		super();</span>
 <span class="fc" id="L153">		this.employeeData=employeeData;</span>
 <span class="fc" id="L154">		this.address=address;</span>
@@ -157,7 +157,7 @@ public class Employee {
 <span class="fc" id="L157">		this.personalDetails=personal;</span>
 <span class="fc" id="L158">		this.project=project;</span>
 <span class="fc" id="L159">		this.salary=salary;</span>
-	//	allread al=new allread(id);
+	//	EmployeeObjectRead al=new EmployeeObjectRead(id);
 
 	//	this.threadcall();
 

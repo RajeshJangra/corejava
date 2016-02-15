@@ -14,9 +14,9 @@ import java.util.concurrent.Callable;
 /**
  * Created by mkishore on 2/11/2016.
  */
-public class contactread implements Callable<List<Contact>>{
+public class contactread implements Callable<Contact>{
     int id;
-    List<Contact> contact=new ArrayList<Contact>();
+    Contact contact=new Contact();
     public contactread(int id)
     {
         this.id=id;
@@ -41,7 +41,7 @@ public class contactread implements Callable<List<Contact>>{
         return result;
     }
 
-    public List<Contact> call() throws Exception {
+    public Contact call() throws Exception {
     try {
         File file = new File("C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\contactxml.xml");
         Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
@@ -80,7 +80,7 @@ public class contactread implements Callable<List<Contact>>{
 
         if (Integer.parseInt(eElement.getAttribute("id")) == id) {
 
-            contact.add(new Contact(Integer.parseInt(eElement.getAttribute("id")), eElement.getElementsByTagName("emailid").item(0).getTextContent(), Long.parseLong(eElement.getElementsByTagName("phone").item(0).getTextContent())));
+            contact=new Contact(Integer.parseInt(eElement.getAttribute("id")), eElement.getElementsByTagName("emailid").item(0).getTextContent(), Long.parseLong(eElement.getElementsByTagName("phone").item(0).getTextContent()));
 
         }
     }

@@ -15,9 +15,9 @@ import java.util.concurrent.Callable;
  * Created by mkishore on 2/11/2016.
  */
 
- class Addressread implements Callable<List<Address>> {
+ class Addressread implements Callable<Address> {
     int id;
-    List<Address> address;
+    Address address;
 
     @Override
     public boolean equals(Object o) {
@@ -42,8 +42,8 @@ import java.util.concurrent.Callable;
         this.id = id;
     }
 
-    public List<Address> call() throws Exception {
-        try {address=new ArrayList<Address>();
+    public Address call() throws Exception {
+        try {address=new Address();
             File file = new File("C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\addressxml.xml");
             Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
 
@@ -79,7 +79,7 @@ import java.util.concurrent.Callable;
         if (Integer.parseInt(eElement.getAttribute("id")) == id) {
 
 
-            address.add(new Address(id,
+            address=new Address(id,
                     Integer.parseInt(eElement.getElementsByTagName("houseno").item(0).getTextContent()),
                     Integer.parseInt(eElement.getElementsByTagName("sector").item(0).getTextContent()),
                     eElement.getElementsByTagName("city").item(0).getTextContent(),
@@ -87,7 +87,7 @@ import java.util.concurrent.Callable;
                     eElement.getElementsByTagName("state").item(0).getTextContent(),
                     eElement.getElementsByTagName("landmark").item(0).getTextContent(),
                     eElement.getElementsByTagName("email_id").item(0).getTextContent(),
-                    Address.addresstype.valueOf(eElement.getElementsByTagName("address_type").item(0).getTextContent())));
+                    Address.addresstype.valueOf(eElement.getElementsByTagName("address_type").item(0).getTextContent()));
 
 
         }
