@@ -1,27 +1,34 @@
-<?xml version="1.0"?>
-<class>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><class>
 	<project EmployeeID="1">
 		<projectId>1</projectId>
 		<name>Pioneer</name>
 		<startDate>11-01-2014</startDate>
+		<endDate>14-02-2016</endDate>
 		
 	</project>
+
 	<project EmployeeID="1">
 		<projectId>2</projectId>
 		<name>Pantha</name>
 		<startDate>11-01-2014</startDate>
-		
-	</project>
+		<endDate>14-02-2016</endDate><endDate>14-02-2016</endDate></project>
+
 	<project EmployeeID="1">
 		<projectId>3</projectId>
 		<name>Grindr</name>
 		<startDate>11-01-2014</startDate>
-		
+		<endDate>14-02-2016</endDate>
+
+
 	</project>
 	<project EmployeeID="2">
 		<projectId>3</projectId>
 		<name>Grindr</name>
 		<startDate>11-01-2014</startDate>
-		
+		<endDate>14-02-2016</endDate>
+
+
+
+
 	</project>
 </class>

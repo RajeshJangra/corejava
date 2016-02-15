@@ -25,11 +25,15 @@ public class ProjectData implements Callable<List<Project>> {
 	Date endDate;
 	Date startDate;
 	private int id;
+	int empID;
+	int pID;
 
 	public ProjectData(int id) {
 		super();
 		this.id = id;
 	}
+	
+	
 
 	@Override
 	public List<Project> call() throws Exception {
@@ -60,7 +64,19 @@ public class ProjectData implements Callable<List<Project>> {
 					startDate = new SimpleDateFormat("dd-MM-yyyy")
 							.parse(eElement.getElementsByTagName("startDate")
 									.item(0).getTextContent());
-					endDate = null;
+					
+					
+					
+					
+					
+						/*endDate = new SimpleDateFormat("dd-MM-yyyy")
+								.parse(eElement.getElementsByTagName("endDate")
+										.item(0).getTextContent());
+						*/
+					
+						endDate = null;
+					
+					
 					Project project1 = new Project(id, projectId, name,
 							startDate, endDate);
 

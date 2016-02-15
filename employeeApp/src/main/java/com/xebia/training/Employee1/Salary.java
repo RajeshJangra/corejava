@@ -29,7 +29,9 @@ public class Salary {
 				+ ", gratvity=" + gratvity + "]";
 	}
 	public Salary(int id,double salaryId, double basic) {
+		
 		super();
+		
 		this.salaryId = salaryId;
 		this.basic = basic;
 		this.HRA = basic/5;
@@ -37,6 +39,9 @@ public class Salary {
 		LTA = basic/15;
 		FP = basic/20;
 		this.gratvity = basic/21;
+		 
+			
+		
 	}
 	
 	@Override

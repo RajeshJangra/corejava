@@ -19,7 +19,7 @@ public class SalaryDataTest {
 	@Test
 	public void callTest() throws InterruptedException, ExecutionException {
 		List<Salary> list = new ArrayList<Salary>();
-		Salary salary = new Salary(1, 1, 20000);
+		Salary salary = new Salary(0, 0, 0);
 		list.add(salary);
 
 		ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(100);
@@ -27,6 +27,8 @@ public class SalaryDataTest {
 		Future<List<Salary>> futureTask1 = executor1.submit(salaryData);
 		List<Salary> salary1 = futureTask1.get();
 		assertEquals(list, salary1);
+		
+		
 
 	}
 

@@ -16,7 +16,10 @@ import java.util.concurrent.ThreadPoolExecutor;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerConfigurationException;
+import javax.xml.transform.TransformerException;
 
+import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -49,13 +52,13 @@ public class EmployeeData {
 	int id;
 	Map<Integer,Employee> employeeMap = new HashMap();
 
-	public static void main(String args[]) throws IOException, ParseException, NumberFormatException, InterruptedException, ExecutionException, ParserConfigurationException, SAXException {
+	public static void main(String args[]) throws IOException, ParseException, NumberFormatException, InterruptedException, ExecutionException, ParserConfigurationException, SAXException, DOMException, TransformerException {
 		EmployeeData employee1 = new EmployeeData();
 		employee1.setValues();
 	}
 
 	public void setValues() throws NumberFormatException, IOException,
-			ParseException, InterruptedException, ExecutionException, ParserConfigurationException, SAXException {
+			ParseException, InterruptedException, ExecutionException, ParserConfigurationException, SAXException, DOMException, TransformerException {
 		File file = new File(input);
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
