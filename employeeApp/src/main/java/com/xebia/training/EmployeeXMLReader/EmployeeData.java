@@ -1,4 +1,4 @@
-package com.xebia.training.Employee2;
+package com.xebia.training.EmployeeXMLReader;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
@@ -26,14 +26,14 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import com.xebia.training.Employee1.ContactDetails;
-import com.xebia.training.Employee1.Department;
-import com.xebia.training.Employee1.Employee;
-import com.xebia.training.Employee1.Employee.Designation;
-import com.xebia.training.Employee1.PersonalDetails;
-import com.xebia.training.Employee1.Project;
-import com.xebia.training.Employee1.Salary;
-import com.xebia.training.MapInterface.EmployeeMap;
+import com.xebia.training.EmployeeEntities.ContactDetails;
+import com.xebia.training.EmployeeEntities.Department;
+import com.xebia.training.EmployeeEntities.Employee;
+import com.xebia.training.EmployeeEntities.PersonalDetails;
+import com.xebia.training.EmployeeEntities.Project;
+import com.xebia.training.EmployeeEntities.Salary;
+import com.xebia.training.EmployeeEntities.Employee.Designation;
+import com.xebia.training.EndDateInfo.EmployeeMap;
 
 public class EmployeeData {
 	private static final String input = "src/main/java/com/XmlFiles/Employee.xml";

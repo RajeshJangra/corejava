@@ -1,4 +1,4 @@
-package com.xebia.training.Employee2;
+package com.xebia.training.EmployeeXMLReader;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -13,8 +13,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.xebia.training.Employee1.PersonalDetails;
-import com.xebia.training.Employee1.PersonalDetails.MarritalStatus;
+import com.xebia.training.EmployeeEntities.PersonalDetails;
+import com.xebia.training.EmployeeEntities.PersonalDetails.MarritalStatus;
 
 public class PersonalDetailsData implements Callable<List<PersonalDetails>> {
 	private static final String input="src/main/java/com/XmlFiles/PersonalDetails.xml";

@@ -1,4 +1,4 @@
-package com.xebia.training.MapInterface;
+package com.xebia.training;
 
 import static org.junit.Assert.assertEquals;
 
@@ -11,9 +11,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 import org.junit.Test;
 
-import com.xebia.training.Employee1.PersonalDetails;
-import com.xebia.training.Employee1.PersonalDetails.MarritalStatus;
-import com.xebia.training.Employee2.PersonalDetailsData;
+import com.xebia.training.EmployeeEntities.PersonalDetails;
+import com.xebia.training.EmployeeEntities.PersonalDetails.MarritalStatus;
+import com.xebia.training.EmployeeXMLReader.PersonalDetailsData;
 
 public class PersonalDetailsDataTest {
 

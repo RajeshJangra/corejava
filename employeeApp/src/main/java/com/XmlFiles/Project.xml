@@ -3,32 +3,28 @@
 		<projectId>1</projectId>
 		<name>Pioneer</name>
 		<startDate>11-01-2014</startDate>
-		<endDate>14-02-2016</endDate>
-		
+		<endDate></endDate>
 	</project>
 
 	<project EmployeeID="1">
 		<projectId>2</projectId>
 		<name>Pantha</name>
 		<startDate>11-01-2014</startDate>
-		<endDate>14-02-2016</endDate><endDate>14-02-2016</endDate></project>
+		<endDate>15-02-2016</endDate></project>
 
 	<project EmployeeID="1">
 		<projectId>3</projectId>
 		<name>Grindr</name>
 		<startDate>11-01-2014</startDate>
-		<endDate>14-02-2016</endDate>
+		<endDate></endDate>
+		
 
-
-	</project>
+	<endDate>15-02-2016</endDate></project>
 	<project EmployeeID="2">
 		<projectId>3</projectId>
 		<name>Grindr</name>
 		<startDate>11-01-2014</startDate>
-		<endDate>14-02-2016</endDate>
-
-
-
+		<endDate/><endDate/>
 
 	</project>
 </class>

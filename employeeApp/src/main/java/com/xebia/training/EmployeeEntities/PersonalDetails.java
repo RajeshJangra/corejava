@@ -1,4 +1,4 @@
-package com.xebia.training.Employee1;
+package com.xebia.training.EmployeeEntities;
 
 public class PersonalDetails {
 	private int personalDetailsID;

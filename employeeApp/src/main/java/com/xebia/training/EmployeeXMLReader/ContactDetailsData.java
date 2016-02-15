@@ -1,4 +1,4 @@
-package com.xebia.training.Employee2;
+package com.xebia.training.EmployeeXMLReader;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -16,8 +16,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.xebia.training.Employee1.ContactDetails;
-import com.xebia.training.Employee1.ContactDetails.AddressType;
+import com.xebia.training.EmployeeEntities.ContactDetails;
+import com.xebia.training.EmployeeEntities.ContactDetails.AddressType;
 
 public class ContactDetailsData implements Callable<List<ContactDetails>>{
 	public static final String input="src/main/java/com/XmlFiles/ContactDetails.xml";

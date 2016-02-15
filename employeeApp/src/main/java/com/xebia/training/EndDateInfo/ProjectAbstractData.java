@@ -1,4 +1,4 @@
-package com.xebia.training.AbstractData;
+package com.xebia.training.EndDateInfo;
 
 import java.io.File;
 import java.io.IOException;
@@ -25,7 +25,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-import com.xebia.training.Employee1.Project;
+import com.xebia.training.EmployeeEntities.Project;
 
 public class ProjectAbstractData {
 	final String input = "src/main/java/com/XmlFiles/Project.xml";

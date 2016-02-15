@@ -1,4 +1,4 @@
-package com.xebia.training.MapInterface;
+package com.xebia.training;
 
 import static org.junit.Assert.*;
 
@@ -11,9 +11,9 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 import org.junit.Test;
 
-import com.xebia.training.Employee1.ContactDetails;
-import com.xebia.training.Employee1.ContactDetails.AddressType;
-import com.xebia.training.Employee2.ContactDetailsData;
+import com.xebia.training.EmployeeEntities.ContactDetails;
+import com.xebia.training.EmployeeEntities.ContactDetails.AddressType;
+import com.xebia.training.EmployeeXMLReader.ContactDetailsData;
 
 public class ContactDetailsDataTest {
 

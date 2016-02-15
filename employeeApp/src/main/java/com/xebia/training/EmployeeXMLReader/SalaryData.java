@@ -1,4 +1,4 @@
-package com.xebia.training.Employee2;
+package com.xebia.training.EmployeeXMLReader;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.xebia.training.Employee1.Salary;
+import com.xebia.training.EmployeeEntities.Salary;
 
 public class SalaryData implements Callable<List<Salary>> {
 	public int id;
@@ -34,12 +34,7 @@ public class SalaryData implements Callable<List<Salary>> {
 		EmployeeId = employeeId;
 	}
 
-	@Override
-	public String toString() {
-		return "[basic=" + basic + ", HRA=" + HRA + ", DA=" + DA + ", LTA="
-				+ LTA + ", FP=" + FP + ", gratvity=" + gratvity + "]";
-	}
-
+	
 	@Override
 	public List<Salary> call() throws Exception {
 		List<Salary> list = new ArrayList<>();

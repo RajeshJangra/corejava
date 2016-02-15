@@ -1,6 +1,6 @@
-package com.xebia.training.MapInterface;
+package com.xebia.training;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,15 +11,18 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 import org.junit.Test;
 
-import com.xebia.training.Employee1.Salary;
-import com.xebia.training.Employee2.SalaryData;
+import com.xebia.training.EmployeeEntities.Salary;
+import com.xebia.training.EmployeeXMLReader.SalaryData;
+
 
 public class SalaryDataTest {
-
+	
 	@Test
 	public void callTest() throws InterruptedException, ExecutionException {
+	//	Salary salary = Mockito.mock(Salary.class);
+
 		List<Salary> list = new ArrayList<Salary>();
-		Salary salary = new Salary(0, 0, 0);
+		Salary salary = new Salary(1, 1, 20000);
 		list.add(salary);
 
 		ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(100);

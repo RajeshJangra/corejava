@@ -1,4 +1,4 @@
-package com.xebia.training.MapInterface;
+package com.xebia.training;
 
 import static org.junit.Assert.*;
 
@@ -13,8 +13,8 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 import org.junit.Test;
 
-import com.xebia.training.Employee1.Project;
-import com.xebia.training.Employee2.ProjectData;
+import com.xebia.training.EmployeeEntities.Project;
+import com.xebia.training.EmployeeXMLReader.ProjectData;
 
 public class ProjectDataTest {
 
@@ -26,7 +26,8 @@ public class ProjectDataTest {
 		
 		list.add(project);
 		Project project1 = new Project(1, 2, "Pantha", new SimpleDateFormat(
-				"dd-MM-yyyy").parse("11-01-2014"),null);
+				"dd-MM-yyyy").parse("11-01-2014"),new SimpleDateFormat(
+						"dd-MM-yyyy").parse("15-02-2016"));
 		list.add(project1);
 		Project project2 = new Project(1, 3, "Grindr", new SimpleDateFormat(
 				"dd-MM-yyyy").parse("11-01-2014"),null);

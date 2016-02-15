@@ -1,4 +1,4 @@
-package com.xebia.training.MapInterface;
+package com.xebia.training.EndDateInfo;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -16,10 +16,9 @@ import javax.xml.transform.TransformerException;
 import org.w3c.dom.DOMException;
 import org.xml.sax.SAXException;
 
-import com.xebia.training.AbstractData.ProjectAbstractData;
-import com.xebia.training.Employee1.Employee;
-import com.xebia.training.Employee1.Project;
-import com.xebia.training.Employee2.ProjectData;
+import com.xebia.training.EmployeeEntities.Employee;
+import com.xebia.training.EmployeeEntities.Project;
+import com.xebia.training.EmployeeXMLReader.ProjectData;
 
 public class EndDateSetup {
 	public int id;
@@ -53,6 +52,9 @@ public class EndDateSetup {
 				if (p.getEndDate() == null) {
 					
 					p.setEndDate(new Date());
+					ProjectAbstractData abc = new ProjectAbstractData(id, projectId);
+					abc.projectData();
+					
 
 				} else {
 					System.out.println("u r not a part of this project..:)");
@@ -60,8 +62,6 @@ public class EndDateSetup {
 			}
 		}
 		
-		ProjectAbstractData abc = new ProjectAbstractData(id, projectId);
-		abc.projectData();
 		
 
 		employee.setProject(project);

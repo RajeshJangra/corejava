@@ -1,20 +1,20 @@
-package com.xebia.training.MapInterface;
+package com.xebia.training.EndDateInfo;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 
 import org.w3c.dom.DOMException;
 import org.xml.sax.SAXException;
 
-import com.xebia.training.Employee1.Employee;
-import com.xebia.training.Employee2.ProjectData;
+import com.xebia.training.EmployeeEntities.Employee;
 
 public class EmployeeMap {
 	static Map<Integer,Employee> empMap;
@@ -22,8 +22,11 @@ public class EmployeeMap {
 
 	public EmployeeMap(Map<Integer, Employee> employeeMap) throws InterruptedException, ExecutionException, DOMException, ParserConfigurationException, SAXException, IOException, ParseException, TransformerException {
 		
-		this.empMap = employeeMap;
 		
+		
+		this.empMap = employeeMap;
+		  final Logger logger = Logger.getLogger(EmployeeMap.class.getName());
+		 
 		System.out.println("Enter employee id :");
 		Scanner sc = new Scanner(System.in);
 		int id = sc.nextInt();
@@ -34,7 +37,7 @@ public class EmployeeMap {
 		
 		employee = empMap.get(id);
 		
-		
+				 
 		System.out.println(employee);
 		
 		System.out.println("\n\nDo u want to end employee's projects(Y/N)");
@@ -48,8 +51,8 @@ public class EmployeeMap {
 		
 
 		
-		EndDateSetup deleteProject = new EndDateSetup(id,projectId);
-		deleteProject.setDate(employee);
+		EndDateSetup setEndDate = new EndDateSetup(id,projectId);
+		setEndDate.setDate(employee);
 		
 		//System.out.println(employee);
 		}

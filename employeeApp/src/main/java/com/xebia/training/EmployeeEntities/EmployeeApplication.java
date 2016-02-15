@@ -1,4 +1,4 @@
-package com.xebia.training.Employee1;
+package com.xebia.training.EmployeeEntities;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -11,7 +11,7 @@ import javax.xml.transform.TransformerException;
 import org.w3c.dom.DOMException;
 import org.xml.sax.SAXException;
 
-import com.xebia.training.Employee2.EmployeeData;
+import com.xebia.training.EmployeeXMLReader.EmployeeData;
 
 public class EmployeeApplication {
 	public static void main(String args[]) throws ParseException,
