@@ -67,10 +67,43 @@ public class Salary {
 		this.gratuity = gratuity;
 	}
 
+	
+	
+	
+	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Salary other = (Salary) obj;
+		if (Double.doubleToLongBits(basic) != Double.doubleToLongBits(other.basic))
+			return false;
+		if (Double.doubleToLongBits(da) != Double.doubleToLongBits(other.da))
+			return false;
+		if (Double.doubleToLongBits(fp) != Double.doubleToLongBits(other.fp))
+			return false;
+		if (Double.doubleToLongBits(gratuity) != Double.doubleToLongBits(other.gratuity))
+			return false;
+		if (Double.doubleToLongBits(hra) != Double.doubleToLongBits(other.hra))
+			return false;
+		if (id != other.id)
+			return false;
+		if (Double.doubleToLongBits(lta) != Double.doubleToLongBits(other.lta))
+			return false;
+		if (Double.doubleToLongBits(pf) != Double.doubleToLongBits(other.pf))
+			return false;
+		return true;
+	}
+
 	@Override
 	public String toString() {
-		return "Salary [id=" + id + ", basic=" + basic + ", hra=" + hra + ", da=" + da + ", lta=" + lta + ", pf=" + pf
-				+ ", fp=" + fp + ", gratuity=" + gratuity + "]";
+		return "(Eid=" + id + ", Basic=" + basic + ", HRA=" + hra + ", DA=" + da + ", LTA=" + lta + ", PF=" + pf
+				+ ", FP=" + fp + ", Gratuity=" + gratuity + ")";
 	}
 	
 	

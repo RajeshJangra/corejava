@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<class>
+ <personaldetails id="101">
+  <age>21</age>
+  <name>Shubham</name>
+  <fathername>R.R.Purwar</fathername>
+  <gender>Male</gender>
+  <bloodgroup>O+</bloodgroup>
+  <maritalstatus>Marriage</maritalstatus>
+  <dob>10-02-1994</dob>
+  <aadharno>12344567</aadharno>
+ </personaldetails>
+</class>

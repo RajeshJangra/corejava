@@ -95,9 +95,9 @@ public class PersonalDetails {
 	
 	@Override
 	public String toString() {
-		return "PersonalDetails [id=" + id + ", age=" + age + ", name=" + name + ", fathername=" + fathername
-				+ ", gender=" + gender + ", bloodgroup=" + bloodgroup + ", maritalstatus=" + maritalstatus + ", dob="
-				+ dob + ", aadharno=" + aadharno + "]";
+		return "(Eid=" + id + ", Age=" + age + ", Name=" + name + ", Fathername=" + fathername
+				+ ", Gender=" + gender + ", Bloodgroup=" + bloodgroup + ", Maritalstatus=" + maritalstatus + ", Dob="
+				+ dob + ", Aadhar no=" + aadharno + ")";
 	}
 	
 }

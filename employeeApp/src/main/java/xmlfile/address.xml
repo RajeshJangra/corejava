@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<class>
+ <address id="101">
+  <sector>C</sector>
+  <city>Delhi</city>
+  <state>Delhi</state>
+  <houseno>5</houseno>
+  <pin>261701</pin>
+  <street>Chandani</street>
+  <addtype>Correspondence</addtype>
+ </address>
+</class>

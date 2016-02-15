@@ -4,7 +4,7 @@ public class Project {
 
 
 	private int id;
-	//private int pid;
+	
 	private Date start_date, end_date;
 	private String name;
 	public int getId() {
@@ -43,7 +43,7 @@ public class Project {
 	
 	@Override
 	public String toString() {
-		return "Project [id=" + id + ", start_date=" + start_date + ", end_date=" + end_date + ", name=" + name + "]";
+		return "(Eid=" + id + ", Start date=" + start_date + ", End date=" + end_date + ", Name=" + name + ")";
 	}
 	
 	

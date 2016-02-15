@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<class>
+ <employee id="101">
+ <work_exp>3</work_exp>
+ <designation>JAVADEVELOPER</designation>
+ </employee>
+  <employee id="102">
+ <work_exp>4</work_exp>
+ <designation>ACCOUNTANT</designation>
+ 
+ </employee>
+</class>

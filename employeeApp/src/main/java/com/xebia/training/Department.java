@@ -48,7 +48,7 @@ public class Department {
 	}
 	
 	public String toString() {
-		return "Department [id=" + id + ", Name=" + Name + ", startDate=" + startDate + ", endDate=" + endDate + "]";
+		return "(Eid=" + id + ", Name=" + Name + ", StartDate=" + startDate + ", EndDate=" + endDate + ")";
 	}
 	
 
