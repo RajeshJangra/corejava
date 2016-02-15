@@ -1,4 +1,4 @@
-package testing;
+package com.xebia.training;
 
 import static org.junit.Assert.*;
 

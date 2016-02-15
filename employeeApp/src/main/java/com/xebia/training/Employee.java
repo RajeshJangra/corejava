@@ -1,17 +1,8 @@
 package com.xebia.training;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.StringTokenizer;
-import com.xebia.training.Address;
-import com.xebia.training.Address.addressType;
 
 public class Employee {
 	String line;
@@ -40,6 +31,16 @@ public class Employee {
 		this.department = (ArrayList<Department>) department;
 	}
 
+	
+
+	public String getLine() {
+		return line;
+	}
+
+	public void setLine(String line) {
+		this.line = line;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -64,7 +65,57 @@ public class Employee {
 		this.designation_obj = designation_obj;
 	}
 
-	enum designation {
+	public ArrayList<Address> getAddress() {
+		return address;
+	}
+
+	public void setAddress(ArrayList<Address> address) {
+		this.address = address;
+	}
+
+	public ArrayList<Salary> getSalary() {
+		return salary;
+	}
+
+	public void setSalary(ArrayList<Salary> salary) {
+		this.salary = salary;
+	}
+
+	public ArrayList<Project> getProject() {
+		return project;
+	}
+
+	public void setProject(ArrayList<Project> project) {
+		this.project = project;
+	}
+
+	public ArrayList<PersonalDetails> getPersonaldetails() {
+		return personaldetails;
+	}
+
+	public void setPersonaldetails(ArrayList<PersonalDetails> personaldetails) {
+		this.personaldetails = personaldetails;
+	}
+
+	public ArrayList<Contact> getContact() {
+		return contact;
+	}
+
+	public void setContact(ArrayList<Contact> contact) {
+		this.contact = contact;
+	}
+
+	public ArrayList<Department> getDepartment() {
+		return department;
+	}
+
+	public void setDepartment(ArrayList<Department> department) {
+		this.department = department;
+	}
+
+
+
+	public enum designation {
 		TRAINEE, PROJECTENGINEER, JAVADEVELOPER, ACCOUNTANT, QAANALYST, SCRUMMASTER, CEO;
 	}
 

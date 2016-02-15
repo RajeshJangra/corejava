@@ -31,7 +31,7 @@ public class Project {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Project(int id, String name, Date end_date, Date start_date) {
+	public Project(int id, String name, Date start_date, Date end_date) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -41,6 +41,35 @@ public class Project {
 	}
 	
 	
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Project other = (Project) obj;
+		if (end_date == null) {
+			if (other.end_date != null)
+				return false;
+		} else if (!end_date.equals(other.end_date))
+			return false;
+		if (id != other.id)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (start_date == null) {
+			if (other.start_date != null)
+				return false;
+		} else if (!start_date.equals(other.start_date))
+			return false;
+		return true;
+	}
 	@Override
 	public String toString() {
 		return "(Eid=" + id + ", Start date=" + start_date + ", End date=" + end_date + ", Name=" + name + ")";

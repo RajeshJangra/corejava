@@ -1,14 +1,11 @@
 package com.xebia.training;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.StringTokenizer;
 import java.util.concurrent.Callable;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -21,7 +18,7 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
-public class InputProject implements Callable{
+public class InputProject implements Callable<List<Project>>{
 
 	String line;
 	int id;
@@ -62,9 +59,9 @@ public class InputProject implements Callable{
 						String na=eElement.getElementsByTagName("name").item(0).getTextContent();
                        
 						Date startdate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("startdate").item(0).getTextContent());
-						Date enddate= new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("enddate").item(0).getTextContent());
+				//		Date enddate= new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("enddate").item(0).getTextContent());
 
-						project.add(new Project(id3, na, startdate, enddate));
+						project.add(new Project(id3, na, startdate, null));
 					
 						
 					}

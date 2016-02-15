@@ -1,4 +1,4 @@
-package testing;
+package com.xebia.training;
 
 import static org.junit.Assert.*;
 
@@ -31,7 +31,8 @@ public class InputContactTest {
 		  InputContact obj3=new InputContact(101);
 			FutureTask<List<Contact>> task3= (FutureTask<List<Contact>>) executor4.submit(obj3);
 			List<Contact> contact1=task3.get();
-		
+		System.out.println(contact1);
+		System.out.println(list);
 			assertEquals(contact1,list);
 		
 	}
