@@ -1,7 +1,6 @@
 package com.xebia.training;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.*;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -11,8 +10,6 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 
 import org.junit.Test;
-
-import com.xebia.training.*;
 public class EmployeeDetailsTest {
 	public EmployeeDetailsTest(){	
 	}
@@ -37,7 +34,7 @@ public class EmployeeDetailsTest {
      System.out.println(detailslist1);
      
      List<EmployeePersonalDetails> list = futureTask.get();
-    // assertNotEquals(list,detailslist1);
+    assertNotEquals(list,detailslist1);
     assertEquals(list,detailslist);
 		
 	}

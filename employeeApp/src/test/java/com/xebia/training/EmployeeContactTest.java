@@ -2,8 +2,7 @@ package com.xebia.training;
 
 import static org.junit.Assert.*;
 
-import com.xebia.training.Contact;
-import com.xebia.training.Contact.AddressType;
+import com.xebia.training.Contact.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +10,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 
-import com.xebia.training.*;
+
 
 import org.junit.Test;
 

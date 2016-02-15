@@ -1,6 +1,7 @@
 package com.xebia.training;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class EmployeeDeptTest {
 	@Test
 	public void CallTest() throws Exception{
 		List<EmployeeDept> list1= new ArrayList<EmployeeDept>();
-		EmployeeDept dept=new EmployeeDept(101,"pioneer", new SimpleDateFormat("dd-MM-yyyy").parse("01-02-2016"),new SimpleDateFormat("dd-MM-yyyy").parse("03-02-2018"));
+		EmployeeDept dept=new EmployeeDept(101,"pioneer", new SimpleDateFormat("dd-MM-yyyy").parse("01-02-2016"),null);
 		list1.add(dept);
 		
 		List<EmployeeDept> list2= new ArrayList<EmployeeDept>();
@@ -31,8 +32,9 @@ public class EmployeeDeptTest {
 		EmployeeDeptInput deptInput=new EmployeeDeptInput(101);
 		Future<List<EmployeeDept>> future1=executor1.submit(deptInput);
 		List<EmployeeDept> list=future1.get();
-		System.out.println(list1);
-		System.out.println(list2);
+		/*System.out.println(list1);
+		System.out.println(list);
+		System.out.println(list2);*/
 		assertEquals(list,list1);
 		assertNotEquals(list,list2);
 		

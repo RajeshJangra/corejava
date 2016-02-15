@@ -1,16 +1,11 @@
 package com.xebia.training;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 //import java.util.Date;
 import java.util.List;
-import java.util.StringTokenizer;
 import java.util.concurrent.Callable;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -20,8 +15,6 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
-import com.xebia.training.EmployeeProject;
 
 public class EmployeeProjectInput implements Callable<List<EmployeeProject>> {
 int id;
@@ -54,8 +47,8 @@ public static final String  in="C:/Users/adarshgupta/GIT/corejava/employeeApp/sr
 				pid= Integer.parseInt(eElement.getElementsByTagName("pid").item(0).getTextContent());
 				pname= eElement.getElementsByTagName("pname").item(0).getTextContent();
 				startDate=new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("startDate").item(0).getTextContent());
-				endDate=new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("endDate").item(0).getTextContent());
-				employeeProject=new EmployeeProject(id1,pid,pname,startDate,endDate);
+				//endDate=new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("endDate").item(0).getTextContent());
+				employeeProject=new EmployeeProject(id1,pid,pname,startDate,null);
 				employeeprojectList.add(employeeProject);
 			} else {
 				break;

@@ -1,5 +1,4 @@
 package com.xebia.training;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
@@ -36,6 +35,8 @@ public class EmployeeSalarytest {
      List<EmployeeSalary> salary = futureTask4.get();
      assertNotEquals(salary,Salarylist);
      assertEquals(salary,list1);
+     //assertEquals(salary.toString(),list1.toString());
+     //assertEquals(salary.hashCode(),list1.hashCode());
 		
 	}
 }

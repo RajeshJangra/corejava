@@ -1,21 +1,21 @@
 package com.xebia.training;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 import java.util.concurrent.Callable;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import com.xebia.training.Contact;
-import com.xebia.training.Contact.AddressType;
+
+import com.xebia.training.Contact.*;
+
+
 
 
 

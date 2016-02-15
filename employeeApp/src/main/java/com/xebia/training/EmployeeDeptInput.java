@@ -30,7 +30,7 @@ public class EmployeeDeptInput implements Callable<List<EmployeeDept>>  {
 		File file=new File(in);
 		int id1;
 		String name;
-		Date startDate,endDate;
+		Date startDate;//,endDate;
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 		Document doc =   dBuilder.parse(file);
@@ -45,8 +45,8 @@ public class EmployeeDeptInput implements Callable<List<EmployeeDept>>  {
 				id1 = Integer.parseInt(eElement.getAttribute("id"));
 				name = eElement.getElementsByTagName("name").item(0).getTextContent();
 				startDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("startDate").item(0).getTextContent());
-				endDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("endDate").item(0).getTextContent());
-				employeeDept=new EmployeeDept(id1,name,startDate,endDate);
+				//endDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("endDate").item(0).getTextContent());
+				employeeDept=new EmployeeDept(id1,name,startDate,null);
 				employeeDeptList.add(employeeDept);
 			} else {
 				break;

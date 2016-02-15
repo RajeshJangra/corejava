@@ -1,13 +1,10 @@
 package com.xebia.training;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.StringTokenizer;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executors;
@@ -26,8 +23,7 @@ import com.xebia.training.Employee.Designation;
 
 public class EmployeeInput implements Callable<List<Employee>> {
 	List<Employee> employeeList = new ArrayList<Employee>();
-	ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors
-			.newFixedThreadPool(10);
+	ThreadPoolExecutor executor = (ThreadPoolExecutor) Executors.newFixedThreadPool(10);
 	int id1;
 	public static final String in = "C:/Users/adarshgupta/GIT/corejava/employeeApp/src/main/java/com/xebia/xmlfiles/employee.xml";
 	Employee employee = null;
@@ -40,7 +36,7 @@ public class EmployeeInput implements Callable<List<Employee>> {
 	public List<Employee> call() throws Exception {
 		int id = 101;
 		String name;
-		Date startDate, endDate;
+		Date startDate;
 		Designation designation;
 		File file = new File(in);
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
@@ -55,17 +51,10 @@ public class EmployeeInput implements Callable<List<Employee>> {
 				Element eElement = (Element) nNode;
 
 				id1 = Integer.parseInt(eElement.getAttribute("id"));
-				name = eElement.getElementsByTagName("name").item(0)
-						.getTextContent();
-				startDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement
-						.getElementsByTagName("startDate").item(0)
-						.getTextContent());
-				endDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement
-						.getElementsByTagName("endDate").item(0)
-						.getTextContent());
-				designation = Designation.valueOf(eElement
-						.getElementsByTagName("designation").item(0)
-						.getTextContent());
+				name = eElement.getElementsByTagName("name").item(0).getTextContent();
+				startDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("startDate").item(0).getTextContent());
+				//endDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("endDate").item(0).getTextContent());
+				designation = Designation.valueOf(eElement.getElementsByTagName("designation").item(0).getTextContent());
 
 				if (id == id1) {
 
@@ -110,8 +99,7 @@ public class EmployeeInput implements Callable<List<Employee>> {
 					List<EmployeeProject> list5 = new ArrayList<EmployeeProject>();
 					list5 = future5.get();
 
-					employee = new Employee(id1, name, startDate, endDate,
-							designation, list2, list5, list1, list3, list4);
+					employee = new Employee(id1, name, startDate, null,designation, list2, list5, list1, list3, list4);
 					employeeList.add(employee);
 				} else {
 					/*

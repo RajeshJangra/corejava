@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class EmployeeProject {
 	private int id;
-	private int pid;
+	public  int pid;
 	private String name;
 	private Date startDate;
 	private Date endDate;

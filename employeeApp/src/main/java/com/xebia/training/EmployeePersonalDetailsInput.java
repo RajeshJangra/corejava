@@ -1,16 +1,10 @@
 package com.xebia.training;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-//import java.util.Date;
-import java.util.StringTokenizer;
 import java.util.concurrent.Callable;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -20,7 +14,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-
+//import java.util.Date;
 
 
 public class EmployeePersonalDetailsInput implements Callable<List<EmployeePersonalDetails>> {

@@ -1,20 +1,9 @@
 package com.xebia.training;
 
-import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
-import java.text.ParseException;
-//import java.text.SimpleDateFormat;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.StringTokenizer;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-
-import com.xebia.training.Contact.AddressType;
-import com.xebia.training.Employee.Designation;
+//import java.text.SimpleDateFormat;
 
 //import java.util.Date;
 
@@ -42,6 +31,7 @@ public class Employee {
 	private String permanent;
 	private String maritalStatus;*/
 
+	
 	public enum Designation{
 		TRAINEE,
 		CONSULTANT,
@@ -69,10 +59,242 @@ public class Employee {
 	}
 
 
+	
 
 	
 	
-	
+	public FileReader getIn() {
+		return in;
+	}
+
+
+
+
+
+
+	public void setIn(FileReader in) {
+		this.in = in;
+	}
+
+
+
+
+
+
+	public int getPid() {
+		return pid;
+	}
+
+
+
+
+
+
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
+
+
+
+
+
+
+	public String getName() {
+		return name;
+	}
+
+
+
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
+
+
+
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+
+
+
+
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
+	}
+
+
+
+
+
+
+	public Designation getDesignation() {
+		return designation;
+	}
+
+
+
+
+
+
+	public void setDesignation(Designation designation) {
+		this.designation = designation;
+	}
+
+
+
+
+
+
+	public List<Employee> getEmployeeInput() {
+		return employeeInput;
+	}
+
+
+
+
+
+
+	public void setEmployeeInput(List<Employee> employeeInput) {
+		this.employeeInput = employeeInput;
+	}
+
+
+
+
+
+
+	public List<Contact> getContact() {
+		return contact;
+	}
+
+
+
+
+
+
+	public void setContact(List<Contact> contact) {
+		this.contact = contact;
+	}
+
+
+
+
+
+
+	public List<EmployeeDept> getEmployeeDept() {
+		return employeeDept;
+	}
+
+
+
+
+
+
+	public void setEmployeeDept(List<EmployeeDept> employeeDept) {
+		this.employeeDept = employeeDept;
+	}
+
+
+
+
+
+
+	public List<EmployeePersonalDetails> getEmployeePersonalDetails() {
+		return employeePersonalDetails;
+	}
+
+
+
+
+
+
+	public void setEmployeePersonalDetails(
+			List<EmployeePersonalDetails> employeePersonalDetails) {
+		this.employeePersonalDetails = employeePersonalDetails;
+	}
+
+
+
+
+
+
+	public List<EmployeeSalary> getEmployeeSalary() {
+		return employeeSalary;
+	}
+
+
+
+
+
+
+	public void setEmployeeSalary(List<EmployeeSalary> employeeSalary) {
+		this.employeeSalary = employeeSalary;
+	}
+
+
+
+
+
+
+	public int getId() {
+		return id;
+	}
+
+
+
+
+
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+
+
+
+
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+
+
+
+
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
+	}
+
+
+
+
+
+
+	public List<EmployeeProject> getEmployeeProject() {
+		return employeeProject;
+	}
+
+
+
+
+
+
+
+
+	public void setEmployeeProject(List<EmployeeProject> employeeProject) {
+		this.employeeProject = employeeProject;
+	}
+
 	
 
 	@Override

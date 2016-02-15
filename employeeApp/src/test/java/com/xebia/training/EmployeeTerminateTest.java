@@ -1,26 +1,24 @@
 package com.xebia.training;
 
+import static org.junit.Assert.*;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
-
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 
 import org.junit.Test;
 
 import com.xebia.training.Contact.AddressType;
 import com.xebia.training.Employee.Designation;
-public class EmployeeInputTest {
-	
-	public EmployeeInputTest(){
-		
-	}
+
+public class EmployeeTerminateTest {
 
 	ThreadPoolExecutor executor1=(ThreadPoolExecutor) Executors.newFixedThreadPool(10);
+	public EmployeeTerminateTest(){
+		
+	}
 	
 	@Test
 	public void CallTest() throws Exception{
@@ -38,8 +36,10 @@ public class EmployeeInputTest {
 		detailslist.add(employeePersonalDetails);
 		
 		List<EmployeeProject> projectlist=new ArrayList<EmployeeProject>();
-		EmployeeProject employeeProject=new EmployeeProject(101,1,"JAVA",  new SimpleDateFormat("dd-MM-yyyy").parse("12-01-2015"),null);
+		EmployeeProject employeeProject=new EmployeeProject(101,1,"Java",  new SimpleDateFormat("dd-MM-yyyy").parse("12-01-2015"),  null);
+		EmployeeProject employeeProject2=new EmployeeProject(101,2,"Scala",new SimpleDateFormat("dd-MM-yyyy").parse("13-02-2015"),  null);
 		projectlist.add(employeeProject);
+		projectlist.add(employeeProject2);
 		
 		List<EmployeeSalary> sallist = new ArrayList<EmployeeSalary>();
 		  EmployeeSalary sal1 = new EmployeeSalary(101,16000.00);
@@ -49,18 +49,21 @@ public class EmployeeInputTest {
 		Employee emp=new Employee(101, "Adarsh Aman", new SimpleDateFormat("dd-MM-yyyy").parse("01-01-2016"), null,Designation.TRAINEE, list, projectlist, list1,detailslist , sallist);
 		emplist.add(emp);
 		
-		List<Employee> emplist1=new ArrayList<Employee>();
-		Employee emp1=new Employee(102, "Adarsh Aman", new SimpleDateFormat("dd-MM-yyyy").parse("01-01-2016"), null,Designation.TRAINEE, list, projectlist, list1,detailslist , sallist);
-		emplist.add(emp1);
+		List<Employee> emplist2=new ArrayList<Employee>();
+		Employee emp2=new Employee(101, "Adarsh Aman", new SimpleDateFormat("dd-MM-yyyy").parse("01-01-2016"),  new SimpleDateFormat("dd-MM-yyyy").parse("01-05-2018"),Designation.TRAINEE, list, projectlist, list1,detailslist , sallist);
+		emplist2.add(emp2);
 		
-		EmployeeInput employeeInput=new EmployeeInput(101);
-		Future<List<Employee>> future=executor1.submit(employeeInput);
-		List<Employee> listfinal=future.get();
-		
-		System.out.println(emplist+"\n\n");
-		System.out.println(listfinal+"\n\n");
-		assertNotEquals(emplist,listfinal);
-		
+		System.out.println(emplist);
+		EmployeeTerminate term=new EmployeeTerminate();
+	    term.terminateEmployee(emplist,101);
+	    System.out.println(emplist);
+	   // System.out.println(term);
+	   // System.out.println(term.toString());
+	    assertEquals(emplist, emplist);
+	    assertNotEquals(emplist2,emplist);
+	    
 		
 	}
+	
+	
 }
