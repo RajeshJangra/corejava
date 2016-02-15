@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<personal>
+    <employee id="101" >
+<passport>1234443</passport>
+        <adhar>344455</adhar>
+        <voter>233444</voter>
+        <account>4433444444</account>
+        <blood>B +</blood>
+        <maritial>SINGLE</maritial>
+        <name>Mandavi</name>
+        <father>N.K.Nigam</father>
+        <dob>26-01-1996</dob>
+        <start>18-01-2016</start>
+        <end>18-01-2018</end>
+
+    </employee>
+    <employee id="102">
+        <passport>1234443</passport>
+        <adhar>344455</adhar>
+        <voter>233444</voter>
+        <account>4433444444</account>
+        <blood>B +</blood>
+        <maritial>SINGLE</maritial>
+        <name>Mandavi</name>
+        <father>N.K.Nigam</father>
+        <dob>26-01-1996</dob>
+        <start>18-01-2016</start>
+        <end>18-01-2018</end>
+
+    </employee>
+    <employee id="103">
+
+        <passport>1234443</passport>
+        <adhar>344455</adhar>
+        <voter>233444</voter>
+        <account>4433444444</account>
+        <blood>B +</blood>
+        <maritial>SINGLE</maritial>
+        <name>Mandavi</name>
+        <father>N.K.Nigam</father>
+        <dob>26-01-1996</dob>
+        <start>18-01-2016</start>
+        <end>18-01-2018</end>
+
+    </employee>
+</personal>

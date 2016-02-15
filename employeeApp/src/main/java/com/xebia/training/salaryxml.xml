@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<salary>
+
+    <employee id="101" >
+        <basic>175000</basic>
+
+    </employee>
+    <employee id="102">
+        <basic>75000</basic>
+    </employee>
+    <employee id="103">
+        <basic>75000</basic>
+    </employee>
+</salary>

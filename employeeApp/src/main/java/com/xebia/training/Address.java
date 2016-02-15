@@ -1,7 +1,13 @@
 package com.xebia.training;
 
-public class Address<T> {
-	private T id;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "employee")
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Address {
+	private int id;
 	private int houseno,sector;
 	private String city;
 	private int pincode;
@@ -15,16 +21,20 @@ public class Address<T> {
 		PERMANENT,
 		TEMPORARY;
 	}
+
+	public Address() {
+	}
+
 	/**
 	 * @return the id
 	 */
-	public T getId() {
+	public int getId() {
 		return id;
 	}
 	/**
 	 * @param id the id to set
 	 */
-	public void setId(T id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	/**
@@ -126,9 +136,43 @@ public class Address<T> {
 				+ landmark +  ", email_id=" + email_id+", address type="
 				+ t.name()+"]";
 	}
-	public Address(T id, int houseno, int sector, String city, int pincode,
-			String state, String landmark, 
-			String email_id,addresstype add) {
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Address address = (Address) o;
+
+		if (id != address.id) return false;
+		if (houseno != address.houseno) return false;
+		if (sector != address.sector) return false;
+		if (pincode != address.pincode) return false;
+		if (!city.equals(address.city)) return false;
+		if (!state.equals(address.state)) return false;
+		if (!landmark.equals(address.landmark)) return false;
+		if (t != address.t) return false;
+		return email_id.equals(address.email_id);
+
+	}
+
+	@Override
+	public int hashCode() {
+		int result = id;
+		result = 31 * result + houseno;
+		result = 31 * result + sector;
+		result = 31 * result + city.hashCode();
+		result = 31 * result + pincode;
+		result = 31 * result + state.hashCode();
+		result = 31 * result + landmark.hashCode();
+		result = 31 * result + t.hashCode();
+		result = 31 * result + email_id.hashCode();
+		return result;
+	}
+
+	public Address(int id, int houseno, int sector, String city, int pincode,
+				   String state, String landmark,
+				   String email_id, addresstype add) {
 		super();
 		this.id = id;
 		this.houseno = houseno;
@@ -143,5 +187,5 @@ public class Address<T> {
 		this.t=add;
 		
 	}
-	
+
 }

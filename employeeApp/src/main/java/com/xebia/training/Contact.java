@@ -1,9 +1,20 @@
 package com.xebia.training;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "employee")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Contact {
 	private int id;
 	private String emailid;
+
+	public Contact() {
+	}
+
 	private long phone;
+
 	/**
 	 * @return the id
 	 */
@@ -54,6 +65,25 @@ public class Contact {
 		this.emailid = emailid;
 		this.phone = phone;
 	}
-	
 
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Contact contact = (Contact) o;
+
+		if (id != contact.id) return false;
+		if (phone != contact.phone) return false;
+		return emailid != null ? emailid.equals(contact.emailid) : contact.emailid == null;
+
+	}
+
+	@Override
+	public int hashCode() {
+		int result = id;
+		result = 31 * result + (emailid != null ? emailid.hashCode() : 0);
+		result = 31 * result + (int) (phone ^ (phone >>> 32));
+		return result;
+	}
 }

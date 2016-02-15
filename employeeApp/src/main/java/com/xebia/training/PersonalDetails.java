@@ -1,8 +1,13 @@
 package com.xebia.training;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.Calendar;
 import java.util.Date;
 
+@XmlRootElement(name = "employee")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class PersonalDetails {
 	private int id;
 	private long passportNo,adharNo,voterId,accountNo;
@@ -15,6 +20,48 @@ public class PersonalDetails {
 		MARRIED;
 	}
 	maritialStatus m;
+
+	public PersonalDetails() {
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		PersonalDetails that = (PersonalDetails) o;
+
+		if (id != that.id) return false;
+		if (passportNo != that.passportNo) return false;
+		if (adharNo != that.adharNo) return false;
+		if (voterId != that.voterId) return false;
+		if (accountNo != that.accountNo) return false;
+		if (bloodGroup != null ? !bloodGroup.equals(that.bloodGroup) : that.bloodGroup != null) return false;
+		if (name != null ? !name.equals(that.name) : that.name != null) return false;
+		if (fatherName != null ? !fatherName.equals(that.fatherName) : that.fatherName != null) return false;
+		if (dob != null ? !dob.equals(that.dob) : that.dob != null) return false;
+		if (startdate != null ? !startdate.equals(that.startdate) : that.startdate != null) return false;
+		if (enddate != null ? !enddate.equals(that.enddate) : that.enddate != null) return false;
+		return m == that.m;
+
+	}
+
+	@Override
+	public int hashCode() {
+		int result = id;
+		result = 31 * result + (int) (passportNo ^ (passportNo >>> 32));
+		result = 31 * result + (int) (adharNo ^ (adharNo >>> 32));
+		result = 31 * result + (int) (voterId ^ (voterId >>> 32));
+		result = 31 * result + (int) (accountNo ^ (accountNo >>> 32));
+		result = 31 * result + (bloodGroup != null ? bloodGroup.hashCode() : 0);
+		result = 31 * result + (name != null ? name.hashCode() : 0);
+		result = 31 * result + (fatherName != null ? fatherName.hashCode() : 0);
+		result = 31 * result + (dob != null ? dob.hashCode() : 0);
+		result = 31 * result + (startdate != null ? startdate.hashCode() : 0);
+		result = 31 * result + (enddate != null ? enddate.hashCode() : 0);
+		result = 31 * result + (m != null ? m.hashCode() : 0);
+		return result;
+	}
 
 	/**
 	 * @return the id
@@ -134,7 +181,7 @@ public class PersonalDetails {
 	/**
 	 * @param enddate the dob to set
 	 */
-	public void setDate(Date enddate) {
+	public void setEndDate(Date enddate) {
 		this.enddate = enddate;
 	}
 	public Date getStartdatedate() {

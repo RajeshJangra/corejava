@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<contact>
+    <employee id="101" >
+        <emailid>kishor@gmail.com</emailid>
+
+        <phone>9458943313</phone>
+    </employee>
+    <employee id="102">
+        <emailid>kishor@gmail.com</emailid>
+
+        <phone>9458943313</phone>
+    </employee>
+    <employee id="103">
+
+        <emailid>kishor@gmail.com</emailid>
+
+        <phone>9458943313</phone>
+    </employee>
+</contact>

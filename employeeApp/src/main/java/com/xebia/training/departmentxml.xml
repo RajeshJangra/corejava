@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<department>
+    <employee id="101" >
+        <deptname>Finance</deptname>
+
+        <start>18-01-2016</start>
+        <end>18-02-2018</end>
+
+    </employee>
+    <employee id="102">
+
+        <deptname>Developer</deptname>
+        <start>18-01-2016</start>
+        <end>18-02-2018</end>
+    </employee>
+    <employee id="103">
+
+        <deptname>Tester</deptname>
+        <start>18-01-2016</start>
+        <end>18-02-2018</end>
+    </employee>
+</department>

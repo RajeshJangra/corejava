@@ -1,5 +1,11 @@
 package com.xebia.training;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "employee")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Salary {
 	private int id;
 	private double basic;
@@ -9,6 +15,7 @@ public class Salary {
 	private double pf;
 	private double fp;
 	private double gratuity;
+
 	public Salary(int id, double basic) {
 		super();
 		this.id = id;
@@ -30,6 +37,49 @@ public class Salary {
 		return "Salary [id=" + id + ", basic=" + basic + ", hra=" + hra
 				+ ", da=" + da + ", lta=" + lta + ", pf=" + pf + ", fp=" + fp
 				+ ", gratuity=" + gratuity + "]";
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Salary salary = (Salary) o;
+
+		if (id != salary.id) return false;
+		if (Double.compare(salary.basic, basic) != 0) return false;
+		if (Double.compare(salary.hra, hra) != 0) return false;
+		if (Double.compare(salary.da, da) != 0) return false;
+		if (Double.compare(salary.lta, lta) != 0) return false;
+		if (Double.compare(salary.pf, pf) != 0) return false;
+		if (Double.compare(salary.fp, fp) != 0) return false;
+		return Double.compare(salary.gratuity, gratuity) == 0;
+
+	}
+
+	public Salary() {
+	}
+
+	@Override
+	public int hashCode() {
+		int result;
+		long temp;
+		result = id;
+		temp = Double.doubleToLongBits(basic);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(hra);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(da);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(lta);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(pf);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(fp);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(gratuity);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		return result;
 	}
 
 	/**
