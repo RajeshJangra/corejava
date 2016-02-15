@@ -27,6 +27,8 @@ public class EmployeeContactTest {
 		Contact contact1=new Contact(101,"Dayanand Sagar Nagar","Sadar Road","Sector 15","Gurgaon",122001,"Haryana", "Park Centra",973489870,"adarshaman@xebia.com",AddressType.CORRESPONDENCE);
 		list.add(contact1);
 		
+		
+		
 		List<Contact> list1= new ArrayList<Contact>();
 		Contact contact2=new Contact(102,"Dayanand Sagar Nagar","Sadar Road","Sector 15","Gurgaon",122001,"Haryana", "Park Centra",973489870,"adarshaman@xebia.com",null);
 		list1.add(contact2);
