@@ -79,12 +79,68 @@ public class EmployeeSalary {
 		this.gratuity = gratuity;
 	}
 
+	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		long temp;
+		temp = Double.doubleToLongBits(basic);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(da);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(fp);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(gratuity);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(hra);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + id;
+		temp = Double.doubleToLongBits(lta);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(pf);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		EmployeeSalary other = (EmployeeSalary) obj;
+		if (Double.doubleToLongBits(basic) != Double
+				.doubleToLongBits(other.basic))
+			return false;
+		if (Double.doubleToLongBits(da) != Double.doubleToLongBits(other.da))
+			return false;
+		if (Double.doubleToLongBits(fp) != Double.doubleToLongBits(other.fp))
+			return false;
+		if (Double.doubleToLongBits(gratuity) != Double
+				.doubleToLongBits(other.gratuity))
+			return false;
+		if (Double.doubleToLongBits(hra) != Double.doubleToLongBits(other.hra))
+			return false;
+		if (id != other.id)
+			return false;
+		if (Double.doubleToLongBits(lta) != Double.doubleToLongBits(other.lta))
+			return false;
+		if (Double.doubleToLongBits(pf) != Double.doubleToLongBits(other.pf))
+			return false;
+		return true;
+	}
+
 
 	@Override
 	public String toString() {
-		return "EmployeeSalary [id=" + id + ", basic=" + basic + ", hra=" + hra
+		return "id=" + id + ", basic=" + basic + ", hra=" + hra
 				+ ", da=" + da + ", lta=" + lta + ", pf=" + pf + ", fp=" + fp
-				+ ", gratuity=" + gratuity + "]";
+				+ ", gratuity=" + gratuity + "";
 	}
 
 

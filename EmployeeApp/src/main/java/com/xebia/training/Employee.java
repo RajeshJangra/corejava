@@ -70,13 +70,124 @@ public class Employee {
 
 
 
+	
+	
+	
+	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((contact == null) ? 0 : contact.hashCode());
+		result = prime * result
+				+ ((designation == null) ? 0 : designation.hashCode());
+		result = prime * result
+				+ ((employeeDept == null) ? 0 : employeeDept.hashCode());
+		result = prime * result
+				+ ((employeeInput == null) ? 0 : employeeInput.hashCode());
+		result = prime
+				* result
+				+ ((employeePersonalDetails == null) ? 0
+						: employeePersonalDetails.hashCode());
+		result = prime * result
+				+ ((employeeProject == null) ? 0 : employeeProject.hashCode());
+		result = prime * result
+				+ ((employeeSalary == null) ? 0 : employeeSalary.hashCode());
+		result = prime * result + ((endDate == null) ? 0 : endDate.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + pid;
+		result = prime * result
+				+ ((startDate == null) ? 0 : startDate.hashCode());
+		return result;
+	}
+
+
+
+
+
+
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (contact == null) {
+			if (other.contact != null)
+				return false;
+		} else if (!contact.equals(other.contact))
+			return false;
+		if (designation != other.designation)
+			return false;
+		if (employeeDept == null) {
+			if (other.employeeDept != null)
+				return false;
+		} else if (!employeeDept.equals(other.employeeDept))
+			return false;
+		if (employeeInput == null) {
+			if (other.employeeInput != null)
+				return false;
+		} else if (!employeeInput.equals(other.employeeInput))
+			return false;
+		if (employeePersonalDetails == null) {
+			if (other.employeePersonalDetails != null)
+				return false;
+		} else if (!employeePersonalDetails
+				.equals(other.employeePersonalDetails))
+			return false;
+		if (employeeProject == null) {
+			if (other.employeeProject != null)
+				return false;
+		} else if (!employeeProject.equals(other.employeeProject))
+			return false;
+		if (employeeSalary == null) {
+			if (other.employeeSalary != null)
+				return false;
+		} else if (!employeeSalary.equals(other.employeeSalary))
+			return false;
+		if (endDate == null) {
+			if (other.endDate != null)
+				return false;
+		} else if (!endDate.equals(other.endDate))
+			return false;
+		if (id != other.id)
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		if (pid != other.pid)
+			return false;
+		if (startDate == null) {
+			if (other.startDate != null)
+				return false;
+		} else if (!startDate.equals(other.startDate))
+			return false;
+		return true;
+	}
+
+
+
+
+
+
+
 
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name
-				+ ", startDate=" + startDate + ", endDate=" + endDate
-				+ ", designation=" + designation + ",\n\nContactDetails=" 
-				+contact+",\nProjectDetails=" +employeeProject+",\nDepartmentDetails=" +employeeDept+",\nPersonalDetails=" +employeePersonalDetails+",\nsalaryDetails=" +employeeSalary+"]";
+				+ ", Date of joinning:" + startDate + ", Date of Termination:" + endDate
+				+ ", Designation in company:" + designation + ",\n\nContact Details: " 
+				+contact+",\nProject Details: " +employeeProject+",\nDetails of the Department: " +employeeDept+","
+						+ "\nEmployee Personal Details:" +employeePersonalDetails+",\nSalary Details of the Employee: " +employeeSalary+"]";
 	}
 
 
