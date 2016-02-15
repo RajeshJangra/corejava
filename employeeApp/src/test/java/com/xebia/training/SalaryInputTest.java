@@ -1,4 +1,4 @@
-package Unittesting;
+package com.xebia.training;
 
 import static org.junit.Assert.*;
 
@@ -19,6 +19,7 @@ public class SalaryInputTest {
 	public SalaryInputTest() {
 	}
 	ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
+	
 	@SuppressWarnings("unchecked")
 	@Test
 	public void calltest() throws InterruptedException, ExecutionException {

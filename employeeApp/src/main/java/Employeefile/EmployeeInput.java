@@ -103,11 +103,5 @@ public class EmployeeInput{
 		return employeeMap;
 
 	}
-	Project terminate()
-	{
-		Project project=new Project();
-		project.setEndDate();
-		return project;
-	}
 }
 

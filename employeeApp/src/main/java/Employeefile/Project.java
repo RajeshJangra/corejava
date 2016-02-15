@@ -4,15 +4,11 @@ import java.util.Date;
 
 public class Project {
 		int id;
-		private double projectId;
+		double projectId;
 		private String name;
 		private Date endDate;
 		private Date startDate; 
 		
-		public Project()
-		{
-			
-		}
 		
 		public Project(int id,double projectId, String name, Date startDate,
 				Date endDate) {
@@ -23,7 +19,6 @@ public class Project {
 			this.startDate = startDate;
 			this.endDate = endDate;
 		}
-		
 
 		@Override
 		public boolean equals(Object obj) {

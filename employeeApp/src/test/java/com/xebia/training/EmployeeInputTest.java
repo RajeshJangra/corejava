@@ -1,4 +1,4 @@
-package Unittesting;
+package com.xebia.training;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -16,7 +16,9 @@ import Employeefile.Employee;
 import Employeefile.EmployeeInput;
 
 public class EmployeeInputTest {
-
+ public EmployeeInputTest() {
+	// TODO Auto-generated constructor stub
+}
 	@Test
 	public void setInputtest() throws DOMException, IOException, ParserConfigurationException, SAXException, ParseException, InterruptedException, ExecutionException {
 		

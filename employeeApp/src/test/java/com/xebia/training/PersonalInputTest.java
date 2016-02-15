@@ -1,4 +1,4 @@
-package Unittesting;
+package com.xebia.training;
 
 import static org.junit.Assert.*;
 
@@ -17,6 +17,10 @@ import Employeefile.PersonalInput;
 
 public class PersonalInputTest {
 
+			public PersonalInputTest()
+			{
+				
+			}
 	ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
 
 	@SuppressWarnings("unchecked")

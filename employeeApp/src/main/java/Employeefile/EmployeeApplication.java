@@ -2,6 +2,7 @@ package Employeefile;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
 
@@ -19,11 +20,12 @@ public class EmployeeApplication {
 			System.out.println("enter the ID:");
 			sc = new Scanner(System.in);
 			id=sc.nextInt();
-			System.out.println(employee.setinput().get(id));
+			Map<Integer, Employee> Emp=employee.setinput();
+			System.out.println(Emp.get(id));
 			System.out.println("enter projecid to terminate:");
 			id1=sc.nextInt();
-			
-			System.out.println(employee.terminate());
+			Termination term=new Termination();
+			System.out.println(term.terminate(Emp,id1).get(id));
 		}
 
 }

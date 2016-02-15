@@ -67,6 +67,36 @@ public class Employee {
 		}
 
 
+		public List<Salary> getSalary() {
+			return salary;
+		}
+
+
+		public void setSalary(List<Salary> salary) {
+			this.salary = salary;
+		}
+
+
+		public List<Project> getProjectData() {
+			return projectData;
+		}
+
+
+		public void setProjectData(List<Project> projectData) {
+			this.projectData = projectData;
+		}
+
+
+		public List<PersonalDetails> getPersonalDetails() {
+			return personalDetails;
+		}
+
+
+		public void setPersonalDetails(List<PersonalDetails> personalDetails) {
+			this.personalDetails = personalDetails;
+		}
+
+
 		public int dateCalculator()
 		{
 			int currentyear = Calendar.getInstance().get(Calendar.YEAR);

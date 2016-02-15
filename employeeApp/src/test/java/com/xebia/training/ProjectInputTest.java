@@ -1,4 +1,4 @@
-package Unittesting;
+package com.xebia.training;
 
 import static org.junit.Assert.*;
 
@@ -18,6 +18,10 @@ import Employeefile.ProjectInput;
 
 public class ProjectInputTest {
 
+	public ProjectInputTest()
+	{
+		
+	}
 	ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
 	
 	@Test

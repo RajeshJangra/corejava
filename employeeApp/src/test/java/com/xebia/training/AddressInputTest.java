@@ -1,6 +1,12 @@
-package Unittesting;
+package com.xebia.training;
 
 import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+
+
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +15,9 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 import java.util.concurrent.ThreadPoolExecutor;
 
-import org.junit.Test;
+
+
+
 
 import Employeefile.Address;
 import Employeefile.Address.AddressType;
@@ -17,7 +25,14 @@ import Employeefile.AddressInput;
 
 public class AddressInputTest {
 
+	
+	public AddressInputTest() {
+		
+	}
+
+
 	ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(4);
+	
 	
 	@SuppressWarnings("unchecked")
 	@Test

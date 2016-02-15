@@ -7,7 +7,6 @@ public class PersonalDetails {
 	private String Bloodgroup;
 	public MaritalStatus maritalStatus;
 	private String Drivinglic;
-	@SuppressWarnings("unused")
 	private int id;
 	
 	
