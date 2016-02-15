@@ -4,6 +4,18 @@
 		<departmentId>1</departmentId>
 		<name>pioneer</name>
 		<startingDate>03-08-2015</startingDate>
-		<endingDate>03-12-2016</endingDate>
+		<endingDate>null</endingDate>
+	</Department>
+	<Department EmployeeId="112">
+		<departmentId>2</departmentId>
+		<name>Testing</name>
+		<startingDate>08-12-2014</startingDate>
+		<endingDate>null</endingDate>
+	</Department>
+	<Department EmployeeId="114">
+		<departmentId>1</departmentId>
+		<name>pioneer</name>
+		<startingDate>25-03-2014</startingDate>
+		<endingDate>null</endingDate>
 	</Department>
 </class>

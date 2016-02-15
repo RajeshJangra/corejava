@@ -67,28 +67,8 @@ public class Employee {
 		}
 
 
-		public List<Salary> getSalary() {
-			return salary;
-		}
-
-
-		public void setSalary(List<Salary> salary) {
-			this.salary = salary;
-		}
-
-
 		public List<Project> getProjectData() {
 			return projectData;
-		}
-
-
-		public void setProjectData(List<Project> projectData) {
-			this.projectData = projectData;
-		}
-
-
-		public List<PersonalDetails> getPersonalDetails() {
-			return personalDetails;
 		}
 
 
@@ -111,6 +91,103 @@ public class Employee {
 			int year = year1.get(Calendar.YEAR);
 			return year;
 		}
+
+		
+		
+		
+
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			Employee other = (Employee) obj;
+			if (DOB == null) {
+				if (other.DOB != null)
+					return false;
+			} else if (!DOB.equals(other.DOB))
+				return false;
+			if (address == null) {
+				if (other.address != null)
+					return false;
+			} else if (!address.equals(other.address))
+				return false;
+			if (age != other.age)
+				return false;
+			if (correspondant == null) {
+				if (other.correspondant != null)
+					return false;
+			} else if (!correspondant.equals(other.correspondant))
+				return false;
+			if (current == null) {
+				if (other.current != null)
+					return false;
+			} else if (!current.equals(other.current))
+				return false;
+			if (department == null) {
+				if (other.department != null)
+					return false;
+			} else if (!department.equals(other.department))
+				return false;
+			if (endingDate == null) {
+				if (other.endingDate != null)
+					return false;
+			} else if (!endingDate.equals(other.endingDate))
+				return false;
+			if (fathersName == null) {
+				if (other.fathersName != null)
+					return false;
+			} else if (!fathersName.equals(other.fathersName))
+				return false;
+			if (gender == null) {
+				if (other.gender != null)
+					return false;
+			} else if (!gender.equals(other.gender))
+				return false;
+			if (id != other.id)
+				return false;
+			if (name == null) {
+				if (other.name != null)
+					return false;
+			} else if (!name.equals(other.name))
+				return false;
+			if (personal == null) {
+				if (other.personal != null)
+					return false;
+			} else if (!personal.equals(other.personal))
+				return false;
+			if (personalDetails == null) {
+				if (other.personalDetails != null)
+					return false;
+			} else if (!personalDetails.equals(other.personalDetails))
+				return false;
+			if (projectData == null) {
+				if (other.projectData != null)
+					return false;
+			} else if (!projectData.equals(other.projectData))
+				return false;
+			if (salary == null) {
+				if (other.salary != null)
+					return false;
+			} else if (!salary.equals(other.salary))
+				return false;
+			if (startingDate == null) {
+				if (other.startingDate != null)
+					return false;
+			} else if (!startingDate.equals(other.startingDate))
+				return false;
+			if (workEx == null) {
+				if (other.workEx != null)
+					return false;
+			} else if (!workEx.equals(other.workEx))
+				return false;
+			return true;
+		}
+
 
 		public String toString() {
 			return "Employee  \nEmployeeId=" + id + ", startingDate=" + startingDate

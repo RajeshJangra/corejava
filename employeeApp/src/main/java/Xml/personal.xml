@@ -8,5 +8,21 @@
 		<maritalStatus>SINGLE</maritalStatus>
 		<drivingLicenceNo>SKLAOM7S</drivingLicenceNo>
 	</personal>
+	<personal EmployeeID="112">
+		<personalDetailsID>2</personalDetailsID>
+		<adharNO>CBH345F67T</adharNO>
+		<panNO>89JKL67HY0</panNO>
+		<bloodGroup>O-VE</bloodGroup>
+		<maritalStatus>MARRIED</maritalStatus>
+		<drivingLicenceNo>12WLQ5YT</drivingLicenceNo>
+	</personal>
+	<personal EmployeeID="114">
+		<personalDetailsID>3</personalDetailsID>
+		<adharNO>AS8976B9BH</adharNO>
+		<panNO>67GHJ89HY4</panNO>
+		<bloodGroup>B+ve</bloodGroup>
+		<maritalStatus>SINGLE</maritalStatus>
+		<drivingLicenceNo>45LT455</drivingLicenceNo>
+	</personal>
 </class>	
 

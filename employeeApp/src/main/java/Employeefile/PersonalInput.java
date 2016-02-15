@@ -64,9 +64,6 @@ public class PersonalInput implements Callable{
 				PersonalDetails personalDetails = new PersonalDetails(id,personalDetailsID, adharNO, panNO, bloodGroup, maritalStatus, drivingLicenceNo);
 				list.add(personalDetails);
 				}
-				else{
-					break;
-				}
 				
 				}
 			}

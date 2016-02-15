@@ -56,9 +56,7 @@ public class ProjectInput implements Callable{
 
 					list.add(project1);
 
-				} else {
-					break;
-				}
+				} 
 
 			}
 

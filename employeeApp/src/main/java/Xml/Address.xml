@@ -14,6 +14,34 @@
 		<email>pprakash@xebia.com</email>
 		<skypeid>prince199428</skypeid>
 	</address>
+	<address id="112">
+		<ContactId>2</ContactId>
+		<addressType>CURRENT</addressType>
+		<houseNo>1496</houseNo>
+		<street>15</street>
+		<area>Kankar baagh</area>
+		<city>Ranchi</city>
+		<pinCode>836598</pinCode>
+		<state>Jharkhand</state>
+		<landmark>Railway Station</landmark>
+		<phoneNo>9863256512</phoneNo>
+		<email> pprince@xebia.com </email>
+		<skypeid>prakash199428</skypeid>
+	</address>
+	<address id="114">
+		<ContactId>3</ContactId>
+		<addressType>PERMANENT</addressType>
+		<houseNo>2563</houseNo>
+		<street>68</street>
+		<area>Purani haweli</area>
+		<city>Ludhiyana</city>
+		<pinCode>256489</pinCode>
+		<state>Madhya pradesh</state>
+		<landmark>Airport</landmark>
+		<phoneNo>8756489541</phoneNo>
+		<email>minalnandan@xebia.com </email>
+		<skypeid>mnandan199406</skypeid>
+	</address>
 </class>
 
 

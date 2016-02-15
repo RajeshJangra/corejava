@@ -76,9 +76,7 @@ public class AddressInput implements Callable {
 				Address address = new Address(id,ContactId, houseNo, street, area, city, pinCode, state, landmark, phoneNo, email, skypeid,addressType);
 				list.add(address);
 				}
-				else{
-					break;
-				}
+				
 			}
 		}
 		return list;

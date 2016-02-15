@@ -62,9 +62,7 @@ public class SalaryInput implements Callable{
 				list.add(salary);
 				}
 				
-				else{
-					break;
-				}
+				
              }
 				
 		}

@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class Termination {
 
-	Map<Integer, Employee> terminate(Map<Integer, Employee> map,int id1)
+	public Map<Integer, Employee> terminate(Map<Integer, Employee> map,int id1,int id)
 	{
-		Employee employee=map.get(110);
+		Employee employee=map.get(id);
 		List<Project> projects=employee.getProjectData();
 		for(Project project: projects)
 		{
@@ -18,9 +18,14 @@ public class Termination {
 						project.setEndDate();
 					}
 			}
+			else
+			{
+				System.out.println("No project of entered ID is assigned");
+			}	
 			
 		}
-	return map;
+		return map;
+		
 	}
 	
 	

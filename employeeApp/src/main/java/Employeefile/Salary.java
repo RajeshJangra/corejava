@@ -63,16 +63,5 @@ public class Salary {
 		FP = basic/20;
 		this.gratuty = basic/21;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
-	}
-	public double getSalaryId() {
-		return salaryId;
-	}
-	public void setSalaryId(double salaryId) {
-		this.salaryId = salaryId;
-	}
+	
 }

@@ -4,4 +4,12 @@
 		<salaryId>1</salaryId>
 		<basic>200000</basic>
 	</salary>
+	<salary id="112">
+		<salaryId>2</salaryId>
+		<basic>300000</basic>
+	</salary>
+	<salary id="114">
+		<salaryId>3</salaryId>
+		<basic>500000</basic>
+	</salary>
 </class>

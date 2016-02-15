@@ -28,4 +28,18 @@
 		<id>112</id>
 		<endingDate></endingDate>
 	</employee>
+	<employee>
+		<name>Minal</name>
+		<startingDate>20-05-2015</startingDate>
+		<fathersName>Prakash Kishore</fathersName>
+		<correspondant>minalnandan@gmail.com </correspondant>
+		<designation>CEO</designation>
+		<current>12/B Mumbai,India</current>
+		<personal>409/5 Mohala Assi ,Banaras</personal>
+		<workEx>2</workEx>
+		<gender>Female</gender>
+		<dOB>16-05-1994</dOB>
+		<id>114</id>
+		<endingDate></endingDate>
+	</employee>
 </class>

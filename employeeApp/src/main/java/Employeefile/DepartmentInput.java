@@ -56,13 +56,10 @@ public class DepartmentInput implements Callable {
 				departmentId = Double.parseDouble(eElement.getElementsByTagName("departmentId").item(0).getTextContent());
 				name =eElement.getElementsByTagName("name").item(0).getTextContent();
 				startingDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("startingDate").item(0).getTextContent());
-				endingDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("endingDate").item(0).getTextContent());
+				endingDate =null;
 				
 				Department department = new Department(EmployeeId,departmentId, name, startingDate, endingDate);
 				list.add(department);
-				}
-				else{
-					break;
 				}
 				}
 			}

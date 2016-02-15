@@ -36,8 +36,7 @@ public class DepartmentInputTest {
 		List<Department> department = futureTask1.get();
 		
 		List<Department> list = new ArrayList<Department>();
-		Department department1 = new Department(110,1,"pioneer", new SimpleDateFormat("dd-MM-yyyy").parse("03-08-2015"),
-				new SimpleDateFormat("dd-MM-yyyy").parse("03-12-2016"));
+		Department department1 = new Department(110,1,"pioneer", new SimpleDateFormat("dd-MM-yyyy").parse("03-08-2015"),null);
 		list.add(department1);
 		
 		assertEquals(department,list);
