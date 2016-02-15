@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>PersonalDetails.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Employee</a> &gt; <a href="index.source.html" class="el_package">com.xebia.training</a> &gt; <span class="el_source">PersonalDetails.java</span></div><h1>PersonalDetails.java</h1><pre class="source lang-java linenums">package com.xebia.training;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Calendar;
+import java.util.Date;
+
+@XmlRootElement(name = &quot;employee&quot;)
+@XmlAccessorType(XmlAccessType.FIELD)
+public class PersonalDetails {
+	private int id;
+	private long passportNo,adharNo,voterId,accountNo;
+	private String bloodGroup,name,fatherName;
+	private Date dob,startdate,enddate;
+<span class="fc" id="L16">	enum maritialStatus</span>
+	{
+<span class="fc" id="L18">		SINGLE,</span>
+<span class="fc" id="L19">		DIVORCEE,</span>
+<span class="fc" id="L20">		MARRIED;</span>
+	}
+	maritialStatus m;
+
+<span class="nc" id="L24">	public PersonalDetails() {</span>
+<span class="nc" id="L25">	}</span>
+
+	@Override
+	public boolean equals(Object o) {
+<span class="pc bpc" id="L29" title="1 of 2 branches missed.">		if (this == o) return true;</span>
+<span class="pc bpc" id="L30" title="2 of 4 branches missed.">		if (o == null || getClass() != o.getClass()) return false;</span>
+
+<span class="fc" id="L32">		PersonalDetails that = (PersonalDetails) o;</span>
+
+<span class="pc bpc" id="L34" title="1 of 2 branches missed.">		if (id != that.id) return false;</span>
+<span class="pc bpc" id="L35" title="1 of 2 branches missed.">		if (passportNo != that.passportNo) return false;</span>
+<span class="pc bpc" id="L36" title="1 of 2 branches missed.">		if (adharNo != that.adharNo) return false;</span>
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">		if (voterId != that.voterId) return false;</span>
+<span class="pc bpc" id="L38" title="1 of 2 branches missed.">		if (accountNo != that.accountNo) return false;</span>
+<span class="pc bpc" id="L39" title="4 of 6 branches missed.">		if (bloodGroup != null ? !bloodGroup.equals(that.bloodGroup) : that.bloodGroup != null) return false;</span>
+<span class="pc bpc" id="L40" title="4 of 6 branches missed.">		if (name != null ? !name.equals(that.name) : that.name != null) return false;</span>
+<span class="pc bpc" id="L41" title="4 of 6 branches missed.">		if (fatherName != null ? !fatherName.equals(that.fatherName) : that.fatherName != null) return false;</span>
+<span class="pc bpc" id="L42" title="4 of 6 branches missed.">		if (dob != null ? !dob.equals(that.dob) : that.dob != null) return false;</span>
+<span class="pc bpc" id="L43" title="4 of 6 branches missed.">		if (startdate != null ? !startdate.equals(that.startdate) : that.startdate != null) return false;</span>
+<span class="pc bpc" id="L44" title="4 of 6 branches missed.">		if (enddate != null ? !enddate.equals(that.enddate) : that.enddate != null) return false;</span>
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">		return m == that.m;</span>
+
+	}
+
+	@Override
+	public int hashCode() {
+<span class="nc" id="L51">		int result = id;</span>
+<span class="nc" id="L52">		result = 31 * result + (int) (passportNo ^ (passportNo &gt;&gt;&gt; 32));</span>
+<span class="nc" id="L53">		result = 31 * result + (int) (adharNo ^ (adharNo &gt;&gt;&gt; 32));</span>
+<span class="nc" id="L54">		result = 31 * result + (int) (voterId ^ (voterId &gt;&gt;&gt; 32));</span>
+<span class="nc" id="L55">		result = 31 * result + (int) (accountNo ^ (accountNo &gt;&gt;&gt; 32));</span>
+<span class="nc bnc" id="L56" title="All 2 branches missed.">		result = 31 * result + (bloodGroup != null ? bloodGroup.hashCode() : 0);</span>
+<span class="nc bnc" id="L57" title="All 2 branches missed.">		result = 31 * result + (name != null ? name.hashCode() : 0);</span>
+<span class="nc bnc" id="L58" title="All 2 branches missed.">		result = 31 * result + (fatherName != null ? fatherName.hashCode() : 0);</span>
+<span class="nc bnc" id="L59" title="All 2 branches missed.">		result = 31 * result + (dob != null ? dob.hashCode() : 0);</span>
+<span class="nc bnc" id="L60" title="All 2 branches missed.">		result = 31 * result + (startdate != null ? startdate.hashCode() : 0);</span>
+<span class="nc bnc" id="L61" title="All 2 branches missed.">		result = 31 * result + (enddate != null ? enddate.hashCode() : 0);</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">		result = 31 * result + (m != null ? m.hashCode() : 0);</span>
+<span class="nc" id="L63">		return result;</span>
+	}
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+<span class="nc" id="L70">		return id;</span>
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+<span class="nc" id="L76">		this.id = id;</span>
+<span class="nc" id="L77">	}</span>
+	/**
+	 * @return the passport_no
+	 */
+	public long getPassport_no() {
+<span class="nc" id="L82">		return passportNo;</span>
+	}
+	/**
+	 * @param passport_no the passport_no to set
+	 */
+	public void setPassport_no(long passport_no) {
+<span class="nc" id="L88">		this.passportNo = passport_no;</span>
+<span class="nc" id="L89">	}</span>
+	/**
+	 * @return the adhar_no
+	 */
+	public long getAdhar_no() {
+<span class="nc" id="L94">		return adharNo;</span>
+	}
+	/**
+	 * @param adhar_no the adhar_no to set
+	 */
+	public void setAdhar_no(long adhar_no) {
+<span class="nc" id="L100">		this.adharNo = adhar_no;</span>
+<span class="nc" id="L101">	}</span>
+	/**
+	 * @return the voter_id
+	 */
+	public long getVoter_id() {
+<span class="nc" id="L106">		return voterId;</span>
+	}
+	/**
+	 * @param voter_id the voter_id to set
+	 */
+	public void setVoter_id(long voter_id) {
+<span class="nc" id="L112">		this.voterId = voter_id;</span>
+<span class="nc" id="L113">	}</span>
+	/**
+	 * @return the account_no
+	 */
+	public long getAccount_no() {
+<span class="nc" id="L118">		return accountNo;</span>
+	}
+	/**
+	 * @param account_no the account_no to set
+	 */
+	public void setAccount_no(long account_no) {
+<span class="nc" id="L124">		this.accountNo = account_no;</span>
+<span class="nc" id="L125">	}</span>
+	/**
+	 * @return the bloodgroup
+	 */
+	public String getBloodgroup() {
+<span class="nc" id="L130">		return bloodGroup;</span>
+	}
+	/**
+	 * @param bloodgroup the bloodgroup to set
+	 */
+	public void setBloodgroup(String bloodgroup) {
+<span class="nc" id="L136">		this.bloodGroup = bloodgroup;</span>
+<span class="nc" id="L137">	}</span>
+	/**
+	 * @return the maritial_status
+	 */
+	
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+<span class="nc" id="L146">		return name;</span>
+	}
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+<span class="nc" id="L152">		this.name = name;</span>
+<span class="nc" id="L153">	}</span>
+	/**
+	 * @return the father_name
+	 */
+	public String getFather_name() {
+<span class="nc" id="L158">		return fatherName;</span>
+	}
+	/**
+	 * @param father_name the father_name to set
+	 */
+	public void setFather_name(String father_name) {
+<span class="nc" id="L164">		this.fatherName = father_name;</span>
+<span class="nc" id="L165">	}</span>
+	/**
+	 * @return the dob
+	 */
+	public Date getDob() {
+<span class="nc" id="L170">		return dob;</span>
+	}
+	/**
+	 * @param dob the dob to set
+	 */
+	public void setDob(Date dob) {
+<span class="nc" id="L176">		this.dob = dob;</span>
+<span class="nc" id="L177">	}</span>
+	public Date getEnddate() {
+<span class="nc" id="L179">		return enddate;</span>
+	}
+	/**
+	 * @param enddate the dob to set
+	 */
+	public void setEndDate(Date enddate) {
+<span class="nc" id="L185">		this.enddate = enddate;</span>
+<span class="nc" id="L186">	}</span>
+	public Date getStartdatedate() {
+<span class="nc" id="L188">		return startdate;</span>
+	}
+	/**
+	 * @param startdate the dob to set
+	 */
+	public void setStartdate(Date startdate) {
+<span class="nc" id="L194">		this.startdate = startdate;</span>
+<span class="nc" id="L195">	}</span>
+	public PersonalDetails(int id, long passport_no, long adhar_no,
+			long voter_id, long account_no, String bloodgroup,
+			 maritialStatus M, String name, String father_name, Date dob,Date startdate,Date enddate) {
+<span class="fc" id="L199">		super();</span>
+<span class="fc" id="L200">		this.id = id;</span>
+<span class="fc" id="L201">		this.passportNo = passport_no;</span>
+<span class="fc" id="L202">		this.adharNo = adhar_no;</span>
+<span class="fc" id="L203">		this.voterId = voter_id;</span>
+<span class="fc" id="L204">		this.accountNo = account_no;</span>
+<span class="fc" id="L205">		this.bloodGroup = bloodgroup;</span>
+<span class="fc" id="L206">		this.m = M;</span>
+<span class="fc" id="L207">		this.name = name;</span>
+<span class="fc" id="L208">		this.fatherName = father_name;</span>
+<span class="fc" id="L209">		this.dob = dob;</span>
+<span class="fc" id="L210">		this.startdate=startdate;</span>
+<span class="fc" id="L211">		this.enddate=enddate;</span>
+<span class="fc" id="L212">		this.agecalc();</span>
+		
+<span class="fc" id="L214">	}</span>
+	public void agecalc()
+<span class="fc" id="L216">	{	Calendar c1=Calendar.getInstance();</span>
+<span class="fc" id="L217">	c1.setTime(dob);</span>
+<span class="fc" id="L218">		int dbyear=c1.get(Calendar.YEAR);</span>
+	//	System.out.println(dbyear);
+<span class="fc" id="L220">		Calendar c=Calendar.getInstance();</span>
+<span class="fc" id="L221">		int now=c.get(Calendar.YEAR);</span>
+<span class="fc" id="L222">		int age=now-dbyear;</span>
+<span class="fc" id="L223">		System.out.println(&quot;Age calculated is&quot;+age);</span>
+<span class="fc" id="L224">	}</span>
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+<span class="fc" id="L230">		return &quot;PersonalDetails [id=&quot; + id + &quot;, passport_no=&quot; + passportNo</span>
+				+ &quot;, adhar_no=&quot; + adharNo + &quot;, voter_id=&quot; + voterId
+				+ &quot;, account_no=&quot; + accountNo + &quot;, bloodgroup=&quot; + bloodGroup
+				+ &quot;, maritial_status=&quot; + m + &quot;, name=&quot; + name
+				+ &quot;, father_name=&quot; + fatherName + &quot;, dob=&quot; + dob
+				+&quot;,startdate=&quot;+startdate+&quot;,enddate=&quot; +enddate+ &quot;]&quot;;
+	}
+
+	
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

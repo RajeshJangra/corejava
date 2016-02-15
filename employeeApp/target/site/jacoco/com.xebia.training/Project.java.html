@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Project.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Employee</a> &gt; <a href="index.source.html" class="el_package">com.xebia.training</a> &gt; <span class="el_source">Project.java</span></div><h1>Project.java</h1><pre class="source lang-java linenums">package com.xebia.training;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Date;
+
+@XmlRootElement(name = &quot;employee&quot;)
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Project {
+	private int id;
+	private int pid;
+	private String name;
+	private Date startdate;
+	private Date enddate;
+
+<span class="nc" id="L17">	public Project() {</span>
+<span class="nc" id="L18">	}</span>
+
+	@Override
+	public boolean equals(Object o) {
+<span class="pc bpc" id="L22" title="1 of 2 branches missed.">		if (this == o) return true;</span>
+<span class="pc bpc" id="L23" title="2 of 4 branches missed.">		if (o == null || getClass() != o.getClass()) return false;</span>
+
+<span class="fc" id="L25">		Project project = (Project) o;</span>
+
+<span class="pc bpc" id="L27" title="1 of 2 branches missed.">		if (id != project.id) return false;</span>
+<span class="pc bpc" id="L28" title="1 of 2 branches missed.">		if (pid != project.pid) return false;</span>
+<span class="pc bpc" id="L29" title="4 of 6 branches missed.">		if (name != null ? !name.equals(project.name) : project.name != null) return false;</span>
+<span class="pc bpc" id="L30" title="4 of 6 branches missed.">		if (startdate != null ? !startdate.equals(project.startdate) : project.startdate != null) return false;</span>
+<span class="pc bpc" id="L31" title="2 of 4 branches missed.">		return enddate != null ? enddate.equals(project.enddate) : project.enddate == null;</span>
+
+	}
+
+	@Override
+	public int hashCode() {
+<span class="fc" id="L37">		int result = id;</span>
+<span class="fc" id="L38">		result = 31 * result + pid;</span>
+<span class="pc bpc" id="L39" title="1 of 2 branches missed.">		result = 31 * result + (name != null ? name.hashCode() : 0);</span>
+<span class="pc bpc" id="L40" title="1 of 2 branches missed.">		result = 31 * result + (startdate != null ? startdate.hashCode() : 0);</span>
+<span class="pc bpc" id="L41" title="1 of 2 branches missed.">		result = 31 * result + (enddate != null ? enddate.hashCode() : 0);</span>
+<span class="fc" id="L42">		return result;</span>
+	}
+
+	/**
+
+	 * @return the pid
+	 */
+	public int getPid() {
+<span class="nc" id="L50">		return pid;</span>
+	}
+	/**
+	 * @param pid the pid to set
+	 */
+	public void setPid(int pid) {
+<span class="nc" id="L56">		this.pid = pid;</span>
+<span class="nc" id="L57">	}</span>
+	
+	public Project(int id,int pid ,String name, Date startdate, Date enddate) {
+<span class="fc" id="L60">		super();</span>
+<span class="fc" id="L61">		this.id = id;</span>
+<span class="fc" id="L62">		this.pid=pid;</span>
+<span class="fc" id="L63">		this.name = name;</span>
+<span class="fc" id="L64">		this.startdate = startdate;</span>
+<span class="fc" id="L65">		this.enddate = enddate;</span>
+<span class="fc" id="L66">	}</span>
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+<span class="fc" id="L72">		return &quot;Project [id=&quot; + id + &quot;, pid=&quot; + pid + &quot;, name=&quot; + name + &quot;, startdate=&quot;</span>
+				+ startdate + &quot;, enddate=&quot; + enddate + &quot;]&quot;;
+	}
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+<span class="nc" id="L79">		return id;</span>
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+<span class="nc" id="L85">		this.id = id;</span>
+<span class="nc" id="L86">	}</span>
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+<span class="nc" id="L91">		return name;</span>
+	}
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+<span class="nc" id="L97">		this.name = name;</span>
+<span class="nc" id="L98">	}</span>
+	/**
+	 * @return the startdate
+	 */
+	public Date getStartdate() {
+<span class="nc" id="L103">		return startdate;</span>
+	}
+	/**
+	 * @param startdate the startdate to set
+	 */
+	public void setStartdate(Date startdate) {
+<span class="nc" id="L109">		this.startdate = startdate;</span>
+<span class="nc" id="L110">	}</span>
+	/**
+	 * @return the enddate
+	 */
+	public Date getEnddate() {
+<span class="nc" id="L115">		return enddate;</span>
+	}
+	/**
+	 * @param enddate the enddate to set
+	 */
+	public void setEnddate(Date enddate) {
+<span class="nc" id="L121">		this.enddate = enddate;</span>
+<span class="nc" id="L122">	}</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

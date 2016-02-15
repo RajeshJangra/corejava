@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>getjaxb.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Employee</a> &gt; <a href="index.source.html" class="el_package">com.xebia.training</a> &gt; <span class="el_source">getjaxb.java</span></div><h1>getjaxb.java</h1><pre class="source lang-java linenums">package com.xebia.training;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import javax.xml.bind.Unmarshaller;
+import java.io.File;
+
+/**
+ * Created by mkishore on 2/15/2016.
+ */
+<span class="nc" id="L12">public class getjaxb {</span>
+    public static void main(String[] args) throws JAXBException {
+
+<span class="nc" id="L15">        JAXBContext jaxbContext = JAXBContext.newInstance(Salarys.class);</span>
+<span class="nc" id="L16">        Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();</span>
+<span class="nc" id="L17">        Salarys emps = (Salarys) jaxbUnmarshaller.unmarshal( new File(&quot;C:\\temp\\employeesal.xml&quot;) );</span>
+
+<span class="nc bnc" id="L19" title="All 2 branches missed.">        for(Salary emp : emps.getSal())</span>
+        {
+           /* System.out.println(emp.getId());
+            System.out.println(emp.getFirstName());*/
+<span class="nc" id="L23">            System.out.println(emp);</span>
+<span class="nc" id="L24">            emp.setBasic(10000);</span>
+<span class="nc" id="L25">        }</span>
+<span class="nc" id="L26">        JAXBContext jaxbContext1 = JAXBContext.newInstance(Salarys.class);</span>
+<span class="nc" id="L27">        Marshaller jaxbMarshaller = jaxbContext1.createMarshaller();</span>
+
+<span class="nc" id="L29">        jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);</span>
+
+<span class="nc" id="L31">        jaxbMarshaller.marshal(emps, System.out);</span>
+<span class="nc" id="L32">        jaxbMarshaller.marshal(emps, new File(&quot;c:/temp/employeesal.xml&quot;));</span>
+<span class="nc" id="L33">    }</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

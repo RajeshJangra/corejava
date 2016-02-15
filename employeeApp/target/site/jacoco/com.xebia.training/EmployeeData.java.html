@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>EmployeeData.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Employee</a> &gt; <a href="index.source.html" class="el_package">com.xebia.training</a> &gt; <span class="el_source">EmployeeData.java</span></div><h1>EmployeeData.java</h1><pre class="source lang-java linenums">package com.xebia.training;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+/**
+ * Created by mkishore on 2/12/2016.
+ */
+@XmlRootElement(name = &quot;employee&quot;)
+@XmlAccessorType(XmlAccessType.FIELD)
+public class EmployeeData {
+    int id;
+    int experience;
+<span class="fc" id="L15">    enum designation {</span>
+<span class="fc" id="L16">        TRAINEE,</span>
+<span class="fc" id="L17">        PROJECT_ENGINEER,</span>
+<span class="fc" id="L18">        JAVA_DEVELOPER,</span>
+<span class="fc" id="L19">        ACCOUNTANT,</span>
+<span class="fc" id="L20">        QA_ANALYST,</span>
+<span class="fc" id="L21">        SCRUM_MASTER;</span>
+    }
+    designation d;
+
+    public EmployeeData(int id,int experience,designation d)
+<span class="fc" id="L26">    {</span>
+<span class="fc" id="L27">       this.id=id;</span>
+<span class="fc" id="L28">        this.experience=experience;</span>
+<span class="fc" id="L29">        this.d=d;</span>
+<span class="fc" id="L30">    }</span>
+    public int getExperience() {
+<span class="nc" id="L32">        return experience;</span>
+    }
+
+    @Override
+    public boolean equals(Object o) {
+<span class="pc bpc" id="L37" title="1 of 2 branches missed.">        if (this == o) return true;</span>
+<span class="pc bpc" id="L38" title="2 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
+
+<span class="fc" id="L40">        EmployeeData that = (EmployeeData) o;</span>
+
+<span class="pc bpc" id="L42" title="1 of 2 branches missed.">        if (id != that.id) return false;</span>
+<span class="pc bpc" id="L43" title="1 of 2 branches missed.">        if (experience != that.experience) return false;</span>
+<span class="pc bpc" id="L44" title="1 of 2 branches missed.">        return d == that.d;</span>
+
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L50">        int result = id;</span>
+<span class="nc" id="L51">        result = 31 * result + experience;</span>
+<span class="nc bnc" id="L52" title="All 2 branches missed.">        result = 31 * result + (d != null ? d.hashCode() : 0);</span>
+<span class="nc" id="L53">        return result;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L58">        return &quot;EmployeeData{&quot; +</span>
+                &quot;id=&quot; + id +
+                &quot;, experience=&quot; + experience +
+                &quot;, d=&quot; + d +
+                '}';
+    }
+
+    public void setExperience(int experience) {
+<span class="nc" id="L66">        this.experience = experience;</span>
+<span class="nc" id="L67">    }</span>
+
+    public designation getD() {
+<span class="nc" id="L70">        return d;</span>
+    }
+
+    public void setD(designation d) {
+<span class="nc" id="L74">        this.d = d;</span>
+<span class="nc" id="L75">    }</span>
+
+
+
+    public int getId() {
+<span class="nc" id="L80">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="nc" id="L84">        this.id = id;</span>
+<span class="nc" id="L85">    }</span>
+
+<span class="nc" id="L87">    public EmployeeData() {</span>
+<span class="nc" id="L88">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

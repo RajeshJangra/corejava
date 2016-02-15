@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Department.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Employee</a> &gt; <a href="index.source.html" class="el_package">com.xebia.training</a> &gt; <span class="el_source">Department.java</span></div><h1>Department.java</h1><pre class="source lang-java linenums">package com.xebia.training;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import java.util.Date;
+
+@XmlRootElement(name = &quot;employee&quot;)
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Department {
+	int id;
+	String name;
+
+<span class="nc" id="L14">	public Department() {</span>
+<span class="nc" id="L15">	}</span>
+
+	Date startdate;
+	Date enddate;
+
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+<span class="nc" id="L25">		return id;</span>
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+<span class="nc" id="L31">		this.id = id;</span>
+<span class="nc" id="L32">	}</span>
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+<span class="nc" id="L37">		return name;</span>
+	}
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+<span class="nc" id="L43">		this.name = name;</span>
+<span class="nc" id="L44">	}</span>
+	/**
+	 * @return the startdate
+	 */
+	public Date getStartdate() {
+<span class="nc" id="L49">		return startdate;</span>
+	}
+	/**
+	 * @param startdate the startdate to set
+	 */
+	public void setStartdate(Date startdate) {
+<span class="nc" id="L55">		this.startdate = startdate;</span>
+<span class="nc" id="L56">	}</span>
+	/**
+	 * @return the enddate
+	 */
+	public Date getEnddate() {
+<span class="nc" id="L61">		return enddate;</span>
+	}
+	/**
+	 * @param enddate the enddate to set
+	 */
+	public void setEnddate(Date enddate) {
+<span class="nc" id="L67">		this.enddate = enddate;</span>
+<span class="nc" id="L68">	}</span>
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+<span class="fc" id="L74">		return &quot;Department [id=&quot; + id + &quot;, name=&quot; + name + &quot;, startdate=&quot;+ startdate + &quot;, enddate=&quot; + enddate + &quot;]&quot;;</span>
+	}
+	public Department(int id, String name, Date startdate, Date enddate) {
+<span class="fc" id="L77">		super();</span>
+<span class="fc" id="L78">		this.id = id;</span>
+<span class="fc" id="L79">		this.name = name;</span>
+<span class="fc" id="L80">		this.startdate = startdate;</span>
+<span class="fc" id="L81">		this.enddate = enddate;</span>
+<span class="fc" id="L82">	}</span>
+
+	@Override
+	public boolean equals(Object o) {
+<span class="pc bpc" id="L86" title="1 of 2 branches missed.">		if (this == o) return true;</span>
+<span class="pc bpc" id="L87" title="2 of 4 branches missed.">		if (o == null || getClass() != o.getClass()) return false;</span>
+
+<span class="fc" id="L89">		Department that = (Department) o;</span>
+
+<span class="pc bpc" id="L91" title="1 of 2 branches missed.">		if (id != that.id) return false;</span>
+<span class="pc bpc" id="L92" title="4 of 6 branches missed.">		if (name != null ? !name.equals(that.name) : that.name != null) return false;</span>
+<span class="pc bpc" id="L93" title="4 of 6 branches missed.">		if (startdate != null ? !startdate.equals(that.startdate) : that.startdate != null) return false;</span>
+<span class="pc bpc" id="L94" title="2 of 4 branches missed.">		return enddate != null ? enddate.equals(that.enddate) : that.enddate == null;</span>
+
+	}
+
+	@Override
+	public int hashCode() {
+<span class="nc" id="L100">		int result = id;</span>
+<span class="nc bnc" id="L101" title="All 2 branches missed.">		result = 31 * result + (name != null ? name.hashCode() : 0);</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">		result = 31 * result + (startdate != null ? startdate.hashCode() : 0);</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">		result = 31 * result + (enddate != null ? enddate.hashCode() : 0);</span>
+<span class="nc" id="L104">		return result;</span>
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

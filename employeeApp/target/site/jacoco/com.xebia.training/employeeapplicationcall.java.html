@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>employeeapplicationcall.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Employee</a> &gt; <a href="index.source.html" class="el_package">com.xebia.training</a> &gt; <span class="el_source">employeeapplicationcall.java</span></div><h1>employeeapplicationcall.java</h1><pre class="source lang-java linenums">package com.xebia.training;
+
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
+/**
+ * Created by mkishore on 2/12/2016.
+ */
+public class employeeapplicationcall {
+    static int id;
+    public static int experience;
+    EmployeeData.designation designation;
+    //   List&lt;Employee&gt; employees;
+    Set&lt;Project&gt; project;
+    List&lt;PersonalDetails&gt; personalDetails;
+    List&lt;Salary&gt; salary;
+    List&lt;Department&gt; department;
+    List&lt;Address&gt; address;
+    List&lt;Contact&gt; contact;
+    String line;
+    employeeapplicationcall ar;
+    // List&lt;Employee&gt; employee;
+    public employeeapplicationcall()
+<span class="nc" id="L32">    {</span>
+
+<span class="nc" id="L34">    }</span>
+    public employeeapplicationcall(int id)
+<span class="nc" id="L36">    {</span>
+<span class="nc" id="L37">        this.id=id;</span>
+
+<span class="nc" id="L39">    }</span>
+    public List&lt;Contact&gt; contactget(int id) throws ExecutionException, InterruptedException {
+<span class="nc" id="L41">        allread al=new allread(id);</span>
+<span class="nc" id="L42">        contactread cr=new contactread(al.id);</span>
+<span class="nc" id="L43">        ExecutorService service =  Executors.newSingleThreadExecutor();</span>
+<span class="nc" id="L44">        contactread sumTask = new contactread(al.id);</span>
+<span class="nc" id="L45">        Future&lt;List&lt;Contact&gt;&gt; future = service.submit(sumTask);</span>
+<span class="nc" id="L46">        List&lt;Contact&gt; s=future.get();</span>
+<span class="nc bnc" id="L47" title="All 2 branches missed.">        for(Contact a:s)</span>
+        {
+<span class="nc" id="L49">            System.out.println(a);</span>
+<span class="nc" id="L50">        }</span>
+<span class="nc" id="L51">        return s;</span>
+    }
+    public List&lt;Address&gt; addressget(int id) throws ExecutionException, InterruptedException {
+<span class="nc" id="L54">        allread al=new allread(id);</span>
+<span class="nc" id="L55">        ExecutorService service =  Executors.newSingleThreadExecutor();</span>
+<span class="nc" id="L56">        Addressread sumTask = new Addressread(al.id);</span>
+<span class="nc" id="L57">        Future&lt;List&lt;Address&gt;&gt; future = service.submit(sumTask);</span>
+<span class="nc" id="L58">        List&lt;Address&gt; s=future.get();</span>
+<span class="nc bnc" id="L59" title="All 2 branches missed.">        for(Address a:s)</span>
+        {
+<span class="nc" id="L61">            System.out.println(a);</span>
+<span class="nc" id="L62">        }</span>
+<span class="nc" id="L63">        return s;</span>
+
+    }
+    public List&lt;Department&gt; departmentget(int id) throws ExecutionException, InterruptedException {
+<span class="nc" id="L67">        allread al=new allread(id);</span>
+<span class="nc" id="L68">        ExecutorService service =  Executors.newSingleThreadExecutor();</span>
+<span class="nc" id="L69">        departmentread sumTask = new departmentread(al.id);</span>
+<span class="nc" id="L70">        Future&lt;List&lt;Department&gt;&gt; future = service.submit(sumTask);</span>
+<span class="nc" id="L71">        List&lt;Department&gt; s=future.get();</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">        for(Department a:s)</span>
+        {
+<span class="nc" id="L74">            System.out.println(a);</span>
+<span class="nc" id="L75">        }</span>
+<span class="nc" id="L76">        return s;</span>
+
+    }
+    /*  public void reademp(int id) throws ParserConfigurationException, IOException, SAXException, InterruptedException {
+          File file = new File(&quot;C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\employeexml.xml&quot;);
+          Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
+
+          doc.getDocumentElement().normalize();
+
+          NodeList nList = doc.getElementsByTagName(&quot;employee&quot;);
+
+          iterateNodes(nList);
+      }
+      private void iterateNodes(final NodeList nList) throws IOException, InterruptedException {
+          for (int temp = 0; temp &lt; nList.getLength(); temp++) {
+              Node nNode = nList.item(temp);
+
+
+              if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+                  printElements((Element) nNode);
+
+              }
+          }
+      }
+
+      private void printElements(final Element nNode) throws IOException, InterruptedException {
+          Element eElement = nNode;
+
+          if (Integer.parseInt(eElement.getAttribute(&quot;id&quot;)) == id) {
+
+
+
+                   experience=   Integer.parseInt(eElement.getElementsByTagName(&quot;experience&quot;).item(0).getTextContent());
+                   designation=   Employee.designation.valueOf(eElement.getElementsByTagName(&quot;designation&quot;).item(0).getTextContent());
+
+
+          }
+
+      }*/
+    public EmployeeData employeeget(int id) throws ExecutionException, InterruptedException {
+<span class="nc" id="L116">        System.out.println(&quot;Entered&quot;);</span>
+<span class="nc" id="L117">        employeeapplicationcall al=new employeeapplicationcall(id);</span>
+<span class="nc" id="L118">        employeeread cr=new employeeread(al.id);</span>
+<span class="nc" id="L119">        ExecutorService service =  Executors.newSingleThreadExecutor();</span>
+<span class="nc" id="L120">        employeeread sumTask = new employeeread(al.id);</span>
+<span class="nc" id="L121">        Future&lt;EmployeeData&gt; future = service.submit(sumTask);</span>
+<span class="nc" id="L122">        EmployeeData s=future.get();</span>
+
+<span class="nc" id="L124">        System.out.println(s);</span>
+
+<span class="nc" id="L126">        return s;</span>
+    }
+    public List&lt;PersonalDetails&gt; personalget(int id) throws ExecutionException, InterruptedException {
+<span class="nc" id="L129">        allread al=new allread(id);</span>
+<span class="nc" id="L130">        contactread cr=new contactread(al.id);</span>
+<span class="nc" id="L131">        ExecutorService service =  Executors.newSingleThreadExecutor();</span>
+<span class="nc" id="L132">        personalread sumTask = new personalread(al.id);</span>
+<span class="nc" id="L133">        Future&lt;List&lt;PersonalDetails&gt;&gt; future = service.submit(sumTask);</span>
+<span class="nc" id="L134">        List&lt;PersonalDetails&gt; s=future.get();</span>
+<span class="nc bnc" id="L135" title="All 2 branches missed.">        for(PersonalDetails a:s)</span>
+        {
+<span class="nc" id="L137">            System.out.println(a);</span>
+<span class="nc" id="L138">        }</span>
+<span class="nc" id="L139">        return s;</span>
+    }
+    public Set&lt;Project&gt; projectget(int id) throws ExecutionException, InterruptedException {
+<span class="nc" id="L142">        allread al=new allread(id);</span>
+<span class="nc" id="L143">        projectread cr=new projectread(al.id);</span>
+<span class="nc" id="L144">        ExecutorService service =  Executors.newSingleThreadExecutor();</span>
+<span class="nc" id="L145">        projectread sumTask = new projectread(al.id);</span>
+<span class="nc" id="L146">        Future&lt;Set&lt;Project&gt;&gt; future = service.submit(sumTask);</span>
+<span class="nc" id="L147">        Set&lt;Project&gt; s=future.get();</span>
+<span class="nc bnc" id="L148" title="All 2 branches missed.">        for(Project a:s)</span>
+        {
+<span class="nc" id="L150">            System.out.println(a);</span>
+<span class="nc" id="L151">        }</span>
+<span class="nc" id="L152">        return s;</span>
+
+    }
+    public List&lt;Salary&gt; salaryget(int id) throws ExecutionException, InterruptedException {
+<span class="nc" id="L156">        allread al=new allread(id);</span>
+<span class="nc" id="L157">        ExecutorService service =  Executors.newSingleThreadExecutor();</span>
+<span class="nc" id="L158">        salaryread sumTask = new salaryread(ar.id);</span>
+<span class="nc" id="L159">        Future&lt;List&lt;Salary&gt;&gt; future = service.submit(sumTask);</span>
+<span class="nc" id="L160">        List&lt;Salary&gt; s=future.get();</span>
+<span class="nc bnc" id="L161" title="All 2 branches missed.">        for(Salary a:s)</span>
+        {
+<span class="nc" id="L163">            System.out.println(a);</span>
+<span class="nc" id="L164">        }</span>
+<span class="nc" id="L165">        return s;</span>
+    }
+    /*public Employee empget(int id) throws InterruptedException, ParserConfigurationException, SAXException, IOException, ExecutionException {    allread ar=new allread();
+
+
+        Employee emp=new Employee(ar.employeeget(ar.id),ar.addressget(ar.id),ar.contactget(ar.id),ar.departmentget(ar.id),ar.personalget(ar.id),ar.projectget(ar.id),ar.salaryget(ar.id));
+      //  System.out.println(ar.id+&quot;&quot;+experience);
+      //  System.out.println(emp);
+        return emp;
+    }*/
+
+   public void empcall(int id) throws ExecutionException, InterruptedException, ParserConfigurationException, SAXException, IOException {
+<span class="nc" id="L177">        ar.id=id;</span>
+<span class="nc" id="L178">        System.out.println(ar.id);</span>
+<span class="nc" id="L179">       List&lt;Salary&gt; s=ar.salaryget(ar.id);</span>
+<span class="nc bnc" id="L180" title="All 2 branches missed.">       for(Salary sa:s)</span>
+       {
+<span class="nc" id="L182">           System.out.println(sa);</span>
+<span class="nc" id="L183">       }</span>
+
+       /* Employee emp=new Employee(ar.employeeget(101),ar.addressget(ar.id),ar.contactget(ar.id),ar.departmentget(ar.id),ar.personalget(ar.id),ar.projectget(ar.id),ar.salaryget(ar.id));
+        //  System.out.println(ar.id+&quot;&quot;+experience);
+        //  System.out.println(emp);
+        return emp;*/
+
+<span class="nc" id="L190">    }</span>
+   /* public static void main(String[] args) throws ExecutionException, InterruptedException, IOException, ParserConfigurationException, SAXException {
+
+      allread ar=new allread();
+        ar.id=101;
+        ar.reademp(101);
+      Employee emp=new Employee(ar.id,ar.experience,ar.designation,ar.addressget(ar.id),ar.contactget(ar.id),ar.departmentget(ar.id),ar.personalget(ar.id),ar.projectget(ar.id),ar.salaryget(ar.id));
+        System.out.println(emp);
+    }*/
+}
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

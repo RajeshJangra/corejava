@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Employee.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Employee</a> &gt; <a href="index.source.html" class="el_package">com.xebia.training</a> &gt; <span class="el_source">Employee.java</span></div><h1>Employee.java</h1><pre class="source lang-java linenums">package com.xebia.training;
+
+import org.xml.sax.SAXException;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ExecutionException;
+
+@XmlRootElement(name = &quot;employee&quot;)
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Employee {
+
+	Employee employee;
+	Set&lt;Project&gt; project;
+	EmployeeData employeeData;
+	List&lt;PersonalDetails&gt; personalDetails;
+	List&lt;Salary&gt; salary;
+	List&lt;Department&gt; department;
+	List&lt;Address&gt; address;
+	List&lt;Contact&gt; contact;
+
+	public Employee getEmployee() {
+<span class="nc" id="L28">		return employee;</span>
+	}
+
+	public void setEmployee(Employee employee) {
+<span class="nc" id="L32">		this.employee = employee;</span>
+<span class="nc" id="L33">	}</span>
+
+	public Set&lt;Project&gt; getProject() {
+<span class="nc" id="L36">		return project;</span>
+	}
+
+	public void setProject(Set&lt;Project&gt; project) {
+<span class="nc" id="L40">		this.project = project;</span>
+<span class="nc" id="L41">	}</span>
+
+	public EmployeeData getEmployeeData() {
+<span class="nc" id="L44">		return employeeData;</span>
+	}
+
+	public void setEmployeeData(EmployeeData employeeData) {
+<span class="nc" id="L48">		this.employeeData = employeeData;</span>
+<span class="nc" id="L49">	}</span>
+
+	public List&lt;PersonalDetails&gt; getPersonalDetails() {
+<span class="nc" id="L52">		return personalDetails;</span>
+	}
+
+	public void setPersonalDetails(List&lt;PersonalDetails&gt; personalDetails) {
+<span class="nc" id="L56">		this.personalDetails = personalDetails;</span>
+<span class="nc" id="L57">	}</span>
+
+	public List&lt;Salary&gt; getSalary() {
+<span class="nc" id="L60">		return salary;</span>
+	}
+
+	public void setSalary(List&lt;Salary&gt; salary) {
+<span class="nc" id="L64">		this.salary = salary;</span>
+<span class="nc" id="L65">	}</span>
+
+	public List&lt;Department&gt; getDepartment() {
+<span class="nc" id="L68">		return department;</span>
+	}
+
+	public void setDepartment(List&lt;Department&gt; department) {
+<span class="nc" id="L72">		this.department = department;</span>
+<span class="nc" id="L73">	}</span>
+
+	public List&lt;Address&gt; getAddress() {
+<span class="nc" id="L76">		return address;</span>
+	}
+
+	public void setAddress(List&lt;Address&gt; address) {
+<span class="nc" id="L80">		this.address = address;</span>
+<span class="nc" id="L81">	}</span>
+
+	public List&lt;Contact&gt; getContact() {
+<span class="nc" id="L84">		return contact;</span>
+	}
+
+	public void setContact(List&lt;Contact&gt; contact) {
+<span class="nc" id="L88">		this.contact = contact;</span>
+<span class="nc" id="L89">	}</span>
+
+/*
+
+	public void endate()
+	{
+		Calendar c=Calendar.getInstance();
+		Date d= new SimpleDateFormat(&quot;dd-MM-yyyy&quot;).parse(Calendar.getInstance().toString());
+	}
+*/
+
+	@Override
+	public String toString() {
+<span class="fc" id="L102">		return &quot;Employee{&quot; +</span>
+
+				&quot; Project=&quot; + project +
+				&quot;, employeeData=&quot; + employeeData +
+				&quot;, personalDetails=&quot; + personalDetails +
+				&quot;, salary=&quot; + salary +
+				&quot;, department=&quot; + department +
+				&quot;, address=&quot; + address +
+				&quot;, contact=&quot; + contact +
+				'}';
+	}
+
+	@Override
+	public boolean equals(Object o) {
+<span class="pc bpc" id="L116" title="1 of 2 branches missed.">		if (this == o) return true;</span>
+<span class="pc bpc" id="L117" title="2 of 4 branches missed.">		if (o == null || getClass() != o.getClass()) return false;</span>
+
+<span class="fc" id="L119">		Employee employee = (Employee) o;</span>
+
+<span class="pc bpc" id="L121" title="4 of 6 branches missed.">		if (project != null ? !project.equals(employee.project) : employee.project != null) return false;</span>
+<span class="pc bpc" id="L122" title="4 of 6 branches missed.">		if (employeeData != null ? !employeeData.equals(employee.employeeData) : employee.employeeData != null)</span>
+<span class="nc" id="L123">			return false;</span>
+<span class="pc bpc" id="L124" title="4 of 6 branches missed.">		if (personalDetails != null ? !personalDetails.equals(employee.personalDetails) : employee.personalDetails != null)</span>
+<span class="nc" id="L125">			return false;</span>
+<span class="pc bpc" id="L126" title="4 of 6 branches missed.">		if (salary != null ? !salary.equals(employee.salary) : employee.salary != null) return false;</span>
+<span class="pc bpc" id="L127" title="4 of 6 branches missed.">		if (department != null ? !department.equals(employee.department) : employee.department != null) return false;</span>
+<span class="pc bpc" id="L128" title="4 of 6 branches missed.">		if (address != null ? !address.equals(employee.address) : employee.address != null) return false;</span>
+<span class="pc bpc" id="L129" title="3 of 4 branches missed.">		return contact != null ? contact.equals(employee.contact) : employee.contact == null;</span>
+
+	}
+
+	@Override
+	public int hashCode() {
+<span class="nc bnc" id="L135" title="All 2 branches missed.">		int result = project != null ? project.hashCode() : 0;</span>
+<span class="nc bnc" id="L136" title="All 2 branches missed.">		result = 31 * result + (employeeData != null ? employeeData.hashCode() : 0);</span>
+<span class="nc bnc" id="L137" title="All 2 branches missed.">		result = 31 * result + (personalDetails != null ? personalDetails.hashCode() : 0);</span>
+<span class="nc bnc" id="L138" title="All 2 branches missed.">		result = 31 * result + (salary != null ? salary.hashCode() : 0);</span>
+<span class="nc bnc" id="L139" title="All 2 branches missed.">		result = 31 * result + (department != null ? department.hashCode() : 0);</span>
+<span class="nc bnc" id="L140" title="All 2 branches missed.">		result = 31 * result + (address != null ? address.hashCode() : 0);</span>
+<span class="nc bnc" id="L141" title="All 2 branches missed.">		result = 31 * result + (contact != null ? contact.hashCode() : 0);</span>
+<span class="nc" id="L142">		return result;</span>
+	}
+
+	public Employee() {
+<span class="nc" id="L146">		super();</span>
+
+<span class="nc" id="L148">	}</span>
+
+
+	public Employee(EmployeeData employeeData, List&lt;Address&gt; address,List&lt;Contact&gt; contact,List&lt;Department&gt; department,List&lt;PersonalDetails&gt; personal,Set&lt;Project&gt; project,List&lt;Salary&gt; salary) throws NumberFormatException, IOException, InterruptedException, ExecutionException, SAXException, ParserConfigurationException {
+<span class="fc" id="L152">		super();</span>
+<span class="fc" id="L153">		this.employeeData=employeeData;</span>
+<span class="fc" id="L154">		this.address=address;</span>
+<span class="fc" id="L155">		this.contact=contact;</span>
+<span class="fc" id="L156">		this.department=department;</span>
+<span class="fc" id="L157">		this.personalDetails=personal;</span>
+<span class="fc" id="L158">		this.project=project;</span>
+<span class="fc" id="L159">		this.salary=salary;</span>
+	//	allread al=new allread(id);
+
+	//	this.threadcall();
+
+<span class="fc" id="L164">	}</span>
+
+
+	/*public void threadcall() throws IOException, InterruptedException {
+
+		Employee e = new Employee();
+
+		Employee.inproject in = e.new inproject(id);
+		Thread iproject = new Thread(in);
+		iproject.start();
+		iproject.join();
+		Employee.inpersonal inper = e.new inpersonal(id);
+		Thread iper = new Thread(inper);
+		iper.start();
+		iper.join();
+		Employee.insalary insal = e.new insalary(id);
+		Thread isal = new Thread(insal);
+		isal.start();
+		isal.join();
+		Employee.indepartment indep = e.new indepartment(id);
+		Thread idep = new Thread(indep);
+		idep.start();
+		idep.join();
+		Employee.inaddress inadd = e.new inaddress(id);
+		Thread iadd = new Thread(inadd);
+		iadd.start();
+		iadd.join();
+		Employee.incontact incon = e.new incontact(id);
+		Thread icon = new Thread(incon);
+		icon.start();
+		icon.join();
+	}
+*/
+	/*class inproject implements Runnable {
+		int id;
+		String inpro = &quot;C:/Users/mkishore/Desktop/Today work/project.txt&quot;;
+		final String directory = &quot;C:/Users/mkishore/Desktop/Today work/&quot;;
+		Set&lt;Project&gt; project = new HashSet&lt;Project&gt;();
+		String line;
+
+		public inproject(int id) {
+			this.id = id;
+		}
+
+		public void run() {
+			try {
+
+				File file = new File(&quot;C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\projectxml.xml&quot;);
+				Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
+
+				doc.getDocumentElement().normalize();
+
+				NodeList nList = doc.getElementsByTagName(&quot;employee&quot;);
+
+				iterateNodes(nList);
+
+
+				for (Project p : project) {
+					System.out.println(p);
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		private void iterateNodes(final NodeList nList) throws ParseException {
+			for (int temp = 0; temp &lt; nList.getLength(); temp++) {
+				Node nNode = nList.item(temp);
+
+				if ((nNode.getNodeType()) == (Node.ELEMENT_NODE)) {
+					printElements((Element) nNode);
+
+				}
+			}
+		}
+
+		private void printElements(final Element nNode) throws ParseException {
+			Element eElement = nNode;
+
+			if (Integer.parseInt(eElement.getAttribute(&quot;id&quot;)) == id) {
+
+
+				project.add(new Project(Integer.parseInt(eElement.getAttribute(&quot;id&quot;)), Integer.parseInt(eElement.getElementsByTagName(&quot;projectid&quot;).item(0).getTextContent()), eElement.getElementsByTagName(&quot;name&quot;).item(0).getTextContent(), new SimpleDateFormat(&quot;dd-MM-yyyy&quot;).parse(eElement.getElementsByTagName(&quot;start&quot;).item(0).getTextContent()), new SimpleDateFormat(&quot;dd-MM-yyyy&quot;).parse(eElement.getElementsByTagName(&quot;end&quot;).item(0).getTextContent())));
+
+
+			}
+
+
+		}
+	}
+
+	class inpersonal implements Runnable {
+		int id;
+
+		final String directory = &quot;C:/Users/mkishore/Desktop/Today work/&quot;;
+		List&lt;PersonalDetails&gt; personalDetails=new ArrayList&lt;PersonalDetails&gt;();
+		String line;
+
+		public inpersonal(int id) {
+			this.id = id;
+		}
+
+		public void run() {
+			try {
+
+				File file = new File(&quot;C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\personalxml.xml&quot;);
+				Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
+
+				doc.getDocumentElement().normalize();
+
+				NodeList nList = doc.getElementsByTagName(&quot;employee&quot;);
+
+				iterateNodes(nList);
+
+
+				for (PersonalDetails p : personalDetails) {
+					System.out.println(p);
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		private void iterateNodes(final NodeList nList) throws ParseException {
+			for (int temp = 0; temp &lt; nList.getLength(); temp++) {
+				Node nNode = nList.item(temp);
+
+				if ((nNode.getNodeType()) == (Node.ELEMENT_NODE)) {
+					printElements((Element) nNode);
+
+				}
+			}
+		}
+
+		private void printElements(final Element nNode) throws ParseException {
+			Element eElement = nNode;
+
+			if (Integer.parseInt(eElement.getAttribute(&quot;id&quot;)) == id) {
+					personalDetails.add(new PersonalDetails(Integer.parseInt(eElement.getAttribute(&quot;id&quot;)),
+							Long.parseLong(eElement.getElementsByTagName(&quot;passport&quot;).item(0).getTextContent()),
+							Long.parseLong(eElement.getElementsByTagName(&quot;adhar&quot;).item(0).getTextContent()),
+							Long.parseLong(eElement.getElementsByTagName(&quot;voter&quot;).item(0).getTextContent()),
+							Long.parseLong(eElement.getElementsByTagName(&quot;account&quot;).item(0).getTextContent()),
+							eElement.getElementsByTagName(&quot;blood&quot;).item(0).getTextContent(),
+							PersonalDetails.maritialStatus.valueOf(eElement.getElementsByTagName(&quot;maritial&quot;).item(0).getTextContent()),
+							eElement.getElementsByTagName(&quot;name&quot;).item(0).getTextContent(),
+							eElement.getElementsByTagName(&quot;father&quot;).item(0).getTextContent(),
+							new SimpleDateFormat(&quot;dd-MM-yyyy&quot;).parse(eElement.getElementsByTagName(&quot;dob&quot;).item(0).getTextContent()),
+							new SimpleDateFormat(&quot;dd-MM-yyyy&quot;).parse(eElement.getElementsByTagName(&quot;start&quot;).item(0).getTextContent()),
+							new SimpleDateFormat(&quot;dd-MM-yyyy&quot;).parse(eElement.getElementsByTagName(&quot;end&quot;).item(0).getTextContent())));
+
+			}
+		}
+	}
+	class insalary implements Runnable {
+		int id;
+
+		final String directory = &quot;C:/Users/mkishore/Desktop/Today work/&quot;;
+		List&lt;Salary&gt; salary = new ArrayList&lt;Salary&gt;();
+		String line;
+
+		public insalary(int id) {
+			this.id = id;
+		}
+
+		public void run() {
+			try {
+				File file = new File(&quot;C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\salaryxml.xml&quot;);
+				Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
+
+				doc.getDocumentElement().normalize();
+
+				NodeList nList = doc.getElementsByTagName(&quot;employee&quot;);
+
+				iterateNodes(nList);
+
+
+				for (Salary p : salary) {
+					System.out.println(p);
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		private void iterateNodes(final NodeList nList) {
+			for (int temp = 0; temp &lt; nList.getLength(); temp++) {
+				Node nNode = nList.item(temp);
+
+
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+					printElements((Element) nNode);
+				}
+			}
+		}
+
+		private void printElements(final Element nNode) {
+			Element eElement = nNode;
+
+			if (Integer.parseInt(eElement.getAttribute(&quot;id&quot;)) == id) {
+
+
+				salary.add(new Salary(Integer.parseInt(eElement.getAttribute(&quot;id&quot;)), Integer.parseInt(eElement.getElementsByTagName(&quot;basic&quot;).item(0).getTextContent())));
+
+
+			}
+
+		}
+	}
+
+	class indepartment implements Runnable {
+		int id;
+
+		final String directory = &quot;C:/Users/mkishore/Desktop/Today work/&quot;;
+
+		String line;
+		List&lt;Department&gt; department=new ArrayList&lt;Department&gt;();
+		public indepartment(int id) {
+			this.id = id;
+		}
+
+		public void run() {
+			try {
+				File file = new File(&quot;C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\departmentxml.xml&quot;);
+				Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
+
+				doc.getDocumentElement().normalize();
+
+				NodeList nList = doc.getElementsByTagName(&quot;employee&quot;);
+
+				iterateNodes(nList);
+
+				for (Department p : department) {
+					System.out.println(p);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		private void iterateNodes(final NodeList nList) throws ParseException {
+			for (int temp = 0; temp &lt; nList.getLength(); temp++) {
+				Node nNode = nList.item(temp);
+
+
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+					printElements((Element) nNode);
+
+				}
+			}
+		}
+
+		private void printElements(final Element nNode) throws ParseException {
+			Element eElement = nNode;
+
+			if (Integer.parseInt(eElement.getAttribute(&quot;id&quot;)) == id) {
+
+
+				department = new ArrayList&lt;Department&gt;();
+
+
+				department.add(new Department(Integer.parseInt(eElement.getAttribute(&quot;id&quot;)), eElement.getElementsByTagName(&quot;deptname&quot;).item(0).getTextContent(), new SimpleDateFormat(&quot;dd-MM-yyyy&quot;).parse(eElement.getElementsByTagName(&quot;start&quot;).item(0).getTextContent()), null));
+
+
+			}
+
+		}
+	}
+
+	class inaddress implements Runnable {
+		List&lt;Address&gt; address = new ArrayList&lt;Address&gt;();
+		int id;
+
+
+		public inaddress(int id) {
+			this.id = id;
+		}
+
+		public void run() {
+			try {
+				File file = new File(&quot;C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\addressxml.xml&quot;);
+				Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
+
+				doc.getDocumentElement().normalize();
+
+				NodeList nList = doc.getElementsByTagName(&quot;employee&quot;);
+
+				iterateNodes(nList);
+
+
+				for (Address p : address) {
+					System.out.println(p);
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		private void iterateNodes(final NodeList nList) {
+			for (int temp = 0; temp &lt; nList.getLength(); temp++) {
+				Node nNode = nList.item(temp);
+
+
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+					printElements((Element) nNode);
+
+				}
+			}
+		}
+
+		private void printElements(final Element nNode) {
+			Element eElement = nNode;
+
+			if (Integer.parseInt(eElement.getAttribute(&quot;id&quot;)) == id) {
+
+
+				address.add(new Address(id,
+						Integer.parseInt(eElement.getElementsByTagName(&quot;houseno&quot;).item(0).getTextContent()),
+						Integer.parseInt(eElement.getElementsByTagName(&quot;sector&quot;).item(0).getTextContent()),
+						eElement.getElementsByTagName(&quot;city&quot;).item(0).getTextContent(),
+						Integer.parseInt(eElement.getElementsByTagName(&quot;pincode&quot;).item(0).getTextContent()),
+						eElement.getElementsByTagName(&quot;state&quot;).item(0).getTextContent(),
+						eElement.getElementsByTagName(&quot;landmark&quot;).item(0).getTextContent(),
+						eElement.getElementsByTagName(&quot;email_id&quot;).item(0).getTextContent(),
+						Address.addresstype.valueOf(eElement.getElementsByTagName(&quot;address_type&quot;).item(0).getTextContent())));
+
+
+			}
+
+		}
+	}
+
+	class incontact implements Runnable {
+		int id;
+		String inpro = &quot;C:/Users/mkishore/Desktop/Today work/project.txt&quot;;
+		final String directory = &quot;C:/Users/mkishore/Desktop/Today work/&quot;;
+		Employee em=new Employee();
+
+		String line;
+
+		public incontact(int id) {
+			this.id = id;
+		}
+
+		public void run() {
+				em.contact=new ArrayList&lt;Contact&gt;();
+			try {
+				File file = new File(&quot;C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\contactxml.xml&quot;);
+				Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
+
+				doc.getDocumentElement().normalize();
+
+				NodeList nList = doc.getElementsByTagName(&quot;employee&quot;);
+
+				iterateNodes(nList);
+
+
+				for (Contact p : contact)
+
+				{
+					System.out.println(p);
+				}
+
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		private void iterateNodes(final NodeList nList) {
+			for (int temp = 0; temp &lt; nList.getLength(); temp++) {
+				Node nNode = nList.item(temp);
+
+
+				if (nNode.getNodeType() == Node.ELEMENT_NODE) {
+					printElements((Element) nNode);
+
+				}
+			}
+		}
+
+		private void printElements(final Element nNode) {
+			Element eElement = nNode;
+
+			if (Integer.parseInt(eElement.getAttribute(&quot;id&quot;)) == id) {
+
+				contact.add(new Contact(Integer.parseInt(eElement.getAttribute(&quot;id&quot;)), eElement.getElementsByTagName(&quot;emailid&quot;).item(0).getTextContent(), Long.parseLong(eElement.getElementsByTagName(&quot;phone&quot;).item(0).getTextContent())));
+
+			}
+		}
+
+
+	}
+
+*/
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

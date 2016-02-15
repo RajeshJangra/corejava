@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Address.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Employee</a> &gt; <a href="index.source.html" class="el_package">com.xebia.training</a> &gt; <span class="el_source">Address.java</span></div><h1>Address.java</h1><pre class="source lang-java linenums">package com.xebia.training;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = &quot;employee&quot;)
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Address {
+	private int id;
+	private int houseno,sector;
+	private String city;
+	private int pincode;
+	private String state;
+	private String landmark;
+	addresstype t;
+	private String email_id;
+<span class="fc" id="L18">	enum addresstype</span>
+	{
+<span class="fc" id="L20">		CORRESPONDANCE,</span>
+<span class="fc" id="L21">		PERMANENT,</span>
+<span class="fc" id="L22">		TEMPORARY;</span>
+	}
+
+<span class="nc" id="L25">	public Address() {</span>
+<span class="nc" id="L26">	}</span>
+
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+<span class="nc" id="L32">		return id;</span>
+	}
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+<span class="nc" id="L38">		this.id = id;</span>
+<span class="nc" id="L39">	}</span>
+	/**
+	 * @return the houseno
+	 */
+	public int getHouseno() {
+<span class="nc" id="L44">		return houseno;</span>
+	}
+	/**
+	 * @param houseno the houseno to set
+	 */
+	public void setHouseno(int houseno) {
+<span class="nc" id="L50">		this.houseno = houseno;</span>
+<span class="nc" id="L51">	}</span>
+	/**
+	 * @return the sector
+	 */
+	public int getSector() {
+<span class="nc" id="L56">		return sector;</span>
+	}
+	/**
+	 * @param sector the sector to set
+	 */
+	public void setSector(int sector) {
+<span class="nc" id="L62">		this.sector = sector;</span>
+<span class="nc" id="L63">	}</span>
+	/**
+	 * @return the city
+	 */
+	public String getCity() {
+<span class="nc" id="L68">		return city;</span>
+	}
+	/**
+	 * @param city the city to set
+	 */
+	public void setCity(String city) {
+<span class="nc" id="L74">		this.city = city;</span>
+<span class="nc" id="L75">	}</span>
+	/**
+	 * @return the pincode
+	 */
+	public int getPincode() {
+<span class="nc" id="L80">		return pincode;</span>
+	}
+	/**
+	 * @param pincode the pincode to set
+	 */
+	public void setPincode(int pincode) {
+<span class="nc" id="L86">		this.pincode = pincode;</span>
+<span class="nc" id="L87">	}</span>
+	/**
+	 * @return the state
+	 */
+	public String getState() {
+<span class="nc" id="L92">		return state;</span>
+	}
+	/**
+	 * @param state the state to set
+	 */
+	public void setState(String state) {
+<span class="nc" id="L98">		this.state = state;</span>
+<span class="nc" id="L99">	}</span>
+		/**
+	 * @return the landmark
+	 */
+	public String getLandmark() {
+<span class="nc" id="L104">		return landmark;</span>
+	}
+	/**
+	 * @param landmark the landmark to set
+	 */
+	public void setLandmark(String landmark) {
+<span class="nc" id="L110">		this.landmark = landmark;</span>
+<span class="nc" id="L111">	}</span>
+	/**
+	 * @return the phone
+	 */
+	
+	/**
+	 * @return the email_id
+	 */
+	public String getEmail_id() {
+<span class="nc" id="L120">		return email_id;</span>
+	}
+	/**
+	 * @param email_id the email_id to set
+	 */
+	public void setEmail_id(String email_id) {
+<span class="nc" id="L126">		this.email_id = email_id;</span>
+<span class="nc" id="L127">	}</span>
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+<span class="fc" id="L133">		return &quot;Address [id=&quot; + id + &quot;, houseno=&quot; + houseno + &quot;, sector=&quot;</span>
+				+ sector + &quot;, city=&quot; + city + &quot;, pincode=&quot; + pincode
+				+ &quot;, state=&quot; + state + &quot;, &quot; + &quot;, landmark=&quot;
+				+ landmark +  &quot;, email_id=&quot; + email_id+&quot;, address type=&quot;
+<span class="fc" id="L137">				+ t.name()+&quot;]&quot;;</span>
+	}
+
+	@Override
+	public boolean equals(Object o) {
+<span class="pc bpc" id="L142" title="1 of 2 branches missed.">		if (this == o) return true;</span>
+<span class="pc bpc" id="L143" title="2 of 4 branches missed.">		if (o == null || getClass() != o.getClass()) return false;</span>
+
+<span class="fc" id="L145">		Address address = (Address) o;</span>
+
+<span class="pc bpc" id="L147" title="1 of 2 branches missed.">		if (id != address.id) return false;</span>
+<span class="pc bpc" id="L148" title="1 of 2 branches missed.">		if (houseno != address.houseno) return false;</span>
+<span class="pc bpc" id="L149" title="1 of 2 branches missed.">		if (sector != address.sector) return false;</span>
+<span class="pc bpc" id="L150" title="1 of 2 branches missed.">		if (pincode != address.pincode) return false;</span>
+<span class="pc bpc" id="L151" title="1 of 2 branches missed.">		if (!city.equals(address.city)) return false;</span>
+<span class="pc bpc" id="L152" title="1 of 2 branches missed.">		if (!state.equals(address.state)) return false;</span>
+<span class="pc bpc" id="L153" title="1 of 2 branches missed.">		if (!landmark.equals(address.landmark)) return false;</span>
+<span class="pc bpc" id="L154" title="1 of 2 branches missed.">		if (t != address.t) return false;</span>
+<span class="fc" id="L155">		return email_id.equals(address.email_id);</span>
+
+	}
+
+	@Override
+	public int hashCode() {
+<span class="nc" id="L161">		int result = id;</span>
+<span class="nc" id="L162">		result = 31 * result + houseno;</span>
+<span class="nc" id="L163">		result = 31 * result + sector;</span>
+<span class="nc" id="L164">		result = 31 * result + city.hashCode();</span>
+<span class="nc" id="L165">		result = 31 * result + pincode;</span>
+<span class="nc" id="L166">		result = 31 * result + state.hashCode();</span>
+<span class="nc" id="L167">		result = 31 * result + landmark.hashCode();</span>
+<span class="nc" id="L168">		result = 31 * result + t.hashCode();</span>
+<span class="nc" id="L169">		result = 31 * result + email_id.hashCode();</span>
+<span class="nc" id="L170">		return result;</span>
+	}
+
+	public Address(int id, int houseno, int sector, String city, int pincode,
+				   String state, String landmark,
+				   String email_id, addresstype add) {
+<span class="fc" id="L176">		super();</span>
+<span class="fc" id="L177">		this.id = id;</span>
+<span class="fc" id="L178">		this.houseno = houseno;</span>
+<span class="fc" id="L179">		this.sector = sector;</span>
+<span class="fc" id="L180">		this.city = city;</span>
+<span class="fc" id="L181">		this.pincode = pincode;</span>
+<span class="fc" id="L182">		this.state = state;</span>
+		
+<span class="fc" id="L184">		this.landmark = landmark;</span>
+		
+<span class="fc" id="L186">		this.email_id = email_id;</span>
+<span class="fc" id="L187">		this.t=add;</span>
+		
+<span class="fc" id="L189">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

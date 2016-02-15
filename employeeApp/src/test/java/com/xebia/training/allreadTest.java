@@ -36,10 +36,10 @@ public class allreadTest {
         Department department = new Department(101,"Finance",new SimpleDateFormat("dd-MM-yyyy").parse("18-01-2016"),null);
         departmentlist.add(department);
         List<PersonalDetails> personallist = new ArrayList<PersonalDetails>();
-        PersonalDetails personal = new PersonalDetails(101,1234443l,344455l,233444l,4433444444l,"B +",PersonalDetails.maritialStatus.SINGLE,"Mandavi","N.K.Nigam",new SimpleDateFormat("dd-MM-yyyy").parse("26-01-1996"),new SimpleDateFormat("dd-MM-yyyy").parse("18-01-2016"),new SimpleDateFormat("dd-MM-yyyy").parse("18-01-2018"));
+        PersonalDetails personal = new PersonalDetails(101,1234443l,344455l,233444l,4433444444l,"B +",PersonalDetails.maritialStatus.SINGLE,"Mandavi","N.K.Nigam",new SimpleDateFormat("dd-MM-yyyy").parse("26-01-1996"),new SimpleDateFormat("dd-MM-yyyy").parse("18-01-2016"),null);
         personallist.add(personal);
         projectlist = new HashSet<Project>();
-        Project project = new Project(101,1002,"XYZ",new SimpleDateFormat("dd-MM-yyyy").parse("18-01-2016"),new SimpleDateFormat("dd-MM-yyyy").parse("18-02-2018"));
+        Project project = new Project(101,1002,"XYZ",new SimpleDateFormat("dd-MM-yyyy").parse("18-01-2016"),null);
         projectlist.add(project);
         salarylist = new ArrayList<Salary>();
         Salary salary = new Salary(101,175000);
