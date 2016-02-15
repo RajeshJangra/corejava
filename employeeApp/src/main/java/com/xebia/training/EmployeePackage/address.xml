@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<address>
+    <employee id="101">
+        <address_type>permanentAddress</address_type>
+        <house_no>801</house_no>
+        <streetApartment>sector30</streetApartment>
+        <city>gurgaon</city>
+        <pincode>333333</pincode>
+        <state>haryana</state>
+        <area>area</area>
+    </employee>
+    <employee id="102">
+        <address_type>currentAddress</address_type>
+        <house_no>802</house_no>
+        <streetApartment>sector31</streetApartment>
+        <city>chandigarh</city>
+        <pincode>333332</pincode>
+        <state>UP</state>
+        <area>area</area>
+    </employee>
+    <employee id="103">
+        <address_type>correspondentAddress</address_type>
+        <house_no>803</house_no>
+        <streetApartment>sector29</streetApartment>
+        <city>gurgaon</city>
+        <pincode>333333</pincode>
+        <state>haryana</state>
+        <area>area</area>
+    </employee>
+
+</address>

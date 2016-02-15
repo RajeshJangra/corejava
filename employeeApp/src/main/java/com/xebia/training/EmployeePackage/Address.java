@@ -4,7 +4,7 @@ public class Address {
 	public enum Address_type{
 		correspondentAddress,
 		currentAddress,
-		permanentAddress;
+		 permanentAddress;
 	}
 	private Address_type addressType;
 	private int id;
@@ -74,6 +74,39 @@ public class Address {
 		this.area = area;
 
 	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Address address = (Address) o;
+
+		if (id != address.id) return false;
+		if (houseNo != address.houseNo) return false;
+		if (addressType != address.addressType) return false;
+		if (streetApartment != null ? !streetApartment.equals(address.streetApartment) : address.streetApartment != null)
+			return false;
+		if (city != null ? !city.equals(address.city) : address.city != null) return false;
+		if (pinCode != null ? !pinCode.equals(address.pinCode) : address.pinCode != null) return false;
+		if (state != null ? !state.equals(address.state) : address.state != null) return false;
+		return !(area != null ? !area.equals(address.area) : address.area != null);
+
+	}
+
+	@Override
+	public int hashCode() {
+		int result = addressType != null ? addressType.hashCode() : 0;
+		result = 31 * result + id;
+		result = 31 * result + houseNo;
+		result = 31 * result + (streetApartment != null ? streetApartment.hashCode() : 0);
+		result = 31 * result + (city != null ? city.hashCode() : 0);
+		result = 31 * result + (pinCode != null ? pinCode.hashCode() : 0);
+		result = 31 * result + (state != null ? state.hashCode() : 0);
+		result = 31 * result + (area != null ? area.hashCode() : 0);
+		return result;
+	}
+
 	@Override
 	public String toString() {
 		return "EmployeePackage.Address [ id=" + id+",addressType=" + addressType + ", houseNo=" + houseNo + ", streetApartment="

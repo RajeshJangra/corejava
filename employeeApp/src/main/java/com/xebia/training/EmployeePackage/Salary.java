@@ -23,6 +23,46 @@ public class Salary {
 	}
 
 	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+
+		Salary salary = (Salary) o;
+
+		if (id != salary.id) return false;
+		if (Double.compare(salary.BASIC, BASIC) != 0) return false;
+		if (Double.compare(salary.HRA, HRA) != 0) return false;
+		if (Double.compare(salary.DA, DA) != 0) return false;
+		if (Double.compare(salary.LTA, LTA) != 0) return false;
+		if (Double.compare(salary.PF, PF) != 0) return false;
+		if (Double.compare(salary.FP, FP) != 0) return false;
+		return Double.compare(salary.GRATVITY, GRATVITY) == 0;
+
+	}
+
+	@Override
+	public int hashCode() {
+		int result;
+		long temp;
+		result = id;
+		temp = Double.doubleToLongBits(BASIC);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(HRA);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(DA);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(LTA);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(PF);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(FP);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(GRATVITY);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+
+	@Override
 	public String toString() {
 		return "EmployeePackage.Salary [id=" + id + ", BASIC=" + BASIC + ", HRA=" + HRA
 				+ ", DA=" + DA + ", LTA=" + LTA + ", PF=" + PF + ", FP="

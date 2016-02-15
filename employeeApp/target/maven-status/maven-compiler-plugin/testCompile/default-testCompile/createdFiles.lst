@@ -1,1 +1,8 @@
+com\xebia\training\EmployeePackage\EmployeeInTest.class
 com\xebia\training\AppTest.class
+com\xebia\training\EmployeePackage\DepartmentInTest.class
+com\xebia\training\EmployeePackage\ProjectInTest.class
+com\xebia\training\EmployeePackage\SalaryInTest.class
+com\xebia\training\EmployeePackage\PersonalInTest.class
+com\xebia\training\EmployeePackage\AddressInTest.class
+com\xebia\training\EmployeePackage\ContactsInTest.class

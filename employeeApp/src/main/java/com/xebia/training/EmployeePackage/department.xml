@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<department>
+    <employee id="101">
+        <designation>Trainee</designation>
+        <start_date>18-01-2016</start_date>
+        <end_date>18-01-2018</end_date>
+    </employee>
+    <employee id="102">
+        <designation>Manager</designation>
+        <start_date>18-01-2016</start_date>
+        <end_date>18-01-2018</end_date>
+    </employee>
+    <employee id="103">
+        <designation>CEO</designation>
+        <start_date>18-01-2016</start_date>
+        <end_date>18-01-2018</end_date>
+    </employee>
+</department>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<contacts>
+    <employee id="101">
+        <phone_no>10010</phone_no>
+        <mail_id>pj@gmail.com</mail_id>
+    </employee>
+    <employee id="102">
+        <phone_no>54020</phone_no>
+        <mail_id>mk@gmail.com</mail_id>
+    </employee>
+    <employee id="103">
+        <phone_no>40010</phone_no>
+        <mail_id>jm@gmail.com</mail_id>
+    </employee>
+</contacts>

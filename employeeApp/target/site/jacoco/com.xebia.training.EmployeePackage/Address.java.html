@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Address.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">employeeApp</a> &gt; <a href="index.source.html" class="el_package">com.xebia.training.EmployeePackage</a> &gt; <span class="el_source">Address.java</span></div><h1>Address.java</h1><pre class="source lang-java linenums">package com.xebia.training.EmployeePackage;
+
+public class Address {
+<span class="fc" id="L4">	public enum Address_type{</span>
+<span class="fc" id="L5">		correspondentAddress,</span>
+<span class="fc" id="L6">		currentAddress,</span>
+<span class="fc" id="L7">		 permanentAddress;</span>
+	}
+	private Address_type addressType;
+	private int id;
+	private int houseNo;
+	private String streetApartment;
+	private String city;
+	private String pinCode;
+	private String state;
+	private String area;
+
+	public int getId() {
+<span class="nc" id="L19">		return id;</span>
+	}
+	public void setId(int id) {
+<span class="nc" id="L22">		this.id = id;</span>
+<span class="nc" id="L23">	}</span>
+	public int getHouseNo() {
+<span class="nc" id="L25">		return houseNo;</span>
+	}
+	public void setHouseNo(int houseNo) {
+<span class="nc" id="L28">		this.houseNo = houseNo;</span>
+<span class="nc" id="L29">	}</span>
+	public String getStreetApartment() {
+<span class="nc" id="L31">		return streetApartment;</span>
+	}
+	public void setStreetApartment(String streetApartment) {
+<span class="nc" id="L34">		this.streetApartment = streetApartment;</span>
+<span class="nc" id="L35">	}</span>
+	public String getCity() {
+<span class="nc" id="L37">		return city;</span>
+	}
+	public void setCity(String city) {
+<span class="nc" id="L40">		this.city = city;</span>
+<span class="nc" id="L41">	}</span>
+	public String getPinCode() {
+<span class="nc" id="L43">		return pinCode;</span>
+	}
+	public void setPinCode(String pinCode) {
+<span class="nc" id="L46">		this.pinCode = pinCode;</span>
+<span class="nc" id="L47">	}</span>
+	public String getState() {
+<span class="nc" id="L49">		return state;</span>
+	}
+	public void setState(String state) {
+<span class="nc" id="L52">		this.state = state;</span>
+<span class="nc" id="L53">	}</span>
+	public String getArea() {
+<span class="nc" id="L55">		return area;</span>
+	}
+	public void setArea(String area) {
+<span class="nc" id="L58">		this.area = area;</span>
+<span class="nc" id="L59">	}</span>
+
+
+
+	public Address( int id,Address_type addressType, int houseNo,
+				   String streetApartment, String city, String pinCode,
+				   String state, String area) {
+<span class="fc" id="L66">		super();</span>
+<span class="fc" id="L67">		this.addressType = addressType;</span>
+<span class="fc" id="L68">		this.id = id;</span>
+<span class="fc" id="L69">		this.houseNo = houseNo;</span>
+<span class="fc" id="L70">		this.streetApartment = streetApartment;</span>
+<span class="fc" id="L71">		this.city = city;</span>
+<span class="fc" id="L72">		this.pinCode = pinCode;</span>
+<span class="fc" id="L73">		this.state = state;</span>
+<span class="fc" id="L74">		this.area = area;</span>
+
+<span class="fc" id="L76">	}</span>
+
+	@Override
+	public boolean equals(Object o) {
+<span class="pc bpc" id="L80" title="1 of 2 branches missed.">		if (this == o) return true;</span>
+<span class="pc bpc" id="L81" title="2 of 4 branches missed.">		if (o == null || getClass() != o.getClass()) return false;</span>
+
+<span class="fc" id="L83">		Address address = (Address) o;</span>
+
+<span class="pc bpc" id="L85" title="1 of 2 branches missed.">		if (id != address.id) return false;</span>
+<span class="pc bpc" id="L86" title="1 of 2 branches missed.">		if (houseNo != address.houseNo) return false;</span>
+<span class="pc bpc" id="L87" title="1 of 2 branches missed.">		if (addressType != address.addressType) return false;</span>
+<span class="pc bpc" id="L88" title="4 of 6 branches missed.">		if (streetApartment != null ? !streetApartment.equals(address.streetApartment) : address.streetApartment != null)</span>
+<span class="nc" id="L89">			return false;</span>
+<span class="pc bpc" id="L90" title="4 of 6 branches missed.">		if (city != null ? !city.equals(address.city) : address.city != null) return false;</span>
+<span class="pc bpc" id="L91" title="4 of 6 branches missed.">		if (pinCode != null ? !pinCode.equals(address.pinCode) : address.pinCode != null) return false;</span>
+<span class="pc bpc" id="L92" title="4 of 6 branches missed.">		if (state != null ? !state.equals(address.state) : address.state != null) return false;</span>
+<span class="pc bpc" id="L93" title="4 of 6 branches missed.">		return !(area != null ? !area.equals(address.area) : address.area != null);</span>
+
+	}
+
+	@Override
+	public int hashCode() {
+<span class="nc bnc" id="L99" title="All 2 branches missed.">		int result = addressType != null ? addressType.hashCode() : 0;</span>
+<span class="nc" id="L100">		result = 31 * result + id;</span>
+<span class="nc" id="L101">		result = 31 * result + houseNo;</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">		result = 31 * result + (streetApartment != null ? streetApartment.hashCode() : 0);</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">		result = 31 * result + (city != null ? city.hashCode() : 0);</span>
+<span class="nc bnc" id="L104" title="All 2 branches missed.">		result = 31 * result + (pinCode != null ? pinCode.hashCode() : 0);</span>
+<span class="nc bnc" id="L105" title="All 2 branches missed.">		result = 31 * result + (state != null ? state.hashCode() : 0);</span>
+<span class="nc bnc" id="L106" title="All 2 branches missed.">		result = 31 * result + (area != null ? area.hashCode() : 0);</span>
+<span class="nc" id="L107">		return result;</span>
+	}
+
+	@Override
+	public String toString() {
+<span class="fc" id="L112">		return &quot;EmployeePackage.Address [ id=&quot; + id+&quot;,addressType=&quot; + addressType + &quot;, houseNo=&quot; + houseNo + &quot;, streetApartment=&quot;</span>
+				+ streetApartment + &quot;, city=&quot; + city + &quot;, pinCode=&quot;
+				+ pinCode + &quot;, state=&quot; + state + &quot;, area=&quot; + area + &quot;]&quot;;
+	}
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>

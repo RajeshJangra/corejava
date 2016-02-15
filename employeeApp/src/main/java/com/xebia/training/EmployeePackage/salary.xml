@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<salary>
+    <employee id="101">
+        <basic>500000</basic>
+    </employee>
+    <employee id="102">
+      <basic>600000</basic>
+    </employee>
+    <employee id="103">
+        <basic>500000</basic>
+    </employee>
+</salary>

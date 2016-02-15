@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<personal>
+    <employee id="101">
+        <adharNo>a101</adharNo>
+        <panNo >p101</panNo>
+        <bloodGroup>A+</bloodGroup>
+        <electionId>e101</electionId>
+        <licenceNo>l101</licenceNo>
+    </employee>
+    <employee id="102">
+        <adharNo>a102</adharNo>
+        <panNo >p102</panNo>
+        <bloodGroup>B+</bloodGroup>
+        <electionId>e102</electionId>
+        <licenceNo>l102</licenceNo>
+    </employee>
+    <employee id="103">
+        <adharNo>a103</adharNo>
+        <panNo>p103</panNo>
+        <bloodGroup>O+</bloodGroup>
+        <electionId>e103</electionId>
+        <licenceNo>l113</licenceNo>
+    </employee>
+</personal>

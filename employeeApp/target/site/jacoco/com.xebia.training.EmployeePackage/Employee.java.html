@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../.resources/report.css" type="text/css"/><link rel="shortcut icon" href="../.resources/report.gif" type="image/gif"/><title>Employee.java</title><link rel="stylesheet" href="../.resources/prettify.css" type="text/css"/><script type="text/javascript" src="../.resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../.sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">employeeApp</a> &gt; <a href="index.source.html" class="el_package">com.xebia.training.EmployeePackage</a> &gt; <span class="el_source">Employee.java</span></div><h1>Employee.java</h1><pre class="source lang-java linenums">package com.xebia.training.EmployeePackage;
+import java.util.*;
+
+import java.util.List;
+
+public class Employee {
+<span class="fc" id="L7">    public enum MaritalStatus {</span>
+<span class="fc" id="L8">        married,</span>
+<span class="fc" id="L9">        unmarried,</span>
+<span class="fc" id="L10">        diverse,</span>
+<span class="fc" id="L11">        widow,</span>
+<span class="fc" id="L12">        widower;</span>
+    }
+
+<span class="fc" id="L15">    public enum Designation {</span>
+<span class="fc" id="L16">        CEO,</span>
+<span class="fc" id="L17">        Manager,</span>
+<span class="fc" id="L18">        Trainee,</span>
+<span class="fc" id="L19">        Accountant,</span>
+<span class="fc" id="L20">        Developer,</span>
+<span class="fc" id="L21">        Peon;</span>
+    }
+
+    private int id;
+
+    private String name;
+    private String fatherName;
+    private int age;
+    private String gender;
+    private MaritalStatus maritalStatus;
+    private Designation designation;
+    private float workExp;
+    private Date dob;
+    private Date startDate;
+    private Date endDate;
+    private Salary salary;
+    private List&lt;Project&gt; project;
+    private Address address;
+    private Contacts contacts;
+    private Department department;
+    private PersonalDetails  personaldetails;
+
+    public Employee(int id, String name, String fatherName, int age, String gender,
+                    MaritalStatus maritalStatus, Designation designation, float workExp,
+                    Date dob, Date startDate, Date endDate, Salary salary, List&lt;Project&gt; project,
+<span class="fc" id="L46">                    Address address, Contacts contacts, Department department, PersonalDetails personaldetails) {</span>
+<span class="fc" id="L47">        this.id = id;</span>
+<span class="fc" id="L48">        this.name = name;</span>
+<span class="fc" id="L49">        this.fatherName = fatherName;</span>
+<span class="fc" id="L50">        this.age = age;</span>
+<span class="fc" id="L51">        this.gender = gender;</span>
+<span class="fc" id="L52">        this.maritalStatus = maritalStatus;</span>
+<span class="fc" id="L53">        this.designation = designation;</span>
+<span class="fc" id="L54">        this.workExp = workExp;</span>
+<span class="fc" id="L55">        this.dob = dob;</span>
+<span class="fc" id="L56">        this.startDate = startDate;</span>
+<span class="fc" id="L57">        this.endDate = endDate;</span>
+<span class="fc" id="L58">        this.salary = salary;</span>
+<span class="fc" id="L59">        this.project = project;</span>
+<span class="fc" id="L60">        this.address = address;</span>
+<span class="fc" id="L61">        this.contacts = contacts;</span>
+<span class="fc" id="L62">        this.department = department;</span>
+<span class="fc" id="L63">        this.personaldetails = personaldetails;</span>
+<span class="fc" id="L64">    }</span>
+
+    @Override
+    public boolean equals(Object o) {
+<span class="pc bpc" id="L68" title="1 of 2 branches missed.">        if (this == o) return true;</span>
+<span class="pc bpc" id="L69" title="2 of 4 branches missed.">        if (o == null || getClass() != o.getClass()) return false;</span>
+
+<span class="fc" id="L71">        Employee employee = (Employee) o;</span>
+
+<span class="pc bpc" id="L73" title="1 of 2 branches missed.">        if (id != employee.id) return false;</span>
+<span class="pc bpc" id="L74" title="1 of 2 branches missed.">        if (age != employee.age) return false;</span>
+<span class="pc bpc" id="L75" title="1 of 2 branches missed.">        if (Float.compare(employee.workExp, workExp) != 0) return false;</span>
+<span class="pc bpc" id="L76" title="4 of 6 branches missed.">        if (name != null ? !name.equals(employee.name) : employee.name != null) return false;</span>
+<span class="pc bpc" id="L77" title="4 of 6 branches missed.">        if (fatherName != null ? !fatherName.equals(employee.fatherName) : employee.fatherName != null) return false;</span>
+<span class="pc bpc" id="L78" title="4 of 6 branches missed.">        if (gender != null ? !gender.equals(employee.gender) : employee.gender != null) return false;</span>
+<span class="pc bpc" id="L79" title="1 of 2 branches missed.">        if (maritalStatus != employee.maritalStatus) return false;</span>
+<span class="pc bpc" id="L80" title="1 of 2 branches missed.">        if (designation != employee.designation) return false;</span>
+<span class="pc bpc" id="L81" title="4 of 6 branches missed.">        if (dob != null ? !dob.equals(employee.dob) : employee.dob != null) return false;</span>
+<span class="pc bpc" id="L82" title="4 of 6 branches missed.">        if (startDate != null ? !startDate.equals(employee.startDate) : employee.startDate != null) return false;</span>
+<span class="pc bpc" id="L83" title="4 of 6 branches missed.">        if (endDate != null ? !endDate.equals(employee.endDate) : employee.endDate != null) return false;</span>
+<span class="pc bpc" id="L84" title="4 of 6 branches missed.">        if (salary != null ? !salary.equals(employee.salary) : employee.salary != null) return false;</span>
+<span class="pc bpc" id="L85" title="4 of 6 branches missed.">        if (project != null ? !project.equals(employee.project) : employee.project != null) return false;</span>
+<span class="pc bpc" id="L86" title="4 of 6 branches missed.">        if (address != null ? !address.equals(employee.address) : employee.address != null) return false;</span>
+<span class="pc bpc" id="L87" title="4 of 6 branches missed.">        if (contacts != null ? !contacts.equals(employee.contacts) : employee.contacts != null) return false;</span>
+<span class="pc bpc" id="L88" title="4 of 6 branches missed.">        if (department != null ? !department.equals(employee.department) : employee.department != null) return false;</span>
+<span class="pc bpc" id="L89" title="4 of 6 branches missed.">        return !(personaldetails != null ? !personaldetails.equals(employee.personaldetails) : employee.personaldetails != null);</span>
+
+    }
+
+    @Override
+    public int hashCode() {
+<span class="nc" id="L95">        int result = id;</span>
+<span class="nc bnc" id="L96" title="All 2 branches missed.">        result = 31 * result + (name != null ? name.hashCode() : 0);</span>
+<span class="nc bnc" id="L97" title="All 2 branches missed.">        result = 31 * result + (fatherName != null ? fatherName.hashCode() : 0);</span>
+<span class="nc" id="L98">        result = 31 * result + age;</span>
+<span class="nc bnc" id="L99" title="All 2 branches missed.">        result = 31 * result + (gender != null ? gender.hashCode() : 0);</span>
+<span class="nc bnc" id="L100" title="All 2 branches missed.">        result = 31 * result + (maritalStatus != null ? maritalStatus.hashCode() : 0);</span>
+<span class="nc bnc" id="L101" title="All 2 branches missed.">        result = 31 * result + (designation != null ? designation.hashCode() : 0);</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">        result = 31 * result + (workExp != +0.0f ? Float.floatToIntBits(workExp) : 0);</span>
+<span class="nc bnc" id="L103" title="All 2 branches missed.">        result = 31 * result + (dob != null ? dob.hashCode() : 0);</span>
+<span class="nc bnc" id="L104" title="All 2 branches missed.">        result = 31 * result + (startDate != null ? startDate.hashCode() : 0);</span>
+<span class="nc bnc" id="L105" title="All 2 branches missed.">        result = 31 * result + (endDate != null ? endDate.hashCode() : 0);</span>
+<span class="nc bnc" id="L106" title="All 2 branches missed.">        result = 31 * result + (salary != null ? salary.hashCode() : 0);</span>
+<span class="nc bnc" id="L107" title="All 2 branches missed.">        result = 31 * result + (project != null ? project.hashCode() : 0);</span>
+<span class="nc bnc" id="L108" title="All 2 branches missed.">        result = 31 * result + (address != null ? address.hashCode() : 0);</span>
+<span class="nc bnc" id="L109" title="All 2 branches missed.">        result = 31 * result + (contacts != null ? contacts.hashCode() : 0);</span>
+<span class="nc bnc" id="L110" title="All 2 branches missed.">        result = 31 * result + (department != null ? department.hashCode() : 0);</span>
+<span class="nc bnc" id="L111" title="All 2 branches missed.">        result = 31 * result + (personaldetails != null ? personaldetails.hashCode() : 0);</span>
+<span class="nc" id="L112">        return result;</span>
+    }
+
+    @Override
+    public String toString() {
+<span class="fc" id="L117">        return &quot;Employee{&quot; +</span>
+                &quot;id=&quot; + id +
+                &quot;, name='&quot; + name + '\'' +
+                &quot;, fatherName='&quot; + fatherName + '\'' +
+                &quot;, age=&quot; + age +
+                &quot;, gender='&quot; + gender + '\'' +
+                &quot;, maritalStatus=&quot; + maritalStatus +
+                &quot;, designation=&quot; + designation +
+                &quot;, workExp=&quot; + workExp +
+                &quot;, dob=&quot; + dob +
+                &quot;, startDate=&quot; + startDate +
+                &quot;, endDate=&quot; + endDate +
+                &quot;, salary=&quot; + salary +
+                &quot;, project=&quot; + project +
+                &quot;, address=&quot; + address +
+                &quot;, contacts=&quot; + contacts +
+                &quot;, department=&quot; + department +
+                &quot;, personaldetails=&quot; + personaldetails +
+                '}';
+    }
+
+    public Date getStartDate() {
+<span class="nc" id="L139">        return startDate;</span>
+    }
+
+    public void setStartDate(Date startDate) {
+<span class="nc" id="L143">        this.startDate = startDate;</span>
+<span class="nc" id="L144">    }</span>
+
+    public Date getEndDate() {
+<span class="nc" id="L147">        return endDate;</span>
+    }
+
+    public void setEndDate(Date endDate) {
+<span class="nc" id="L151">        this.endDate = endDate;</span>
+<span class="nc" id="L152">    }</span>
+
+    public String getFatherName() {
+<span class="nc" id="L155">        return fatherName;</span>
+    }
+
+    public void setFatherName(String fatherName) {
+<span class="nc" id="L159">        this.fatherName = fatherName;</span>
+<span class="nc" id="L160">    }</span>
+
+
+    public void setId(int id) {
+<span class="nc" id="L164">        this.id = id;</span>
+<span class="nc" id="L165">    }</span>
+
+    public int getId() {
+<span class="nc" id="L168">        return id;</span>
+    }
+
+    public void setName(String name) {
+<span class="nc" id="L172">        this.name = name;</span>
+<span class="nc" id="L173">    }</span>
+
+    public String getName() {
+<span class="nc" id="L176">        return name;</span>
+    }
+
+    public int getAge() {
+<span class="nc" id="L180">        return age;</span>
+    }
+
+    public void setAge(int age) {
+<span class="nc" id="L184">        this.age = age;</span>
+<span class="nc" id="L185">    }</span>
+
+    public String getGender() {
+<span class="nc" id="L188">        return gender;</span>
+    }
+
+    public void setGender(String gender) {
+<span class="nc" id="L192">        this.gender = gender;</span>
+<span class="nc" id="L193">    }</span>
+
+    public float getWorkExp() {
+<span class="nc" id="L196">        return workExp;</span>
+    }
+
+    public void setWorkExp(float workExp) {
+<span class="nc" id="L200">        this.workExp = workExp;</span>
+<span class="nc" id="L201">    }</span>
+
+    public Date getDob() {
+<span class="nc" id="L204">        return dob;</span>
+    }
+
+    public void setDob(Date dob) {
+<span class="nc" id="L208">        this.dob = dob;</span>
+<span class="nc" id="L209">    }</span>
+
+    public MaritalStatus getMaritalStatus() {
+<span class="nc" id="L212">        return maritalStatus;</span>
+    }
+
+    public void setMaritalStatus(MaritalStatus maritalStatus) {
+<span class="nc" id="L216">        this.maritalStatus = maritalStatus;</span>
+<span class="nc" id="L217">    }</span>
+
+    public Designation getDesignation() {
+<span class="nc" id="L220">        return designation;</span>
+    }
+
+    public void setDesignation(Designation designation) {
+<span class="nc" id="L224">        this.designation = designation;</span>
+<span class="nc" id="L225">    }</span>
+
+    public Salary getSalary() {
+<span class="nc" id="L228">        return salary;</span>
+    }
+
+    public void setSalary(Salary salary) {
+<span class="nc" id="L232">        this.salary = salary;</span>
+<span class="nc" id="L233">    }</span>
+
+    public List&lt;Project&gt; getProject() {
+<span class="nc" id="L236">        return project;</span>
+    }
+
+    public void setProject(List&lt;Project&gt; project) {
+<span class="nc" id="L240">        this.project = project;</span>
+<span class="nc" id="L241">    }</span>
+
+    public Address getAddress() {
+<span class="nc" id="L244">        return address;</span>
+    }
+
+    public void setAddress(Address address) {
+<span class="nc" id="L248">        this.address = address;</span>
+<span class="nc" id="L249">    }</span>
+
+    public Contacts getContacts() {
+<span class="nc" id="L252">        return contacts;</span>
+    }
+
+    public void setContacts(Contacts contacts) {
+<span class="nc" id="L256">        this.contacts = contacts;</span>
+<span class="nc" id="L257">    }</span>
+
+    public Department getDepartment() {
+<span class="nc" id="L260">        return department;</span>
+    }
+
+    public void setDepartment(Department department) {
+<span class="nc" id="L264">        this.department = department;</span>
+<span class="nc" id="L265">    }</span>
+
+    public PersonalDetails getPersonaldetails() {
+<span class="nc" id="L268">        return personaldetails;</span>
+    }
+
+    public void setPersonaldetails(PersonalDetails personaldetails) {
+<span class="nc" id="L272">        this.personaldetails = personaldetails;</span>
+<span class="nc" id="L273">    }</span>
+
+
+    public void agecalc() {
+<span class="nc" id="L277">        Calendar c = Calendar.getInstance();</span>
+<span class="nc" id="L278">        int now = c.get(Calendar.YEAR);</span>
+<span class="nc" id="L279">        Calendar c1 = Calendar.getInstance();</span>
+<span class="nc" id="L280">        c1.setTime(dob);</span>
+<span class="nc" id="L281">        int dobyear = c1.get(Calendar.YEAR);</span>
+<span class="nc" id="L282">        int age = now - dobyear;</span>
+<span class="nc" id="L283">        System.out.println(&quot;Age calculated is&quot; + age);</span>
+<span class="nc" id="L284">    }</span>
+}
+
+
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.eclemma.org/jacoco">JaCoCo</a> 0.7.5.201505241946</span></div></body></html>
