@@ -36,7 +36,9 @@ public class EmployeeContactTest {
 		ContactInput contactInput=new ContactInput(101);
 		Future<List<Contact>> future=executor1.submit(contactInput);
 		List<Contact> contactList=future.get();
-		//assertEquals(contactList.toString(),list.toString());
+		//System.out.println(contactList);
+		//System.out.println(list);
+		assertEquals(contactList.toString(),list.toString());
 		assertNotEquals(contactInput, list1);
 		
 	}

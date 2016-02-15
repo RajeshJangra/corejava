@@ -99,7 +99,7 @@ public class EmployeeProject {
 	}
 	@Override
 	public String toString() {
-		return "\n[id=" + id + ", pid=" + pid + ", name=" + name
+		return "[id=" + id + ", pid=" + pid + ", name=" + name
 				+ ", startDate=" + startDate + ", endDate=" + endDate + "] ";
 	}
 

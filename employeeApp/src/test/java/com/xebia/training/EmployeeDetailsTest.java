@@ -33,9 +33,12 @@ public class EmployeeDetailsTest {
 		
 	 EmployeePersonalDetailsInput employeePersonalDetailsInput2 = new EmployeePersonalDetailsInput(101);
      Future<List<EmployeePersonalDetails>> futureTask = executor1.submit(employeePersonalDetailsInput2);
+     System.out.println(detailslist);
+     System.out.println(detailslist1);
+     
      List<EmployeePersonalDetails> list = futureTask.get();
-     assertNotEquals(list,detailslist);
-    // assertEquals(list,detailslist1);
+    // assertNotEquals(list,detailslist1);
+    assertEquals(list,detailslist);
 		
 	}
 
