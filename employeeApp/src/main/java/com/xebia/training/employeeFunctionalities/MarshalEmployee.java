@@ -19,13 +19,6 @@ public class MarshalEmployee {
         jaxbMarshaller.marshal(employees, new File("src/main/java/com/xebia/training/xmlFiles/marshalledEmployees/EmployeeList.xml"));
     }
 
-    public static void marshalEmployee(Employee employee) throws JAXBException {
-        JAXBContext jaxbContext = JAXBContext.newInstance(Employee.class);
-        Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
-        jaxbMarshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        jaxbMarshaller.marshal(employee, new File("src/main/java/com/xebia/training/xmlFiles/marshalledEmployees/Employee.xml"));
-    }
-
     public static void marshalEmployee(final String id) throws JAXBException, ExecutionException, InterruptedException {
         Employee employee = new EmployeeInput().inputEmployeeDetails(id);
         JAXBContext jaxbContext = JAXBContext.newInstance(Employee.class);
