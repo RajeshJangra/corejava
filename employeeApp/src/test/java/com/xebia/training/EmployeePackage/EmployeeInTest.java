@@ -31,7 +31,7 @@ public class EmployeeInTest {
         PersonalDetails personalDetails=new PersonalDetails(101,"a101","p101","A+","e101","l101");
         Department department=new Department(101,"Trainee",new SimpleDateFormat("dd-MM-yyyy").parse("18-01-2016"),null);
         Address address=new Address(101,Address.Address_type.permanentAddress,801,"sector30","gurgaon","333333","haryana","area") ;
-       Employee employee = new Employee(101,"priyanka","NCJ",22,"female",Employee.MaritalStatus.unmarried,Employee.Designation.Trainee,0.0f,new SimpleDateFormat("dd-MM-yyyy").parse("22-01-1994"),new SimpleDateFormat("dd-MM-yyyy").parse("18-01-2016"),
+       Employee employee = new Employee(101,"priyanka","ncj",22,"female",Employee.MaritalStatus.unmarried,Employee.Designation.Trainee,0.0f,new SimpleDateFormat("dd-MM-yyyy").parse("22-01-1994"),new SimpleDateFormat("dd-MM-yyyy").parse("18-01-2016"),
                null,salary,list,address,contacts,department,personalDetails);
         System.out.println("employee 111 = " + employee);
         System.out.println("employee 122= " + employee2);

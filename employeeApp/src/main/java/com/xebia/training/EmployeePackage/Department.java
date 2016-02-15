@@ -41,8 +41,8 @@ public class Department  {
 	}
 	
 	public String toString() {
-		return "EmployeePackage.Department [id=" + id + ", name=" + name + ", startDate="
-				+ startDate + ", endDate=" + endDate + "]";
+		return "{id=" + id + ", name=" + name + ", startDate="
+				+ startDate + ", endDate=" + endDate + "}";
 	}
 
 	@Override

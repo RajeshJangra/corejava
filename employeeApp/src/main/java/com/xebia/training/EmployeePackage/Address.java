@@ -109,9 +109,9 @@ public class Address {
 
 	@Override
 	public String toString() {
-		return "EmployeePackage.Address [ id=" + id+",addressType=" + addressType + ", houseNo=" + houseNo + ", streetApartment="
+		return "{ id=" + id+",addressType=" + addressType + ", houseNo=" + houseNo + ", streetApartment="
 				+ streetApartment + ", city=" + city + ", pinCode="
-				+ pinCode + ", state=" + state + ", area=" + area + "]";
+				+ pinCode + ", state=" + state + ", area=" + area + "}";
 	}
 
 }

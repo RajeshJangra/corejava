@@ -51,6 +51,6 @@ public class Contacts {
 
 	@Override
 	public String toString() {
-		return "EmployeePackage.Contacts [ id=" + id + ",phoneNo=" + phoneNo + ",email=" + email + "]";
+		return "{ id=" + id + ",phoneNo=" + phoneNo + ",email=" + email + "}";
 	}
 }

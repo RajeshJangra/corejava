@@ -114,7 +114,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", fatherName='" + fatherName + '\'' +
@@ -126,12 +126,12 @@ public class Employee {
                 ", dob=" + dob +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
-                ", salary=" + salary +
-                ", project=" + project +
-                ", address=" + address +
-                ", contacts=" + contacts +
-                ", department=" + department +
-                ", personaldetails=" + personaldetails +
+                ", '\n Salary=" + salary +
+                ", '\n Project=" + project +
+                ", '\n Address=" + address +
+                ", '\n Contacts=" + contacts +
+                ", '\n Department=" + department +
+                ", '\n Personaldetails=" + personaldetails +
                 '}';
     }
 

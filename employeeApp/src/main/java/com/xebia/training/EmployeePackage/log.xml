@@ -1,0 +1,7 @@
+<appender name="appender-log" class="org.apache.log4j.FileAppender">
+    <param name="File" value="efoimporter.log" />
+    <param name="Append" value="false" />
+    <layout class="org.apache.log4j.PatternLayout">
+        <param name="ConversionPattern" value="%m%n" />
+    </layout>
+</appender>

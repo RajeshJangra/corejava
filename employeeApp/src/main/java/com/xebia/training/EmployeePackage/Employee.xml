@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <Employee>
     <employee id="101">
-        <name>priyanka</name>
-        <father_name>NCJ</father_name>
+      <name>priyanka</name>
+        <father_name>ncj</father_name>
         <age>22</age>
         <gender>female</gender>
         <Marital_Status>unmarried</Marital_Status>
@@ -14,28 +14,26 @@
     </employee>
     <employee id="102">
         <name>mandavi</name>
-        <father_name>NKN</father_name>
+        <father_name>nkn</father_name>
         <age>21</age>
         <gender>female</gender>
         <Marital_Status>unmarried</Marital_Status>
         <designation>Trainee</designation>
-        <workExp>0.0</workExp>
+        <workExp>1.5</workExp>
         <dob>26-01-1995</dob>
         <start_date>18-01-2016</start_date>
-        <end_date>18-01-2019</end_date>
+        <end_date>18-01-2018</end_date>
     </employee>
     <employee id="103">
-        <name>xyz</name>
-        <father_name>pqr</father_name>
-        <age>30</age>
-        <gender>male</gender>
-        <Marital_Status>married</Marital_Status>
-        <designation>Manager</designation>
-        <workExp>8</workExp>
-        <dob>14-11-1986</dob>
-        <start_date>11-11-2001</start_date>
-        <end_date>15-12-2018</end_date>
+        <name>jasleen</name>
+        <father_name>jpj</father_name>
+        <age>22</age>
+        <gender>female</gender>
+        <Marital_Status>unmarried</Marital_Status>
+        <designation>Trainee</designation>
+        <workExp>1.5</workExp>
+        <dob>18-01-1994</dob>
+        <start_date>18-06-2015</start_date>
+        <end_date>18-01-2018</end_date>
     </employee>
 </Employee>
-
-

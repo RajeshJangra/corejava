@@ -1,5 +1,6 @@
 package com.xebia.training.EmployeePackage;
-
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 import jdk.nashorn.internal.codegen.CompilerConstants;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -15,6 +16,7 @@ import java.util.*;
 import java.util.concurrent.*;
 
 public class EmployeeIn implements Callable<Employee> {
+    static Logger log=Logger.getLogger(EmployeeApplication.class.getName());
     Employee employee;
     int id;
     static Date date;
@@ -59,7 +61,7 @@ public class EmployeeIn implements Callable<Employee> {
 
     public static void resignEmployee(Employee employee) throws ParseException {
         Scanner sc = new Scanner(System.in);
-        System.out.println("does employee want to resign? Y/N ");
+        log.info("does employee want to resign? Y/N ");
         String reply = sc.nextLine();
         if (reply.equals("Y")) {
             Calendar c = Calendar.getInstance();
@@ -71,11 +73,11 @@ public class EmployeeIn implements Callable<Employee> {
             for (Project project : employee.getProject()) {
                 project.setEndDate(date);
             }
-            System.out.println(employee.getName()+" Sucessfully Resigned\nUpdated Details are\n"+employee);
+            log.info(employee.getName()+" Sucessfully Resigned\nUpdated Details are\n"+employee);
 
         } else {
             date = null;
-            System.out.println("No Employee to resign");
+            log.info("No Employee to resign");
         }
 
     }
@@ -111,6 +113,8 @@ public class EmployeeIn implements Callable<Employee> {
 
     private void printElements(final Element nNode) throws ParseException, ExecutionException, InterruptedException {
         Element eElement = nNode;
+int count=0;
+
         if (Integer.parseInt(eElement.getAttribute("id")) == id) {
             SalaryIn salaryIn = new SalaryIn(id);
             ProjectIn projectIn = new ProjectIn(id);
@@ -129,7 +133,7 @@ public class EmployeeIn implements Callable<Employee> {
 
             Future<Address> addressFuture = executorService.submit(addressIn);
             Address address = addressFuture.get();
-            System.out.println(address);
+
             Future<Contacts> contactsFuture = executorService.submit(contactsIn);
             Contacts contacts = contactsFuture.get();
 
@@ -141,26 +145,27 @@ public class EmployeeIn implements Callable<Employee> {
             PersonalDetails personaldetails = personaldetailsFuture.get();
 
 
-            if (Integer.parseInt(eElement.getAttribute("id")) == id) {
-                Date dob = null, startDate = null, endDate = null;
+            Date dob = null, startDate = null, endDate = null;
 
-                dob = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("dob").item(0).getTextContent());
+            dob = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("dob").item(0).getTextContent());
 
-                startDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("start_date").item(0).getTextContent());
-                endDate = EmployeeIn.date;
+            startDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("start_date").item(0).getTextContent());
+            endDate = EmployeeIn.date;
 
 
-                employee = new Employee(id, eElement.getElementsByTagName("name").item(0).getTextContent(), eElement.getElementsByTagName("father_name").item(0).getTextContent(),
-                        Integer.parseInt(eElement.getElementsByTagName("age").item(0).getTextContent()), eElement.getElementsByTagName("gender").item(0).getTextContent(),
-                        Employee.MaritalStatus.valueOf(eElement.getElementsByTagName("Marital_Status").item(0).getTextContent()),
-                        Employee.Designation.valueOf(eElement.getElementsByTagName("designation").item(0).getTextContent()),
-                        Float.parseFloat(eElement.getElementsByTagName("workExp").item(0).getTextContent()), dob, startDate, endDate, salary, project, address, contacts,
-                        department, personaldetails);
+            employee = new Employee(id, eElement.getElementsByTagName("name").item(0).getTextContent(), eElement.getElementsByTagName("father_name").item(0).getTextContent(),
+                    Integer.parseInt(eElement.getElementsByTagName("age").item(0).getTextContent()), eElement.getElementsByTagName("gender").item(0).getTextContent(),
+                    Employee.MaritalStatus.valueOf(eElement.getElementsByTagName("Marital_Status").item(0).getTextContent()),
+                    Employee.Designation.valueOf(eElement.getElementsByTagName("designation").item(0).getTextContent()),
+                    Float.parseFloat(eElement.getElementsByTagName("workExp").item(0).getTextContent()), dob, startDate, endDate, salary, project, address, contacts,
+                    department, personaldetails);
 
-            }
+        }
+
+
         }
 
     }
-}
+
 
 

@@ -54,16 +54,19 @@ public class PersonalDetails {
 		this.licenceNo = licenceNo;
 	}
 
+	public PersonalDetails() {
+	}
+
 	@Override
 	public String toString() {
-		return "PersonalDetails{" +
+		return "{" +
 				"id=" + id +
 				", adharNo='" + adharNo + '\'' +
 				", panNo='" + panNo + '\'' +
 				", bloodGroup='" + bloodGroup + '\'' +
 				", electionId='" + electionId + '\'' +
 				", licenceNo='" + licenceNo + '\'' +
-				'}';
+				"}";
 	}
 
 	@Override

@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
     public class AddressInTest  {
         @Test
         public  void testCall()throws Exception {
-//            Address> list=new ArrayList<Address>();
+
           Address address=new Address(101,Address.Address_type.permanentAddress,801,"sector30","gurgaon","333333","haryana","area") ;
 
             ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);

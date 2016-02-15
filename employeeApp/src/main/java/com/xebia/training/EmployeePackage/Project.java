@@ -64,8 +64,8 @@ public class Project {
 
 	public String toString() {
 
-		return "EmployeePackage.Project [, id=" + id + ",startDate=" + startDate + ", endDate=" + endDate
-				+ ", name=" + name + "]";
+		return "{id=" + id + ",startDate=" + startDate + ", endDate=" + endDate
+				+ ", name=" + name + "}";
 	}
 }
 

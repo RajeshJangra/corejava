@@ -64,9 +64,9 @@ public class Salary {
 
 	@Override
 	public String toString() {
-		return "EmployeePackage.Salary [id=" + id + ", BASIC=" + BASIC + ", HRA=" + HRA
+		return "{id=" + id + ", BASIC=" + BASIC + ", HRA=" + HRA
 				+ ", DA=" + DA + ", LTA=" + LTA + ", PF=" + PF + ", FP="
-				+ FP + ", GRATVITY=" + GRATVITY + "]";
+				+ FP + ", GRATVITY=" + GRATVITY + "}";
 	}
 
 	public double getBASIC() {
