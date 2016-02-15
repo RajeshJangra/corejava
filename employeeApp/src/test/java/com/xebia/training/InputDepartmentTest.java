@@ -33,8 +33,6 @@ public class InputDepartmentTest {
 			FutureTask<List<Department>> task1= (FutureTask<List<Department>>) executor2.submit(obj1);
 			List<Department> department1=task1.get();
 			
-			System.out.println(department1);
-			System.out.println(list);
 			
 			assertEquals(department1,list);
 

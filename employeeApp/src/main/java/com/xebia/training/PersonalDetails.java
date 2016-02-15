@@ -3,6 +3,56 @@ import java.util.Calendar;
 import java.util.Date;
 public class PersonalDetails {
 	
+	
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		PersonalDetails other = (PersonalDetails) obj;
+		if (aadharno != other.aadharno)
+			return false;
+		if (age != other.age)
+			return false;
+		if (bloodgroup == null) {
+			if (other.bloodgroup != null)
+				return false;
+		} else if (!bloodgroup.equals(other.bloodgroup))
+			return false;
+		if (dob == null) {
+			if (other.dob != null)
+				return false;
+		} else if (!dob.equals(other.dob))
+			return false;
+		if (fathername == null) {
+			if (other.fathername != null)
+				return false;
+		} else if (!fathername.equals(other.fathername))
+			return false;
+		if (gender == null) {
+			if (other.gender != null)
+				return false;
+		} else if (!gender.equals(other.gender))
+			return false;
+		if (id != other.id)
+			return false;
+		if (maritalstatus == null) {
+			if (other.maritalstatus != null)
+				return false;
+		} else if (!maritalstatus.equals(other.maritalstatus))
+			return false;
+		if (name == null) {
+			if (other.name != null)
+				return false;
+		} else if (!name.equals(other.name))
+			return false;
+		return true;
+	}
+
 	private int id,age;
 	private String name,fathername,gender,bloodgroup;
 	private String maritalstatus;

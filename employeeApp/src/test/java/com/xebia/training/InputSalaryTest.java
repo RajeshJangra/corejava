@@ -33,8 +33,7 @@ public class InputSalaryTest {
 			FutureTask<List<Salary>> task= (FutureTask<List<Salary>>) executor1.submit(obj);
 			List<Salary> salary1=task.get();
 			
-			System.out.println(salary1);
-			System.out.println(list);
+			
 		     assertEquals(salary1,list);
 		//assertNotEquals(salary1,list1);
 		

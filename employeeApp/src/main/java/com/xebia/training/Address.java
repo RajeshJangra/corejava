@@ -40,6 +40,8 @@ public class Address {
 	public int getPin() {
 		return pin;
 	}
+	
+	
 	public void setPin(int pin) {
 		this.pin = pin;
 	}
@@ -56,6 +58,8 @@ public class Address {
 		Correspondence;
 	}
 
+	
+	
 	public Address(int id, String sector, String city, String state, int houseno, int pin, String street,
 			addressType addtype) {
 		super();
@@ -70,6 +74,46 @@ public class Address {
 		this.addtype = addtype;
 	}
 
+	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Address other = (Address) obj;
+		if (addtype != other.addtype)
+			return false;
+		if (city == null) {
+			if (other.city != null)
+				return false;
+		} else if (!city.equals(other.city))
+			return false;
+		if (houseno != other.houseno)
+			return false;
+		if (id != other.id)
+			return false;
+		if (pin != other.pin)
+			return false;
+		if (sector == null) {
+			if (other.sector != null)
+				return false;
+		} else if (!sector.equals(other.sector))
+			return false;
+		if (state == null) {
+			if (other.state != null)
+				return false;
+		} else if (!state.equals(other.state))
+			return false;
+		if (street == null) {
+			if (other.street != null)
+				return false;
+		} else if (!street.equals(other.street))
+			return false;
+		return true;
+	}
 	@Override
 	public String toString() {
 		return " [Street=" + street + ", Sector=" + sector + ", City=" + city + ", State=" + state + ", Houseno="
