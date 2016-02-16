@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<class>
+    <ContactsData employeeId="001">
+        <contactId>001</contactId>
+        <name>Kapil Choudhary</name>
+        <addressType>CORRESPONDENCE</addressType>
+        <houseNo>669/D</houseNo>
+        <streetOrApartment>Shri Nagar</streetOrApartment>
+        <area>Rani Bagh</area>
+        <city>New Delhi</city>
+        <state>Delhi</state>
+        <pincode>110034</pincode>
+        <landmark>M2K Pitam Pura</landmark>
+        <phoneNo>9560654774</phoneNo>
+        <email>kchoudhary@xebia.com</email>
+    </ContactsData>
+
+    <ContactsData employeeId="002">
+        <contactId>002</contactId>
+        <name>Surbhi</name>
+        <addressType>CURRENT</addressType>
+        <houseNo>129</houseNo>
+        <streetOrApartment>Giri Nagar</streetOrApartment>
+        <area>Kalkaji</area>
+        <city>New Delhi</city>
+        <state>Delhi</state>
+        <pincode>110019</pincode>
+        <landmark>Govindpuri Metro Station</landmark>
+        <phoneNo>8527533789</phoneNo>
+        <email>jasleeny@xebia.com</email>
+    </ContactsData>
+</class>

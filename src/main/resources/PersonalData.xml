@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<class>
+    <PersonalData employeeId="001">
+        <personalDetailsID>001</personalDetailsID>
+        <fatherName>Karan Singh</fatherName>
+        <gender>Male</gender>
+        <dob>15-09-1993</dob>
+        <bloodGroup>B+</bloodGroup>
+        <maritalStatus>Single</maritalStatus>
+        <passportInformation>K5554FF447</passportInformation>
+        <adharNO>562256546</adharNO>
+        <drivingLicenceNo>DL525565</drivingLicenceNo>
+    </PersonalData>
+
+    <PersonalData employeeId="002">
+        <personalDetailsID>002</personalDetailsID>
+        <fatherName>Parveen Kumar</fatherName>
+        <gender>Female</gender>
+        <dob>14-09-1990</dob>
+        <bloodGroup>O+</bloodGroup>
+        <maritalStatus>Single</maritalStatus>
+        <passportInformation>J5554FF557</passportInformation>
+        <adharNO>896256546</adharNO>
+        <drivingLicenceNo>DL256445</drivingLicenceNo>
+    </PersonalData>
+
+</class>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<class>
+    <SalaryData employeeId="001">
+        <salaryId>001</salaryId>
+        <basic>750000</basic>
+    </SalaryData>
+
+    <SalaryData employeeId="002">
+        <salaryId>002</salaryId>
+        <basic>7500</basic>
+    </SalaryData>
+
+</class>

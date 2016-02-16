@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<class>
+    <DepartmentData employeeId="001">
+        <departmentId>001</departmentId>
+        <name>Technical</name>
+        <startDate>01-09-2015</startDate>
+        <endDate>03-03-2016</endDate>
+    </DepartmentData>
+
+    <DepartmentData employeeId="002">
+        <departmentId>002</departmentId>
+        <name>Non-Technical</name>
+        <startDate>01-05-2014</startDate>
+        <endDate>03-12-2016</endDate>
+    </DepartmentData>
+</class>

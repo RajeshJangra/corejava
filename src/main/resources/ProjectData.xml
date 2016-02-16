@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<class>
+    <ProjectData employeeId="001">
+        <projectId>001</projectId>
+        <name>Beachbody</name>
+        <designation>CONSULTANT</designation>
+        <startDate>12-12-2015</startDate>
+        <endDate>05-04-2016</endDate>
+    </ProjectData>
+
+    <ProjectData employeeId="001">
+        <projectId>002</projectId>
+        <name>Pantha</name>
+        <designation>TRAINEE</designation>
+        <startDate>01-09-2015</startDate>
+        <endDate>01-12-2015</endDate>
+    </ProjectData>
+
+    <ProjectData employeeId="001">
+        <projectId>003</projectId>
+        <name>Delivery</name>
+        <designation>MANAGER</designation>
+        <startDate>10-04-2016</startDate>
+        <endDate>05-08-2016</endDate>
+    </ProjectData>
+
+    <ProjectData employeeId="002">
+        <projectId>004</projectId>
+        <name>Grindr</name>
+        <designation>HR</designation>
+        <startDate>02-01-2016</startDate>
+        <endDate>15-02-2016</endDate>
+    </ProjectData>
+
+</class>
