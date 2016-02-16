@@ -1,4 +1,4 @@
-package com.xebia.training.EmployeeEntities;
+package com.xebia.training.MainApplication;
 
 import java.io.IOException;
 import java.text.ParseException;
