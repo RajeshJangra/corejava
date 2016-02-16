@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<class>
+ <employee>
+  <name>VISHAL</name>
+  <startingDate>03-02-2015</startingDate>
+  <fathersName>AWADH SINGH</fathersName>
+  <correspondant>VISHALSINGH@xebia.com</correspondant>
+  <designation>TRAINEE</designation>
+  <current>13/B gurgaon,haryana,India</current>
+  <personal>B-26,PAPRATAND,GIRIDIH</personal>
+  <workEx>1</workEx>
+  <gender>MALE</gender>
+  <dOB>30-08-1992</dOB>
+  <id>1</id>
+  <endingDate></endingDate>
+ </employee>
+ <employee>
+  <name>ANIRBAN</name>
+  <startingDate>20-01-2016</startingDate>
+  <fathersName>RANJAN KUMAR</fathersName>
+  <correspondant> ANIRBAN@xebia.com </correspondant>
+  <designation>TRAINEE</designation>
+  <current>KOLKATA,INDIA</current>
+  <personal>ROHINI,DELHI</personal>
+  <workEx>0</workEx>
+  <gender>male</gender>
+  <dOB>2-2-1992</dOB>
+  <id>2</id>
+  <endingDate></endingDate>
+ </employee>
+</class>

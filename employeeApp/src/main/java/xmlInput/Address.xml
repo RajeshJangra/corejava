@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<class>
+ <address id="1">
+  <ContactId>1.0</ContactId>
+  <addressType>PERMANENT</addressType>
+  <houseNo>420</houseNo>
+  <street>14</street>
+  <area>PAPRATAND</area>
+  <city>GIRIDIH</city>
+  <pinCode>815301</pinCode>
+  <state>JHARKHAND</state>
+  <landmark>NOTHING</landmark>
+  <phoneNo>977516</phoneNo>
+  <email>VISHALSINGH@xebia.com</email>
+  <skypeid>VISHALSINGH0007</skypeid>
+ </address>
+</class>
