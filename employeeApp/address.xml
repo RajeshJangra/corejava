@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Addresses>
+    <Address id="512">
+        <addressType>PERMANENT</addressType>
+        <area>Kushwaha Vatika</area>
+        <city>Bhagalpur</city>
+        <emailID>manav@xebia.com</emailID>
+        <houseNumber>6-A</houseNumber>
+        <phone>8653153544</phone>
+        <pinCode>812001</pinCode>
+        <state>Bihar</state>
+        <street>Ishakchak Road</street>
+    </Address>
+    <Address id="511">
+        <addressType>PERMANENT</addressType>
+        <area>Durgachak</area>
+        <city>Ranchi</city>
+        <emailID>vishal@xebia.com</emailID>
+        <houseNumber>92/B</houseNumber>
+        <phone>8327535944</phone>
+        <pinCode>834543</pinCode>
+        <state>Jharkhand</state>
+        <street>Bhikaji Kama Road</street>
+    </Address>
+    <Address id="383">
+        <addressType>PERMANENT</addressType>
+        <area>Meharaulli</area>
+        <city>Delhi</city>
+        <emailID>ram@xebia.com</emailID>
+        <houseNumber>1232</houseNumber>
+        <phone>9846703544</phone>
+        <pinCode>110001</pinCode>
+        <state>NCR</state>
+        <street>M.G. Road</street>
+    </Address>
+</Addresses>

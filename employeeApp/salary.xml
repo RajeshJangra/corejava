@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<salaries>
+    <Salary id="512">
+        <basic>8600.0</basic>
+    </Salary>
+    <Salary id="511">
+        <basic>8600.0</basic>
+    </Salary>
+    <Salary id="383">
+        <basic>26000.0</basic>
+    </Salary>
+</salaries>

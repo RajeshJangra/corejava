@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Departments>
+    <Department id="512">
+        <name>Technical</name>
+        <startDate>2016-01-20T00:00:00+05:30</startDate>
+    </Department>
+    <Department id="511">
+        <name>Technical</name>
+        <startDate>2016-01-20T00:00:00+05:30</startDate>
+    </Department>
+    <Department id="383">
+        <name>HR</name>
+        <startDate>2015-01-20T00:00:00+05:30</startDate>
+    </Department>
+</Departments>

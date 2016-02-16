@@ -1,88 +1,86 @@
 package com.xebia.training;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
+import javax.xml.bind.annotation.*;
 
-enum Designation{
-	JAVA_CONSULTANT,
-	SENIOR_JAVA_CONSULTANT,
-	TRAINEE;
-	
-}
-
+@SuppressWarnings("restriction")
+@XmlRootElement
 public class Employee {
+	public enum Designation{
+		JAVA_CONSULTANT,
+		SENIOR_JAVA_CONSULTANT,
+		TRAINEE,
+		CEO,
+		CTO;
+		
+	}
 	
+	
+	public Employee() {
+		
+	}
 	private String name;
 	private String fatherName;
-	private String id;
+	private int id;
 	private int age;
 	private Address address;
 	private Salary salary;
 	private Date dateOfBirth;
 	private Date dateOfJoining;
 	private Date dateOfEnding;
-	private PersonalDetails personalDetails;
-	
+	private PersonalDetail personalDetail;
+	private Department department;
 	private int workExperience;
 	
-	private Project project;
+	private List<Project> project;
 	private String gender;
 	private Designation designation;
+
 	
 	
-	
-	public Employee(String name, String fatherName, String id, int age,
-			Address address, Salary salary, Date dateOfBirth,
-			Date dateOfJoining, Date dateOfEnding,
-			PersonalDetails personalDetails, int workExperience,
-			Project project, String gender,Designation designation) {
+	public Employee(String name, String fatherName, int id, Address address,
+			Salary salary, Date dateOfBirth, Date dateOfJoining,
+			Date dateOfEnding, PersonalDetail personalDetail,
+			Department department, int workExperience, List<Project> project,
+			String gender, Designation designation) {
 		super();
 		this.name = name;
 		this.fatherName = fatherName;
 		this.id = id;
-		this.age = age;
+		
 		this.address = address;
 		this.salary = salary;
 		this.dateOfBirth = dateOfBirth;
 		this.dateOfJoining = dateOfJoining;
 		this.dateOfEnding = dateOfEnding;
-		this.personalDetails = personalDetails;
+		this.personalDetail = personalDetail;
+		this.department = department;
 		this.workExperience = workExperience;
 		this.project = project;
 		this.gender = gender;
-		this.designation=designation;
+		this.designation = designation;
+		this.age=this.calculateAge();
 	}
-	public Date getDateOfBirth() {
-		return dateOfBirth;
-	}
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
-	}
-	public Date getDateOfJoining() {
-		return dateOfJoining;
-	}
-	public void setDateOfJoining(Date dateOfJoining) {
-		this.dateOfJoining = dateOfJoining;
-	}
-	public Date getDateOfEnding() {
-		return dateOfEnding;
-	}
-	public void setDateOfEnding(Date dateOfEnding) {
-		this.dateOfEnding = dateOfEnding;
-	}
-	
-	
+
+	@XmlElement
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getId() {
+	@XmlAttribute
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	
+	public void setId(int id) {
 		this.id = id;
 	}
+	@XmlElement
 	public String getFatherName() {
 		return fatherName;
 	}
@@ -90,20 +88,45 @@ public class Employee {
 	public void setFatherName(String fatherName) {
 		this.fatherName = fatherName;
 	}
+	@XmlElement
+	public Date getDateOfBirth() {
+		return dateOfBirth;
+	}
+	public void setDateOfBirth(Date dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+	@XmlElement
+	public Date getDateOfJoining() {
+		return dateOfJoining;
+	}
+	public void setDateOfJoining(Date dateOfJoining) {
+		this.dateOfJoining = dateOfJoining;
+	}
+	@XmlElement
+	public Date getDateOfEnding() {
+		return dateOfEnding;
+	}
+	public void setDateOfEnding(Date dateOfEnding) {
+		this.dateOfEnding = dateOfEnding;
+	}
+	
+	public void setAge()
+	{
+		this.age=this.calculateAge();
+	}
 
 	public int getAge() {
 		return age;
 	}
-	public void setAge(int age) {
-		this.age = age;
-	}
+	
 
-	public PersonalDetails getPersonalDetails() {
-		return personalDetails;
+	public PersonalDetail getPersonalDetail() {
+		return personalDetail;
 	}
-	public void setPersonalDetails(PersonalDetails personalDetails) {
-		this.personalDetails = personalDetails;
+	public void setPersonalDetail(PersonalDetail personalDetail) {
+		this.personalDetail = personalDetail;
 	}
+	@XmlElement
 	public Designation getDesignation() {
 		return designation;
 	}
@@ -119,6 +142,7 @@ public class Employee {
 	public void setSalary(Salary salary) {
 		this.salary = salary;
 	}
+	@XmlElement
 	public int getWorkExperience() {
 		return workExperience;
 	}
@@ -126,21 +150,36 @@ public class Employee {
 		this.workExperience = workExperience;
 	}
 	
+	public Department getDepartment() {
+		return department;
+	}
+	public void setDepartment(Department department) {
+		this.department = department;
+	}
 	public Address getAddress() {
 		return address;
 	}
-	public Project getProject() {
+	public List<Project> getProject() {
 		return project;
 	}
-	public void setProject(Project project) {
+	public void setProject(List<Project> project) {
 		this.project = project;
 	}
+	@XmlElement
 	public String getGender() {
 		return gender;
 	}
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
+	 public int calculateAge() {
+	        Calendar calender = Calendar.getInstance();
+	        calender.setTime(this.dateOfBirth);
+	        int year = calender.get(Calendar.YEAR);
+	        calender = Calendar.getInstance();
+	        int now = calender.get(Calendar.YEAR);
+	        return now - year;
+	    }
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -158,10 +197,10 @@ public class Employee {
 		result = prime * result
 				+ ((fatherName == null) ? 0 : fatherName.hashCode());
 		result = prime * result + ((gender == null) ? 0 : gender.hashCode());
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
+		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result
-				+ ((personalDetails == null) ? 0 : personalDetails.hashCode());
+				+ ((personalDetail == null) ? 0 : personalDetail.hashCode());
 		result = prime * result + ((project == null) ? 0 : project.hashCode());
 		result = prime * result + ((salary == null) ? 0 : salary.hashCode());
 		result = prime * result + workExperience;
@@ -210,20 +249,17 @@ public class Employee {
 				return false;
 		} else if (!gender.equals(other.gender))
 			return false;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
+		if (id != other.id)
 			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
-		if (personalDetails == null) {
-			if (other.personalDetails != null)
+		if (personalDetail == null) {
+			if (other.personalDetail != null)
 				return false;
-		} else if (!personalDetails.equals(other.personalDetails))
+		} else if (!personalDetail.equals(other.personalDetail))
 			return false;
 		if (project == null) {
 			if (other.project != null)
@@ -245,7 +281,7 @@ public class Employee {
 				+ ", id=" + id + ", age=" + age + ", address=" + address
 				+ ", salary=" + salary + ", dateOfBirth=" + dateOfBirth
 				+ ", dateOfJoining=" + dateOfJoining + ", dateOfEnding="
-				+ dateOfEnding + ", personalDetails=" + personalDetails
+				+ dateOfEnding + ", personalDetail=" + personalDetail
 				+ ", workExperience=" + workExperience + ", project=" + project
 				+ ", gender=" + gender + ", designation=" + designation + "]";
 	}

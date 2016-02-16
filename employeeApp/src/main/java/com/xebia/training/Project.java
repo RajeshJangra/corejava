@@ -1,42 +1,64 @@
 package com.xebia.training;
 import java.util.Date;
 
-
+import javax.xml.bind.annotation.*;
+@SuppressWarnings("restriction")
+@XmlRootElement
 public class Project {
        private int id;
+       private int projectId;
        private String name;
        private Date startDate;
        private Date endDate;
-	public Project(int id, String name, Date startDate, Date endDate) {
+	
+	public Project(int id, int projectId, String name, Date startDate,
+			Date endDate) {
 		super();
 		this.id = id;
+		this.projectId = projectId;
 		this.name = name;
 		this.startDate = startDate;
 		this.endDate = endDate;
 	}
+	
+	public Project() {
+		
+	}
+
+	@XmlAttribute
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
+	@XmlElement
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
+	@XmlElement
 	public Date getStartDate() {
 		return startDate;
 	}
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
+	@XmlElement
 	public Date getEndDate() {
 		return endDate;
 	}
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
+	}
+	@XmlElement
+	public int getProjectId() {
+		return projectId;
+	}
+	public void setProjectId(int projectId) {
+		this.projectId = projectId;
 	}
 	@Override
 	public int hashCode() {
@@ -45,6 +67,7 @@ public class Project {
 		result = prime * result + ((endDate == null) ? 0 : endDate.hashCode());
 		result = prime * result + id;
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + projectId;
 		result = prime * result
 				+ ((startDate == null) ? 0 : startDate.hashCode());
 		return result;
@@ -70,6 +93,8 @@ public class Project {
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
+		if (projectId != other.projectId)
+			return false;
 		if (startDate == null) {
 			if (other.startDate != null)
 				return false;
@@ -79,8 +104,9 @@ public class Project {
 	}
 	@Override
 	public String toString() {
-		return "Project [id=" + id + ", name=" + name + ", startDate="
-				+ startDate + ", endDate=" + endDate + "]";
+		return "Project [id=" + id + ", projectId=" + projectId + ", name="
+				+ name + ", startDate=" + startDate + ", endDate=" + endDate
+				+ "]";
 	}
        
        

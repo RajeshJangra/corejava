@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Employees>
+    <employee id="512">
+        <dateOfBirth>1995-07-06T00:00:00+05:30</dateOfBirth>
+        <dateOfJoining>2016-01-20T00:00:00+05:30</dateOfJoining>
+        <designation>TRAINEE</designation>
+        <fatherName>Diwakar</fatherName>
+        <gender>Male</gender>
+        <name>Manav</name>
+        <workExperience>2</workExperience>
+    </employee>
+    <employee id="511">
+        <dateOfBirth>1994-01-02T00:00:00+05:30</dateOfBirth>
+        <dateOfJoining>2016-01-20T00:00:00+05:30</dateOfJoining>
+        <designation>TRAINEE</designation>
+        <fatherName>Abhishek</fatherName>
+        <gender>Male</gender>
+        <name>Vishal</name>
+        <workExperience>2</workExperience>
+    </employee>
+    <employee id="383">
+        <dateOfBirth>1978-01-20T00:00:00+05:30</dateOfBirth>
+        <dateOfEnding>2016-03-24T00:00:00+05:30</dateOfEnding>
+        <dateOfJoining>2012-08-03T00:00:00+05:30</dateOfJoining>
+        <designation>TRAINEE</designation>
+        <fatherName>Mohit</fatherName>
+        <gender>Male</gender>
+        <name>Ram</name>
+        <workExperience>8</workExperience>
+    </employee>
+</Employees>

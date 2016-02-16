@@ -1,35 +1,46 @@
 package com.xebia.training;
 import java.util.Date;
 
+import javax.xml.bind.annotation.*;
 
+@SuppressWarnings("restriction")
+@XmlRootElement
 public class Department {
 	private String name;
 	private int id;
 	private Date startDate;
 	private Date endDate;
+	@XmlElement
 	public String getName() {
 		return name;
 	}
 	public void setName(String name) {
 		this.name = name;
 	}
+	@XmlAttribute
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
+	@XmlElement
 	public Date getStartDate() {
 		return startDate;
 	}
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
+	@XmlElement
 	public Date getEndDate() {
 		return endDate;
 	}
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
+	}
+	public Department()
+	{
+		
 	}
 	public Department(String name, int id, Date startDate, Date endDate) {
 		super();

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PersonalDetails>
+    <PersonalDetail id="512">
+        <aadhaarNumber>237JHD</aadhaarNumber>
+        <bloodGroup>A+</bloodGroup>
+        <drivingLicenseNumber>DSU779</drivingLicenseNumber>
+        <passportNumber>DS87DS</passportNumber>
+    </PersonalDetail>
+    <PersonalDetail id="511">
+        <aadhaarNumber>RE89SS</aadhaarNumber>
+        <bloodGroup>B+</bloodGroup>
+        <drivingLicenseNumber>5487JE</drivingLicenseNumber>
+        <passportNumber>34JKS9W</passportNumber>
+    </PersonalDetail>
+    <PersonalDetail id="383">
+        <aadhaarNumber>HG98HJ</aadhaarNumber>
+        <bloodGroup>O+</bloodGroup>
+        <drivingLicenseNumber>UY987G</drivingLicenseNumber>
+        <passportNumber>U988HG</passportNumber>
+    </PersonalDetail>
+</PersonalDetails>
