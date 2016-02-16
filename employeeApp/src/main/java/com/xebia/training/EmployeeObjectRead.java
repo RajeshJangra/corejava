@@ -116,7 +116,7 @@ public class EmployeeObjectRead {
     }
     public void empget(Employee employee) throws InterruptedException, ParserConfigurationException, SAXException, IOException, ExecutionException, ParseException {    EmployeeObjectRead ar=new EmployeeObjectRead();
 
-        System.out.println("Want employee to resign(Y/N):");
+        log.info("Want employee to resign(Y/N):");
         Scanner sc=new Scanner(System.in);
         String choice=sc.nextLine();
         if(choice.equals("Y"))
