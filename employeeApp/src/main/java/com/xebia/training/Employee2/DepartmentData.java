@@ -1,10 +1,13 @@
-package com.xebia.training.DataFiles;
+package com.xebia.training.Employee2;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.StringTokenizer;
 import java.util.concurrent.Callable;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -15,7 +18,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.xebia.training.Classes.Department;
+import com.xebia.training.Employee1.Department;
 
 public class DepartmentData implements Callable<List<Department>>{
 	

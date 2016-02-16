@@ -1,4 +1,4 @@
-package com.xebia.training.DataFiles;
+package com.xebia.training.Employee2;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
@@ -15,7 +15,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.xebia.training.Classes.Project;
+import com.xebia.training.Employee1.Project;
 
 public class ProjectData implements Callable<List<Project>> {
 	private static final String input = "/home/jasleen/corejava/employeeApp/src/main/java/com/XmlFiles/Project.xml";

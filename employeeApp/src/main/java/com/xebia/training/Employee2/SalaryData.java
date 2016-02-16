@@ -1,4 +1,4 @@
-package com.xebia.training.DataFiles;
+package com.xebia.training.Employee2;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import com.xebia.training.Classes.Salary;
+import com.xebia.training.Employee1.Salary;
 
 public class SalaryData implements Callable<List<Salary>> {
 	public int id;

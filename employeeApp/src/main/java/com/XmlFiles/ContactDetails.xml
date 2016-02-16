@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<class>
+<contactDetails id="1">
+<ContactId>1</ContactId>
+<addressType>CORRESPONDENT</addressType>
+<houseNo>409</houseNo>
+<street>5</street>
+<area>Gandhi Nagar:</area>
+<city>Jind</city>
+<pinCode>126102</pinCode>
+<state>Haryana</state>
+<landmark>Bhagat Park</landmark>
+<phoneNo>999144400</phoneNo>
+<email>raggarwal@xebia.com</email>
+<skypeid>aggarwal.rohan17</skypeid>
+</contactDetails>
+
+<contactDetails id="2">
+<ContactId>1</ContactId>
+<addressType>CORRESPONDENT</addressType>
+<houseNo>409</houseNo>
+<street>5</street>
+<area>Gandhi Nagar:</area>
+<city>Jind</city>
+<pinCode>126102</pinCode>
+<state>Haryana</state>
+<landmark>Bhagat Park</landmark>
+<phoneNo>999144400</phoneNo>
+<email>raggarwal@xebia.com</email>
+<skypeid>aggarwal.rohan17</skypeid>
+</contactDetails>
+</class>

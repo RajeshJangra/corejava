@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<class>
+	<salary id="1">
+		<salaryId>1</salaryId>
+		<basic>20000</basic>
+	</salary>
+
+</class>
