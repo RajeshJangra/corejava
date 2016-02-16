@@ -1,0 +1,10 @@
+enter the employee id:
+employee = {id=101, name='priyanka', fatherName='ncj', age=22, gender='female', maritalStatus=unmarried, designation=Trainee, workExp=0.0, dob=Sat Jan 22 00:00:00 IST 1994, startDate=Mon Jan 18 00:00:00 IST 2016, endDate=null, '
+ Salary={id=101, BASIC=500000.0, HRA=250000.0, DA=50000.0, LTA=50000.0, PF=60000.0, FP=50000.0, GRATVITY=1500000.0}, '
+ Project=[{id=101,startDate=Fri Feb 19 00:00:00 IST 2016, endDate=null, name=Grindr}], '
+ Address={ id=101,addressType=permanentAddress, houseNo=801, streetApartment=sector30, city=gurgaon, pinCode=333333, state=haryana, area=area}, '
+ Contacts={ id=101,phoneNo=10010,email=pj@gmail.com}, '
+ Department={id=101, name=Trainee, startDate=Mon Jan 18 00:00:00 IST 2016, endDate=null}, '
+ Personaldetails={id=101, adharNo='a101', panNo='p101', bloodGroup='A+', electionId='e101', licenceNo='l101'}}
+
+does employee want to resign? Y/N 

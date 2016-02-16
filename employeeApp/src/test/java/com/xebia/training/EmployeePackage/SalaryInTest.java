@@ -1,5 +1,6 @@
 package com.xebia.training.EmployeePackage;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -23,6 +24,8 @@ public class SalaryInTest  {
     @Test
     public  void testCall()throws Exception {
 //        List<PersonalDetails> list = new ArrayList<PersonalDetails>();
+
+
         Salary salary=new Salary(101,500000.00);
 //        list.add(personalDetails);
         ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(5);
