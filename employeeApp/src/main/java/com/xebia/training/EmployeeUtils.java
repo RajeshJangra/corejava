@@ -47,6 +47,7 @@ public class EmployeeUtils{
 			employee.setPersonalDetail(personalDetail);
 			employee.setProject(projects);
 			employee.setSalary(salary);
+			employee.setAge();
 			return employee;
 		}
 	}
