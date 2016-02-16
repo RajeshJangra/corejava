@@ -81,3 +81,128 @@ Address[id=102, houseno=72, sector=30, city=Gurgaon, pincode=249403, state=Uttra
 Contact [id=102, emailid=kishor@gmail.com, phone=9458943313]}
 
 Employee Id102 details has been written into file employee102 successfully
+Employee Bsic Details Read
+Address Details Read
+Contact Details Read
+Department Details Read
+Personal Details Read
+Project Details Read
+Salary Details Read
+Employee{ 
+[Project [id=101, pid=1002, name=XYZ, startdate=Mon Jan 18 00:00:00 IST 2016, enddate=null]], 
+
+EmployeeData[id=101, experience=3, d=QA_ANALYST],
+
+PersonalDetails [id=101, passport_no=1234443, adhar_no=344455, voter_id=233444, account_no=4433444444, bloodgroup=B +, maritial_status=SINGLE, name=Mandavi, father_name=N.K.Nigam, dob=Fri Jan 26 00:00:00 IST 1996,startdate=Mon Jan 18 00:00:00 IST 2016,enddate=null,age=20], 
+
+Salary [id=101, basic=175000.0, hra=87500.0, da=17500.0, lta=17500.0, pf=21000.0, fp=17500.0, gratuity=525000.0], 
+
+Department [id=101, name=Finance, startdate=Mon Jan 18 00:00:00 IST 2016, enddate=null], 
+
+Address[id=101, houseno=71, sector=30, city=Gurgaon, pincode=249403, state=Uttrakhand, , landmark=Hilly, email_id=kishor@gmail.com, address type=CORRESPONDANCE],
+
+Contact [id=101, emailid=kishor@gmail.com, phone=9458943313]}
+
+Employee Bsic Details Read
+Address Details Read
+Contact Details Read
+Department Details Read
+Personal Details Read
+Project Details Read
+Salary Details Read
+Employee{ 
+[Project [id=101, pid=1002, name=XYZ, startdate=Mon Jan 18 00:00:00 IST 2016, enddate=null]], 
+
+EmployeeData[id=101, experience=3, d=QA_ANALYST],
+
+PersonalDetails [id=101, passport_no=1234443, adhar_no=344455, voter_id=233444, account_no=4433444444, bloodgroup=B +, maritial_status=SINGLE, name=Mandavi, father_name=N.K.Nigam, dob=Fri Jan 26 00:00:00 IST 1996,startdate=Mon Jan 18 00:00:00 IST 2016,enddate=null,age=20], 
+
+Salary [id=101, basic=175000.0, hra=87500.0, da=17500.0, lta=17500.0, pf=21000.0, fp=17500.0, gratuity=525000.0], 
+
+Department [id=101, name=Finance, startdate=Mon Jan 18 00:00:00 IST 2016, enddate=null], 
+
+Address[id=101, houseno=71, sector=30, city=Gurgaon, pincode=249403, state=Uttrakhand, , landmark=Hilly, email_id=kishor@gmail.com, address type=CORRESPONDANCE],
+
+Contact [id=101, emailid=kishor@gmail.com, phone=9458943313]}
+
+Employee Bsic Details Read
+Address Details Read
+Contact Details Read
+Department Details Read
+Personal Details Read
+Project Details Read
+Salary Details Read
+Employee{ 
+[Project [id=101, pid=1002, name=XYZ, startdate=Mon Jan 18 00:00:00 IST 2016, enddate=null]], 
+
+EmployeeData[id=101, experience=3, d=QA_ANALYST],
+
+PersonalDetails [id=101, passport_no=1234443, adhar_no=344455, voter_id=233444, account_no=4433444444, bloodgroup=B +, maritial_status=SINGLE, name=Mandavi, father_name=N.K.Nigam, dob=Fri Jan 26 00:00:00 IST 1996,startdate=Mon Jan 18 00:00:00 IST 2016,enddate=null,age=20], 
+
+Salary [id=101, basic=175000.0, hra=87500.0, da=17500.0, lta=17500.0, pf=21000.0, fp=17500.0, gratuity=525000.0], 
+
+Department [id=101, name=Finance, startdate=Mon Jan 18 00:00:00 IST 2016, enddate=null], 
+
+Address[id=101, houseno=71, sector=30, city=Gurgaon, pincode=249403, state=Uttrakhand, , landmark=Hilly, email_id=kishor@gmail.com, address type=CORRESPONDANCE],
+
+Contact [id=101, emailid=kishor@gmail.com, phone=9458943313]}
+
+Want employee to resign(Y/N):
+
+Mandavi	Resigned 
+
+Employee{ 
+[Project [id=101, pid=1002, name=XYZ, startdate=Mon Jan 18 00:00:00 IST 2016, enddate=Tue Feb 16 00:00:00 IST 2016]], 
+
+EmployeeData[id=101, experience=3, d=QA_ANALYST],
+
+PersonalDetails [id=101, passport_no=1234443, adhar_no=344455, voter_id=233444, account_no=4433444444, bloodgroup=B +, maritial_status=SINGLE, name=Mandavi, father_name=N.K.Nigam, dob=Fri Jan 26 00:00:00 IST 1996,startdate=Mon Jan 18 00:00:00 IST 2016,enddate=Tue Feb 16 00:00:00 IST 2016,age=20], 
+
+Salary [id=101, basic=175000.0, hra=87500.0, da=17500.0, lta=17500.0, pf=21000.0, fp=17500.0, gratuity=525000.0], 
+
+Department [id=101, name=Finance, startdate=Mon Jan 18 00:00:00 IST 2016, enddate=Tue Feb 16 00:00:00 IST 2016], 
+
+Address[id=101, houseno=71, sector=30, city=Gurgaon, pincode=249403, state=Uttrakhand, , landmark=Hilly, email_id=kishor@gmail.com, address type=CORRESPONDANCE],
+
+Contact [id=101, emailid=kishor@gmail.com, phone=9458943313]}
+
+Employee Id101 details has been written into file employee101 successfully
+Employee Bsic Details Read
+Address Details Read
+Contact Details Read
+Department Details Read
+Personal Details Read
+Project Details Read
+Salary Details Read
+Employee{ 
+[Project [id=101, pid=1002, name=XYZ, startdate=Mon Jan 18 00:00:00 IST 2016, enddate=null]], 
+
+EmployeeData[id=101, experience=3, d=QA_ANALYST],
+
+PersonalDetails [id=101, passport_no=1234443, adhar_no=344455, voter_id=233444, account_no=4433444444, bloodgroup=B +, maritial_status=SINGLE, name=Mandavi, father_name=N.K.Nigam, dob=Fri Jan 26 00:00:00 IST 1996,startdate=Mon Jan 18 00:00:00 IST 2016,enddate=null,age=20], 
+
+Salary [id=101, basic=175000.0, hra=87500.0, da=17500.0, lta=17500.0, pf=21000.0, fp=17500.0, gratuity=525000.0], 
+
+Department [id=101, name=Finance, startdate=Mon Jan 18 00:00:00 IST 2016, enddate=null], 
+
+Address[id=101, houseno=71, sector=30, city=Gurgaon, pincode=249403, state=Uttrakhand, , landmark=Hilly, email_id=kishor@gmail.com, address type=CORRESPONDANCE],
+
+Contact [id=101, emailid=kishor@gmail.com, phone=9458943313]}
+
+Want employee to resign(Y/N):
+Employee{ 
+[Project [id=101, pid=1002, name=XYZ, startdate=Mon Jan 18 00:00:00 IST 2016, enddate=null]], 
+
+EmployeeData[id=101, experience=3, d=QA_ANALYST],
+
+PersonalDetails [id=101, passport_no=1234443, adhar_no=344455, voter_id=233444, account_no=4433444444, bloodgroup=B +, maritial_status=SINGLE, name=Mandavi, father_name=N.K.Nigam, dob=Fri Jan 26 00:00:00 IST 1996,startdate=Mon Jan 18 00:00:00 IST 2016,enddate=null,age=20], 
+
+Salary [id=101, basic=175000.0, hra=87500.0, da=17500.0, lta=17500.0, pf=21000.0, fp=17500.0, gratuity=525000.0], 
+
+Department [id=101, name=Finance, startdate=Mon Jan 18 00:00:00 IST 2016, enddate=null], 
+
+Address[id=101, houseno=71, sector=30, city=Gurgaon, pincode=249403, state=Uttrakhand, , landmark=Hilly, email_id=kishor@gmail.com, address type=CORRESPONDANCE],
+
+Contact [id=101, emailid=kishor@gmail.com, phone=9458943313]}
+
+Employee Id101 details has been written into file employee101 successfully

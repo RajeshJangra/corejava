@@ -11,7 +11,7 @@ import static org.junit.Assert.assertEquals;
 
 
 
-public class allreadTest {
+public class employeeobjectreadTest {
     EmployeeData empdata;
     Address address;
     Contact contact;

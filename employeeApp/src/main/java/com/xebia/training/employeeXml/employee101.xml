@@ -5,7 +5,6 @@
         <pid>1002</pid>
         <name>XYZ</name>
         <startdate>2016-01-18T00:00:00+05:30</startdate>
-        <enddate>2016-02-16T00:00:00+05:30</enddate>
     </project>
     <employeeData>
         <id>101</id>
@@ -24,7 +23,6 @@
         <fatherName>N.K.Nigam</fatherName>
         <dob>1996-01-26T00:00:00+05:30</dob>
         <startdate>2016-01-18T00:00:00+05:30</startdate>
-        <enddate>2016-02-16T00:00:00+05:30</enddate>
         <m>SINGLE</m>
     </personalDetails>
     <salary>
@@ -41,7 +39,6 @@
         <id>101</id>
         <name>Finance</name>
         <startdate>2016-01-18T00:00:00+05:30</startdate>
-        <enddate>2016-02-16T00:00:00+05:30</enddate>
     </department>
     <address>
         <id>101</id>
