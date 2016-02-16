@@ -16,19 +16,6 @@ import java.util.concurrent.*;
 public class AddressInput {
     List<Address> address = new ArrayList<>();
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        AddressInput that = (AddressInput) o;
-        return address.equals(that.address);
-    }
-
-    @Override
-    public int hashCode() {
-        return address.hashCode();
-    }
-
     public List<Address> inputAddress(final String id) throws IOException, ExecutionException, InterruptedException {
         Callable<List<Address>> callAddress = new Callable<List<Address>>() {
             public List<Address> call() throws Exception {

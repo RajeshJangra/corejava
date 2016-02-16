@@ -1,6 +1,7 @@
 package com.xebia.training.employeeFunctionalities;
 
 import com.xebia.training.employeeInformation.Employee;
+import org.apache.log4j.Logger;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -10,16 +11,23 @@ import java.io.FileNotFoundException;
 import java.util.List;
 
 public class UnmarshalEmployee {
+    static Logger log = Logger.getLogger(Employee.class.getName());
+
     public static List<Employee> unmarshalEmployees() throws JAXBException, FileNotFoundException {
+        log.info("Unmarshalling Employee List");
         JAXBContext jaxbContext = JAXBContext.newInstance(Employees.class);
         final Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
         Employees employeesUnmarshalled = (Employees) unmarshaller.unmarshal(new FileInputStream("src/main/java/com/xebia/training/xmlFiles/marshalledEmployees/EmployeeList.xml"));
+        log.info("After Unmarshalling " + employeesUnmarshalled.getEmployees());
         return employeesUnmarshalled.getEmployees();
     }
 
     public static Employee unmarshalEmployee(final String id) throws JAXBException, FileNotFoundException {
+        log.info("Unmarshalling Employee Id " + id);
         JAXBContext jaxbContext = JAXBContext.newInstance(Employee.class);
         final Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
-        return ((Employee) unmarshaller.unmarshal(new FileInputStream("src/main/java/com/xebia/training/xmlFiles/marshalledEmployees/" + id + ".xml")));
+        Employee employee = ((Employee) unmarshaller.unmarshal(new FileInputStream("src/main/java/com/xebia/training/xmlFiles/marshalledEmployees/" + id + ".xml")));
+        log.info("After Unmarshalling " + employee);
+        return employee;
     }
 }

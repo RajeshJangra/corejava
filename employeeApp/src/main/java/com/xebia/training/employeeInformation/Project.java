@@ -1,5 +1,7 @@
 package com.xebia.training.employeeInformation;
 
+import org.apache.log4j.Logger;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
@@ -7,6 +9,7 @@ import java.util.Date;
 
 @XmlType(propOrder = {"projectId", "projectName", "startDate", "endDate"})
 public class Project {
+    static Logger log = Logger.getLogger(Project.class.getName());
     private int projectId;
     private String projectName;
     private Date startDate, endDate = null;
@@ -15,10 +18,11 @@ public class Project {
     }
 
     public Project(int projectId, String projectName, Date startDate) {
-        super();
+        //  log.info("Project Constructor Called");
         this.projectId = projectId;
         this.projectName = projectName;
         this.startDate = startDate;
+        //  log.info("Project Class Variable Instantiated "+this);
     }
 
     @Override

@@ -16,20 +16,7 @@ import java.util.Set;
 import java.util.concurrent.*;
 
 public class ProjectInput {
-    Set<Project> project = new HashSet<>();
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ProjectInput that = (ProjectInput) o;
-        return project.equals(that.project);
-    }
-
-    @Override
-    public int hashCode() {
-        return project.hashCode();
-    }
+    Set<Project> projectSet = new HashSet<>();
 
     public Set<Project> inputProject(final String id) throws IOException, ParseException, ExecutionException, InterruptedException {
         Callable<Set<Project>> callProject = new Callable<Set<Project>>() {
@@ -46,11 +33,11 @@ public class ProjectInput {
                             int projectId = Integer.parseInt(eElement.getElementsByTagName("projectId").item(0).getTextContent());
                             String projectName = eElement.getElementsByTagName("projectName").item(0).getTextContent();
                             String startDate = eElement.getElementsByTagName("startDate").item(0).getTextContent();
-                            project.add(new Project(projectId, projectName, new SimpleDateFormat("dd-MM-yyyy").parse(startDate)));
+                            projectSet.add(new Project(projectId, projectName, new SimpleDateFormat("dd-MM-yyyy").parse(startDate)));
                         }
                     }
                 }
-                return project;
+                return projectSet;
             }
 
         };

@@ -15,22 +15,6 @@ import java.util.concurrent.*;
 public class DepartmentInput {
     Department department = null;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        DepartmentInput that = (DepartmentInput) o;
-
-        return department.equals(that.department);
-
-    }
-
-    @Override
-    public int hashCode() {
-        return department.hashCode();
-    }
-
     public Department inputDepartment(final String id) throws IOException, ExecutionException, InterruptedException {
         Callable<Department> callDepartment = new Callable<Department>() {
             public Department call() throws Exception {

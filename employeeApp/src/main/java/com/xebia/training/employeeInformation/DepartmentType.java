@@ -12,6 +12,7 @@ public enum DepartmentType {
     ADMIN("D05", "01-01-2004"),
     HR("D06", "01-01-2005"),
     OTHERS("D07", "01-01-2006");
+
     private String departmentId;
     private Date startDate;
 
@@ -19,36 +20,23 @@ public enum DepartmentType {
         this.departmentId = departmentId;
         try {
             this.startDate = new SimpleDateFormat("dd-MM-yyyy").parse(startDate);
-            //      this.endDate =
         } catch (ParseException p) {
             p.printStackTrace();
         }
     }
 
-    /**
-     * @return the departmentId
-     */
     public String getDepartmentId() {
         return departmentId;
     }
 
-    /**
-     * @param departmentId the departmentId to set
-     */
     public void setDepartmentId(String departmentId) {
         this.departmentId = departmentId;
     }
 
-    /**
-     * @return the startDate
-     */
     public Date getStartDate() {
         return startDate;
     }
 
-    /**
-     * @param startDate the startDate to set
-     */
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }

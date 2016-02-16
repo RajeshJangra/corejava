@@ -17,5 +17,7 @@ public class ContactInputTest {
 
         assertEquals(contactInput1, contactTest);
         assertNotEquals(contactInput2, contactTest);
+        assertEquals(contactInput1.toString(), contactTest.toString());
+        assertEquals(contactInput1.hashCode(), contactTest.hashCode());
     }
 }

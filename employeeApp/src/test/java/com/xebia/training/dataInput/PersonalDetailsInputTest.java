@@ -19,5 +19,7 @@ public class PersonalDetailsInputTest {
 
         assertEquals(personalDetailsInput1, personalDetailsTest);
         assertNotEquals(personalDetailsInput2, personalDetailsTest);
+        assertEquals(personalDetailsInput1.toString(), personalDetailsTest.toString());
+        assertEquals(personalDetailsInput1.hashCode(), personalDetailsTest.hashCode());
     }
 }

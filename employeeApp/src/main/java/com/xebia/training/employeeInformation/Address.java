@@ -1,11 +1,14 @@
 package com.xebia.training.employeeInformation;
 
+import org.apache.log4j.Logger;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlType(propOrder = {"addressType", "houseNo", "street", "sector", "city", "state", "pin"})
 public class Address {
+    static Logger log = Logger.getLogger(Address.class.getName());
     private String street, city, state;
     private int houseNo, sector, pin;
     private AddressType addressType;
@@ -15,7 +18,7 @@ public class Address {
 
     public Address(int houseNo, int sector, String street, String city, String state, int pin,
                    AddressType addressType) {
-        super();
+        //  log.info("Address Constructor Called");
         this.street = street;
         this.city = city;
         this.state = state;
@@ -23,6 +26,7 @@ public class Address {
         this.sector = sector;
         this.pin = pin;
         this.addressType = addressType;
+        //  log.info("Address Class Variable Instantiated "+this);
     }
 
     @Override

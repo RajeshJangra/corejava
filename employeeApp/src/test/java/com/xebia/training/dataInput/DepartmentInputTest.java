@@ -18,5 +18,7 @@ public class DepartmentInputTest {
 
         assertEquals(departmentInput1, departmentTest);
         assertNotEquals(departmentInput2, departmentTest);
+        assertEquals(departmentInput1.toString(), departmentTest.toString());
+        assertEquals(departmentInput1.hashCode(), departmentTest.hashCode());
     }
 }

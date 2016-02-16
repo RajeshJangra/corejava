@@ -16,19 +16,6 @@ import java.util.concurrent.*;
 public class PersonalDetailsInput {
     PersonalDetails personalDetails = null;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        PersonalDetailsInput that = (PersonalDetailsInput) o;
-        return personalDetails.equals(that.personalDetails);
-    }
-
-    @Override
-    public int hashCode() {
-        return personalDetails.hashCode();
-    }
-
     public PersonalDetails inputPersonalDetails(final String id) throws IOException, ParseException, ExecutionException, InterruptedException {
         Callable<PersonalDetails> callPersonalDetails = new Callable<PersonalDetails>() {
             public PersonalDetails call() throws Exception {

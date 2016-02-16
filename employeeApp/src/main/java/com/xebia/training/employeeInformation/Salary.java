@@ -1,17 +1,20 @@
 package com.xebia.training.employeeInformation;
 
+import org.apache.log4j.Logger;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlType(propOrder = {"basic", "houseRentAllowance", "leaveTravelAllowance", "flexiPay", "providentFund", "grossSalary", "netSalary"})
 public class Salary {
+    static Logger log = Logger.getLogger(Salary.class.getName());
     double basic, houseRentAllowance, leaveTravelAllowance, flexiPay, providentFund, grossSalary, netSalary;
 
     public Salary() {
     }
 
     public Salary(double basic) {
-        super();
+        //  log.info("Salary Constructor Called");
         this.basic = basic;
         this.houseRentAllowance = 0.5 * basic;
         this.leaveTravelAllowance = 0.1 * basic;
@@ -19,6 +22,7 @@ public class Salary {
         this.providentFund = 0.12 * basic;
         this.grossSalary = this.basic + this.houseRentAllowance + this.leaveTravelAllowance + this.flexiPay + this.providentFund;
         this.netSalary = this.grossSalary - this.providentFund;
+        //  log.info("Salary Class Variable Instantiated "+this);
     }
 
     @Override

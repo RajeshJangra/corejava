@@ -27,5 +27,7 @@ public class ProjectInputTest {
 
         assertEquals(projectInput1, projectSetTest);
         assertNotEquals(projectInput2, projectSetTest);
+        assertEquals(projectInput1.toString(), projectSetTest.toString());
+        assertEquals(projectInput1.hashCode(), projectSetTest.hashCode());
     }
 }

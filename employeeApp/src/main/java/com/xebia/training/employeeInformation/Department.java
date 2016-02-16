@@ -1,5 +1,7 @@
 package com.xebia.training.employeeInformation;
 
+import org.apache.log4j.Logger;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
@@ -7,7 +9,7 @@ import java.util.Date;
 
 @XmlType(propOrder = {"deptId", "deptName", "startDate", "endDate"})
 public class Department {
-    private final static String directory = "C:/Users/nitishkumar/Desktop/Employee/";
+    static Logger log = Logger.getLogger(Department.class.getName());
     String deptId, deptName;
     Date startDate, endDate = null;
 
@@ -15,9 +17,11 @@ public class Department {
     }
 
     public Department(DepartmentType departmentType) {
+        //   log.info("Department Constructor Called");
         this.deptId = departmentType.getDepartmentId();
         this.deptName = departmentType.name();
         this.startDate = departmentType.getStartDate();
+        //   log.info("Department Class Variable Instantiated "+this);
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.xebia.training.employeeInformation;
 
+import org.apache.log4j.Logger;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 import java.util.Calendar;
@@ -7,6 +9,7 @@ import java.util.Date;
 
 @XmlType(propOrder = {"name", "fatherName", "motherName", "dateOfBirth", "age", "gender", "bloodGroup", "maritalStatus", "panNo", "adharNo", "drivingLicenceNo"})
 public class PersonalDetails {
+    static Logger log = Logger.getLogger(PersonalDetails.class.getName());
     private String name, fatherName, motherName, drivingLicenceNo, panNo;
     private long adharNo;
     private int age;
@@ -21,7 +24,7 @@ public class PersonalDetails {
     public PersonalDetails(String name, String fatherName, String motherName, String drivingLicenceNo,
                            long adharNo, String panNo, Date dateOfBirth, Gender gender, BloodGroup bloodGroup,
                            MaritalStatus maritalStatus) {
-        super();
+        //  log.info("PersonalDetails Constructor Called");
         this.name = name;
         this.fatherName = fatherName;
         this.motherName = motherName;
@@ -33,6 +36,7 @@ public class PersonalDetails {
         this.bloodGroup = bloodGroup;
         this.maritalStatus = maritalStatus;
         this.age = this.calculateAge();
+        //  log.info("Personal Details Class Variable Instantiated "+this);
     }
 
     @Override

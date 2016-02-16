@@ -14,19 +14,6 @@ import java.util.concurrent.*;
 public class SalaryInput {
     Salary salary = null;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        SalaryInput that = (SalaryInput) o;
-        return salary.equals(that.salary);
-    }
-
-    @Override
-    public int hashCode() {
-        return salary.hashCode();
-    }
-
     public Salary inputSalary(final String id) throws IOException, ExecutionException, InterruptedException {
         Callable<Salary> callSalary = new Callable<Salary>() {
             public Salary call() throws Exception {

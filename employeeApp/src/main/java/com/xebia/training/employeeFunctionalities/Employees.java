@@ -2,12 +2,14 @@ package com.xebia.training.employeeFunctionalities;
 
 import com.xebia.training.dataInput.EmployeeInput;
 import com.xebia.training.employeeInformation.Employee;
+import org.apache.log4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
+import javax.xml.bind.JAXBException;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -20,6 +22,7 @@ import java.util.concurrent.ExecutionException;
 
 @XmlRootElement(name = "employees")
 public class Employees {
+    static Logger log = Logger.getLogger(Employees.class.getName());
     private List<Employee> employeeList = new ArrayList<>();
 
     public Employees(List<Employee> employeeList) {
@@ -44,7 +47,7 @@ public class Employees {
                 '}';
     }
 
-    public List<Employee> inputAllEmployees() throws ParserConfigurationException, IOException, SAXException, ExecutionException, InterruptedException {
+    public List<Employee> inputAllEmployees() throws ParserConfigurationException, IOException, SAXException, ExecutionException, InterruptedException, JAXBException {
         File file = new File("src/main/java/com/xebia/training/xmlFiles/EmployeeData.xml");
         Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
         document.getDocumentElement().normalize();

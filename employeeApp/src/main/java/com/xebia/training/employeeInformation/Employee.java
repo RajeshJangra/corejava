@@ -1,5 +1,7 @@
 package com.xebia.training.employeeInformation;
 
+import org.apache.log4j.Logger;
+
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -10,6 +12,7 @@ import java.util.*;
 @XmlRootElement(name = "employee")
 public class Employee {
 
+    static Logger log = Logger.getLogger(Employee.class.getName());
     private String id;
     private int workExperience;
     private Date startDate, endDate = null;
@@ -25,6 +28,7 @@ public class Employee {
     }
 
     public Employee(String id, int workExperience, Date startDate, Designation designation, List<Address> address, Contact contact, Department department, PersonalDetails personalDetails, Set<Project> project, Salary salary) {
+        //  log.info("Employee Constructor Called");
         this.id = id;
         this.workExperience = workExperience;
         this.startDate = startDate;
@@ -35,6 +39,7 @@ public class Employee {
         this.personalDetails = personalDetails;
         this.project = project;
         this.salary = salary;
+        //   log.info("\nEmployee object created for "+this.getId()+"\nDetails Are "+this);
     }
 
     @Override

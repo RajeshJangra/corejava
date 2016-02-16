@@ -5,3 +5,4 @@ com\xebia\training\dataInput\ContactInputTest.class
 com\xebia\training\dataInput\PersonalDetailsInputTest.class
 com\xebia\training\dataInput\DepartmentInputTest.class
 com\xebia\training\dataInput\AddressInputTest.class
+com\xebia\training\employeeFunctionalities\EmployeesTest.class

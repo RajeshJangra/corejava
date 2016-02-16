@@ -27,5 +27,7 @@ public class AddressInputTest {
 
         assertEquals(addressListInput1, addressListTest);
         assertNotEquals(addressListInput2, addressListTest);
+        assertEquals(addressListInput1.toString(), addressListTest.toString());
+        assertEquals(addressListInput1.hashCode(), addressListTest.hashCode());
     }
 }

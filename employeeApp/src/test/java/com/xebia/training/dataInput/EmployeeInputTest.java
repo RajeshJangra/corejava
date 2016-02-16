@@ -48,6 +48,8 @@ public class EmployeeInputTest {
 
         assertEquals(employeeTest, employeeInput1);
         assertNotEquals(employeeTest, employeeInput2);
+        assertEquals(employeeTest.toString(), employeeInput1.toString());
+        assertEquals(employeeTest.hashCode(), employeeInput1.hashCode());
 
     }
 }

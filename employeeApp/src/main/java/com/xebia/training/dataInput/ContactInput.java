@@ -14,19 +14,6 @@ import java.util.concurrent.*;
 public class ContactInput {
     Contact contact = null;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        ContactInput that = (ContactInput) o;
-        return contact.equals(that.contact);
-    }
-
-    @Override
-    public int hashCode() {
-        return contact.hashCode();
-    }
-
     public Contact inputContact(final String id) throws IOException, ExecutionException, InterruptedException {
         Callable<Contact> callContact = new Callable<Contact>() {
             public Contact call() throws Exception {

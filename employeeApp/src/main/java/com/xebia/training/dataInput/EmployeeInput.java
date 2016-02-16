@@ -17,22 +17,6 @@ import java.util.concurrent.*;
 public class EmployeeInput {
     Employee employee = null;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        EmployeeInput that = (EmployeeInput) o;
-
-        return employee.equals(that.employee);
-
-    }
-
-    @Override
-    public int hashCode() {
-        return employee.hashCode();
-    }
-
     public Employee inputEmployeeDetails(final String id) throws ExecutionException, InterruptedException {
         Callable<Employee> callEmployee = new Callable<Employee>() {
             public Employee call() throws Exception {

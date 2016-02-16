@@ -1,10 +1,13 @@
 package com.xebia.training.employeeInformation;
 
+import org.apache.log4j.Logger;
+
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 @XmlType(propOrder = {"phone", "email"})
 public class Contact {
+    static Logger log = Logger.getLogger(Contact.class.getName());
     private String email;
     private long phone;
 
@@ -12,10 +15,10 @@ public class Contact {
     }
 
     public Contact(long phone, String email) {
-
-        super();
+        //   log.info("Contact Constructor Called");
         this.email = email;
         this.phone = phone;
+        //  log.info("Contact Class Variable Instantiated "+this);
     }
 
     @Override

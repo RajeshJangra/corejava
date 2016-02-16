@@ -16,5 +16,7 @@ public class SalaryInputTest {
 
         assertEquals(SalaryInput1, salaryTest);
         assertNotEquals(SalaryInput2, salaryTest);
+        assertEquals(SalaryInput1.toString(), salaryTest.toString());
+        assertEquals(SalaryInput1.hashCode(), salaryTest.hashCode());
     }
 }
