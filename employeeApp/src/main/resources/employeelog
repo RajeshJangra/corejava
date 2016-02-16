@@ -1,1 +1,12 @@
 Enter your id
+Do you want to employees to resign Y/N
+Enter Employee ID to resign
+101 Successfully resigned!!
+Details Updated
+ Employee: (Eid=101, work_exp=3, designation_obj=JAVADEVELOPER
+ Salary:[(Eid=101, Basic=10000.0, HRA=5000.0, DA=1000.0, LTA=1000.0, PF=1200.0, FP=1000.0, Gratuity=30000.0)]
+ Department:[(Eid=101, Name=Management, StartDate=Sun Jan 10 00:00:00 IST 2016, EndDate=Tue Feb 16 00:00:00 IST 2016)]
+ Project:[(Eid=101, Start date=Sun Jan 10 00:00:00 IST 2016, End date=Tue Feb 16 00:00:00 IST 2016, Name=Project)]
+ Contact:[(Eid=101, Phoneno=8563873806, Emailid=purawrshubham94@gmail.com)]
+ Address:[ [Street=Chandani, Sector=C, City=Delhi, State=Delhi, Houseno=5, Pin=262701, Id=101, Addtype=Correspondence]]
+ Personaldetails:[(Eid=101, Age=21, Name=Shubham, Fathername=R.R.Purwar, Gender=Male, Bloodgroup=O+, Maritalstatus=Marriage, Dob=Thu Feb 10 00:00:00 IST 1994, Aadhar no=12344567)])

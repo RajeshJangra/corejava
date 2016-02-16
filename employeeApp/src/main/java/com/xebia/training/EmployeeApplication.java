@@ -15,15 +15,15 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 public class EmployeeApplication {
-	
+
 	static Logger log=Logger.getLogger(EmployeeApplication.class.getName());
 
 	public static  void main(String[] args) throws InterruptedException, ExecutionException, ParserConfigurationException, SAXException, IOException, ParseException 
 	{
 		BasicConfigurator.configure();
-		
-      List<Employee> employees=InputEmployee.InputEmp();
-	
+
+		List<Employee> employees=InputEmployee.InputEmp();
+
 		Scanner sc=new Scanner(System.in);
 		log.info("Enter your id");
 		int id=sc.nextInt();
@@ -36,7 +36,7 @@ public class EmployeeApplication {
 		else
 		{
 			log.info(employees);
-		sc.close();
+			sc.close();
 		}
 
 	}

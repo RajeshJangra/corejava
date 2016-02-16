@@ -49,39 +49,39 @@ public class InputEmployee {
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
 				int id=Integer.parseInt( eElement.getAttribute("id"));
-				ThreadPoolExecutor executor1= (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
+				ThreadPoolExecutor executor= (ThreadPoolExecutor) Executors.newFixedThreadPool(12);
 				InputSalary obj=new InputSalary(id);
 				@SuppressWarnings("unchecked")
-				FutureTask<List<Salary>> task= (FutureTask<List<Salary>>) executor1.submit(obj);
+				FutureTask<List<Salary>> task= (FutureTask<List<Salary>>) executor.submit(obj);
 				List<Salary> salary1=task.get();
 
 
-				ThreadPoolExecutor executor2= (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
+				
 				InputDepartment obj1=new InputDepartment(id);
-				FutureTask<List<Department>> task1= (FutureTask<List<Department>>) executor2.submit(obj1);
+				FutureTask<List<Department>> task1= (FutureTask<List<Department>>) executor.submit(obj1);
 				List<Department> department1=task1.get();
 
 
 
-				ThreadPoolExecutor executor3= (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
+			
 				InputProject obj2=new InputProject(id);
-				FutureTask<List<Project>> task2= (FutureTask<List<Project>>) executor3.submit(obj2);
+				FutureTask<List<Project>> task2= (FutureTask<List<Project>>) executor.submit(obj2);
 				List<Project> project1=task2.get();
 
-				ThreadPoolExecutor executor4= (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
+		
 				InputContact obj3=new InputContact(id);
-				FutureTask<List<Contact>> task3= (FutureTask<List<Contact>>) executor4.submit(obj3);
+				FutureTask<List<Contact>> task3= (FutureTask<List<Contact>>) executor.submit(obj3);
 				List<Contact> contact1=task3.get();
 
-				ThreadPoolExecutor executor5= (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
+			
 				InputAddress obj4=new InputAddress(id);
-				FutureTask<List<Address>> task4= (FutureTask<List<Address>>) executor5.submit(obj4);
+				FutureTask<List<Address>> task4= (FutureTask<List<Address>>) executor.submit(obj4);
 				List<Address> address1=task4.get();
 
-				ThreadPoolExecutor executor6= (ThreadPoolExecutor) Executors.newFixedThreadPool(2);
+			
 				InputPersonaldetails obj5=new InputPersonaldetails(id);
 				@SuppressWarnings("unchecked")
-				FutureTask<List<PersonalDetails>> task5= (FutureTask<List<PersonalDetails>>) executor6.submit(obj5);
+				FutureTask<List<PersonalDetails>> task5= (FutureTask<List<PersonalDetails>>) executor.submit(obj5);
 				List<PersonalDetails> personaldetails1=task5.get();
 
 				int work=Integer.parseInt(eElement.getElementsByTagName("work_exp").item(0).getTextContent());	
