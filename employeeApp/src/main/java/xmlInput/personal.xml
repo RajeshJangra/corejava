@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<class>
+ <personal EmployeeID="1">
+  <personalDetailsID>1</personalDetailsID>
+  <adharNO>ASDFGHJKL</adharNO>
+  <panNO>QWERTYUIOP</panNO>
+  <bloodGroup>B+ve</bloodGroup>
+  <maritalStatus>SINGLE</maritalStatus>
+  <drivingLicenceNo>ZXCVBNM</drivingLicenceNo>
+ </personal>
+</class>
