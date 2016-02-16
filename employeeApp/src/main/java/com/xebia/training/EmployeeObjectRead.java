@@ -9,13 +9,14 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.*;
-
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
 /**
  * Created by mkishore on 2/11/2016.
  */
 
 public class EmployeeObjectRead {
-
+    static Logger log=Logger.getLogger(EmployeeApplication.class.getName());
     int id;
     Date date=null;
     int experience;
@@ -28,7 +29,6 @@ public class EmployeeObjectRead {
     List<Contact> contact;
 
     String line;
-  //  EmployeeObjectRead ar=new EmployeeObjectRead();
 
     public EmployeeObjectRead()
     {
@@ -48,7 +48,7 @@ public class EmployeeObjectRead {
         contactread sumTask = new contactread(id);
         Future<Contact> future = service.submit(sumTask);
         Contact s=future.get();
-
+        log.info("Contact Details Read");
         return s;
     }
     public  Address addressget(int id) throws ExecutionException, InterruptedException {
@@ -57,7 +57,7 @@ public class EmployeeObjectRead {
         Addressread sumTask = new Addressread(id);
         Future<Address> future = service.submit(sumTask);
         Address s=future.get();
-
+        log.info("Address Details Read");
         return s;
 
     }
@@ -67,55 +67,19 @@ public class EmployeeObjectRead {
         departmentread sumTask = new departmentread(id);
         Future<Department> future = service.submit(sumTask);
         Department s=future.get();
-
+        log.info("Department Details Read");
         return s;
 
     }
-  /*  public void reademp(int id) throws ParserConfigurationException, IOException, SAXException, InterruptedException {
-        File file = new File("C:\\Users\\mkishore\\IdeaProjects\\Employee\\src\\main\\java\\com\\EmployeeTraining\\employeexml.xml");
-        Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(file);
 
-        doc.getDocumentElement().normalize();
-
-        NodeList nList = doc.getElementsByTagName("employee");
-
-        iterateNodes(nList);
-    }
-    private void iterateNodes(final NodeList nList) throws IOException, InterruptedException {
-        for (int temp = 0; temp < nList.getLength(); temp++) {
-            Node nNode = nList.item(temp);
-
-
-            if (nNode.getNodeType() == Node.ELEMENT_NODE) {
-                printElements((Element) nNode);
-
-            }
-        }
-    }
-
-    private void printElements(final Element nNode) throws IOException, InterruptedException {
-        Element eElement = nNode;
-
-        if (Integer.parseInt(eElement.getAttribute("id")) == id) {
-
-
-
-                 experience=   Integer.parseInt(eElement.getElementsByTagName("experience").item(0).getTextContent());
-                 designation=   Employee.designation.valueOf(eElement.getElementsByTagName("designation").item(0).getTextContent());
-
-
-        }
-
-    }*/
   public  EmployeeData employeeget(int id) throws ExecutionException, InterruptedException {
 
-  //    EmployeeObjectRead al=new EmployeeObjectRead(id);
-  //    employeeread cr=new employeeread(id);
+
       ExecutorService service = Executors.newFixedThreadPool(10);
       employeeread sumTask = new employeeread(id);
       Future<EmployeeData> future = service.submit(sumTask);
       EmployeeData s=future.get();
-
+      log.info("Employee Bsic Details Read");
 
 
       return s;
@@ -127,7 +91,7 @@ public class EmployeeObjectRead {
         personalread sumTask = new personalread(id);
         Future<PersonalDetails> future = service.submit(sumTask);
         PersonalDetails s=future.get();
-
+        log.info("Personal Details Read");
           return s;
     }
     public  Set<Project> projectget(int id) throws ExecutionException, InterruptedException {
@@ -137,7 +101,7 @@ public class EmployeeObjectRead {
         projectread sumTask = new projectread(id);
         Future<Set<Project>> future = service.submit(sumTask);
         Set<Project> s=future.get();
-
+        log.info("Project Details Read");
          return s;
 
     }
@@ -147,7 +111,7 @@ public class EmployeeObjectRead {
         salaryread sumTask = new salaryread(id);
         Future<Salary> future = service.submit(sumTask);
         Salary s=future.get();
-
+        log.info("Salary Details Read");
         return s;
     }
     public void empget(Employee employee) throws InterruptedException, ParserConfigurationException, SAXException, IOException, ExecutionException, ParseException {    EmployeeObjectRead ar=new EmployeeObjectRead();
@@ -175,7 +139,7 @@ public class EmployeeObjectRead {
                 personalDetails.setEndDate(date);
 
 
-            System.out.println("\n"+personalDetails.getName()  +"\tResigned \n");
+            log.info("\n"+personalDetails.getName()  +"\tResigned \n");
         }
 
 
@@ -186,12 +150,12 @@ public class EmployeeObjectRead {
     public Employee inputEmployee(final int id) throws ExecutionException, InterruptedException {
         Callable sumTask= new Callable() {
             public Employee call() throws Exception {
-                    //  empget(ar.id);
-                  //  System.out.println(id);
+
                     EmployeeObjectRead ar=new EmployeeObjectRead(id);
+
                     Employee emp=new Employee(ar.employeeget(ar.id),ar.addressget(ar.id),ar.contactget(ar.id),ar.departmentget(ar.id),ar.personalget(ar.id),ar.projectget(ar.id),ar.salaryget(ar.id));
-                    //  System.out.println(ar.id+""+experience);
-                    System.out.println(emp);
+
+                    log.info(emp);
                     return emp;
             }
         };
@@ -199,23 +163,8 @@ public class EmployeeObjectRead {
         ExecutorService service =  Executors.newSingleThreadExecutor();
       //  EmployeeObjectRead sumTask = new EmployeeObjectRead(id);
         Future<Employee> future = service.submit(sumTask);
+
         return future.get();
     }
-   /* public Employee call() throws Exception {
-        ar.id=id;
-        System.out.println(ar.id);
-        ar.salaryget(ar.id);
-        Employee emp=new Employee(ar.employeeget(ar.id),ar.addressget(ar.id),ar.contactget(ar.id),ar.departmentget(ar.id),ar.personalget(ar.id),ar.projectget(ar.id),ar.salaryget(ar.id));
-        //  System.out.println(ar.id+""+experience);
-        //  System.out.println(emp);
-        return emp;}
-*/
-   /* public static void main(String[] args) throws ExecutionException, InterruptedException, IOException, ParserConfigurationException, SAXException {
 
-      EmployeeObjectRead ar=new EmployeeObjectRead();
-        ar.id=101;
-      //  ar.reademp(101);
-      Employee emp=new Employee(ar.employeeget(ar.id),ar.addressget(ar.id),ar.contactget(ar.id),ar.departmentget(ar.id),ar.personalget(ar.id),ar.projectget(ar.id),ar.salaryget(ar.id));
-        System.out.println(emp);
-    }*/
 }
