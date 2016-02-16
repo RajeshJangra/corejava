@@ -1,5 +1,8 @@
 package com.xebia.training;
 
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.Logger;
+
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -12,23 +15,29 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 public class EmployeeApplication {
+	
+	static Logger log=Logger.getLogger(EmployeeApplication.class.getName());
 
 	public static  void main(String[] args) throws InterruptedException, ExecutionException, ParserConfigurationException, SAXException, IOException, ParseException 
 	{
-
-		List<Employee> employees=InputEmployee.InputEmp();
-		System.out.println(employees);
+		BasicConfigurator.configure();
+		
+      List<Employee> employees=InputEmployee.InputEmp();
+	
 		Scanner sc=new Scanner(System.in);
-		System.out.println("Do you want to employees to resign Y/N");
+		log.info("Enter your id");
+		int id=sc.nextInt();
+		log.info("Do you want to employees to resign Y/N");
 		String ch=sc.next();
 		if(ch.equalsIgnoreCase("Y")){
-			System.out.println("Enter Employee ID to resign");
-			int id=sc.nextInt();
+			log.info("Enter Employee ID to resign");
 			Terminate.terminateEmployee(employees,id);
 		}
-		System.out.println("--------------------------Complete Details of Employee-----------------------------------------------");
-		System.out.println(employees);
+		else
+		{
+			log.info(employees);
 		sc.close();
+		}
 
 	}
 

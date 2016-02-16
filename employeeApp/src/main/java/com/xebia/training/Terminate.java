@@ -24,8 +24,9 @@ public class Terminate {
 					project.setEnd_date(endDate);
 					
 				}
+				System.out.println(employee.getId()+" Successfully resigned!!\nDetails Updated\n"+employee);
 			}
-			System.out.println(employee.getId()+" Successfully resigned!!\nDetails Updated\n"+employee);
+			
 		}
 		
 		

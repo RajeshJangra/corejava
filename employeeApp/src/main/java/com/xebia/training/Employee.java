@@ -9,6 +9,62 @@ public class Employee {
 	private int id;
 	private int work_exp;
 	designation designation_obj;
+	
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		if (address == null) {
+			if (other.address != null)
+				return false;
+		} else if (!address.equals(other.address))
+			return false;
+		if (contact == null) {
+			if (other.contact != null)
+				return false;
+		} else if (!contact.equals(other.contact))
+			return false;
+		if (department == null) {
+			if (other.department != null)
+				return false;
+		} else if (!department.equals(other.department))
+			return false;
+		if (designation_obj != other.designation_obj)
+			return false;
+		if (id != other.id)
+			return false;
+		if (line == null) {
+			if (other.line != null)
+				return false;
+		} else if (!line.equals(other.line))
+			return false;
+		if (personaldetails == null) {
+			if (other.personaldetails != null)
+				return false;
+		} else if (!personaldetails.equals(other.personaldetails))
+			return false;
+		if (project == null) {
+			if (other.project != null)
+				return false;
+		} else if (!project.equals(other.project))
+			return false;
+		if (salary == null) {
+			if (other.salary != null)
+				return false;
+		} else if (!salary.equals(other.salary))
+			return false;
+		if (work_exp != other.work_exp)
+			return false;
+		return true;
+	}
+
 	private ArrayList<Address> address;
 	private ArrayList<Salary> salary;
 	private ArrayList<Project> project;

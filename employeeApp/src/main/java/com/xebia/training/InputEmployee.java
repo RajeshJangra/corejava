@@ -21,6 +21,14 @@ import org.xml.sax.SAXException;
 public class InputEmployee {
 
 	static String ine="/Users/spurwar/corejava/employeeApp/src/main/java/xmlfile/employee.xml";
+	int id;
+	
+
+	public InputEmployee(int id) {
+		super();
+		this.id = id;
+	}
+
 
 	public static List<Employee> InputEmp() throws InterruptedException, ExecutionException, ParserConfigurationException, SAXException, IOException
 	{
