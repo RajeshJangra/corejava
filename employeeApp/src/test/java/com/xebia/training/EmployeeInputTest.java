@@ -38,7 +38,6 @@ public class EmployeeInputTest {
 		
 		Map<Integer,Employee> employeeMap = new HashMap<Integer, Employee>();
 		
-		Map<Integer,Employee> empl = new HashMap<Integer, Employee>();
 		
 		Date startingDate = new SimpleDateFormat("dd-MM-yyyy").parse("20-01-2016");
 		Date dOB = new SimpleDateFormat("dd-MM-yyyy").parse("17-10-1994");
@@ -72,7 +71,6 @@ public class EmployeeInputTest {
 		
 		Employee emp = new Employee("Prince", startingDate,"upendra kumar", null,"pprakash@xebia.com",Designation.TRAINEE,"13/B gurgaon,haryana,India"
 				,"409/5 gandhi nagar hind,gaya","1","male", dOB,110, list1, list,list4,list3,list2);
-		empl.put(110,emp);
 		
 		 assertEquals(employeeMap.get(110),emp);
 		
