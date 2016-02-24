@@ -1,4 +1,4 @@
-package com.xebia.training.MapInterface;
+package com.xebia.training;
 
 import static org.junit.Assert.*;
 
