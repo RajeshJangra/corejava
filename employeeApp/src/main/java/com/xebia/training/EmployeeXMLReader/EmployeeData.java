@@ -19,6 +19,8 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
 
+import com.xebia.training.MainApplication.AgeCalculator;
+import com.xebia.training.MainApplication.ThreadExecution;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -37,24 +39,14 @@ import com.xebia.training.EndDateInfo.EmployeeMap;
 
 public class EmployeeData {
 	private static final String input = "src/main/java/com/XmlFiles/Employee.xml";
-	String name;
-	Date startingDate;
-	String fathersName;
-	Date endingDate;
-	String correspondant;
 
-	Designation designation = null;
-	String current;
-	String personal;
-	String workEx;
-	String gender;
-	Date dOB;
-	int id;
 	Map<Integer,Employee> employeeMap = new HashMap();
 
+
+
 	public static void main(String args[]) throws IOException, ParseException, NumberFormatException, InterruptedException, ExecutionException, ParserConfigurationException, SAXException, DOMException, TransformerException {
-		EmployeeData employee1 = new EmployeeData();
-		employee1.setValues();
+		EmployeeData employee = new EmployeeData();
+		employee.setValues();
 	}
 
 	public void setValues() throws NumberFormatException, IOException,
@@ -71,73 +63,37 @@ public class EmployeeData {
 			Node nNode = nList.item(temp);
 			if (nNode.getNodeType() == Node.ELEMENT_NODE) {
 				Element eElement = (Element) nNode;
-				
-				
-				
-				name = eElement.getElementsByTagName("name").item(0).getTextContent();
-				startingDate = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("startingDate").item(0).getTextContent());
-				fathersName = eElement.getElementsByTagName("fathersName").item(0).getTextContent();
-				
-				correspondant = eElement.getElementsByTagName("correspondant").item(0).getTextContent();
-				designation = Designation.valueOf(eElement.getElementsByTagName("designation").item(0).getTextContent());
-				current = eElement.getElementsByTagName("current").item(0).getTextContent();
-				personal = eElement.getElementsByTagName("personal").item(0).getTextContent();
-				workEx = eElement.getElementsByTagName("workEx").item(0).getTextContent();
-				gender =eElement.getElementsByTagName("gender").item(0).getTextContent();
-				dOB = new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("dOB").item(0).getTextContent());
-				id = Integer.parseInt(eElement.getElementsByTagName("id").item(0).getTextContent());
-				endingDate =null;
+				Employee employee1 = new Employee();
 
-				
-				
-				ThreadPoolExecutor executor1 = (ThreadPoolExecutor) Executors.newFixedThreadPool(100);
-				
-				
-				
-				
-				SalaryData salaryData = new SalaryData(id);
-				Future<List<Salary>> futureTask1 = executor1.submit(salaryData);
-				List<Salary> salary = futureTask1.get();
-				
-				
-				
-				ProjectData projectData = new ProjectData(id);
-				Future<List<Project>> futureTask = executor1.submit(projectData);
-				List<Project> project = futureTask.get();
-				
+				String name = eElement.getElementsByTagName("name").item(0).getTextContent();
 
-				
-				PersonalDetailsData personalDetailsData = new PersonalDetailsData(id);
-				Future<List<PersonalDetails>> futureTask2 = executor1.submit(personalDetailsData);
-				List<PersonalDetails> personalDetails = futureTask2.get();
+				employee1.setName(name);
+				employee1.setStartingDate(new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("startingDate").item(0).getTextContent()));
 
-				
-				DepartmentData departmentData = new DepartmentData(id);
-				Future<List<Department>> futureTask3 = executor1.submit(departmentData);
-				List<Department> department = futureTask3.get();
+				employee1.setFathersName(eElement.getElementsByTagName("fathersName").item(0).getTextContent());
+				employee1.setCorrespondant(eElement.getElementsByTagName("correspondant").item(0).getTextContent());
 
-				
-				ContactDetailsData contactDetailsData = new ContactDetailsData(id);
-				Future<List<ContactDetails>> futureTask4 = executor1.submit(contactDetailsData);
-				List<ContactDetails> contactDetails = futureTask4.get();
-				
-				Employee emp = new Employee(name, startingDate, fathersName, endingDate, correspondant, designation, current, personal, workEx, gender, dOB, id, salary, project, personalDetails, department, contactDetails);
-
-				
-			
-			
-			employeeMap.put(id,emp);
-			
-			
-			
-			//	System.out.println(emp + "\n");
+				employee1.setDesignation(
+						Designation.valueOf(eElement.getElementsByTagName("designation").item(0).getTextContent())
+				);
+				employee1.setCurrent(eElement.getElementsByTagName("current").item(0).getTextContent());
+				employee1.setPersonal(eElement.getElementsByTagName("personal").item(0).getTextContent());
+				employee1.setWorkEx(eElement.getElementsByTagName("workEx").item(0).getTextContent());
+				employee1.setGender(eElement.getElementsByTagName("gender").item(0).getTextContent());
+				employee1.setDOB(new SimpleDateFormat("dd-MM-yyyy").parse(eElement.getElementsByTagName("dOB").item(0).getTextContent()));
+				employee1.setId(Integer.parseInt(eElement.getElementsByTagName("id").item(0).getTextContent()));
+				employee1.setEndingDate(null);
+				AgeCalculator age = new AgeCalculator(employee1);
+				employee1.setAge(age.ageCal());
+				ThreadExecution execution = new ThreadExecution(employeeMap);
+				employeeMap = execution.executeThreads(employee1);
 
 			}
 
 		}
 
 		EmployeeMap eMap = new EmployeeMap(employeeMap);
-	//	fileReader.close();
+
 
 	}
 

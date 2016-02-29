@@ -31,11 +31,8 @@ public class EmployeeMap {
 		System.out.println("Enter employee id :");
 		Scanner sc = new Scanner(System.in);
 		int id = sc.nextInt();
-		
-		
-		
-		
-		
+
+
 		employee = empMap.get(id);
 		
 			 

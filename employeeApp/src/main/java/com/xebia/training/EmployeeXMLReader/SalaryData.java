@@ -16,16 +16,14 @@ import org.w3c.dom.NodeList;
 import com.xebia.training.EmployeeEntities.Salary;
 
 public class SalaryData implements Callable<List<Salary>> {
+
+
 	public int id;
 	public double salaryId;
 	public double basic;
 
-	public double HRA;
-	public double DA;
+	
 
-	public double LTA;
-	public double FP;
-	public double gratvity;
 	public int EmployeeId;
 	public static final String input = "/home/raggarwal/GIT/corejava/employeeApp/src/main/java/com/XmlFiles/Salary.xml";
 
